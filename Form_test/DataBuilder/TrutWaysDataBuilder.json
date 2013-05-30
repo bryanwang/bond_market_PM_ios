@@ -1,0 +1,16 @@
+{
+	"grouped": true,
+	"title": "增信方式",
+            "controllerName": "TrustWaysViewController",
+	"sections": [
+                 { "elements":
+                        [
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"资产抵押", "controllerAction": "showAssertsTypes:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"担保保证", "controllerAction": "showGuaranteeTypes:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"内部增级", "controllerAction": "showEnhancementsWays:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"银行流动性支持", "controllerAction": "showBankSupportWays:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"其他增信方式", "controllerAction": "showOtherTrustWays:"},
+                        ]
+                 }
+    ]
+}

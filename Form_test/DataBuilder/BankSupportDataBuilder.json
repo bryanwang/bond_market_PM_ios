@@ -1,0 +1,17 @@
+{
+	"grouped": true,
+	"title": "银行流动性支持",
+            "controllerName": "EnhancementsViewController",
+	"sections": [
+                { "elements":
+                        [
+                                { "type":"QEntryElement", "key": "others", "placeholder": "银行名称"},
+                        ]
+                 },
+                  { "elements":
+                        [
+                                { "type":"QEntryElement", "key": "others", "placeholder": "其他"},
+                        ]
+                 }
+        ]
+}

@@ -1,0 +1,24 @@
+{
+	"grouped": true,
+	"title": "股权",
+            "controllerName": "EnhancementsViewController",
+	"sections": [
+                 { "title": "股权所有人", "elements":
+                        [
+                                { "type":"QEntryElement", "key":"TrustIncrease", "placeholder":"股权所有人"},
+                                { "type":"QButtonElement", "title":"添加", "controllerAction": "handleEquityAddButtonTapped:"}
+                        ]
+                },
+                {"elements":
+                      [
+                          { "type":"QEntryElement", "key": "others", "placeholder": "其他性质"},
+                      ]
+                },
+                { "elements":
+                        [
+                                { "type":"QEntryElement", "key": "others", "title": "质押金额", "placeholder": "亿", "prefix": "亿 ", "keyboardType":"NumberPad"},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumberPad", "prefix": "倍 ", "bind": "textValue: IssueScale"},
+                        ]
+                 }
+        ]
+}

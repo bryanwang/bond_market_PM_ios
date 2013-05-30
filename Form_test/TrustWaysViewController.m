@@ -36,7 +36,7 @@
 
 
 - (void)showAssertsTypes:(QElement *)element{
-    QRootElement *root = [AssertsTypesDataBuilder create];
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"AssertsTypesDataBuilder" andData:nil];
     AssertsTypesViewController *ac = [[AssertsTypesViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:ac forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
@@ -45,7 +45,7 @@
 }
 
 - (void)showGuaranteeTypes:(QElement *)element{
-    QRootElement *root = [GuaranteeDataBuilder create];
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"GuaranteeDataBuilder" andData:nil];
     GuaranteeViewController *gc = [[GuaranteeViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:gc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
@@ -54,7 +54,7 @@
 }
 
 - (void)showEnhancementsWays:(QElement *)element{
-    QRootElement *root = [EnhancementsDataBuilder create];
+    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"EnhancementsDataBuilder" andData:nil];
     EnhancementsViewController *ec = [[EnhancementsViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:ec forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
@@ -63,7 +63,7 @@
 }
 
 - (void)showBankSupportWays:(QElement *)element{
-    QRootElement *root = [BankSupportDataBuilder create];
+    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"BankSupportDataBuilder" andData:nil];
     BankSupportViewController *bc = [[BankSupportViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:bc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION

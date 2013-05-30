@@ -24,7 +24,7 @@
 - (BondBasicInfoViewController *)bc
 {
     if (_bc == nil) {
-        QRootElement *root = [BasicDataBuilder create];
+        QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BasicDataBuilder" andData:nil];
         _bc = [[BondBasicInfoViewController alloc]initWithRoot:root];
         _bc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
         [self.view addSubview:_bc.view];
@@ -35,7 +35,7 @@
 - (FinancialIndicatorsViewController *)fc
 {
     if (_fc == nil) {
-        QRootElement *root = [FinanceDataBuilder create];
+        QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"FinanceDataBuilder" andData:nil];
         _fc = [[FinancialIndicatorsViewController alloc]initWithRoot:root];
         _fc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
         [self.view addSubview:_fc.view];
@@ -159,19 +159,29 @@
     [self.view addSubview:segmentedControl];
 }
 
+- (void)readTablesJsonValues
+{
+    NSMutableDictionary *basic_dic = [[NSMutableDictionary alloc] init];
+    [self.bc.root fetchValueUsingBindingsIntoObject:basic_dic];
+    NSLog(@"%@", basic_dic);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"新债录入";
     self.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(readTablesJsonValues)];
+    self.navigationItem.rightBarButtonItem = item;
     
     [self setUpSegmentedController];
     [self registerNotification];
 
     [self.segmentedControl setSelectedIndex:0];
     
+    __block NewBondViewController* nc = self;
     RunBlockAfterDelay(0.35f, ^{
-        [self changeFormDetail:0];
+        [nc changeFormDetail:0];
     });
 }
 

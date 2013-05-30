@@ -1,0 +1,29 @@
+{
+	"grouped": true,
+	"title": "土地",
+            "controllerName": "EnhancementsViewController",
+	"sections": [
+                { 
+                    "title": "性质", 
+                    "type": "QSelectSection",
+                    "multipleAllowed": true,
+                    "items": [
+                            "商业",
+                            "住宅",
+                    ]
+                },
+                {"elements":
+                      [
+                          { "type":"QEntryElement", "key": "others", "placeholder": "其他性质"},
+                      ]
+                },
+                { "elements":
+                        [
+                                { "type":"QEntryElement", "key": "others", "title": "土地面积", "placeholder": "万平方米", "prefix": "万平方米 ", "keyboardType":"NumberPad"},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"转让价值", "placeholder": "亿元", "keyboardType":"NumberPad", "prefix": "亿元 ", "bind": "textValue: IssueScale"},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumberPad", "prefix": "倍 ", "bind": "textValue: IssueScale"},
+                                 { "type":"QPickerElement", "key":"Interest", "title":"土地出让证明", "items":[["有", "无", " "]]},
+                        ]
+                 }
+        ]
+}

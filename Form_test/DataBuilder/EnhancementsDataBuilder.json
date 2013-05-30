@@ -1,0 +1,20 @@
+{
+	"grouped": true,
+	"title": "内部增级",
+            "controllerName": "EnhancementsViewController",
+	"sections": [
+                { 
+                    "type": "QSelectSection",
+                    "multipleAllowed": true,
+                    "items": [
+                            "偿债基金",
+                            "结构化分级",
+                    ]
+                },
+                { "elements":
+                        [
+                                { "type":"QEntryElement", "key": "others", "placeholder": "其他"},
+                        ]
+                 }
+        ]
+}

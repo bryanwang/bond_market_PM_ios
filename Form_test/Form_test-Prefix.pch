@@ -12,7 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import<QuickDialog.h>
-    #import "SampleDataBuilder.h"
+//    #import "SampleDataBuilder.h"
     #import "BYBaseQuickDialogViewController.h"
     #import <define.h>
     #import "Utils.h"

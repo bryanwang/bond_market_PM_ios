@@ -1,0 +1,15 @@
+{
+	"grouped": true,
+	"title": "新增资产抵制押",
+            "controllerName": "TrustWaysViewController",
+	"sections": [
+                 { "elements":
+                        [
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"土地", "controllerAction": "showLandTypes:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"房产", "controllerAction": "showEstateTypes:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"股权", "controllerAction": "showEquityTypes:"},
+                                { "type":"QLabelElement", "key":"TrustIncrease", "title":"应收账款", "controllerAction": "showReceivablesTypes:"},
+                        ]
+                 }
+    ]
+}

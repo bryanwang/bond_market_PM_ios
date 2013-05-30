@@ -31,6 +31,18 @@
 		CA1BCCC01756F88F0049D342 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1BCCBE1756F88F0049D342 /* BondRemarkViewController.m */; };
 		CA1BCCC11756F88F0049D342 /* BondRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCBF1756F88F0049D342 /* BondRemarkViewController.xib */; };
 		CA1BCCC4175706570049D342 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1BCCC3175706570049D342 /* Utils.m */; };
+		CA1BCCC9175730600049D342 /* BasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCC8175730600049D342 /* BasicDataBuilder.json */; };
+		CA1BCCCB1757387B0049D342 /* 债市通 数据库字段结构.md in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCCA1757387B0049D342 /* 债市通 数据库字段结构.md */; };
+		CA1BCCCD175739030049D342 /* FinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCCC175739030049D342 /* FinanceDataBuilder.json */; };
+		CA1BCCCF17573B8D0049D342 /* TrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCCE17573B8D0049D342 /* TrutWaysDataBuilder.json */; };
+		CA1BCCD117573BC10049D342 /* AssertsTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCD017573BC10049D342 /* AssertsTypesDataBuilder.json */; };
+		CA1BCCD517573EB80049D342 /* GuaranteeDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCD417573EB80049D342 /* GuaranteeDataBuilder.json */; };
+		CA1BCCD7175741390049D342 /* EnhancementsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCD6175741390049D342 /* EnhancementsDataBuilder.json */; };
+		CA1BCCDB175742630049D342 /* BankSupportDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCDA175742620049D342 /* BankSupportDataBuilder.json */; };
+		CA1BCCDD17574CB60049D342 /* LandTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCDC17574CB60049D342 /* LandTypesDataBuilder.json */; };
+		CA1BCCDF17574EBA0049D342 /* EstateTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCDE17574EB90049D342 /* EstateTypesDataBuilder.json */; };
+		CA1BCCE117574F150049D342 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCE017574F150049D342 /* EquityDataBuilder.json */; };
+		CA1BCCE317574FFD0049D342 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */; };
 		CACFD99C17558E04008264DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99B17558E04008264DA /* UIKit.framework */; };
 		CACFD99E17558E04008264DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99D17558E04008264DA /* Foundation.framework */; };
 		CACFD9A017558E04008264DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99F17558E04008264DA /* CoreGraphics.framework */; };
@@ -87,6 +99,18 @@
 		CA1BCCBF1756F88F0049D342 /* BondRemarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BondRemarkViewController.xib; path = Form_test/BondRemarkViewController.xib; sourceTree = "<group>"; };
 		CA1BCCC2175706570049D342 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		CA1BCCC3175706570049D342 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		CA1BCCC8175730600049D342 /* BasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BasicDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCCA1757387B0049D342 /* 债市通 数据库字段结构.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "债市通 数据库字段结构.md"; sourceTree = "<group>"; };
+		CA1BCCCC175739030049D342 /* FinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinanceDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCCE17573B8D0049D342 /* TrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TrutWaysDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCD017573BC10049D342 /* AssertsTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AssertsTypesDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCD417573EB80049D342 /* GuaranteeDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuaranteeDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCD6175741390049D342 /* EnhancementsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EnhancementsDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCDA175742620049D342 /* BankSupportDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BankSupportDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCDC17574CB60049D342 /* LandTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LandTypesDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCDE17574EB90049D342 /* EstateTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EstateTypesDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCE017574F150049D342 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EquityDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReceivablesDataBuilder.json; sourceTree = "<group>"; };
 		CACFD99817558E04008264DA /* Form_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Form_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACFD99B17558E04008264DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CACFD99D17558E04008264DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -242,6 +266,18 @@
 		CAE13648175592DB00616AA7 /* DataBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				CA1BCCCA1757387B0049D342 /* 债市通 数据库字段结构.md */,
+				CA1BCCDA175742620049D342 /* BankSupportDataBuilder.json */,
+				CA1BCCC8175730600049D342 /* BasicDataBuilder.json */,
+				CA1BCCCC175739030049D342 /* FinanceDataBuilder.json */,
+				CA1BCCCE17573B8D0049D342 /* TrutWaysDataBuilder.json */,
+				CA1BCCD017573BC10049D342 /* AssertsTypesDataBuilder.json */,
+				CA1BCCD417573EB80049D342 /* GuaranteeDataBuilder.json */,
+				CA1BCCD6175741390049D342 /* EnhancementsDataBuilder.json */,
+				CA1BCCDC17574CB60049D342 /* LandTypesDataBuilder.json */,
+				CA1BCCDE17574EB90049D342 /* EstateTypesDataBuilder.json */,
+				CA1BCCE017574F150049D342 /* EquityDataBuilder.json */,
+				CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */,
 				CAE13649175592DB00616AA7 /* SampleDataBuilder.h */,
 				CAE1364A175592DB00616AA7 /* SampleDataBuilder.m */,
 			);
@@ -251,11 +287,9 @@
 		CAE136601755E6FD00616AA7 /* TrustWays */ = {
 			isa = PBXGroup;
 			children = (
+				CAE136611755E71600616AA7 /* Asserts */,
 				CAE1364C1755D5CC00616AA7 /* TrustWaysViewController.h */,
 				CAE1364D1755D5CC00616AA7 /* TrustWaysViewController.m */,
-				CAE136611755E71600616AA7 /* Asserts */,
-				CAE136511755DB1200616AA7 /* AssertsTypesViewController.h */,
-				CAE136521755DB1200616AA7 /* AssertsTypesViewController.m */,
 				CA1BCC761755EE1B0049D342 /* GuaranteeViewController.h */,
 				CA1BCC771755EE1B0049D342 /* GuaranteeViewController.m */,
 				CA1BCC791755F31D0049D342 /* EnhancementsViewController.h */,
@@ -273,6 +307,8 @@
 		CAE136611755E71600616AA7 /* Asserts */ = {
 			isa = PBXGroup;
 			children = (
+				CAE136511755DB1200616AA7 /* AssertsTypesViewController.h */,
+				CAE136521755DB1200616AA7 /* AssertsTypesViewController.m */,
 				CAE136541755DCBB00616AA7 /* LandViewController.h */,
 				CAE136551755DCBB00616AA7 /* LandViewController.m */,
 				CAE136571755E09B00616AA7 /* EstateViewController.h */,
@@ -353,6 +389,18 @@
 				CA1BCCA31756E9E90049D342 /* segmented-bg.png in Resources */,
 				CA1BCCA41756E9E90049D342 /* segmented-bg@2x.png in Resources */,
 				CA1BCCC11756F88F0049D342 /* BondRemarkViewController.xib in Resources */,
+				CA1BCCC9175730600049D342 /* BasicDataBuilder.json in Resources */,
+				CA1BCCCB1757387B0049D342 /* 债市通 数据库字段结构.md in Resources */,
+				CA1BCCCD175739030049D342 /* FinanceDataBuilder.json in Resources */,
+				CA1BCCCF17573B8D0049D342 /* TrutWaysDataBuilder.json in Resources */,
+				CA1BCCD117573BC10049D342 /* AssertsTypesDataBuilder.json in Resources */,
+				CA1BCCD517573EB80049D342 /* GuaranteeDataBuilder.json in Resources */,
+				CA1BCCD7175741390049D342 /* EnhancementsDataBuilder.json in Resources */,
+				CA1BCCDB175742630049D342 /* BankSupportDataBuilder.json in Resources */,
+				CA1BCCDD17574CB60049D342 /* LandTypesDataBuilder.json in Resources */,
+				CA1BCCDF17574EBA0049D342 /* EstateTypesDataBuilder.json in Resources */,
+				CA1BCCE117574F150049D342 /* EquityDataBuilder.json in Resources */,
+				CA1BCCE317574FFD0049D342 /* ReceivablesDataBuilder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

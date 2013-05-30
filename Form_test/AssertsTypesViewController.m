@@ -39,8 +39,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showLandTypes:(QElement *)element{
-    QRootElement *root = [LandTypesDataBuilder create];
+- (void)showLandTypes:(QElement *)element
+{
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
     LandViewController *lc = [[LandViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:lc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
@@ -48,8 +49,9 @@
                                                       userInfo:dict];
 }
 
-- (void)showEstateTypes:(QElement *)element{
-    QRootElement *root = [EstateTypesDataBuilder create];
+- (void)showEstateTypes:(QElement *)element
+{
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EstateTypesDataBuilder" andData:nil];
     EstateViewController *ec = [[EstateViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:ec forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
@@ -57,8 +59,9 @@
                                                       userInfo:dict];
 }
 
-- (void)showEquityTypes:(QElement *)element{
-    QRootElement *root = [EquityDataBuilder create];
+- (void)showEquityTypes:(QElement *)element
+{
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EquityDataBuilder" andData:nil];
     EquityViewController *ec = [[EquityViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:ec forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
@@ -66,8 +69,9 @@
                                                       userInfo:dict];
 }
 
-- (void)showReceivablesTypes:(QElement *)element{
-    QRootElement *root = [ReceivablesDataBuilder create];
+- (void)showReceivablesTypes:(QElement *)element
+{
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ReceivablesDataBuilder" andData:nil];
     ReceivablesViewController *rc = [[ReceivablesViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:rc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION

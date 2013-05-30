@@ -32,7 +32,7 @@
 }
 
 - (void)showTrustWays:(QElement *)element{
-    QRootElement *root = [TrutWaysDataBuilder create];
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
     TrustWaysViewController *tc = [[TrustWaysViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:tc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION

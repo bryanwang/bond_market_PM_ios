@@ -1,0 +1,30 @@
+{
+	"grouped": true,
+	"title": "Json Data",
+    "controllerName": "NewBondViewController",
+	"sections": [
+                 { "elements":
+                        [
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"总资产", "placeholder": "万元", "keyboardType":"NumberPad", 
+                                "prefix": "万元 "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"净资产", "placeholder": "万元", "keyboardType":"NumberPad", 
+                                "prefix": "万元 "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"资产负债率", "placeholder": "(%)", "keyboardType":"NumberPad", 
+                                "prefix": "% "},
+                                { "type":"QPickerElement", "key":"Interest", "title":"有息债务", "items":[["长期", "短期"]]},
+                                 { "type":"QEntryElement", "key":"IssueScale", "title":"营业收入", "placeholder": "万元", "keyboardType":"NumberPad", 
+                                "prefix": "万元 "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"毛利率", "placeholder": "(%)", "keyboardType":"NumberPad", 
+                                "prefix": "% "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"净利率", "placeholder": "万元", "keyboardType":"NumberPad", 
+                                "prefix": "万元 "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"经营性现金流", "placeholder": "万元", "keyboardType":"NumberPad", 
+                                "prefix": "万元 "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"流动比率", "placeholder": "(%)", "keyboardType":"NumberPad", 
+                                "prefix": "% "},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"利率保障倍数EBIT", "placeholder": "万元", "keyboardType":"NumberPad", 
+                                "prefix": "万元 "},
+                        ]
+                 }
+    ]
+}
