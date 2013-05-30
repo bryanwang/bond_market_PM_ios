@@ -163,7 +163,9 @@
 {
     NSMutableDictionary *basic_dic = [[NSMutableDictionary alloc] init];
     [self.bc.root fetchValueUsingBindingsIntoObject:basic_dic];
+    [self.fc.root fetchValueIntoObject:basic_dic];
     NSLog(@"%@", basic_dic);
+    //todo add ex values
 }
 
 - (void)viewDidLoad
