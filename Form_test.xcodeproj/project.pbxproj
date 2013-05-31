@@ -45,6 +45,9 @@
 		CA1BCCE317574FFD0049D342 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */; };
 		CA1BCCF317587C060049D342 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCF117587C060049D342 /* area.plist */; };
 		CA1BCCF417587C060049D342 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCF217587C060049D342 /* city.plist */; };
+		CA1E37E5175894AB008D0BC3 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E37E4175894A0008D0BC3 /* libQuickDialog.a */; };
+		CA1E37EA17589700008D0BC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E37E917589700008D0BC3 /* MapKit.framework */; };
+		CA1E37EC1758970A008D0BC3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E37EB1758970A008D0BC3 /* CoreLocation.framework */; };
 		CACFD99C17558E04008264DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99B17558E04008264DA /* UIKit.framework */; };
 		CACFD99E17558E04008264DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99D17558E04008264DA /* Foundation.framework */; };
 		CACFD9A017558E04008264DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99F17558E04008264DA /* CoreGraphics.framework */; };
@@ -62,6 +65,23 @@
 		CAE1365C1755E2A800616AA7 /* EquityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1365B1755E2A800616AA7 /* EquityViewController.m */; };
 		CAE1365F1755E6EC00616AA7 /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1365E1755E6EC00616AA7 /* ReceivablesViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA1E37E1175894A0008D0BC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1E37DC175894A0008D0BC3 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D80B0E3313E052DF00FA85CA;
+			remoteInfo = QuickDialogExample;
+		};
+		CA1E37E3175894A0008D0BC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1E37DC175894A0008D0BC3 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C542393145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4628E194A0414F578E740F3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +135,9 @@
 		CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReceivablesDataBuilder.json; sourceTree = "<group>"; };
 		CA1BCCF117587C060049D342 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		CA1BCCF217587C060049D342 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		CA1E37DC175894A0008D0BC3 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Support/QuickDialog/QuickDialog.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CA1E37E917589700008D0BC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CA1E37EB1758970A008D0BC3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CACFD99817558E04008264DA /* Form_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Form_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACFD99B17558E04008264DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CACFD99D17558E04008264DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -150,9 +173,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1E37EC1758970A008D0BC3 /* CoreLocation.framework in Frameworks */,
+				CA1E37EA17589700008D0BC3 /* MapKit.framework in Frameworks */,
 				CACFD99C17558E04008264DA /* UIKit.framework in Frameworks */,
 				CACFD99E17558E04008264DA /* Foundation.framework in Frameworks */,
 				CACFD9A017558E04008264DA /* CoreGraphics.framework in Frameworks */,
+				CA1E37E5175894AB008D0BC3 /* libQuickDialog.a in Frameworks */,
 				C63691FFECD04368B9A0848B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +235,15 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		CA1E37DD175894A0008D0BC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA1E37E2175894A0008D0BC3 /* QuickDialogExample.app */,
+				CA1E37E4175894A0008D0BC3 /* libQuickDialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CACFD98F17558E04008264DA = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +265,8 @@
 		CACFD99A17558E04008264DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E37EB1758970A008D0BC3 /* CoreLocation.framework */,
+				CA1E37E917589700008D0BC3 /* MapKit.framework */,
 				CACFD99B17558E04008264DA /* UIKit.framework */,
 				CACFD99D17558E04008264DA /* Foundation.framework */,
 				CACFD99F17558E04008264DA /* CoreGraphics.framework */,
@@ -258,6 +295,7 @@
 		CACFD9A217558E04008264DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA1E37DC175894A0008D0BC3 /* QuickDialog.xcodeproj */,
 				CACFD9A317558E04008264DA /* Form_test-Info.plist */,
 				CACFD9A417558E04008264DA /* InfoPlist.strings */,
 				CACFD9A717558E04008264DA /* main.m */,
@@ -368,12 +406,35 @@
 			mainGroup = CACFD98F17558E04008264DA;
 			productRefGroup = CACFD99917558E04008264DA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CA1E37DD175894A0008D0BC3 /* Products */;
+					ProjectRef = CA1E37DC175894A0008D0BC3 /* QuickDialog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CACFD99717558E04008264DA /* Form_test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CA1E37E2175894A0008D0BC3 /* QuickDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QuickDialogExample.app;
+			remoteRef = CA1E37E1175894A0008D0BC3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA1E37E4175894A0008D0BC3 /* libQuickDialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQuickDialog.a;
+			remoteRef = CA1E37E3175894A0008D0BC3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CACFD99617558E04008264DA /* Resources */ = {
@@ -491,7 +552,7 @@
 		CACFD9B917558E04008264DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -518,13 +579,14 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "B432C502-C44A-4A71-BE03-E3D2E92DD2F0";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ./Support/QuickDialog/quickdialog;
 			};
 			name = Debug;
 		};
 		CACFD9BA17558E04008264DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -544,6 +606,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "B432C502-C44A-4A71-BE03-E3D2E92DD2F0";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ./Support/QuickDialog/quickdialog;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

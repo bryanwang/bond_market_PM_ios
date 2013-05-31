@@ -10,7 +10,7 @@
                                 { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "其他"]], "bind": "textValue: EntNature"},
                                 { "type":"QPickerElement", "key":"Area", "title":"所在地区"},
                                 { "type":"QEntryElement", "key":"IssueScale", "title":"发行规模", "placeholder": "亿元", "keyboardType":"NumberPad", "prefix": " 亿元", "bind": "textValue: IssueScale"},
-                                { "type":"QEntryElement", "key":"IssuePeriod", "title":"发行期限", "keyboardType":"NumberPad", "prefix": " 年", "bind": "textValue: IssuePeriod"},
+                                { "type":"QEntryElement", "key":"IssuePeriod", "title":"发行期限", "keyboardType":"NumberPad", "prefix": " 年", "placeholder": "年", "bind": "textValue: IssuePeriod"},
                         ]
                  },
                  { "elements":
@@ -18,7 +18,7 @@
                         { "type":"QPickerElement", "key":"Interest", "title":"利率区间", "items":[["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%"], 
                         ["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%", "11%", "12%", "13%", "14%", "15%", "16%", "17%", "18%", "19%", "20%"]]},
                         { "type":"QEntryElement", "key":"IssueScale", "title":"发行规模", "placeholder": "亿元", "keyboardType":"NumberPad", "prefix": " 亿元 "},
-                        { "type":"QEntryElement", "key":"QueryFrom", "title":"发行期限", "keyboardType":"NumberPad", "prefix": " 年"},
+                        { "type":"QEntryElement", "key":"QueryFrom", "title":"发行期限", "keyboardType":"NumberPad", "prefix": " 年", "placeholder": "年"},
                         { "type":"QDateTimeInlineElement", "key":"QueryFrom", "title":"询价有效期起", "_mode":"1"},
                         { "type":"QDateTimeInlineElement", "key":"QueryTo", "title":"询价有效期止",  "_mode":"1"},
                         { "type":"QPickerElement", "key":"BondRate", "title":"债项评级", "items" :[["无", "AAA", "AA+", "AA", "AA-", "A+", "A", "A-", "BBB+"]]},
