@@ -17,8 +17,5 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.quickDialogTableView.backgroundView = nil;
-//    self.quickDialogTableView.backgroundColor = [UIColor whiteColor];
 }
-
 @end

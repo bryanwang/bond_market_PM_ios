@@ -43,6 +43,8 @@
 		CA1BCCDF17574EBA0049D342 /* EstateTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCDE17574EB90049D342 /* EstateTypesDataBuilder.json */; };
 		CA1BCCE117574F150049D342 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCE017574F150049D342 /* EquityDataBuilder.json */; };
 		CA1BCCE317574FFD0049D342 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */; };
+		CA1BCCF317587C060049D342 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCF117587C060049D342 /* area.plist */; };
+		CA1BCCF417587C060049D342 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1BCCF217587C060049D342 /* city.plist */; };
 		CACFD99C17558E04008264DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99B17558E04008264DA /* UIKit.framework */; };
 		CACFD99E17558E04008264DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99D17558E04008264DA /* Foundation.framework */; };
 		CACFD9A017558E04008264DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACFD99F17558E04008264DA /* CoreGraphics.framework */; };
@@ -111,6 +113,8 @@
 		CA1BCCDE17574EB90049D342 /* EstateTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EstateTypesDataBuilder.json; sourceTree = "<group>"; };
 		CA1BCCE017574F150049D342 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EquityDataBuilder.json; sourceTree = "<group>"; };
 		CA1BCCE217574FFD0049D342 /* ReceivablesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReceivablesDataBuilder.json; sourceTree = "<group>"; };
+		CA1BCCF117587C060049D342 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		CA1BCCF217587C060049D342 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		CACFD99817558E04008264DA /* Form_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Form_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACFD99B17558E04008264DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CACFD99D17558E04008264DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,6 +163,8 @@
 		CA1BCC841755F79C0049D342 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CA1BCCF117587C060049D342 /* area.plist */,
+				CA1BCCF217587C060049D342 /* city.plist */,
 				CA1BCCA51756EA1E0049D342 /* define.h */,
 				CA1BCC851755F79C0049D342 /* HDTextView.h */,
 				CA1BCC861755F79C0049D342 /* HDTextView.m */,
@@ -401,6 +407,8 @@
 				CA1BCCDF17574EBA0049D342 /* EstateTypesDataBuilder.json in Resources */,
 				CA1BCCE117574F150049D342 /* EquityDataBuilder.json in Resources */,
 				CA1BCCE317574FFD0049D342 /* ReceivablesDataBuilder.json in Resources */,
+				CA1BCCF317587C060049D342 /* area.plist in Resources */,
+				CA1BCCF417587C060049D342 /* city.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

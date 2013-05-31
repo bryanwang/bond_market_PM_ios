@@ -9,7 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Utils : NSObject
++ (Utils *)sharedInstance;
+
+@property (nonatomic, strong) NSArray *arears;
 
 @end
 
 
+@interface NSObject(BY)
+- (void)hideKeyBoard;
+@end

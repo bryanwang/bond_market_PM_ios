@@ -16,8 +16,8 @@
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "title": "质押金额", "placeholder": "亿", "prefix": "亿 ", "keyboardType":"NumberPad"},
-                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumberPad", "prefix": "倍 ", "bind": "textValue: IssueScale"},
+                                { "type":"QEntryElement", "key": "others", "title": "质押金额", "placeholder": "亿", "prefix": " 亿", "keyboardType":"NumberPad"},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumberPad", "prefix": " 倍", "bind": "textValue: IssueScale"},
                         ]
                  }
         ]

@@ -3,16 +3,16 @@
 	"title": "应收账款",
       "controllerName": "ReceivablesViewController",
 	"sections": [
-                 { "title": "股权所有人", "elements":
+                 { "title": "应收账款对象", "elements":
                         [
-                                { "type":"QEntryElement", "key":"TrustIncrease", "placeholder":"股权所有人"},
+                                { "type":"QEntryElement", "key":"TrustIncrease", "placeholder":"应收账款对象"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleEquityAddButtonTapped:"}
                         ]
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "title": "应收账款余额", "placeholder": "亿", "prefix": "亿 ", "keyboardType":"NumberPad"},
-                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumberPad", "prefix": "倍 ", "bind": "textValue: IssueScale"},
+                                { "type":"QEntryElement", "key": "others", "title": "应收账款余额", "placeholder": "亿", "prefix": " 亿", "keyboardType":"NumberPad"},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumberPad", "prefix": " 倍", "bind": "textValue: IssueScale"},
                         ]
                  }
         ]

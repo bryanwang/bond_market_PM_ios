@@ -15,4 +15,57 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 @implementation Utils
 
+- (NSArray *)arears
+{
+    if (_arears == nil) {
+        _arears = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"area.plist" ofType:nil]];
+    }
+    
+    return _arears;
+}
+
++ (Utils *)sharedInstance
+{
+    static Utils *sharedInstance = nil;
+    static dispatch_once_t onceToken = 0;
+    
+    dispatch_once(&onceToken,^{
+        sharedInstance = [[Utils alloc] init];
+    });
+    
+    return sharedInstance;
+}
+@end
+
+@implementation NSObject(BY)
+
+//隐藏键盘
+- (void)hideKeyBoard
+{
+    for (UIWindow* window in [UIApplication sharedApplication].windows)
+    {
+        for (UIView* view in window.subviews)
+        {
+            [self dismissAllKeyBoardInView:view];
+        }
+    }
+}
+
+-(BOOL) dismissAllKeyBoardInView:(UIView *)view
+{
+    if([view isFirstResponder])
+    {
+        [view resignFirstResponder];
+        return YES;
+    }
+    for(UIView *subView in view.subviews)
+    {
+        if([self dismissAllKeyBoardInView:subView])
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

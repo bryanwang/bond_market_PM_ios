@@ -17,14 +17,88 @@
 @property (nonatomic, strong) FinancialIndicatorsViewController *fc;
 @property (nonatomic, strong) BondRemarkViewController *rc;
 @property (nonatomic, strong) AKSegmentedControl *segmentedControl;
+
+@property (nonatomic, strong) NSArray *provinces;
+@property (nonatomic, strong) NSArray *cities;
+@property (nonatomic, strong) NSArray *areas;
+
 @end
 
+
 @implementation NewBondViewController
+
+- (void)fetchProvinces
+{
+    @autoreleasepool {
+        NSArray *ps = [Utils sharedInstance].arears;
+        NSMutableArray *array = [NSMutableArray array];
+        [ps enumerateObjectsUsingBlock:^(id p, NSUInteger index, BOOL*stop) {
+            [array addObject:p[@"state"]];
+        }];
+        
+        self.provinces = [array copy];
+    }
+}
+
+- (void)fetchCitiesWithProvincesIndex: (NSInteger)index
+{
+
+    @autoreleasepool {
+        NSArray *cs = [Utils sharedInstance].arears[index][@"cities"];
+        NSMutableArray *array = [NSMutableArray array];
+        [cs enumerateObjectsUsingBlock:^(id c, NSUInteger index, BOOL*stop) {
+            [array addObject:c[@"city"]];
+        }];
+        
+        self.cities = [array copy];
+    }
+}
+
+- (void)fetchAreasWithCityIndex: (NSInteger)cindex AndProvincesIndex: (NSInteger )pindex
+{
+    @autoreleasepool {
+        NSArray *as  =[Utils sharedInstance].arears[pindex][@"cities"][cindex][@"areas"];
+        NSMutableArray *array = [NSMutableArray array];
+        NSLog(@"%@", as);
+        [as enumerateObjectsUsingBlock:^(id a, NSUInteger index, BOOL*stop) {
+            [array addObject:a];
+        }];
+        
+        if (array.count == 0) {
+            [array addObject:@"无"];
+        }
+        
+        self.areas = [array copy];
+    }
+}
 
 - (BondBasicInfoViewController *)bc
 {
     if (_bc == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BasicDataBuilder" andData:nil];
+        QSection *section = [root getSectionForIndex:0];
+        QPickerElement *element = (QPickerElement *)[section getVisibleElementForIndex:3];
+        
+        [self fetchProvinces];
+        [self fetchCitiesWithProvincesIndex:0];
+        [self fetchAreasWithCityIndex:0 AndProvincesIndex:0];
+        
+        NSArray *provinces = [self.provinces copy];
+        NSArray *cities = [self.cities copy];
+        NSArray *areas = [self.areas copy];
+        element.items =  @[provinces, cities, areas];
+        element.onValueChanged = ^(QRootElement *el) {
+            QPickerElement *p =  (QPickerElement *)el;
+            NSInteger pi = [p.selectedIndexes[0] integerValue];
+            NSInteger ci = [p.selectedIndexes[1] integerValue];
+            
+            [self fetchCitiesWithProvincesIndex:pi];
+            [self fetchAreasWithCityIndex:ci AndProvincesIndex:pi];
+                
+            p.items =  @[self.provinces, self.cities, self.areas];
+            [p reloadAllComponents];
+        };
+        
         _bc = [[BondBasicInfoViewController alloc]initWithRoot:root];
         _bc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
         [self.view addSubview:_bc.view];
@@ -52,35 +126,6 @@
 
     }
     return _rc;
-}
-
-//隐藏键盘
-- (void)hideKeyBoard
-{
-    for (UIWindow* window in [UIApplication sharedApplication].windows)
-    {
-        for (UIView* view in window.subviews)
-        {
-            [self dismissAllKeyBoardInView:view];
-        }
-    }
-}
-
--(BOOL) dismissAllKeyBoardInView:(UIView *)view
-{
-    if([view isFirstResponder])
-    {
-        [view resignFirstResponder];
-        return YES;
-    }
-    for(UIView *subView in view.subviews)
-    {
-        if([self dismissAllKeyBoardInView:subView])
-        {
-            return YES;
-        }
-    }
-    return NO;
 }
 
 - (void)changeFormDetail: (NSUInteger)index

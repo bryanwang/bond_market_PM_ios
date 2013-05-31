@@ -8,12 +8,14 @@
 
 #import "BondBasicInfoViewController.h"
 #import "TrustWaysViewController.h"
+#import "AppDelegate.h"
 
 @interface BondBasicInfoViewController ()
-
 @end
 
-@implementation BondBasicInfoViewController
+@implementation BondBasicInfoViewController {
+    QElement *areaElement;
+}
 
 - (void)displayViewControllerForRoot:(QRootElement *)element {
     QuickDialogController *newController = [QuickDialogController controllerForRoot:element];
@@ -31,7 +33,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)showTrustWays:(QElement *)element{
+- (void)showTrustWays:(QElement *)element
+{
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
     TrustWaysViewController *tc = [[TrustWaysViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:tc forKey:BYCONTROLLERKEY];
