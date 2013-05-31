@@ -59,7 +59,6 @@
 		CACFD9B217558E04008264DA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CACFD9B117558E04008264DA /* Default-568h@2x.png */; };
 		CAE1364B175592DB00616AA7 /* SampleDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1364A175592DB00616AA7 /* SampleDataBuilder.m */; };
 		CAE1364F1755D5CC00616AA7 /* TrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1364D1755D5CC00616AA7 /* TrustWaysViewController.m */; };
-		CAE136531755DB1200616AA7 /* AssertsTypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE136521755DB1200616AA7 /* AssertsTypesViewController.m */; };
 		CAE136561755DCBB00616AA7 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE136551755DCBB00616AA7 /* LandViewController.m */; };
 		CAE136591755E09B00616AA7 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE136581755E09B00616AA7 /* EstateViewController.m */; };
 		CAE1365C1755E2A800616AA7 /* EquityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1365B1755E2A800616AA7 /* EquityViewController.m */; };
@@ -155,8 +154,6 @@
 		CAE1364A175592DB00616AA7 /* SampleDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleDataBuilder.m; sourceTree = "<group>"; };
 		CAE1364C1755D5CC00616AA7 /* TrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrustWaysViewController.h; path = Form_test/TrustWaysViewController.h; sourceTree = "<group>"; };
 		CAE1364D1755D5CC00616AA7 /* TrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrustWaysViewController.m; path = Form_test/TrustWaysViewController.m; sourceTree = "<group>"; };
-		CAE136511755DB1200616AA7 /* AssertsTypesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssertsTypesViewController.h; sourceTree = "<group>"; };
-		CAE136521755DB1200616AA7 /* AssertsTypesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssertsTypesViewController.m; sourceTree = "<group>"; };
 		CAE136541755DCBB00616AA7 /* LandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
 		CAE136551755DCBB00616AA7 /* LandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
 		CAE136571755E09B00616AA7 /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstateViewController.h; sourceTree = "<group>"; };
@@ -242,6 +239,7 @@
 			children = (
 				CAE136601755E6FD00616AA7 /* TrustWays */,
 				CAE1364C1755D5CC00616AA7 /* TrustWaysViewController.h */,
+				CAE1364D1755D5CC00616AA7 /* TrustWaysViewController.m */,
 				CA1BCCA61756EE0E0049D342 /* BondBasicInfoViewController.h */,
 				CA1BCCA71756EE0E0049D342 /* BondBasicInfoViewController.m */,
 				CA1BCCBD1756F88F0049D342 /* BondRemarkViewController.h */,
@@ -249,7 +247,6 @@
 				CA1BCCBF1756F88F0049D342 /* BondRemarkViewController.xib */,
 				CA1BCCB71756F7970049D342 /* FinancialIndicatorsViewController.h */,
 				CA1BCCB81756F7970049D342 /* FinancialIndicatorsViewController.m */,
-				CAE1364D1755D5CC00616AA7 /* TrustWaysViewController.m */,
 				CA1BCC761755EE1B0049D342 /* GuaranteeViewController.h */,
 				CA1BCC771755EE1B0049D342 /* GuaranteeViewController.m */,
 				CA1BCC791755F31D0049D342 /* EnhancementsViewController.h */,
@@ -358,8 +355,6 @@
 		CAE136601755E6FD00616AA7 /* TrustWays */ = {
 			isa = PBXGroup;
 			children = (
-				CAE136511755DB1200616AA7 /* AssertsTypesViewController.h */,
-				CAE136521755DB1200616AA7 /* AssertsTypesViewController.m */,
 				CAE136541755DCBB00616AA7 /* LandViewController.h */,
 				CAE136551755DCBB00616AA7 /* LandViewController.m */,
 				CAE136571755E09B00616AA7 /* EstateViewController.h */,
@@ -523,7 +518,6 @@
 				CACFD9AC17558E04008264DA /* AppDelegate.m in Sources */,
 				CAE1364B175592DB00616AA7 /* SampleDataBuilder.m in Sources */,
 				CAE1364F1755D5CC00616AA7 /* TrustWaysViewController.m in Sources */,
-				CAE136531755DB1200616AA7 /* AssertsTypesViewController.m in Sources */,
 				CAE136561755DCBB00616AA7 /* LandViewController.m in Sources */,
 				CAE136591755E09B00616AA7 /* EstateViewController.m in Sources */,
 				CAE1365C1755E2A800616AA7 /* EquityViewController.m in Sources */,
