@@ -9,12 +9,12 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //    #import "SampleDataBuilder.h"
-    #import "QuickDialog.h" 
-    #import "BYBaseQuickDialogViewController.h"
-    #import <define.h>
-    #import "Utils.h"
+#import "QuickDialog.h"
+#import "BYBaseQuickDialogViewController.h"
+#import <define.h>
+#import "Utils.h"
 #endif

@@ -1,9 +1,9 @@
 //
 //  main.m
-//  Form_test
+//  bond_market_PM_iphone
 //
-//  Created by Bruce yang on 13-5-29.
-//  Copyright (c) 2013年 bruce yang. All rights reserved.
+//  Created by YANG YUXIN on 6/3/13.
+//  Copyright (c) 2013 pyrating. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

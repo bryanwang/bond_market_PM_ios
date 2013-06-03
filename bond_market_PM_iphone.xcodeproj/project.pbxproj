@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E988199175C2FE80014D6B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E988198175C2FE80014D6B0 /* CoreLocation.framework */; };
+		0E98819D175C2FEC0014D6B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E98819C175C2FEC0014D6B0 /* MapKit.framework */; };
+		0EA8826E175C237A001100A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8826D175C237A001100A7 /* UIKit.framework */; };
+		0EA88270175C237A001100A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8826F175C237A001100A7 /* Foundation.framework */; };
+		0EA88272175C237A001100A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA88271175C237A001100A7 /* CoreGraphics.framework */; };
+		0EA88278175C237A001100A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EA88276175C237A001100A7 /* InfoPlist.strings */; };
+		0EA8827A175C237A001100A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA88279175C237A001100A7 /* main.m */; };
+		0EA88280175C237A001100A7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8827F175C237A001100A7 /* Default.png */; };
+		0EA88282175C237A001100A7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA88281175C237A001100A7 /* Default@2x.png */; };
+		0EA88284175C237A001100A7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA88283175C237A001100A7 /* Default-568h@2x.png */; };
+		0EA88296175C24DF001100A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA88292175C24DF001100A7 /* AppDelegate.m */; };
+		0EA88297175C24DF001100A7 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA88294175C24DF001100A7 /* BoardViewController.m */; };
+		0EA88298175C24DF001100A7 /* BoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA88295175C24DF001100A7 /* BoardViewController.xib */; };
+		0EA882A6175C2522001100A7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829D175C2522001100A7 /* area.plist */; };
+		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
+		0EA882A8175C2522001100A7 /* HDTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A1175C2522001100A7 /* HDTextView.m */; };
+		0EA882A9175C2522001100A7 /* BYBaseQuickDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */; };
+		0EA882AA175C2522001100A7 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A5175C2522001100A7 /* Utils.m */; };
+		0EA882B9175C2545001100A7 /* BankSupportDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */; };
+		0EA882BA175C2545001100A7 /* BasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AD175C2545001100A7 /* BasicDataBuilder.json */; };
+		0EA882BB175C2545001100A7 /* FinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */; };
+		0EA882BC175C2545001100A7 /* TrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */; };
+		0EA882BD175C2545001100A7 /* AssertsTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B0175C2545001100A7 /* AssertsTypesDataBuilder.json */; };
+		0EA882BE175C2545001100A7 /* GuaranteeDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B1175C2545001100A7 /* GuaranteeDataBuilder.json */; };
+		0EA882BF175C2545001100A7 /* EnhancementsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B2175C2545001100A7 /* EnhancementsDataBuilder.json */; };
+		0EA882C0175C2545001100A7 /* LandTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B3175C2545001100A7 /* LandTypesDataBuilder.json */; };
+		0EA882C1175C2545001100A7 /* EstateTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B4175C2545001100A7 /* EstateTypesDataBuilder.json */; };
+		0EA882C2175C2545001100A7 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B5175C2545001100A7 /* EquityDataBuilder.json */; };
+		0EA882C3175C2545001100A7 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */; };
+		0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882B8175C2545001100A7 /* SampleDataBuilder.m */; };
+		0EA882C7175C25A3001100A7 /* NewBondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882C6175C25A3001100A7 /* NewBondViewController.m */; };
+		0EA882DB175C25AF001100A7 /* TrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */; };
+		0EA882DC175C25AF001100A7 /* BondBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */; };
+		0EA882DD175C25AF001100A7 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */; };
+		0EA882DE175C25AF001100A7 /* BondRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */; };
+		0EA882DF175C25AF001100A7 /* FinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */; };
+		0EA882E0175C25AF001100A7 /* GuaranteeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D3175C25AF001100A7 /* GuaranteeViewController.m */; };
+		0EA882E1175C25AF001100A7 /* EnhancementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */; };
+		0EA882E2175C25AF001100A7 /* BankSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D7175C25AF001100A7 /* BankSupportViewController.m */; };
+		0EA882E3175C25AF001100A7 /* OtherTrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */; };
+		0EA882E4175C25AF001100A7 /* OtherTrustWaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */; };
+		0EA882EE175C25BB001100A7 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882E7175C25BB001100A7 /* LandViewController.m */; };
+		0EA882EF175C25BB001100A7 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882E9175C25BB001100A7 /* EstateViewController.m */; };
+		0EA882F0175C25BB001100A7 /* EquityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882EB175C25BB001100A7 /* EquityViewController.m */; };
+		0EA882F1175C25BB001100A7 /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882ED175C25BB001100A7 /* ReceivablesViewController.m */; };
+		0EA882FA175C25CA001100A7 /* segmented-bg-pressed-center.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F2175C25CA001100A7 /* segmented-bg-pressed-center.png */; };
+		0EA882FB175C25CA001100A7 /* segmented-bg-pressed-center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F3175C25CA001100A7 /* segmented-bg-pressed-center@2x.png */; };
+		0EA882FC175C25CA001100A7 /* segmented-bg-pressed-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F4175C25CA001100A7 /* segmented-bg-pressed-left.png */; };
+		0EA882FD175C25CA001100A7 /* segmented-bg-pressed-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F5175C25CA001100A7 /* segmented-bg-pressed-left@2x.png */; };
+		0EA882FE175C25CA001100A7 /* segmented-bg-pressed-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F6175C25CA001100A7 /* segmented-bg-pressed-right.png */; };
+		0EA882FF175C25CA001100A7 /* segmented-bg-pressed-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F7175C25CA001100A7 /* segmented-bg-pressed-right@2x.png */; };
+		0EA88300175C25CA001100A7 /* segmented-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F8175C25CA001100A7 /* segmented-bg.png */; };
+		0EA88301175C25CA001100A7 /* segmented-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882F9175C25CA001100A7 /* segmented-bg@2x.png */; };
+		0EA8830B175C2C81001100A7 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8830A175C2C01001100A7 /* libQuickDialog.a */; };
+		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0EA88307175C2C01001100A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D80B0E3313E052DF00FA85CA;
+			remoteInfo = QuickDialogExample;
+		};
+		0EA88309175C2C01001100A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C542393145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E988198175C2FE80014D6B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0E98819C175C2FEC0014D6B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0EA8826A175C237A001100A7 /* bond_market_PM_iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bond_market_PM_iphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA8826D175C237A001100A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0EA8826F175C237A001100A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0EA88271175C237A001100A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0EA88275175C237A001100A7 /* bond_market_PM_iphone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bond_market_PM_iphone-Info.plist"; sourceTree = "<group>"; };
+		0EA88277175C237A001100A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0EA88279175C237A001100A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0EA8827B175C237A001100A7 /* bond_market_PM_iphone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bond_market_PM_iphone-Prefix.pch"; sourceTree = "<group>"; };
+		0EA8827F175C237A001100A7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0EA88281175C237A001100A7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0EA88283175C237A001100A7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0EA88291175C24DF001100A7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0EA88292175C24DF001100A7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0EA88293175C24DF001100A7 /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
+		0EA88294175C24DF001100A7 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
+		0EA88295175C24DF001100A7 /* BoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardViewController.xib; sourceTree = "<group>"; };
+		0EA8829D175C2522001100A7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		0EA8829E175C2522001100A7 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		0EA8829F175C2522001100A7 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
+		0EA882A0175C2522001100A7 /* HDTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTextView.h; sourceTree = "<group>"; };
+		0EA882A1175C2522001100A7 /* HDTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTextView.m; sourceTree = "<group>"; };
+		0EA882A2175C2522001100A7 /* BYBaseQuickDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYBaseQuickDialogViewController.h; sourceTree = "<group>"; };
+		0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYBaseQuickDialogViewController.m; sourceTree = "<group>"; };
+		0EA882A4175C2522001100A7 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		0EA882A5175C2522001100A7 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BankSupportDataBuilder.json; sourceTree = "<group>"; };
+		0EA882AD175C2545001100A7 /* BasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BasicDataBuilder.json; sourceTree = "<group>"; };
+		0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinanceDataBuilder.json; sourceTree = "<group>"; };
+		0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TrutWaysDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B0175C2545001100A7 /* AssertsTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AssertsTypesDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B1175C2545001100A7 /* GuaranteeDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuaranteeDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B2175C2545001100A7 /* EnhancementsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EnhancementsDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B3175C2545001100A7 /* LandTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LandTypesDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B4175C2545001100A7 /* EstateTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EstateTypesDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B5175C2545001100A7 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EquityDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReceivablesDataBuilder.json; sourceTree = "<group>"; };
+		0EA882B7175C2545001100A7 /* SampleDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDataBuilder.h; sourceTree = "<group>"; };
+		0EA882B8175C2545001100A7 /* SampleDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleDataBuilder.m; sourceTree = "<group>"; };
+		0EA882C5175C25A3001100A7 /* NewBondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBondViewController.h; sourceTree = "<group>"; };
+		0EA882C6175C25A3001100A7 /* NewBondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBondViewController.m; sourceTree = "<group>"; };
+		0EA882C9175C25AF001100A7 /* TrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrustWaysViewController.h; sourceTree = "<group>"; };
+		0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrustWaysViewController.m; sourceTree = "<group>"; };
+		0EA882CB175C25AF001100A7 /* BondBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondBasicInfoViewController.h; sourceTree = "<group>"; };
+		0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondBasicInfoViewController.m; sourceTree = "<group>"; };
+		0EA882CD175C25AF001100A7 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondRemarkViewController.h; sourceTree = "<group>"; };
+		0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondRemarkViewController.m; sourceTree = "<group>"; };
+		0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BondRemarkViewController.xib; sourceTree = "<group>"; };
+		0EA882D0175C25AF001100A7 /* FinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialIndicatorsViewController.h; sourceTree = "<group>"; };
+		0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialIndicatorsViewController.m; sourceTree = "<group>"; };
+		0EA882D2175C25AF001100A7 /* GuaranteeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuaranteeViewController.h; sourceTree = "<group>"; };
+		0EA882D3175C25AF001100A7 /* GuaranteeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuaranteeViewController.m; sourceTree = "<group>"; };
+		0EA882D4175C25AF001100A7 /* EnhancementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnhancementsViewController.h; sourceTree = "<group>"; };
+		0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnhancementsViewController.m; sourceTree = "<group>"; };
+		0EA882D6175C25AF001100A7 /* BankSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSupportViewController.h; sourceTree = "<group>"; };
+		0EA882D7175C25AF001100A7 /* BankSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSupportViewController.m; sourceTree = "<group>"; };
+		0EA882D8175C25AF001100A7 /* OtherTrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTrustWaysViewController.h; sourceTree = "<group>"; };
+		0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTrustWaysViewController.m; sourceTree = "<group>"; };
+		0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherTrustWaysViewController.xib; sourceTree = "<group>"; };
+		0EA882E6175C25BB001100A7 /* LandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
+		0EA882E7175C25BB001100A7 /* LandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
+		0EA882E8175C25BB001100A7 /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstateViewController.h; sourceTree = "<group>"; };
+		0EA882E9175C25BB001100A7 /* EstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstateViewController.m; sourceTree = "<group>"; };
+		0EA882EA175C25BB001100A7 /* EquityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquityViewController.h; sourceTree = "<group>"; };
+		0EA882EB175C25BB001100A7 /* EquityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EquityViewController.m; sourceTree = "<group>"; };
+		0EA882EC175C25BB001100A7 /* ReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivablesViewController.h; sourceTree = "<group>"; };
+		0EA882ED175C25BB001100A7 /* ReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivablesViewController.m; sourceTree = "<group>"; };
+		0EA882F2175C25CA001100A7 /* segmented-bg-pressed-center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-center.png"; sourceTree = "<group>"; };
+		0EA882F3175C25CA001100A7 /* segmented-bg-pressed-center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-center@2x.png"; sourceTree = "<group>"; };
+		0EA882F4175C25CA001100A7 /* segmented-bg-pressed-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-left.png"; sourceTree = "<group>"; };
+		0EA882F5175C25CA001100A7 /* segmented-bg-pressed-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-left@2x.png"; sourceTree = "<group>"; };
+		0EA882F6175C25CA001100A7 /* segmented-bg-pressed-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-right.png"; sourceTree = "<group>"; };
+		0EA882F7175C25CA001100A7 /* segmented-bg-pressed-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg-pressed-right@2x.png"; sourceTree = "<group>"; };
+		0EA882F8175C25CA001100A7 /* segmented-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg.png"; sourceTree = "<group>"; };
+		0EA882F9175C25CA001100A7 /* segmented-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented-bg@2x.png"; sourceTree = "<group>"; };
+		0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Support/QuickDialog/QuickDialog.xcodeproj; sourceTree = SOURCE_ROOT; };
+		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EA88267175C237A001100A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E98819D175C2FEC0014D6B0 /* MapKit.framework in Frameworks */,
+				0E988199175C2FE80014D6B0 /* CoreLocation.framework in Frameworks */,
+				0EA8826E175C237A001100A7 /* UIKit.framework in Frameworks */,
+				0EA88270175C237A001100A7 /* Foundation.framework in Frameworks */,
+				0EA88272175C237A001100A7 /* CoreGraphics.framework in Frameworks */,
+				0EA8830B175C2C81001100A7 /* libQuickDialog.a in Frameworks */,
+				17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EA88261175C237A001100A7 = {
+			isa = PBXGroup;
+			children = (
+				0E98819C175C2FEC0014D6B0 /* MapKit.framework */,
+				0E988198175C2FE80014D6B0 /* CoreLocation.framework */,
+				0EA88273175C237A001100A7 /* bond_market_PM_iphone */,
+				0EA8826C175C237A001100A7 /* Frameworks */,
+				0EA8826B175C237A001100A7 /* Products */,
+				8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		0EA8826B175C237A001100A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8826A175C237A001100A7 /* bond_market_PM_iphone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0EA8826C175C237A001100A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8826D175C237A001100A7 /* UIKit.framework */,
+				0EA8826F175C237A001100A7 /* Foundation.framework */,
+				0EA88271175C237A001100A7 /* CoreGraphics.framework */,
+				387BF9DE8CE3400AA0164469 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0EA88273175C237A001100A7 /* bond_market_PM_iphone */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8829C175C2517001100A7 /* Utils */,
+				0EA8829B175C250F001100A7 /* DataBuilder */,
+				0EA8829A175C250B001100A7 /* Bonds */,
+				0EA88299175C2505001100A7 /* Image */,
+				0EA88291175C24DF001100A7 /* AppDelegate.h */,
+				0EA88292175C24DF001100A7 /* AppDelegate.m */,
+				0EA88293175C24DF001100A7 /* BoardViewController.h */,
+				0EA88294175C24DF001100A7 /* BoardViewController.m */,
+				0EA88295175C24DF001100A7 /* BoardViewController.xib */,
+				0EA88274175C237A001100A7 /* Supporting Files */,
+			);
+			path = bond_market_PM_iphone;
+			sourceTree = "<group>";
+		};
+		0EA88274175C237A001100A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */,
+				0EA88275175C237A001100A7 /* bond_market_PM_iphone-Info.plist */,
+				0EA88276175C237A001100A7 /* InfoPlist.strings */,
+				0EA88279175C237A001100A7 /* main.m */,
+				0EA8827B175C237A001100A7 /* bond_market_PM_iphone-Prefix.pch */,
+				0EA8827F175C237A001100A7 /* Default.png */,
+				0EA88281175C237A001100A7 /* Default@2x.png */,
+				0EA88283175C237A001100A7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0EA88299175C2505001100A7 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882F2175C25CA001100A7 /* segmented-bg-pressed-center.png */,
+				0EA882F3175C25CA001100A7 /* segmented-bg-pressed-center@2x.png */,
+				0EA882F4175C25CA001100A7 /* segmented-bg-pressed-left.png */,
+				0EA882F5175C25CA001100A7 /* segmented-bg-pressed-left@2x.png */,
+				0EA882F6175C25CA001100A7 /* segmented-bg-pressed-right.png */,
+				0EA882F7175C25CA001100A7 /* segmented-bg-pressed-right@2x.png */,
+				0EA882F8175C25CA001100A7 /* segmented-bg.png */,
+				0EA882F9175C25CA001100A7 /* segmented-bg@2x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		0EA8829A175C250B001100A7 /* Bonds */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882C8175C25A7001100A7 /* Form */,
+				0EA882C5175C25A3001100A7 /* NewBondViewController.h */,
+				0EA882C6175C25A3001100A7 /* NewBondViewController.m */,
+			);
+			name = Bonds;
+			sourceTree = "<group>";
+		};
+		0EA8829B175C250F001100A7 /* DataBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882AB175C253B001100A7 /* Bonds */,
+			);
+			name = DataBuilder;
+			sourceTree = "<group>";
+		};
+		0EA8829C175C2517001100A7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0EA8829D175C2522001100A7 /* area.plist */,
+				0EA8829E175C2522001100A7 /* city.plist */,
+				0EA8829F175C2522001100A7 /* define.h */,
+				0EA882A0175C2522001100A7 /* HDTextView.h */,
+				0EA882A1175C2522001100A7 /* HDTextView.m */,
+				0EA882A2175C2522001100A7 /* BYBaseQuickDialogViewController.h */,
+				0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */,
+				0EA882A4175C2522001100A7 /* Utils.h */,
+				0EA882A5175C2522001100A7 /* Utils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		0EA882AB175C253B001100A7 /* Bonds */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */,
+				0EA882AD175C2545001100A7 /* BasicDataBuilder.json */,
+				0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */,
+				0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */,
+				0EA882B0175C2545001100A7 /* AssertsTypesDataBuilder.json */,
+				0EA882B1175C2545001100A7 /* GuaranteeDataBuilder.json */,
+				0EA882B2175C2545001100A7 /* EnhancementsDataBuilder.json */,
+				0EA882B3175C2545001100A7 /* LandTypesDataBuilder.json */,
+				0EA882B4175C2545001100A7 /* EstateTypesDataBuilder.json */,
+				0EA882B5175C2545001100A7 /* EquityDataBuilder.json */,
+				0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */,
+				0EA882B7175C2545001100A7 /* SampleDataBuilder.h */,
+				0EA882B8175C2545001100A7 /* SampleDataBuilder.m */,
+			);
+			name = Bonds;
+			sourceTree = "<group>";
+		};
+		0EA882C8175C25A7001100A7 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882E5175C25B3001100A7 /* TrustWays */,
+				0EA882C9175C25AF001100A7 /* TrustWaysViewController.h */,
+				0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */,
+				0EA882CB175C25AF001100A7 /* BondBasicInfoViewController.h */,
+				0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */,
+				0EA882CD175C25AF001100A7 /* BondRemarkViewController.h */,
+				0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */,
+				0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */,
+				0EA882D0175C25AF001100A7 /* FinancialIndicatorsViewController.h */,
+				0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */,
+				0EA882D2175C25AF001100A7 /* GuaranteeViewController.h */,
+				0EA882D3175C25AF001100A7 /* GuaranteeViewController.m */,
+				0EA882D4175C25AF001100A7 /* EnhancementsViewController.h */,
+				0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */,
+				0EA882D6175C25AF001100A7 /* BankSupportViewController.h */,
+				0EA882D7175C25AF001100A7 /* BankSupportViewController.m */,
+				0EA882D8175C25AF001100A7 /* OtherTrustWaysViewController.h */,
+				0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */,
+				0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		0EA882E5175C25B3001100A7 /* TrustWays */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882E6175C25BB001100A7 /* LandViewController.h */,
+				0EA882E7175C25BB001100A7 /* LandViewController.m */,
+				0EA882E8175C25BB001100A7 /* EstateViewController.h */,
+				0EA882E9175C25BB001100A7 /* EstateViewController.m */,
+				0EA882EA175C25BB001100A7 /* EquityViewController.h */,
+				0EA882EB175C25BB001100A7 /* EquityViewController.m */,
+				0EA882EC175C25BB001100A7 /* ReceivablesViewController.h */,
+				0EA882ED175C25BB001100A7 /* ReceivablesViewController.m */,
+			);
+			name = TrustWays;
+			sourceTree = "<group>";
+		};
+		0EA88303175C2C00001100A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0EA88308175C2C01001100A7 /* QuickDialogExample.app */,
+				0EA8830A175C2C01001100A7 /* libQuickDialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0EA88269175C237A001100A7 /* bond_market_PM_iphone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EA8828D175C237A001100A7 /* Build configuration list for PBXNativeTarget "bond_market_PM_iphone" */;
+			buildPhases = (
+				9980EA1F7E79469B88041285 /* Check Pods Manifest.lock */,
+				0EA88266175C237A001100A7 /* Sources */,
+				0EA88267175C237A001100A7 /* Frameworks */,
+				0EA88268175C237A001100A7 /* Resources */,
+				1238CA449C614F4BAA61BB30 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bond_market_PM_iphone;
+			productName = bond_market_PM_iphone;
+			productReference = 0EA8826A175C237A001100A7 /* bond_market_PM_iphone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0EA88262175C237A001100A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = pyrating;
+			};
+			buildConfigurationList = 0EA88265175C237A001100A7 /* Build configuration list for PBXProject "bond_market_PM_iphone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0EA88261175C237A001100A7;
+			productRefGroup = 0EA8826B175C237A001100A7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0EA88303175C2C00001100A7 /* Products */;
+					ProjectRef = 0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0EA88269175C237A001100A7 /* bond_market_PM_iphone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0EA88308175C2C01001100A7 /* QuickDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QuickDialogExample.app;
+			remoteRef = 0EA88307175C2C01001100A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0EA8830A175C2C01001100A7 /* libQuickDialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQuickDialog.a;
+			remoteRef = 0EA88309175C2C01001100A7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0EA88268175C237A001100A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EA88278175C237A001100A7 /* InfoPlist.strings in Resources */,
+				0EA88280175C237A001100A7 /* Default.png in Resources */,
+				0EA88282175C237A001100A7 /* Default@2x.png in Resources */,
+				0EA88284175C237A001100A7 /* Default-568h@2x.png in Resources */,
+				0EA88298175C24DF001100A7 /* BoardViewController.xib in Resources */,
+				0EA882A6175C2522001100A7 /* area.plist in Resources */,
+				0EA882A7175C2522001100A7 /* city.plist in Resources */,
+				0EA882B9175C2545001100A7 /* BankSupportDataBuilder.json in Resources */,
+				0EA882BA175C2545001100A7 /* BasicDataBuilder.json in Resources */,
+				0EA882BB175C2545001100A7 /* FinanceDataBuilder.json in Resources */,
+				0EA882BC175C2545001100A7 /* TrutWaysDataBuilder.json in Resources */,
+				0EA882BD175C2545001100A7 /* AssertsTypesDataBuilder.json in Resources */,
+				0EA882BE175C2545001100A7 /* GuaranteeDataBuilder.json in Resources */,
+				0EA882BF175C2545001100A7 /* EnhancementsDataBuilder.json in Resources */,
+				0EA882C0175C2545001100A7 /* LandTypesDataBuilder.json in Resources */,
+				0EA882C1175C2545001100A7 /* EstateTypesDataBuilder.json in Resources */,
+				0EA882C2175C2545001100A7 /* EquityDataBuilder.json in Resources */,
+				0EA882C3175C2545001100A7 /* ReceivablesDataBuilder.json in Resources */,
+				0EA882DE175C25AF001100A7 /* BondRemarkViewController.xib in Resources */,
+				0EA882E4175C25AF001100A7 /* OtherTrustWaysViewController.xib in Resources */,
+				0EA882FA175C25CA001100A7 /* segmented-bg-pressed-center.png in Resources */,
+				0EA882FB175C25CA001100A7 /* segmented-bg-pressed-center@2x.png in Resources */,
+				0EA882FC175C25CA001100A7 /* segmented-bg-pressed-left.png in Resources */,
+				0EA882FD175C25CA001100A7 /* segmented-bg-pressed-left@2x.png in Resources */,
+				0EA882FE175C25CA001100A7 /* segmented-bg-pressed-right.png in Resources */,
+				0EA882FF175C25CA001100A7 /* segmented-bg-pressed-right@2x.png in Resources */,
+				0EA88300175C25CA001100A7 /* segmented-bg.png in Resources */,
+				0EA88301175C25CA001100A7 /* segmented-bg@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1238CA449C614F4BAA61BB30 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		9980EA1F7E79469B88041285 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0EA88266175C237A001100A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EA8827A175C237A001100A7 /* main.m in Sources */,
+				0EA88296175C24DF001100A7 /* AppDelegate.m in Sources */,
+				0EA88297175C24DF001100A7 /* BoardViewController.m in Sources */,
+				0EA882A8175C2522001100A7 /* HDTextView.m in Sources */,
+				0EA882A9175C2522001100A7 /* BYBaseQuickDialogViewController.m in Sources */,
+				0EA882AA175C2522001100A7 /* Utils.m in Sources */,
+				0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */,
+				0EA882C7175C25A3001100A7 /* NewBondViewController.m in Sources */,
+				0EA882DB175C25AF001100A7 /* TrustWaysViewController.m in Sources */,
+				0EA882DC175C25AF001100A7 /* BondBasicInfoViewController.m in Sources */,
+				0EA882DD175C25AF001100A7 /* BondRemarkViewController.m in Sources */,
+				0EA882DF175C25AF001100A7 /* FinancialIndicatorsViewController.m in Sources */,
+				0EA882E0175C25AF001100A7 /* GuaranteeViewController.m in Sources */,
+				0EA882E1175C25AF001100A7 /* EnhancementsViewController.m in Sources */,
+				0EA882E2175C25AF001100A7 /* BankSupportViewController.m in Sources */,
+				0EA882E3175C25AF001100A7 /* OtherTrustWaysViewController.m in Sources */,
+				0EA882EE175C25BB001100A7 /* LandViewController.m in Sources */,
+				0EA882EF175C25BB001100A7 /* EstateViewController.m in Sources */,
+				0EA882F0175C25BB001100A7 /* EquityViewController.m in Sources */,
+				0EA882F1175C25BB001100A7 /* ReceivablesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0EA88276175C237A001100A7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EA88277175C237A001100A7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0EA8828B175C237A001100A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ./Support/QuickDialog/quickdialog;
+			};
+			name = Debug;
+		};
+		0EA8828C175C237A001100A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Lv (MGF6BVKNBF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "BB3CDAE8-36FD-433A-927D-C1A4AB230368";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ./Support/QuickDialog/quickdialog;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0EA8828E175C237A001100A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bond_market_PM_iphone/bond_market_PM_iphone-Prefix.pch";
+				INFOPLIST_FILE = "bond_market_PM_iphone/bond_market_PM_iphone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0EA8828F175C237A001100A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bond_market_PM_iphone/bond_market_PM_iphone-Prefix.pch";
+				INFOPLIST_FILE = "bond_market_PM_iphone/bond_market_PM_iphone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0EA88265175C237A001100A7 /* Build configuration list for PBXProject "bond_market_PM_iphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EA8828B175C237A001100A7 /* Debug */,
+				0EA8828C175C237A001100A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EA8828D175C237A001100A7 /* Build configuration list for PBXNativeTarget "bond_market_PM_iphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EA8828E175C237A001100A7 /* Debug */,
+				0EA8828F175C237A001100A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0EA88262175C237A001100A7 /* Project object */;
+}
