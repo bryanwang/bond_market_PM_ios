@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GuaranteeViewController : BYBaseQuickDialogViewController
+@interface GuaranteeViewController : BYQuickDialogWrappedViewController
 
 @end

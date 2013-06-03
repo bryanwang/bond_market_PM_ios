@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BondRemarkViewController : UIViewController
+@interface BondRemarkViewController : BBCustomBackButtonViewController
 
 @end

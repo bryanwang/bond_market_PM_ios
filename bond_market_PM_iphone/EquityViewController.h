@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EquityViewController : BYBaseQuickDialogViewController
+@interface EquityViewController : BYQuickDialogWrappedViewController
 
 @end

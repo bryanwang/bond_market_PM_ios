@@ -20,7 +20,6 @@
     [super viewDidLoad];
     self.textview.placeholder = @"其他...";
     self.title = @"其他增信方式";
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -32,7 +31,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

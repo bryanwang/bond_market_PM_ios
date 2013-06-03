@@ -94,33 +94,41 @@
 {
     CGRect aRect = CGRectMake(0.0f, 0.0f, APP_SCREEN_WIDTH, 44.0f);
     AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect];
-    [segmentedControl setContentEdgeInsets:UIEdgeInsetsMake(2.0, 2.0, 3.0, 2.0)];
+//    [segmentedControl setContentEdgeInsets:UIEdgeInsetsMake(2.0, 2.0, 3.0, 2.0)];
     [segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
-    //    segmentedControl.separatorImage = [[UIImage alloc] init];
-    
-    UIImage *backgroundImage = [UIImage imageNamed:@"segmented-bg.png"];
+
+    UIImage *backgroundImage = [UIImage imageNamed:@"sort-bar"];
     [segmentedControl setBackgroundImage:backgroundImage];
-    
-    UIImage *buttonBackgroundImagePressedLeft = [UIImage imageNamed:@"segmented-bg-pressed-left.png"];
-    UIImage *buttonBackgroundImagePressedCenter = [UIImage imageNamed:@"segmented-bg-pressed-center.png"];
-    UIImage *buttonBackgroundImagePressedRight = [UIImage imageNamed:@"segmented-bg-pressed-right.png"];
+
+    UIImage *buttonBackgroundImagePressedLeft = [UIImage imageNamed:@"sort-bar-01-sel"];
+    UIImage *buttonBackgroundImagePressedCenter = [UIImage imageNamed:@"sort-bar-01-sel"];
+    UIImage *buttonBackgroundImagePressedRight = [UIImage imageNamed:@"sort-bar-01-sel"];
     
     UIButton *btn1 = [[UIButton alloc] init];
     [btn1 setTitle:@"基本信息" forState:UIControlStateNormal];
+    btn1.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
     [btn1 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
+    [btn1 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
+    [btn1 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
     [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateHighlighted];
     [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateSelected];
     [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:(UIControlStateHighlighted|UIControlStateSelected)];
     
     UIButton *btn2 = [[UIButton alloc] init];
+    btn2.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
     [btn2 setTitle:@"财务指标" forState:UIControlStateNormal];
+    [btn2 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
+    [btn2 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
     [btn2 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
     [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateHighlighted];
     [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateSelected];
     [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:(UIControlStateHighlighted|UIControlStateSelected)];
     
     UIButton *btn3 = [[UIButton alloc] init];
+    btn3.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
     [btn3 setTitle:@"备注说明" forState:UIControlStateNormal];
+    [btn3 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
+    [btn3 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
     [btn3 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
     [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:UIControlStateHighlighted];
     [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:UIControlStateSelected];
@@ -141,14 +149,24 @@
     //todo add ex values
 }
 
+- (void)setUpLeftNavigationButton
+{
+    UIBarButtonItem *item = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"] highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"] target:self selector:@selector(readTablesJsonValues)];
+    ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+    [((UIButton *)(item.customView)) setTitle:@"完成" forState:UIControlStateNormal];
+    [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
+    
+    
+    self.navigationItem.rightBarButtonItem = item;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"新债录入";
     self.view.backgroundColor = [UIColor whiteColor];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(readTablesJsonValues)];
-    self.navigationItem.rightBarButtonItem = item;
     
+    [self setUpLeftNavigationButton];
     [self setUpSegmentedController];
     [self registerNotification];
 

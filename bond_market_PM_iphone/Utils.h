@@ -19,3 +19,22 @@
 @interface NSObject(BY)
 - (void)hideKeyBoard;
 @end
+
+
+@interface PMHttpClient : AFHTTPClient
+
++ (PMHttpClient *)shareIntance;
+
+@end
+
+
+
+@interface UIBarButtonItem (BY)
+
++ (UIBarButtonItem *)barButtonItemWithImage:(UIImage *)normalImage
+                           highlightedImage:(UIImage *)highlightedImage
+                                     target:(id)target
+                                   selector:(SEL)selector;
+
+
+@end

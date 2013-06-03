@@ -80,6 +80,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
     QSection *section = [self.root getSectionForIndex:0];
     QPickerElement *element = (QPickerElement *)[section getVisibleElementForIndex:3];
     

@@ -9,8 +9,8 @@
 #import "BoardViewController.h"
 #import "NewBondViewController.h"
 
-@interface BoardViewController ()
-
+@interface BoardViewController () 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 @end
 
 @implementation BoardViewController
@@ -21,19 +21,17 @@
     [self.navigationController pushViewController:nc animated:YES];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"nav-logo"]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.scrollview.scrollEnabled = YES;
+    self.scrollview.contentSize = CGSizeMake(320.0f, 648.0f);
 }
 
 - (void)didReceiveMemoryWarning

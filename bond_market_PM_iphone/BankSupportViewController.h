@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BankSupportViewController : BYBaseQuickDialogViewController
+@interface BankSupportViewController : BYQuickDialogWrappedViewController
 
 @end

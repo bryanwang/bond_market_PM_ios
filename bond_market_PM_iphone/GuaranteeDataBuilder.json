@@ -6,7 +6,7 @@
                  { "elements":
                         [
                                 { "type":"QEntryElement", "key":"TrustIncrease", "placeholder":"担保方"},
-                                { "type":"QButtonElement", "title":"添加", "controllerAction": "handleEquityAddButtonTapped:"}
+                                { "type":"QButtonElement", "title":"添加", "controllerAction": "handleGuaranteeAddButtonTapped:"}
                         ]
                  },
                  { 

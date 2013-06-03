@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LandViewController : BYBaseQuickDialogViewController
+@interface LandViewController : BYQuickDialogWrappedViewController
 
 @end

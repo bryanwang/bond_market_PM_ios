@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OtherTrustWaysViewController : UIViewController
+@interface OtherTrustWaysViewController : BBCustomBackButtonViewController
 
 @end

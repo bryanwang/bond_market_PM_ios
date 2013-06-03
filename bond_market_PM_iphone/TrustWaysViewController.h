@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrustWaysViewController : BYBaseQuickDialogViewController
+@interface TrustWaysViewController : BYQuickDialogWrappedViewController
+
 @end

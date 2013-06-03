@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import <QuickDialog.h>
-#import "SampleDataBuilder.h"
+#import "LoginViewController.h"
 
 
 @implementation AppDelegate
@@ -17,10 +17,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
-    self.bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
-    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:self.bc];
+//    self.bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
+//    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:self.bc];
+    ;
+    LoginViewController *lc = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = nc;
+    self.window.rootViewController = lc;
     [self.window makeKeyAndVisible];
     return YES;
 }

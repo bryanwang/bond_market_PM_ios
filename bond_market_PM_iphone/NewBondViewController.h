@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewBondViewController : UIViewController
+@interface NewBondViewController : BBCustomBackButtonViewController
 
 @end

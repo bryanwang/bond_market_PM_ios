@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EnhancementsViewController : BYBaseQuickDialogViewController
+@interface EnhancementsViewController : BYQuickDialogWrappedViewController
 
 @end

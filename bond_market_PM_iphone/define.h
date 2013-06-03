@@ -9,10 +9,13 @@
 #ifndef define_h
 #define define_h
 
-#define BASE_URL @""
+#define BASE_URL @"http://192.168.1.139:63001/"
+#define LOGIN_INTERFACE @"/api/ios/signin"
 
 #define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
 #define BYCONTROLLERKEY @"viewcontroller"
+
+#define USER_DEFAULTS_MOBILE_KEY @"mobile"
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 )

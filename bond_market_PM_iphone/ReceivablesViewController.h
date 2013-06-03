@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceivablesViewController : BYBaseQuickDialogViewController
+@interface ReceivablesViewController : BYQuickDialogWrappedViewController
 
 @end
