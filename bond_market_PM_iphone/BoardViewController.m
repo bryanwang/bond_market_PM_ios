@@ -8,6 +8,7 @@
 
 #import "BoardViewController.h"
 #import "NewBondViewController.h"
+#import "MyBondsViewController.h"
 
 @interface BoardViewController () 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
@@ -21,10 +22,20 @@
     [self.navigationController pushViewController:nc animated:YES];
 }
 
+
+- (IBAction)showMybonds:(id)sender
+{
+    MyBondsViewController *bc = [[MyBondsViewController alloc]init];
+    [self.navigationController pushViewController:bc animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"nav-logo"]];
+    UIImageView *logo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"nav-logo"]];
+    SET_VIEW_X(logo, 10.0f);
+    SET_VIEW_Y(logo, 10.0f);
+    [self.navigationController.navigationBar addSubview:logo];
 }
 
 - (void)viewWillAppear:(BOOL)animated

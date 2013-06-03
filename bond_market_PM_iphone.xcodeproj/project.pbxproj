@@ -142,6 +142,7 @@
 		CA8A1EE1175C708300E87946 /* sort-bar-01-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1EDD175C708200E87946 /* sort-bar-01-sel.png */; };
 		CA8A1EE2175C708300E87946 /* sort-bar-01-sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1EDE175C708300E87946 /* sort-bar-01-sel@2x.png */; };
 		CA8A1EE5175C808900E87946 /* BYQuickDialogWrappedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1EE4175C808900E87946 /* BYQuickDialogWrappedViewController.m */; };
+		CA8A1EE8175C8A6800E87946 /* MyBondsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -324,6 +325,8 @@
 		CA8A1EDE175C708300E87946 /* sort-bar-01-sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort-bar-01-sel@2x.png"; sourceTree = "<group>"; };
 		CA8A1EE3175C808900E87946 /* BYQuickDialogWrappedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYQuickDialogWrappedViewController.h; sourceTree = "<group>"; };
 		CA8A1EE4175C808900E87946 /* BYQuickDialogWrappedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYQuickDialogWrappedViewController.m; sourceTree = "<group>"; };
+		CA8A1EE6175C8A6500E87946 /* MyBondsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBondsViewController.h; sourceTree = "<group>"; };
+		CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBondsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,13 +395,13 @@
 				0EA8829A175C250B001100A7 /* Bonds */,
 				0EA88291175C24DF001100A7 /* AppDelegate.h */,
 				0EA88292175C24DF001100A7 /* AppDelegate.m */,
-				0EA88274175C237A001100A7 /* Supporting Files */,
 				CA8A1E30175C343B00E87946 /* LoginViewController.h */,
 				CA8A1E31175C343B00E87946 /* LoginViewController.m */,
 				CA8A1E32175C343B00E87946 /* LoginViewController.xib */,
 				0EA88293175C24DF001100A7 /* BoardViewController.h */,
 				0EA88294175C24DF001100A7 /* BoardViewController.m */,
 				0EA88295175C24DF001100A7 /* BoardViewController.xib */,
+				0EA88274175C237A001100A7 /* Supporting Files */,
 			);
 			path = bond_market_PM_iphone;
 			sourceTree = "<group>";
@@ -426,6 +429,8 @@
 				0EA882C8175C25A7001100A7 /* Form */,
 				0EA882C5175C25A3001100A7 /* NewBondViewController.h */,
 				0EA882C6175C25A3001100A7 /* NewBondViewController.m */,
+				CA8A1EE6175C8A6500E87946 /* MyBondsViewController.h */,
+				CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */,
 			);
 			name = Bonds;
 			sourceTree = "<group>";
@@ -854,6 +859,7 @@
 				CA8A1E33175C343B00E87946 /* LoginViewController.m in Sources */,
 				CA8A1E89175C3FD400E87946 /* BBCustomBackButtonViewController.m in Sources */,
 				CA8A1EE5175C808900E87946 /* BYQuickDialogWrappedViewController.m in Sources */,
+				CA8A1EE8175C8A6800E87946 /* MyBondsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
