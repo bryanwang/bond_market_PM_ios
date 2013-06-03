@@ -95,8 +95,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     switch (_mode) {
         case UIDatePickerModeDate:
-            [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-            [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+//                        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+//            [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
             break;
         case UIDatePickerModeTime:
             [dateFormatter setDateStyle:NSDateFormatterNoStyle];
