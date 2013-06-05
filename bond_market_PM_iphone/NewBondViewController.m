@@ -143,10 +143,28 @@
 - (void)readTablesJsonValues
 {
     NSMutableDictionary *basic_dic = [[NSMutableDictionary alloc] init];
+    
     [self.bc.root fetchValueUsingBindingsIntoObject:basic_dic];
-    [self.fc.root fetchValueIntoObject:basic_dic];
+
+    NSString *userId = [LoginManager sharedInstance].fetchUserId;
+//    NSDictionary *newbondJSON =
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:basic_dic options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"  > the json string: %@", jsonString);
+    
+    NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
+    
+    [[PMHttpClient shareIntance] postPath:CREATE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *result = responseObject;
+        NSLog(@"%@", result);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // todo:
+    }];
+    
     NSLog(@"%@", basic_dic);
     //todo add ex values
+    NSInteger i = 0;
 }
 
 - (void)setUpLeftNavigationButton

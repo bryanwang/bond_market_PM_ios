@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
 
+void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
+
 @interface Utils : NSObject
 + (Utils *)sharedInstance;
 

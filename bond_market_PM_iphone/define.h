@@ -12,6 +12,7 @@
 #define BASE_URL @"http://192.168.1.139:63001/"
 #define LOGIN_INTERFACE @"/api/ios/signin"
 #define MY_BONDS_INTERFACE @"/api/ios/newbond/mine"
+#define CREATE_NEWBOND_INTERFACE @"/api/ios/newbond/create"
 #define MY_BONDS_INPUTUBFI_INTERFACE @"/api/ios/newbond/bonus"
 
 #define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
