@@ -239,7 +239,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     cell.backgroundView  = nor;
     
     UIView *sel = [[UIView alloc]initWithFrame:cell.bounds];
-    sel.backgroundColor = RGBCOLOR(221, 221, 221);
+    sel.backgroundColor = RGBCOLOR(250, 248, 244);
     cell.selectedBackgroundView = sel;
 }
 
