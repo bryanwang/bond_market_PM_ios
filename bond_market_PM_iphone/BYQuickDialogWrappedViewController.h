@@ -10,6 +10,8 @@
 
 @interface BYQuickDialogWrappedViewController : BBCustomBackButtonViewController
 
+@property (strong, nonatomic) QuickDialogController *qc;
+
 - (BYQuickDialogWrappedViewController *)initWithRoot:(QRootElement *)rootElement;
 
 @end

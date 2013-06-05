@@ -15,6 +15,7 @@ typedef enum BondsOrderType: NSUInteger
     OrderByChargePerson
 } BondsOrderType;
 
+
 @interface BondsTableViewController : UITableViewController
 
 
@@ -23,6 +24,6 @@ typedef enum BondsOrderType: NSUInteger
 - (void) fetchMyInputInfo;
 
 - (void)orderBy:(BondsOrderType)orderType;
-- (void)filterBy: (NSDictionary *)query;
+- (void)filterBy: (NSArray *)query;
 
 @end

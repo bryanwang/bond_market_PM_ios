@@ -9,7 +9,7 @@
 #import "BYQuickDialogWrappedViewController.h"
 
 @interface BYQuickDialogWrappedViewController ()
-@property (strong, nonatomic) QuickDialogController *qc;
+
 @end
 
 @implementation BYQuickDialogWrappedViewController

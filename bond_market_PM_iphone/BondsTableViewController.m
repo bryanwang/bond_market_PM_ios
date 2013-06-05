@@ -11,7 +11,12 @@
 #import "BondTableHeader.h"
 
 @interface BondsTableViewController () {
+    //存储原始数据
     NSMutableArray *bondsJson;
+    // 用作筛选
+    NSMutableArray *filterBondsJson;
+    // 当前的 排序方式
+    BondsOrderType curOrderType;
 }
 
 @property (nonatomic, strong) NSMutableArray *sections;
@@ -39,22 +44,35 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     return _fomart;
 }
 
-- (void)filterBy: (NSDictionary *)query
+- (void)filterBy: (NSArray *)query
 {
-    NSLog(@"filter");
+    //还原数据
+    filterBondsJson = [bondsJson mutableCopy];
+    
+    if (query.count == 0) {
+        //全部
+    }
+    else {
+        NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.NewBondInfo.Status in %@", query];
+        [filterBondsJson filterUsingPredicate:thePredicate];
+    }
+
+    [self orderBy:curOrderType];
 }
 
 - (void)orderBy:(BondsOrderType)orderType
 {
+    curOrderType = orderType;
+    
     NSString *predicateStr = @"";
     if (orderType == OrderByChargePerson) {
         //sections for owner
-        NSSet *uniques = [NSSet setWithArray: [bondsJson valueForKeyPath:@"OwnerInfo.Name"]];
+        NSSet *uniques = [NSSet setWithArray: [filterBondsJson valueForKeyPath:@"OwnerInfo.Name"]];
         self.sections = [[uniques allObjects] mutableCopy];
         predicateStr = @"(OwnerInfo.Name like %@)";
     } else {
         //sections for update time
-        NSSet *uniques = [NSSet setWithArray: [bondsJson valueForKeyPath:@"NewBondInfo.UpdateTime"]];
+        NSSet *uniques = [NSSet setWithArray: [filterBondsJson valueForKeyPath:@"NewBondInfo.UpdateTime"]];
         self.sections = [[uniques allObjects] mutableCopy];
         predicateStr = @"(NewBondInfo.UpdateTime like %@)";
         
@@ -79,7 +97,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     NSMutableArray *tmps2 = [NSMutableArray array];
     [self.sections enumerateObjectsUsingBlock:^(id section, NSUInteger index, BOOL *stop) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateStr, section];
-        NSArray *temp = [bondsJson filteredArrayUsingPredicate:predicate];
+        NSArray *temp = [filterBondsJson filteredArrayUsingPredicate:predicate];
         [tmps2 addObject:temp];
     }];
     
@@ -108,8 +126,10 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         [tmps addObject:mutBond];
     }];
     
-    bondsJson = tmps;
+    filterBondsJson =  [tmps mutableCopy];
+    bondsJson =  [tmps mutableCopy];
 }
+
 
 - (void) fetchMyBonds
 {

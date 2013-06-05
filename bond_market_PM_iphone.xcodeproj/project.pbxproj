@@ -179,6 +179,8 @@
 		CA8AEFDA175F004E000F37FA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8AEFD9175F004E000F37FA /* CoreText.framework */; };
 		CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDB175F00D6000F37FA /* table-section.png */; };
 		CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDC175F00D6000F37FA /* table-section@2x.png */; };
+		CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFE0175F2D00000F37FA /* FilterViewController.m */; };
+		CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -403,6 +405,9 @@
 		CA8AEFD9175F004E000F37FA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		CA8AEFDB175F00D6000F37FA /* table-section.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-section.png"; sourceTree = "<group>"; };
 		CA8AEFDC175F00D6000F37FA /* table-section@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-section@2x.png"; sourceTree = "<group>"; };
+		CA8AEFDF175F2D00000F37FA /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		CA8AEFE0175F2D00000F37FA /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BondFilterDataBuilder.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +527,8 @@
 				CA8AEF98175ECDA8000F37FA /* BondsTableViewController.m */,
 				CA8A1EE6175C8A6500E87946 /* MyBondsViewController.h */,
 				CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */,
+				CA8AEFDF175F2D00000F37FA /* FilterViewController.h */,
+				CA8AEFE0175F2D00000F37FA /* FilterViewController.m */,
 			);
 			name = Bonds;
 			sourceTree = "<group>";
@@ -558,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */,
+				CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */,
 				0EA882AD175C2545001100A7 /* BasicDataBuilder.json */,
 				0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */,
 				0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */,
@@ -959,6 +967,7 @@
 				CA8AEFD8175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */,
 				CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */,
 				CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */,
+				CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1037,7 @@
 				CA8AEF99175ECDA8000F37FA /* BondsTableViewController.m in Sources */,
 				CA8AEF9D175ECDBA000F37FA /* BondTableCell.m in Sources */,
 				CA8AEFA3175ED241000F37FA /* BondTableHeader.m in Sources */,
+				CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

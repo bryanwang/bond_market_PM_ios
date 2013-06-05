@@ -8,14 +8,32 @@
 
 #import "MyBondsViewController.h"
 #import "BondsTableViewController.h"
+#import "FilterViewController.h"
 #import <AKSegmentedControl.h>
 
 @interface MyBondsViewController ()
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
 @property (strong, nonatomic)BondsTableViewController *tableviewController;
+@property (strong, nonatomic)FilterViewController *filterViewController;
 @end
 
+
 @implementation MyBondsViewController
+
+- (FilterViewController *)filterViewController
+{
+    if (_filterViewController == nil) {
+        QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
+        _filterViewController = [[FilterViewController alloc]initWithRoot:root];
+        
+        __block MyBondsViewController *delegate = self;
+        _filterViewController.filterCallback = ^ (id filter) {
+            [delegate.tableviewController filterBy:(NSArray *)filter];
+        };
+    }
+    
+    return _filterViewController;
+}
 
 
 - (BondsTableViewController *)tableviewController
@@ -35,8 +53,7 @@
 
 - (void)filterMyBonds
 {
-    //todo: fliter
-    [self.tableviewController filterBy:nil];
+    [self.navigationController pushViewController:self.filterViewController animated:YES];
 }
 
 - (void)setUpSegmentedControll
