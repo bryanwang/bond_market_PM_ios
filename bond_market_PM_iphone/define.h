@@ -11,11 +11,16 @@
 
 #define BASE_URL @"http://192.168.1.139:63001/"
 #define LOGIN_INTERFACE @"/api/ios/signin"
+#define MY_BONDS_INTERFACE @"/api/ios/newbond/mine"
+
+#define CONDENSED_FONT @"Berthold Akzidenz Grotesk BE"
 
 #define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
 #define BYCONTROLLERKEY @"viewcontroller"
-
 #define USER_DEFAULTS_MOBILE_KEY @"mobile"
+#define USER_DEFAULTS_ID_KEY @"userid"
+
+#define TABLE_SECTION_HEIGHT 23.0f
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 )

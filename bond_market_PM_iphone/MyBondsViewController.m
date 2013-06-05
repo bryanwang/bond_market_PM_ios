@@ -7,13 +7,25 @@
 //
 
 #import "MyBondsViewController.h"
+#import "BondsTableViewController.h"
 #import <AKSegmentedControl.h>
 
 @interface MyBondsViewController ()
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
+@property (strong, nonatomic)BondsTableViewController *tableviewController;
 @end
 
 @implementation MyBondsViewController
+
+
+- (BondsTableViewController *)tableviewController
+{
+    if (_tableviewController == nil) {
+        _tableviewController = [[BondsTableViewController alloc]init];
+    }
+    
+    return _tableviewController;
+}
 
 - (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
 {
@@ -86,12 +98,24 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
+
+- (void)fetchMyBonds
+{
+    UIView *view = self.tableviewController.view;
+    CGRect rect = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height - 44);
+    view.frame = rect;
+    [self.view addSubview:view];
+    
+    [self.tableviewController fetchMyBonds];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"我的新债";
     [self setUpSegmentedControll];
     [self setUpLeftNavigationButton];
+    [self fetchMyBonds];
     
     [self.segmentedControl setSelectedIndex:0];
 }

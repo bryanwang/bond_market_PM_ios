@@ -8,7 +8,8 @@
 
 #import "BondBasicInfoViewController.h"
 #import "TrustWaysViewController.h"
-#import "AppDelegate.h"
+#import "CreateTrustWaysViewController.h"
+
 
 @interface BondBasicInfoViewController ()
 
@@ -124,9 +125,8 @@
 
 - (void)showTrustWays:(QElement *)element
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
-    TrustWaysViewController *tc = [[TrustWaysViewController alloc]initWithRoot:root];
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:tc forKey:BYCONTROLLERKEY];
+    CreateTrustWaysViewController *cc = [[CreateTrustWaysViewController alloc]initWithNibName:@"CreateTrustWaysViewController" bundle:nil];
+    NSDictionary* dict = [NSDictionary dictionaryWithObject:cc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
                                                         object:self
                                                       userInfo:dict];

@@ -27,26 +27,28 @@
     NSString *mobile = self.mobile.text;
     NSString *password = self.password.text;
     
-    BoardViewController *bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
-    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:bc];
-    [self presentViewController:nc animated:YES completion:nil];
+//    BoardViewController *bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
+//    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:bc];
+//    [self presentViewController:nc animated:YES completion:nil];
 
-//    NSDictionary *params = @{@"mobile": mobile, @"pwd": password, @"role": @"1"};
-//    [[PMHttpClient shareIntance]postPath:LOGIN_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSDictionary *result = (NSDictionary *)responseObject;
-//        if ([result[@"Account"][@"Role"] integerValue] == 1) {
-//            //save mobile
-//            [[NSUserDefaults standardUserDefaults] setObject:mobile forKey:USER_DEFAULTS_MOBILE_KEY];
-//            [[NSUserDefaults standardUserDefaults] synchronize];
-//            
-//            BoardViewController *bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
-//            UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:bc];
-//            [self presentViewController:nc animated:YES completion:nil];
-//        }
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"%@", error);
-//    }];
+    NSDictionary *params = @{@"mobile": mobile, @"pwd": password, @"role": @"1"};
+    [[PMHttpClient shareIntance]postPath:LOGIN_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *result = (NSDictionary *)responseObject;
+//        NSLog(@"%@", result[@"Account"]);
+        if ([result[@"Account"][@"Role"] integerValue] == 1) {
+            //todo: login manager
+            [[NSUserDefaults standardUserDefaults] setObject:result[@"Account"][@"Id"] forKey:USER_DEFAULTS_ID_KEY];
+            [[NSUserDefaults standardUserDefaults] setObject:mobile forKey:USER_DEFAULTS_MOBILE_KEY];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            BoardViewController *bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
+            UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:bc];
+            [self presentViewController:nc animated:YES completion:nil];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)viewTapped: (id)sender

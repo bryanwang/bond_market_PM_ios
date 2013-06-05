@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"增信方式";
+    self.title = @"新建增信方式";
 }
 
 - (void)didReceiveMemoryWarning
