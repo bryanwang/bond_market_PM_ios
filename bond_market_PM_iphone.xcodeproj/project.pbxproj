@@ -175,6 +175,7 @@
 		CA8AEFD1175ED558000F37FA /* status-5.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC5175ED558000F37FA /* status-5.png */; };
 		CA8AEFD2175ED558000F37FA /* status-5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC6175ED558000F37FA /* status-5@2x.png */; };
 		CA8AEFD4175EF449000F37FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFD3175EF449000F37FA /* Localizable.strings */; };
+		CA8AEFD8175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFD7175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -395,6 +396,7 @@
 		CA8AEFC5175ED558000F37FA /* status-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-5.png"; sourceTree = "<group>"; };
 		CA8AEFC6175ED558000F37FA /* status-5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-5@2x.png"; sourceTree = "<group>"; };
 		CA8AEFD3175EF449000F37FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CA8AEFD7175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berthold Akzidenz Grotesk BE Condensed.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,7 +463,7 @@
 		0EA88273175C237A001100A7 /* bond_market_PM_iphone */ = {
 			isa = PBXGroup;
 			children = (
-				CA8A1E35175C35D500E87946 /* Image */,
+				CA8AEFD5175EF865000F37FA /* Resource */,
 				0EA8829C175C2517001100A7 /* Utils */,
 				0EA8829B175C250F001100A7 /* DataBuilder */,
 				0EA8829A175C250B001100A7 /* Bonds */,
@@ -724,6 +726,23 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		CA8AEFD5175EF865000F37FA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CA8AEFD6175EF871000F37FA /* Font */,
+				CA8A1E35175C35D500E87946 /* Image */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		CA8AEFD6175EF871000F37FA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CA8AEFD7175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -927,6 +946,7 @@
 				CA8AEFD1175ED558000F37FA /* status-5.png in Resources */,
 				CA8AEFD2175ED558000F37FA /* status-5@2x.png in Resources */,
 				CA8AEFD4175EF449000F37FA /* Localizable.strings in Resources */,
+				CA8AEFD8175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
