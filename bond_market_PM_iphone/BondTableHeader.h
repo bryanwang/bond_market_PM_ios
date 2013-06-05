@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BondTableHeader : UIView
-
+@property (nonatomic, strong) NSDictionary *inputInfo;
 @end

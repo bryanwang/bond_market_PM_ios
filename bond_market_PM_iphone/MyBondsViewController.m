@@ -30,6 +30,8 @@
 - (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
 {
     NSUInteger index = [sender.selectedIndexes lastIndex];
+    [self.tableviewController setOrderType:index];
+    [self.tableviewController reloadTableview];
 }
 
 - (void)setUpSegmentedControll
@@ -107,6 +109,7 @@
     [self.view addSubview:view];
     
     [self.tableviewController fetchMyBonds];
+    [self.tableviewController fetchMyInputInfo];
 }
 
 - (void)viewDidLoad

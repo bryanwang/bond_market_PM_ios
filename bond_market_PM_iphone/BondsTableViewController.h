@@ -20,5 +20,6 @@ typedef enum BondsOrderType: NSUInteger
 
 - (void) reloadTableview;
 - (void) fetchMyBonds;
+- (void) fetchMyInputInfo;
 
 @end

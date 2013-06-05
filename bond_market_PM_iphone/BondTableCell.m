@@ -29,7 +29,7 @@
         self.title.text = info[@"ShortTitle"];
         self.type.text = info[@"Type"];
         
-        if (owner) {
+        if (![owner[@"Name"] isEqual: NSLocalizedString(@"no owner", "")]) {
              self.captain.text = owner[@"Name"];
          } else {
              [self.captain removeFromSuperview];

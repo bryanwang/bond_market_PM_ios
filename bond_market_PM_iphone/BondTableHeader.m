@@ -8,24 +8,27 @@
 
 #import "BondTableHeader.h"
 
+@interface BondTableHeader()
+@property (weak, nonatomic) IBOutlet UILabel *totalEntryFee;
+@property (weak, nonatomic) IBOutlet UILabel *totalDeductFee;
+@end
+
 @implementation BondTableHeader
 
-- (id)initWithFrame:(CGRect)frame
+- (void)awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    [super awakeFromNib];
+    self.backgroundColor = RGBCOLOR(255, 255, 255);
+    [self.totalDeductFee setFont:[UIFont fontWithName:CONDENSED_FONT size:36.0f]];
+    [self.totalEntryFee setFont:[UIFont fontWithName:CONDENSED_FONT size:36.0f]];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setInputInfo:(NSDictionary *)inputInfo
 {
-    // Drawing code
+    self.totalDeductFee.text = [NSString stringWithFormat:@"%@", inputInfo[@"totalActualBonus"]];
+    self.totalEntryFee.text = [NSString stringWithFormat:@"%@", inputInfo[@"totalInputBonus"]];
+    
+    [self setNeedsDisplay];
 }
-*/
 
 @end
