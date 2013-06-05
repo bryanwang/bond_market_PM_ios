@@ -18,9 +18,9 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = RGBCOLOR(255, 255, 255);
-    [self.totalDeductFee setFont:[UIFont fontWithName:CONDENSED_FONT size:36.0f]];
-    [self.totalEntryFee setFont:[UIFont fontWithName:CONDENSED_FONT size:36.0f]];
+
+    [self.totalDeductFee setFont:[UIFont BertholdFontOfSize:36]];
+    [self.totalEntryFee setFont:[UIFont BertholdFontOfSize:36]];
 }
 
 - (void)setInputInfo:(NSDictionary *)inputInfo

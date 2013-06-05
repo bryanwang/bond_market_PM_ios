@@ -9,12 +9,14 @@
 #import "BondTableCell.h"
 
 @interface BondTableCell()
+
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *type;
 @property (weak, nonatomic) IBOutlet UILabel *captain;
 @property (weak, nonatomic) IBOutlet UIImageView *iconcaptain;
 @property (weak, nonatomic) IBOutlet UIImageView *status;
 @property (weak, nonatomic) IBOutlet UIView *tagstatus;
+@property (weak, nonatomic) IBOutlet UIView *sepview;
 
 @end
 
@@ -60,5 +62,24 @@
         }
     }
 }
+
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    NSUInteger status = [self.bond[@"NewBondInfo"][@"Status"] integerValue];
+    if (status == MatchedFailed || status == AuditedFailed) {
+        self.tagstatus.backgroundColor = RGBCOLOR(197, 193, 186);
+    }
+    else {
+        self.tagstatus.backgroundColor = RGBCOLOR(182, 12, 16);
+        self.sepview.backgroundColor = RGBCOLOR(145, 144, 142);
+    }
+}
+
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+//    [super setSelected:selected animated:animated];
+//     self.tagstatus.backgroundColor = RGBCOLOR(182, 12, 16);
+//    self.sepview.backgroundColor = RGBCOLOR(145, 144, 142);
+//}
 
 @end

@@ -14,7 +14,6 @@
 #define MY_BONDS_INTERFACE @"/api/ios/newbond/mine"
 #define MY_BONDS_INPUTUBFI_INTERFACE @"/api/ios/newbond/bonus"
 
-#define CONDENSED_FONT @"Berthold Akzidenz Grotesk BE"
 #define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
 #define BYCONTROLLERKEY @"viewcontroller"
 #define USER_DEFAULTS_MOBILE_KEY @"mobile"

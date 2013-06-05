@@ -52,10 +52,10 @@
 //        NSLog(@"Font name  = %@", temp);
 //    }
     
-    [self.totalDeductFee setFont:[UIFont fontWithName:CONDENSED_FONT size:36.0f]];
-    [self.totalEntryFee setFont:[UIFont fontWithName:CONDENSED_FONT size:36.0f]];
-    [self.totalEntryCount setFont:[UIFont fontWithName:CONDENSED_FONT size:22.0f]];
-    [self.totalDeductCount setFont:[UIFont fontWithName:CONDENSED_FONT size:22.0f]];
+    [self.totalDeductFee setFont:[UIFont BertholdFontOfSize:36]];
+    [self.totalEntryFee setFont:[UIFont BertholdFontOfSize:36]];
+    [self.totalEntryCount setFont:[UIFont BertholdFontOfSize:22]];
+    [self.totalDeductCount setFont:[UIFont BertholdFontOfSize:22]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

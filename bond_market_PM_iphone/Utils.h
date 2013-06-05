@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreText/CoreText.h>
 
 @interface Utils : NSObject
 + (Utils *)sharedInstance;
@@ -36,5 +37,11 @@
                                      target:(id)target
                                    selector:(SEL)selector;
 
+
+@end
+
+@interface UIFont(BY)
+
++ (UIFont *)BertholdFontOfSize:(CGFloat)size;
 
 @end

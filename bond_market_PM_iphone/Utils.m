@@ -143,3 +143,22 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 
 @end
+
+
+@implementation UIFont(BY)
+
++ (UIFont *)BertholdFontOfSize:(CGFloat)size
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSURL * url = [[NSBundle mainBundle] URLForResource:@"Berthold Akzidenz Grotesk BE Condensed" withExtension:@"ttf"];
+		CFErrorRef error;
+        CTFontManagerRegisterFontsForURL((__bridge CFURLRef)url, kCTFontManagerScopeNone, &error);
+        error = nil;
+    });
+    
+    return [UIFont fontWithName:@"Berthold Akzidenz Grotesk BE" size:size];
+}
+
+
+@end

@@ -176,6 +176,9 @@
 		CA8AEFD2175ED558000F37FA /* status-5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC6175ED558000F37FA /* status-5@2x.png */; };
 		CA8AEFD4175EF449000F37FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFD3175EF449000F37FA /* Localizable.strings */; };
 		CA8AEFD8175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFD7175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf */; };
+		CA8AEFDA175F004E000F37FA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8AEFD9175F004E000F37FA /* CoreText.framework */; };
+		CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDB175F00D6000F37FA /* table-section.png */; };
+		CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDC175F00D6000F37FA /* table-section@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -397,6 +400,9 @@
 		CA8AEFC6175ED558000F37FA /* status-5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-5@2x.png"; sourceTree = "<group>"; };
 		CA8AEFD3175EF449000F37FA /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CA8AEFD7175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Berthold Akzidenz Grotesk BE Condensed.ttf"; sourceTree = "<group>"; };
+		CA8AEFD9175F004E000F37FA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		CA8AEFDB175F00D6000F37FA /* table-section.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-section.png"; sourceTree = "<group>"; };
+		CA8AEFDC175F00D6000F37FA /* table-section@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-section@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +410,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8AEFDA175F004E000F37FA /* CoreText.framework in Frameworks */,
 				CA8AEF91175ECCE2000F37FA /* QuartzCore.framework in Frameworks */,
 				CA8A1E91175C447300E87946 /* MessageUI.framework in Frameworks */,
 				CA8A1E8F175C446900E87946 /* Security.framework in Frameworks */,
@@ -426,8 +433,6 @@
 		0EA88261175C237A001100A7 = {
 			isa = PBXGroup;
 			children = (
-				CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */,
-				CA8AEF8C175ECC30000F37FA /* Reveal.framework */,
 				0EA88273175C237A001100A7 /* bond_market_PM_iphone */,
 				0EA8826C175C237A001100A7 /* Frameworks */,
 				0EA8826B175C237A001100A7 /* Products */,
@@ -446,6 +451,9 @@
 		0EA8826C175C237A001100A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA8AEFD9175F004E000F37FA /* CoreText.framework */,
+				CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */,
+				CA8AEF8C175ECC30000F37FA /* Reveal.framework */,
 				CA8A1E90175C447300E87946 /* MessageUI.framework */,
 				CA8A1E8E175C446900E87946 /* Security.framework */,
 				CA8A1E8C175C445E00E87946 /* MobileCoreServices.framework */,
@@ -622,6 +630,8 @@
 		CA8A1E35175C35D500E87946 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				CA8AEFDB175F00D6000F37FA /* table-section.png */,
+				CA8AEFDC175F00D6000F37FA /* table-section@2x.png */,
 				CA8A1ED7175C704D00E87946 /* sort-bar.png */,
 				CA8A1ED8175C704D00E87946 /* sort-bar@2x.png */,
 				CA8A1EA5175C62D200E87946 /* dash-board-03-nor.png */,
@@ -947,6 +957,8 @@
 				CA8AEFD2175ED558000F37FA /* status-5@2x.png in Resources */,
 				CA8AEFD4175EF449000F37FA /* Localizable.strings in Resources */,
 				CA8AEFD8175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */,
+				CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */,
+				CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
