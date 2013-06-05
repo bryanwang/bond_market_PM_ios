@@ -143,6 +143,37 @@
 		CA8A1EE2175C708300E87946 /* sort-bar-01-sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1EDE175C708300E87946 /* sort-bar-01-sel@2x.png */; };
 		CA8A1EE5175C808900E87946 /* BYQuickDialogWrappedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1EE4175C808900E87946 /* BYQuickDialogWrappedViewController.m */; };
 		CA8A1EE8175C8A6800E87946 /* MyBondsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */; };
+		CA8AEF8D175ECC30000F37FA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8AEF8C175ECC30000F37FA /* Reveal.framework */; };
+		CA8AEF91175ECCE2000F37FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */; };
+		CA8AEF95175ECD77000F37FA /* CreateTrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */; };
+		CA8AEF96175ECD77000F37FA /* CreateTrustWaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */; };
+		CA8AEF99175ECDA8000F37FA /* BondsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF98175ECDA8000F37FA /* BondsTableViewController.m */; };
+		CA8AEF9D175ECDBA000F37FA /* BondTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF9B175ECDBA000F37FA /* BondTableCell.m */; };
+		CA8AEF9E175ECDBA000F37FA /* BondTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEF9C175ECDBA000F37FA /* BondTableCell.xib */; };
+		CA8AEFA3175ED241000F37FA /* BondTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFA1175ED241000F37FA /* BondTableHeader.m */; };
+		CA8AEFA4175ED241000F37FA /* BondTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFA2175ED241000F37FA /* BondTableHeader.xib */; };
+		CA8AEFB1175ED54D000F37FA /* icon-captain.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFA7175ED54D000F37FA /* icon-captain.png */; };
+		CA8AEFB2175ED54D000F37FA /* icon-captain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFA8175ED54D000F37FA /* icon-captain@2x.png */; };
+		CA8AEFB3175ED54D000F37FA /* icon-commission.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFA9175ED54D000F37FA /* icon-commission.png */; };
+		CA8AEFB4175ED54D000F37FA /* icon-commission@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFAA175ED54D000F37FA /* icon-commission@2x.png */; };
+		CA8AEFB5175ED54D000F37FA /* icon-cost.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFAB175ED54D000F37FA /* icon-cost.png */; };
+		CA8AEFB6175ED54D000F37FA /* icon-cost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFAC175ED54D000F37FA /* icon-cost@2x.png */; };
+		CA8AEFB7175ED54D000F37FA /* icon-delet.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFAD175ED54D000F37FA /* icon-delet.png */; };
+		CA8AEFB8175ED54D000F37FA /* icon-delet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFAE175ED54D000F37FA /* icon-delet@2x.png */; };
+		CA8AEFB9175ED54D000F37FA /* icon-Modify.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFAF175ED54D000F37FA /* icon-Modify.png */; };
+		CA8AEFBA175ED54D000F37FA /* icon-Modify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFB0175ED54D000F37FA /* icon-Modify@2x.png */; };
+		CA8AEFC7175ED558000F37FA /* status-0.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFBB175ED558000F37FA /* status-0.png */; };
+		CA8AEFC8175ED558000F37FA /* status-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFBC175ED558000F37FA /* status-0@2x.png */; };
+		CA8AEFC9175ED558000F37FA /* status-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFBD175ED558000F37FA /* status-1.png */; };
+		CA8AEFCA175ED558000F37FA /* status-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFBE175ED558000F37FA /* status-1@2x.png */; };
+		CA8AEFCB175ED558000F37FA /* status-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFBF175ED558000F37FA /* status-2.png */; };
+		CA8AEFCC175ED558000F37FA /* status-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC0175ED558000F37FA /* status-2@2x.png */; };
+		CA8AEFCD175ED558000F37FA /* status-3.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC1175ED558000F37FA /* status-3.png */; };
+		CA8AEFCE175ED558000F37FA /* status-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC2175ED558000F37FA /* status-3@2x.png */; };
+		CA8AEFCF175ED558000F37FA /* status-4.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC3175ED558000F37FA /* status-4.png */; };
+		CA8AEFD0175ED558000F37FA /* status-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC4175ED558000F37FA /* status-4@2x.png */; };
+		CA8AEFD1175ED558000F37FA /* status-5.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC5175ED558000F37FA /* status-5.png */; };
+		CA8AEFD2175ED558000F37FA /* status-5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFC6175ED558000F37FA /* status-5@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,6 +358,41 @@
 		CA8A1EE4175C808900E87946 /* BYQuickDialogWrappedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYQuickDialogWrappedViewController.m; sourceTree = "<group>"; };
 		CA8A1EE6175C8A6500E87946 /* MyBondsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBondsViewController.h; sourceTree = "<group>"; };
 		CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBondsViewController.m; sourceTree = "<group>"; };
+		CA8AEF8C175ECC30000F37FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CA8AEF92175ECD77000F37FA /* CreateTrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTrustWaysViewController.h; sourceTree = "<group>"; };
+		CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrustWaysViewController.m; sourceTree = "<group>"; };
+		CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTrustWaysViewController.xib; sourceTree = "<group>"; };
+		CA8AEF97175ECDA7000F37FA /* BondsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondsTableViewController.h; sourceTree = "<group>"; };
+		CA8AEF98175ECDA8000F37FA /* BondsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondsTableViewController.m; sourceTree = "<group>"; };
+		CA8AEF9A175ECDBA000F37FA /* BondTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondTableCell.h; sourceTree = "<group>"; };
+		CA8AEF9B175ECDBA000F37FA /* BondTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondTableCell.m; sourceTree = "<group>"; };
+		CA8AEF9C175ECDBA000F37FA /* BondTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BondTableCell.xib; sourceTree = "<group>"; };
+		CA8AEFA0175ED241000F37FA /* BondTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondTableHeader.h; sourceTree = "<group>"; };
+		CA8AEFA1175ED241000F37FA /* BondTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondTableHeader.m; sourceTree = "<group>"; };
+		CA8AEFA2175ED241000F37FA /* BondTableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BondTableHeader.xib; sourceTree = "<group>"; };
+		CA8AEFA7175ED54D000F37FA /* icon-captain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-captain.png"; sourceTree = "<group>"; };
+		CA8AEFA8175ED54D000F37FA /* icon-captain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-captain@2x.png"; sourceTree = "<group>"; };
+		CA8AEFA9175ED54D000F37FA /* icon-commission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-commission.png"; sourceTree = "<group>"; };
+		CA8AEFAA175ED54D000F37FA /* icon-commission@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-commission@2x.png"; sourceTree = "<group>"; };
+		CA8AEFAB175ED54D000F37FA /* icon-cost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cost.png"; sourceTree = "<group>"; };
+		CA8AEFAC175ED54D000F37FA /* icon-cost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cost@2x.png"; sourceTree = "<group>"; };
+		CA8AEFAD175ED54D000F37FA /* icon-delet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-delet.png"; sourceTree = "<group>"; };
+		CA8AEFAE175ED54D000F37FA /* icon-delet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-delet@2x.png"; sourceTree = "<group>"; };
+		CA8AEFAF175ED54D000F37FA /* icon-Modify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Modify.png"; sourceTree = "<group>"; };
+		CA8AEFB0175ED54D000F37FA /* icon-Modify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Modify@2x.png"; sourceTree = "<group>"; };
+		CA8AEFBB175ED558000F37FA /* status-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-0.png"; sourceTree = "<group>"; };
+		CA8AEFBC175ED558000F37FA /* status-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-0@2x.png"; sourceTree = "<group>"; };
+		CA8AEFBD175ED558000F37FA /* status-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-1.png"; sourceTree = "<group>"; };
+		CA8AEFBE175ED558000F37FA /* status-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-1@2x.png"; sourceTree = "<group>"; };
+		CA8AEFBF175ED558000F37FA /* status-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-2.png"; sourceTree = "<group>"; };
+		CA8AEFC0175ED558000F37FA /* status-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-2@2x.png"; sourceTree = "<group>"; };
+		CA8AEFC1175ED558000F37FA /* status-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-3.png"; sourceTree = "<group>"; };
+		CA8AEFC2175ED558000F37FA /* status-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-3@2x.png"; sourceTree = "<group>"; };
+		CA8AEFC3175ED558000F37FA /* status-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-4.png"; sourceTree = "<group>"; };
+		CA8AEFC4175ED558000F37FA /* status-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-4@2x.png"; sourceTree = "<group>"; };
+		CA8AEFC5175ED558000F37FA /* status-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-5.png"; sourceTree = "<group>"; };
+		CA8AEFC6175ED558000F37FA /* status-5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-5@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +400,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8AEF91175ECCE2000F37FA /* QuartzCore.framework in Frameworks */,
 				CA8A1E91175C447300E87946 /* MessageUI.framework in Frameworks */,
 				CA8A1E8F175C446900E87946 /* Security.framework in Frameworks */,
 				CA8A1E8D175C445E00E87946 /* MobileCoreServices.framework in Frameworks */,
@@ -345,6 +412,7 @@
 				0EA88272175C237A001100A7 /* CoreGraphics.framework in Frameworks */,
 				0EA8830B175C2C81001100A7 /* libQuickDialog.a in Frameworks */,
 				17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */,
+				CA8AEF8D175ECC30000F37FA /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +422,8 @@
 		0EA88261175C237A001100A7 = {
 			isa = PBXGroup;
 			children = (
+				CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */,
+				CA8AEF8C175ECC30000F37FA /* Reveal.framework */,
 				0EA88273175C237A001100A7 /* bond_market_PM_iphone */,
 				0EA8826C175C237A001100A7 /* Frameworks */,
 				0EA8826B175C237A001100A7 /* Products */,
@@ -429,6 +499,14 @@
 				0EA882C8175C25A7001100A7 /* Form */,
 				0EA882C5175C25A3001100A7 /* NewBondViewController.h */,
 				0EA882C6175C25A3001100A7 /* NewBondViewController.m */,
+				CA8AEFA0175ED241000F37FA /* BondTableHeader.h */,
+				CA8AEFA1175ED241000F37FA /* BondTableHeader.m */,
+				CA8AEFA2175ED241000F37FA /* BondTableHeader.xib */,
+				CA8AEF9A175ECDBA000F37FA /* BondTableCell.h */,
+				CA8AEF9B175ECDBA000F37FA /* BondTableCell.m */,
+				CA8AEF9C175ECDBA000F37FA /* BondTableCell.xib */,
+				CA8AEF97175ECDA7000F37FA /* BondsTableViewController.h */,
+				CA8AEF98175ECDA8000F37FA /* BondsTableViewController.m */,
 				CA8A1EE6175C8A6500E87946 /* MyBondsViewController.h */,
 				CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */,
 			);
@@ -512,6 +590,9 @@
 		0EA882E5175C25B3001100A7 /* TrustWays */ = {
 			isa = PBXGroup;
 			children = (
+				CA8AEF92175ECD77000F37FA /* CreateTrustWaysViewController.h */,
+				CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */,
+				CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */,
 				0EA882E6175C25BB001100A7 /* LandViewController.h */,
 				0EA882E7175C25BB001100A7 /* LandViewController.m */,
 				0EA882E8175C25BB001100A7 /* EstateViewController.h */,
@@ -614,6 +695,28 @@
 				CA8A1EDC175C708200E87946 /* sort-bar-01-nor@2x.png */,
 				CA8A1EDD175C708200E87946 /* sort-bar-01-sel.png */,
 				CA8A1EDE175C708300E87946 /* sort-bar-01-sel@2x.png */,
+				CA8AEFBB175ED558000F37FA /* status-0.png */,
+				CA8AEFBC175ED558000F37FA /* status-0@2x.png */,
+				CA8AEFBD175ED558000F37FA /* status-1.png */,
+				CA8AEFBE175ED558000F37FA /* status-1@2x.png */,
+				CA8AEFBF175ED558000F37FA /* status-2.png */,
+				CA8AEFC0175ED558000F37FA /* status-2@2x.png */,
+				CA8AEFC1175ED558000F37FA /* status-3.png */,
+				CA8AEFC2175ED558000F37FA /* status-3@2x.png */,
+				CA8AEFC3175ED558000F37FA /* status-4.png */,
+				CA8AEFC4175ED558000F37FA /* status-4@2x.png */,
+				CA8AEFC5175ED558000F37FA /* status-5.png */,
+				CA8AEFC6175ED558000F37FA /* status-5@2x.png */,
+				CA8AEFA7175ED54D000F37FA /* icon-captain.png */,
+				CA8AEFA8175ED54D000F37FA /* icon-captain@2x.png */,
+				CA8AEFA9175ED54D000F37FA /* icon-commission.png */,
+				CA8AEFAA175ED54D000F37FA /* icon-commission@2x.png */,
+				CA8AEFAB175ED54D000F37FA /* icon-cost.png */,
+				CA8AEFAC175ED54D000F37FA /* icon-cost@2x.png */,
+				CA8AEFAD175ED54D000F37FA /* icon-delet.png */,
+				CA8AEFAE175ED54D000F37FA /* icon-delet@2x.png */,
+				CA8AEFAF175ED54D000F37FA /* icon-Modify.png */,
+				CA8AEFB0175ED54D000F37FA /* icon-Modify@2x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -795,6 +898,31 @@
 				CA8A1EE0175C708300E87946 /* sort-bar-01-nor@2x.png in Resources */,
 				CA8A1EE1175C708300E87946 /* sort-bar-01-sel.png in Resources */,
 				CA8A1EE2175C708300E87946 /* sort-bar-01-sel@2x.png in Resources */,
+				CA8AEF96175ECD77000F37FA /* CreateTrustWaysViewController.xib in Resources */,
+				CA8AEF9E175ECDBA000F37FA /* BondTableCell.xib in Resources */,
+				CA8AEFA4175ED241000F37FA /* BondTableHeader.xib in Resources */,
+				CA8AEFB1175ED54D000F37FA /* icon-captain.png in Resources */,
+				CA8AEFB2175ED54D000F37FA /* icon-captain@2x.png in Resources */,
+				CA8AEFB3175ED54D000F37FA /* icon-commission.png in Resources */,
+				CA8AEFB4175ED54D000F37FA /* icon-commission@2x.png in Resources */,
+				CA8AEFB5175ED54D000F37FA /* icon-cost.png in Resources */,
+				CA8AEFB6175ED54D000F37FA /* icon-cost@2x.png in Resources */,
+				CA8AEFB7175ED54D000F37FA /* icon-delet.png in Resources */,
+				CA8AEFB8175ED54D000F37FA /* icon-delet@2x.png in Resources */,
+				CA8AEFB9175ED54D000F37FA /* icon-Modify.png in Resources */,
+				CA8AEFBA175ED54D000F37FA /* icon-Modify@2x.png in Resources */,
+				CA8AEFC7175ED558000F37FA /* status-0.png in Resources */,
+				CA8AEFC8175ED558000F37FA /* status-0@2x.png in Resources */,
+				CA8AEFC9175ED558000F37FA /* status-1.png in Resources */,
+				CA8AEFCA175ED558000F37FA /* status-1@2x.png in Resources */,
+				CA8AEFCB175ED558000F37FA /* status-2.png in Resources */,
+				CA8AEFCC175ED558000F37FA /* status-2@2x.png in Resources */,
+				CA8AEFCD175ED558000F37FA /* status-3.png in Resources */,
+				CA8AEFCE175ED558000F37FA /* status-3@2x.png in Resources */,
+				CA8AEFCF175ED558000F37FA /* status-4.png in Resources */,
+				CA8AEFD0175ED558000F37FA /* status-4@2x.png in Resources */,
+				CA8AEFD1175ED558000F37FA /* status-5.png in Resources */,
+				CA8AEFD2175ED558000F37FA /* status-5@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +988,10 @@
 				CA8A1E89175C3FD400E87946 /* BBCustomBackButtonViewController.m in Sources */,
 				CA8A1EE5175C808900E87946 /* BYQuickDialogWrappedViewController.m in Sources */,
 				CA8A1EE8175C8A6800E87946 /* MyBondsViewController.m in Sources */,
+				CA8AEF95175ECD77000F37FA /* CreateTrustWaysViewController.m in Sources */,
+				CA8AEF99175ECDA8000F37FA /* BondsTableViewController.m in Sources */,
+				CA8AEF9D175ECDBA000F37FA /* BondTableCell.m in Sources */,
+				CA8AEFA3175ED241000F37FA /* BondTableHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +1075,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bond_market_PM_iphone/bond_market_PM_iphone-Prefix.pch";
 				INFOPLIST_FILE = "bond_market_PM_iphone/bond_market_PM_iphone-Info.plist";
@@ -955,6 +1091,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bond_market_PM_iphone/bond_market_PM_iphone-Prefix.pch";
 				INFOPLIST_FILE = "bond_market_PM_iphone/bond_market_PM_iphone-Info.plist";

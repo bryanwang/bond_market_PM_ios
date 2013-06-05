@@ -20,24 +20,48 @@
 
 @implementation BondsTableViewController
 
+- (void)generatedatesAndBonds: (NSMutableArray *)bonds
+{
+    @autoreleasepool {
+        //change every bond create time
+        NSMutableArray *tmps = [NSMutableArray array];
+        [bonds enumerateObjectsUsingBlock:^(id bond, NSUInteger index, BOOL *stop) {
+            NSMutableDictionary *mutBond = [bond mutableCopy];
+            NSMutableDictionary *mutInfo = [mutBond[@"NewBondInfo"] mutableCopy];
+            //only date
+            mutInfo[@"UpdateTime"] = [mutInfo[@"UpdateTime"] substringToIndex:10];
+            mutBond[@"NewBondInfo"] = [mutInfo copy];
+            [tmps addObject:mutBond];
+        }];
+        
+        //dates
+        NSSet *uniqueDates = [NSSet setWithArray: [tmps valueForKeyPath:@"NewBondInfo.UpdateTime"]];
+        self.dates = [[uniqueDates allObjects] mutableCopy];
+
+        //bonds
+        NSMutableArray *tmps2 = [NSMutableArray array];
+        [self.dates enumerateObjectsUsingBlock:^(id date, NSUInteger index, BOOL *stop) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(NewBondInfo.UpdateTime like %@)", date];
+            NSArray *temp = [tmps filteredArrayUsingPredicate:predicate];
+            [tmps2 addObject:temp];
+        }];
+        self.bonds = tmps2;
+    }
+}
+
 - (void) fetchMyBonds
 {
     NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_ID_KEY];
     if (userid != nil) {
-//        NSDictionary *params = @{@"userid": userid};
-//        [[PMHttpClient shareIntance]getPath:MY_BONDS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSDictionary *result = (NSDictionary *)responseObject;
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSLog(@"%@", error);
-//        }];
-        
-        //mock data
-        self.dates = [@[@1] copy];
-        NSArray *array = @[@1,@2];
-        self.bonds = [NSMutableArray arrayWithObject:array];
-        
-        [self.tableView reloadData];
+        NSDictionary *params = @{@"userid": userid};
+        [[PMHttpClient shareIntance]getPath:MY_BONDS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            bondsJson = (NSMutableArray *)responseObject;
+            [self generatedatesAndBonds: bondsJson];
+            [self.tableView reloadData];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@", error);
+        }];
     }
     else {
         //todo: not login
@@ -75,8 +99,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = RGBCOLOR(224, 221, 215);
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    [self.tableView registerClass:[BondTableCell class] forCellReuseIdentifier:@"BondTableCell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,7 +129,7 @@
 	headerLabel.opaque = NO;
 	headerLabel.textColor = RGBCOLOR(100, 100, 100);
 	headerLabel.font = [UIFont systemFontOfSize:14];
-	headerLabel.text = @"2013-1-1";
+	headerLabel.text = self.dates[section];
 	[customView addSubview:headerLabel];
     
 	return customView;
@@ -127,11 +150,16 @@
     return 74.0f;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (BondTableCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BondTableCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"test";
+ 
+    static NSString *CellIdentifier = @"BondTableCell";
+    BondTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = (BondTableCell *)[[[NSBundle mainBundle]loadNibNamed:@"BondTableCell" owner:self options:nil] lastObject];
+    }
     
+    cell.bond = self.bonds[indexPath.section][indexPath.row];
     return cell;
 }
 
@@ -139,6 +167,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+}
+
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    UIView *nor = [[UIView alloc]initWithFrame:cell.bounds];
+    nor.backgroundColor = RGBCOLOR(255, 255, 255);
+    cell.backgroundView  = nor;
+    
+    UIView *sel = [[UIView alloc]initWithFrame:cell.bounds];
+    sel.backgroundColor = RGBCOLOR(221, 221, 221);
+    cell.selectedBackgroundView = sel;
 }
 
 @end

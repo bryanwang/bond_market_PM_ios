@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BondTableCell : UITableViewCell
+typedef enum BondStatus:NSInteger{
+    Auditing,
+    Audited,
+    AuditedFailed,
+    Matchting,
+    Matched,
+    MatchedFailed
+} BondStatus;
 
+@interface BondTableCell : UITableViewCell
+@property (nonatomic, strong) NSDictionary *bond;
 @end
