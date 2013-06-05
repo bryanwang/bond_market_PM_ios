@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIView *tagstatus;
 @property (weak, nonatomic) IBOutlet UIView *sepview;
 
+@property (weak, nonatomic) IBOutlet UILabel *entryFee;
+@property (weak, nonatomic) IBOutlet UILabel *deductFee;
+
 @end
 
 @implementation BondTableCell
@@ -28,8 +31,13 @@
         _bond = bond;
         NSDictionary *info = bond[@"NewBondInfo"];
         NSDictionary *owner =  bond[@"OwnerInfo"];
+        NSDictionary *inputInfo = bond[@"InputInfo"];
+        
         self.title.text = info[@"ShortTitle"];
         self.type.text = info[@"Type"];
+        
+        self.entryFee.text = [NSString stringWithFormat:@"%@", inputInfo[@"InputBonus"]];
+        self.deductFee.text = [NSString stringWithFormat:@"%@", inputInfo[@"EstimateBonus"]];
         
         if (![owner[@"Name"] isEqual: NSLocalizedString(@"no owner", "")]) {
              self.captain.text = owner[@"Name"];

@@ -21,7 +21,7 @@
                         [
                                 { "type":"QEntryElement", "key": "others", "title": "评估价值", "placeholder": "万平方米", "prefix": " 万平方米", "keyboardType":"NumbersAndPunctuation"},
                                 { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumbersAndPunctuation", "prefix": " 倍", "bind": "textValue: IssueScale"},
-                                 { "type":"QPickerElement", "key":"Interest", "title":"房产证", "items":[["有", "无", " "]]},
+                                 { "type":"QPickerElement", "key":"", "title":"房产证", "items":[["有", "无", " "]]},
                         ]
                  }
         ]
