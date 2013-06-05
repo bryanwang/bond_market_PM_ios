@@ -24,30 +24,33 @@
 @implementation LoginViewController
 
 - (IBAction)login:(id)sender {
+    [self hideKeyBoard];
+    
     NSString *mobile = self.mobile.text;
     NSString *password = self.password.text;
     
-//    BoardViewController *bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
-//    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:bc];
-//    [self presentViewController:nc animated:YES completion:nil];
-
+    if ([mobile trim].length == 0 || [password trim].length == 0) {
+        [ALToastView toastInView:APP_ROOT_VIEW withText:@"手机号密码不能为空!"];
+        return;
+    }
+    
     NSDictionary *params = @{@"mobile": mobile, @"pwd": password, @"role": @"1"};
     [[PMHttpClient shareIntance]postPath:LOGIN_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = (NSDictionary *)responseObject;
-//        NSLog(@"%@", result[@"Account"]);
-        if ([result[@"Account"][@"Role"] integerValue] == 1) {
-            //todo: login manager
-            [[NSUserDefaults standardUserDefaults] setObject:result[@"Account"][@"Id"] forKey:USER_DEFAULTS_ID_KEY];
-            [[NSUserDefaults standardUserDefaults] setObject:mobile forKey:USER_DEFAULTS_MOBILE_KEY];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+        NSDictionary *account = result[@"Account"];
+        //user is pm
+        if (account && [account[@"Role"] integerValue] == 1) {
+            [[LoginManager sharedInstance] saveLoginUserInfo:account];
             
             BoardViewController *bc = [[BoardViewController alloc]initWithNibName:@"BoardViewController" bundle:nil];
             UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:bc];
             [self presentViewController:nc animated:YES completion:nil];
         }
-        
+        else {
+            [ALToastView toastInView:APP_ROOT_VIEW withText:@"登录失败"];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
+        //todo:
     }];
 }
 
@@ -74,7 +77,7 @@
     
     [self.view addSubview:self.loginPanel];
     
-    NSString *mobile = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_MOBILE_KEY];
+    NSString *mobile = [[LoginManager sharedInstance] fetchUserMobile];
     if (mobile)
         self.mobile.text = mobile;
 }
@@ -82,7 +85,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
 }
 
 @end

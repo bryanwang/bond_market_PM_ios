@@ -29,6 +29,10 @@
 @end
 
 
+@interface NSString(BY)
+- (NSString *)trim;
+@end
+
 
 @interface UIBarButtonItem (BY)
 
@@ -43,5 +47,18 @@
 @interface UIFont(BY)
 
 + (UIFont *)BertholdFontOfSize:(CGFloat)size;
+
+@end
+
+
+@interface LoginManager: NSObject
+
++ (LoginManager *)sharedInstance;
+
+- (void)saveLoginUserInfo:(NSDictionary *)userInfo;
+
+- (NSString *)fetchUserId;
+
+- (NSString *)fetchUserMobile;
 
 @end

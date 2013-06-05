@@ -18,13 +18,16 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFHTTPClient.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
-#import "QuickDialog.h"
+#import <ALToastView.h>
+#import <MBProgressHUD.h>
 
+#import "QuickDialog.h"
 
 #import <define.h>
 #import "Utils.h"
 #import "BBCustomBackButtonViewController.h"
 #import "BYBaseQuickDialogViewController.h"
 #import "BYQuickDialogWrappedViewController.h"
+
 
 #endif

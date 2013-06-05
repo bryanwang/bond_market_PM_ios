@@ -16,13 +16,15 @@
 
 @property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, strong) NSMutableArray *bonds;
+@property (nonatomic, strong) NSDateFormatter *fomart;
 
 @property (nonatomic, strong) BondTableHeader *bondHeader;
 
-@property (nonatomic, strong) NSDateFormatter *fomart;
-
 @end
 
+
+static float TABLE_SECTION_HEIGHT = 23.0f;
+static float TABLE_CELL_HEIGHT = 74.0f;
 
 @implementation BondsTableViewController
 
@@ -37,10 +39,13 @@
     return _fomart;
 }
 
-- (void)setOrderType:(BondsOrderType)orderType
+- (void)filterBy: (NSDictionary *)query
 {
-    _orderType = orderType;
-    
+    NSLog(@"filter");
+}
+
+- (void)orderBy:(BondsOrderType)orderType
+{
     NSString *predicateStr = @"";
     if (orderType == OrderByChargePerson) {
         //sections for owner
@@ -79,6 +84,8 @@
     }];
     
     self.bonds = tmps2;
+    
+    [self.tableView reloadData];
 }
 
 - (void)convertBondsUpdateTimeFormaterAndOwner: (NSMutableArray *)bonds
@@ -106,13 +113,15 @@
 
 - (void) fetchMyBonds
 {
-    NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_ID_KEY];
+    [MBProgressHUD showHUDAddedTo:self.view.superview animated:YES];
+    NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
         [[PMHttpClient shareIntance]getPath:MY_BONDS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [MBProgressHUD hideAllHUDsForView:self.view.superview animated:YES];
+            
             [self convertBondsUpdateTimeFormaterAndOwner:  (NSMutableArray *)responseObject];
-            [self setOrderType:OrderByTime];
-            [self.tableView reloadData];
+            [self orderBy:OrderByTime];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);
         }];
@@ -124,7 +133,7 @@
 
 - (void)fetchMyInputInfo
 {
-    NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_ID_KEY];
+    NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
         [[PMHttpClient shareIntance]getPath:MY_BONDS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -174,18 +183,19 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    CGRect  r = {0.0f, 0.0f, tableView.bounds.size.width, TABLE_SECTION_HEIGHT};
-	UIView* customView = [[UIView alloc] initWithFrame:r];
+	UIView* customView = [[UIView alloc] initWithFrame:(CGRect){0.0f, 0.0f, tableView.bounds.size.width, TABLE_SECTION_HEIGHT}];
     customView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table-section.png"]];
-	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, tableView.bounds.size.width - 20.0f, TABLE_SECTION_HEIGHT)];
+    
+	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectInset(customView.bounds, 10.0f, 0)];
 	headerLabel.backgroundColor = [UIColor clearColor];
 	headerLabel.opaque = NO;
 	headerLabel.textColor = RGBCOLOR(100, 100, 100);
 	headerLabel.font = [UIFont systemFontOfSize:14];
 	headerLabel.text = self.sections[section];
+    
 	[customView addSubview:headerLabel];
     
-	return customView;
+    return customView;
 }
 
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -200,7 +210,7 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 74.0f;
+    return TABLE_CELL_HEIGHT;
 }
 
 - (BondTableCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -16,10 +16,6 @@
 
 #define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
 #define BYCONTROLLERKEY @"viewcontroller"
-#define USER_DEFAULTS_MOBILE_KEY @"mobile"
-#define USER_DEFAULTS_ID_KEY @"userid"
-
-#define TABLE_SECTION_HEIGHT 23.0f
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 )
@@ -29,7 +25,8 @@
 #define APP_STATUS_FRAME    [UIApplication sharedApplication].statusBarFrame
 #define APP_CONTENT_WIDTH   (APP_SCREEN_BOUNDS.size.width)
 #define APP_CONTENT_HEIGHT  (APP_SCREEN_BOUNDS.size.height-APP_STATUS_FRAME.size.height)
-
+#define APP_ROOT_VIEW [UIApplication sharedApplication].keyWindow.rootViewController.view
+#define APP_WINDOW [UIApplication sharedApplication].keyWindow
 
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]

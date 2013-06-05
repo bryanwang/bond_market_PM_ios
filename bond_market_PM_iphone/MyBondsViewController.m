@@ -30,8 +30,13 @@
 - (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
 {
     NSUInteger index = [sender.selectedIndexes lastIndex];
-    [self.tableviewController setOrderType:index];
-    [self.tableviewController reloadTableview];
+    [self.tableviewController orderBy:(BondsOrderType)index];
+}
+
+- (void)filterMyBonds
+{
+    //todo: fliter
+    [self.tableviewController filterBy:nil];
 }
 
 - (void)setUpSegmentedControll
@@ -85,10 +90,7 @@
 
 }
 
-- (void)filterMyBonds
-{
-    
-}
+
 
 - (void)setUpLeftNavigationButton
 {
@@ -99,7 +101,6 @@
     
     self.navigationItem.rightBarButtonItem = item;
 }
-
 
 - (void)fetchMyBonds
 {

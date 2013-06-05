@@ -99,6 +99,15 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 @end
 
+@implementation NSString(BY)
+
+- (NSString *)trim
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+@end
+
 @implementation UIBarButtonItem (BY)
 
 + (UIBarButtonItem *)barButtonItemWithImage:(UIImage *)normalImage
@@ -144,7 +153,6 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 @end
 
-
 @implementation UIFont(BY)
 
 + (UIFont *)BertholdFontOfSize:(CGFloat)size
@@ -160,5 +168,41 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
     return [UIFont fontWithName:@"Berthold Akzidenz Grotesk BE" size:size];
 }
 
+@end
+
+static NSString *USER_DEFAULTS_MOBILE_KEY  = @"mobile";
+static NSString * USER_DEFAULTS_ID_KEY = @"userid";
+
+@implementation LoginManager
+
++ (LoginManager *)sharedInstance
+{
+    static LoginManager *sharedInstance = nil;
+    static dispatch_once_t onceToken = 0;
+    
+    dispatch_once(&onceToken,^{
+        sharedInstance = [[LoginManager alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
+- (void)saveLoginUserInfo:(NSDictionary *)userInfo
+{
+    [[NSUserDefaults standardUserDefaults] setObject:userInfo[@"Id"] forKey:USER_DEFAULTS_ID_KEY];
+    [[NSUserDefaults standardUserDefaults] setObject:userInfo[@"MobliePhone"]  forKey:USER_DEFAULTS_MOBILE_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)fetchUserId
+{
+    //由于服务端没做 用户验证 所以 获取个人信息的所有接口 都要传递userId 参数...
+    return [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_ID_KEY];
+}
+
+- (NSString *)fetchUserMobile
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_MOBILE_KEY];
+}
 
 @end

@@ -16,10 +16,13 @@ typedef enum BondsOrderType: NSUInteger
 } BondsOrderType;
 
 @interface BondsTableViewController : UITableViewController
-@property (nonatomic) BondsOrderType orderType;
+
 
 - (void) reloadTableview;
 - (void) fetchMyBonds;
 - (void) fetchMyInputInfo;
+
+- (void)orderBy:(BondsOrderType)orderType;
+- (void)filterBy: (NSDictionary *)query;
 
 @end

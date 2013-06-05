@@ -76,10 +76,16 @@
     }
 }
 
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//     self.tagstatus.backgroundColor = RGBCOLOR(182, 12, 16);
-//    self.sepview.backgroundColor = RGBCOLOR(145, 144, 142);
-//}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    NSUInteger status = [self.bond[@"NewBondInfo"][@"Status"] integerValue];
+    if (status == MatchedFailed || status == AuditedFailed) {
+        self.tagstatus.backgroundColor = RGBCOLOR(197, 193, 186);
+    }
+    else {
+        self.tagstatus.backgroundColor = RGBCOLOR(182, 12, 16);
+        self.sepview.backgroundColor = RGBCOLOR(145, 144, 142);
+    }
+}
 
 @end
