@@ -10,4 +10,6 @@
 
 @interface NewBondViewController : BBCustomBackButtonViewController
 
+- (id)initWithBond: (NSDictionary *)bond;
+
 @end

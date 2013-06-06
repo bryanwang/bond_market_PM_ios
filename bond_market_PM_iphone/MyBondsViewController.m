@@ -25,8 +25,9 @@
 {
     if (_tableviewController == nil) {
         _tableviewController = [[BondsTableViewController alloc]init];
+        _tableviewController.delegate = self;
     }
-    
+
     return _tableviewController;
 }
 

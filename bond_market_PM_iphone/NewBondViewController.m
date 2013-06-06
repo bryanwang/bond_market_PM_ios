@@ -13,6 +13,8 @@
 #import "BondRemarkViewController.h"
 
 @interface NewBondViewController ()
+@property (nonatomic, strong)NSDictionary *bondInfo;
+
 @property (nonatomic, strong) BondBasicInfoViewController *bc;
 @property (nonatomic, strong) FinancialIndicatorsViewController *fc;
 @property (nonatomic, strong) BondRemarkViewController *rc;
@@ -20,8 +22,15 @@
 
 @end
 
+@implementation NewBondViewController
 
-@implementation NewBondViewController 
+- (id)initWithBond:(NSDictionary *)bond
+{
+    if( self = [super init] ) {
+        self.bondInfo = bond[@"NewBondInfo"];
+    }
+    return self;
+}
 
 - (BondBasicInfoViewController *)bc
 {
@@ -54,6 +63,28 @@
 
     }
     return _rc;
+}
+
+- (void)setElementsDisabled
+{
+    for(QSection *section in self.bc.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            if (![element.key isEqual: @"TrustIncrease"])
+                element.enabled = NO;
+        }
+    }
+    
+    for(QSection *section in self.fc.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            element.enabled = NO;
+        }
+    }
+    
+    self.rc.textview.userInteractionEnabled = NO;
 }
 
 - (void)changeFormDetail: (NSUInteger)index
@@ -180,12 +211,35 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
+- (void)setUPTableView
+{
+    if (self.bondInfo) {
+        NSMutableDictionary *info = [self.bondInfo mutableCopy];
+        [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if (obj != [NSNull null]) {
+                info[key] = [NSString stringWithFormat:@"%@", obj];
+            }
+            
+            if([key isEqual:@"QueryFrom"])
+                info[key] = [NSDate date];
+            
+            if([key isEqual:@"QueryTo"])
+                info[key] = [NSDate date];
+        }];
+        
+        [self.bc.quickDialogTableView.root bindToObject:info];
+        [self.fc.quickDialogTableView.root bindToObject:info];
+        [self setElementsDisabled];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"新债录入";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self setUPTableView];
     [self setUpLeftNavigationButton];
     [self setUpSegmentedController];
     [self registerNotification];

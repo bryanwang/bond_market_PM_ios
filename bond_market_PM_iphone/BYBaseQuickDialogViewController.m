@@ -28,14 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIView *bv = [[UIView alloc]initWithFrame:self.view.bounds];
+    bv.backgroundColor = RGBCOLOR(224, 221, 215);
+    self.quickDialogTableView.backgroundView =bv;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    UIView *bv = [[UIView alloc]initWithFrame:self.view.bounds];
-    bv.backgroundColor = RGBCOLOR(224, 221, 215);
-    self.quickDialogTableView.backgroundView =bv;
 }
 
 - (void)displayViewControllerForRoot:(QRootElement *)element {

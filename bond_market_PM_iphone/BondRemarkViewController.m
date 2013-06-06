@@ -7,11 +7,8 @@
 //
 
 #import "BondRemarkViewController.h"
-#import "HDTextView.h"
 
 @interface BondRemarkViewController ()
-@property (weak, nonatomic) IBOutlet HDTextView *textview;
-
 @end
 
 @implementation BondRemarkViewController

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HDTextView.h"
 
 @interface BondRemarkViewController : BBCustomBackButtonViewController
-
+@property (weak, nonatomic) IBOutlet HDTextView *textview;
 @end
