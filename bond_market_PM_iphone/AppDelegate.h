@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BoardViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) BoardViewController *bc;
-
 @end
