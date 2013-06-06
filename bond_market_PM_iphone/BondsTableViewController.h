@@ -18,6 +18,7 @@ typedef enum BondsOrderType: NSUInteger
 
 @interface BondsTableViewController : UITableViewController
 
+@property (strong, nonatomic) id delegate;
 
 - (void) reloadTableview;
 - (void) fetchMyBonds;

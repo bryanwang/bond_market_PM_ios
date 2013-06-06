@@ -9,6 +9,7 @@
 #import "BondsTableViewController.h"
 #import "BondTableCell.h"
 #import "BondTableHeader.h"
+#import "NewBondViewController.h"
 
 @interface BondsTableViewController () {
     //存储原始数据
@@ -250,6 +251,8 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NewBondViewController *nc = [[NewBondViewController alloc]initWithBond:self.bonds[indexPath.section][indexPath.row]];
+    [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
 }
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
