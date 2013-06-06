@@ -146,33 +146,76 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationViewContoller:) name:BYPUSHVIEWCONTOLLERNOTIFICATION object:nil];
 }
 
-- (void)readTablesJsonValues
-{
-    NSMutableDictionary *basic_dic = [[NSMutableDictionary alloc] init];
-    
-    [self.bc.root fetchValueUsingBindingsIntoObject:basic_dic];
 
-    NSString *userId = [LoginManager sharedInstance].fetchUserId;
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:basic_dic options:NSJSONWritingPrettyPrinted error:&error];
-    if (error)
-        //todo:
+
+
+
+- (NSMutableDictionary *)buildNewbondInfo
+{
+    NSMutableDictionary *newbondInfo = [[NSMutableDictionary alloc] init];
+    [self.bc.root fetchValueUsingBindingsIntoObject:newbondInfo];
+    
+    newbondInfo[@"FinanceIndex"] = [self.fc buildFinaceIndexJson];
+    newbondInfo[@"Remark"] = [self.rc remarkText];
+    
+    // 处理所有日期字段的格式
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    newbondInfo[@"QueryFrom"] = [dateFormatter stringFromDate:newbondInfo[@"QueryFrom"]];
+    newbondInfo[@"QueryTo"] = [dateFormatter stringFromDate:newbondInfo[@"QueryTo"]];
+    
+    // 处理省市区字段
+    QPickerElement *areaElement = (QPickerElement *)[self.bc.root elementWithKey:@"Area"];
+    if ([areaElement.textValue length] > 0) {
+        newbondInfo[@"AreaProvince"] = areaElement.items[0][[areaElement.selectedIndexes[0] intValue]];
+        newbondInfo[@"AreaCity"] = areaElement.items[1][[areaElement.selectedIndexes[1] intValue]];
+        newbondInfo[@"AreaDistrict"] = areaElement.items[2][[areaElement.selectedIndexes[2] intValue]];
+    }
+    
+    // 处理利率区间
+    QPickerElement *interestElement = (QPickerElement *)[self.bc.root elementWithKey:@"Interest"];
+    if ([interestElement.textValue length] > 0) {
+        newbondInfo[@"InterestFrom"] = interestElement.items[0][[interestElement.selectedIndexes[0] intValue]];
+        newbondInfo[@"InterestTo"] = interestElement.items[1][[interestElement.selectedIndexes[1] intValue]];
+        // 去掉百分号
+        newbondInfo[@"InterestFrom"] = [newbondInfo[@"InterestFrom"] substringToIndex:[newbondInfo[@"InterestFrom"] length] - 1];
+        newbondInfo[@"InterestTo"] = [newbondInfo[@"InterestTo"] substringToIndex:[newbondInfo[@"InterestTo"] length] - 1];
+    }
+    return newbondInfo;
+}
+
+- (void)submitNewBondInfo
+{  
+    NSMutableDictionary *newbondInfo = [self buildNewbondInfo];  
+   
+    // 简称 这个字段必填
+    if ([newbondInfo[@"ShortTitle"] length] == 0) {
+        [ALToastView toastInView:self.view withText:@"债券简称必填"];
         return;
+    }    
     
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"  > the json string: %@", jsonString);
+//
+    NSString *userId = [LoginManager sharedInstance].fetchUserId;
     NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
-    
+  
     [[PMHttpClient shareIntance] postPath:CREATE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = responseObject;
-        NSLog(@"%@", result);
+        if ([result[@"Success"] isEqual: @1]) {
+            [ALToastView toastInView:self.view withText:@"新债提交成功"];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // todo:
+            [ALToastView toastInView:self.view withText:@"网络问题，提交失败"];
     }];
+    
 }
 
 - (void)setUpLeftNavigationButton
 {
-    UIBarButtonItem *item = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"] highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"] target:self selector:@selector(readTablesJsonValues)];
+    UIBarButtonItem *item = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"] highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"] target:self selector:@selector(submitNewBondInfo)];
     ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     [((UIButton *)(item.customView)) setTitle:@"完成" forState:UIControlStateNormal];
     [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];

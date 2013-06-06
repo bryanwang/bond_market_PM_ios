@@ -32,4 +32,9 @@
     [super didReceiveMemoryWarning];
 }
 
+- (NSString *)remarkText
+{
+    return self.textview.text;
+}
+
 @end

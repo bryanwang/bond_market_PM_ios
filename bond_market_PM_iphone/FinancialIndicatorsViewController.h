@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FinancialIndicatorsViewController : BYBaseQuickDialogViewController
-
+- (NSString *)buildFinaceIndexJson;
 @end

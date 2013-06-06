@@ -38,7 +38,7 @@
         
         self.inputBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"InputBonus"]];
         self.estimateBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"EstimateBonus"]];
-        
+
         if (![owner[@"Name"] isEqual: NSLocalizedString(@"no owner", "")]) {
              self.captain.text = owner[@"Name"];
          } else {

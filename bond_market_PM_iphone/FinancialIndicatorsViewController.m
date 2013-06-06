@@ -24,4 +24,10 @@
     [super didReceiveMemoryWarning];
 }
 
+
+- (NSString *)buildFinaceIndexJson
+{
+    return @"";
+}
+
 @end
