@@ -7,6 +7,7 @@
 //
 
 #import "Utils.h"
+#import "define.h"
 #import <AFHTTPClient.h>
 
 void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {

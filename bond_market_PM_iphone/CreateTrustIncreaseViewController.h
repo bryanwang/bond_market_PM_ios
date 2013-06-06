@@ -1,5 +1,5 @@
 //
-//  CreateTrustWaysViewController.h
+//  CreateTrustIncreaseViewController.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-4.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateTrustWaysViewController : BBCustomBackButtonViewController
+@interface CreateTrustIncreaseViewController : BBCustomBackButtonViewController
 
 @end

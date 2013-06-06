@@ -1,20 +1,20 @@
 //
-//  CreateTrustWaysViewController.m
+//  CreateTrustIncreaseViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-4.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "CreateTrustWaysViewController.h"
-#import "TrustWaysViewController.h"
+#import "CreateTrustIncreaseViewController.h"
+#import "TrustIncreaseViewController.h"
 
-@interface CreateTrustWaysViewController ()
+@interface CreateTrustIncreaseViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *noitemTips;
 
 @end
 
-@implementation CreateTrustWaysViewController
+@implementation CreateTrustIncreaseViewController
 
 - (void)viewDidLoad
 {
@@ -28,7 +28,7 @@
 -  (void)addTrustWay
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
-    TrustWaysViewController *tc = [[TrustWaysViewController alloc]initWithRoot:root];
+    TrustIncreaseViewController *tc = [[TrustIncreaseViewController alloc]initWithRoot:root];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:tc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
                                                         object:self

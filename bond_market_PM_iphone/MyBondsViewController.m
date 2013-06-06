@@ -9,6 +9,7 @@
 #import "MyBondsViewController.h"
 #import "BondsTableViewController.h"
 #import "FilterViewController.h"
+#import "define.h"
 #import <AKSegmentedControl.h>
 
 @interface MyBondsViewController ()

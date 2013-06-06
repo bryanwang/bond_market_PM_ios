@@ -7,8 +7,8 @@
 //
 
 #import "BondBasicInfoViewController.h"
-#import "TrustWaysViewController.h"
-#import "CreateTrustWaysViewController.h"
+#import "TrustIncreaseViewController.h"
+#import "CreateTrustIncreaseViewController.h"
 
 
 @interface BondBasicInfoViewController ()
@@ -130,7 +130,7 @@
 #pragma quick dialog ation control
 - (void)showTrustWays:(QElement *)element
 {
-    CreateTrustWaysViewController *cc = [[CreateTrustWaysViewController alloc]initWithNibName:@"CreateTrustWaysViewController" bundle:nil];
+    CreateTrustIncreaseViewController *cc = [[CreateTrustIncreaseViewController alloc]initWithNibName:@"CreateTrustWaysViewController" bundle:nil];
     NSDictionary* dict = [NSDictionary dictionaryWithObject:cc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
                                                         object:self

@@ -12,11 +12,11 @@
 #import "EstateViewController.h"
 #import "EquityViewController.h"
 #import "ReceivablesViewController.h"
-#import "OtherTrustWaysViewController.h"
+#import "OtherTrustIncreaseViewController.h"
 #import "GuaranteeViewController.h"
 #import "EnhancementsViewController.h"
 #import "BankSupportViewController.h"
-#import "OtherTrustWaysViewController.h"
+#import "OtherTrustIncreaseViewController.h"
 
 
 @interface BYBaseQuickDialogViewController ()
@@ -101,7 +101,7 @@
 }
 
 - (void)showOtherTrustWays:(QElement *)element{
-    OtherTrustWaysViewController *oc = [[OtherTrustWaysViewController alloc]initWithNibName:@"OtherTrustWaysViewController" bundle:nil];
+    OtherTrustIncreaseViewController *oc = [[OtherTrustIncreaseViewController alloc]initWithNibName:@"OtherTrustWaysViewController" bundle:nil];
     [self postNotificatioWithUserInfoController:oc];
 }
 

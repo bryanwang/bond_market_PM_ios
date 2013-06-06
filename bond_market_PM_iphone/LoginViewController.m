@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "BoardViewController.h"
+#import "define.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UIView *loginPanel;

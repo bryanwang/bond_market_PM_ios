@@ -1,5 +1,5 @@
 //
-//  OtherTrustWaysViewController.h
+//  OtherTrustIncreaseViewController.h
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-29.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OtherTrustWaysViewController : BBCustomBackButtonViewController
+@interface OtherTrustIncreaseViewController : BBCustomBackButtonViewController
 
 @end

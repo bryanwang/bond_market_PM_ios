@@ -1,7 +1,7 @@
 {
 	"grouped": true,
 	"title": "新增资产抵制押",
-            "controllerName": "TrustWaysViewController",
+            "controllerName": "TrustIncreaseViewController",
 	"sections": [
                  { "elements":
                         [

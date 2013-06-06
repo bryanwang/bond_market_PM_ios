@@ -156,7 +156,7 @@
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">OtherTrustWaysViewController</string>
+				<string key="-1.CustomClassName">OtherTrustIncreaseViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -181,7 +181,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">OtherTrustWaysViewController</string>
+					<string key="className">OtherTrustIncreaseViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">textview</string>
@@ -196,7 +196,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/OtherTrustWaysViewController.h</string>
+						<string key="minorKey">./Classes/OtherTrustIncreaseViewController.h</string>
 					</object>
 				</object>
 			</array>

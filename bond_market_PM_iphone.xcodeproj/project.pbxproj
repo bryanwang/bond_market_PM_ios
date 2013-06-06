@@ -38,7 +38,7 @@
 		0EA882C3175C2545001100A7 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */; };
 		0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882B8175C2545001100A7 /* SampleDataBuilder.m */; };
 		0EA882C7175C25A3001100A7 /* NewBondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882C6175C25A3001100A7 /* NewBondViewController.m */; };
-		0EA882DB175C25AF001100A7 /* TrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */; };
+		0EA882DB175C25AF001100A7 /* TrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CA175C25AF001100A7 /* TrustIncreaseViewController.m */; };
 		0EA882DC175C25AF001100A7 /* BondBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */; };
 		0EA882DD175C25AF001100A7 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */; };
 		0EA882DE175C25AF001100A7 /* BondRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */; };
@@ -46,7 +46,7 @@
 		0EA882E0175C25AF001100A7 /* GuaranteeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D3175C25AF001100A7 /* GuaranteeViewController.m */; };
 		0EA882E1175C25AF001100A7 /* EnhancementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */; };
 		0EA882E2175C25AF001100A7 /* BankSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D7175C25AF001100A7 /* BankSupportViewController.m */; };
-		0EA882E3175C25AF001100A7 /* OtherTrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */; };
+		0EA882E3175C25AF001100A7 /* OtherTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D9175C25AF001100A7 /* OtherTrustIncreaseViewController.m */; };
 		0EA882E4175C25AF001100A7 /* OtherTrustWaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */; };
 		0EA882EE175C25BB001100A7 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882E7175C25BB001100A7 /* LandViewController.m */; };
 		0EA882EF175C25BB001100A7 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882E9175C25BB001100A7 /* EstateViewController.m */; };
@@ -145,7 +145,7 @@
 		CA8A1EE8175C8A6800E87946 /* MyBondsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */; };
 		CA8AEF8D175ECC30000F37FA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8AEF8C175ECC30000F37FA /* Reveal.framework */; };
 		CA8AEF91175ECCE2000F37FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */; };
-		CA8AEF95175ECD77000F37FA /* CreateTrustWaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */; };
+		CA8AEF95175ECD77000F37FA /* CreateTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF93175ECD77000F37FA /* CreateTrustIncreaseViewController.m */; };
 		CA8AEF96175ECD77000F37FA /* CreateTrustWaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */; };
 		CA8AEF99175ECDA8000F37FA /* BondsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF98175ECDA8000F37FA /* BondsTableViewController.m */; };
 		CA8AEF9D175ECDBA000F37FA /* BondTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEF9B175ECDBA000F37FA /* BondTableCell.m */; };
@@ -244,8 +244,8 @@
 		0EA882B8175C2545001100A7 /* SampleDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleDataBuilder.m; sourceTree = "<group>"; };
 		0EA882C5175C25A3001100A7 /* NewBondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBondViewController.h; sourceTree = "<group>"; };
 		0EA882C6175C25A3001100A7 /* NewBondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBondViewController.m; sourceTree = "<group>"; };
-		0EA882C9175C25AF001100A7 /* TrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrustWaysViewController.h; sourceTree = "<group>"; };
-		0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrustWaysViewController.m; sourceTree = "<group>"; };
+		0EA882C9175C25AF001100A7 /* TrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrustIncreaseViewController.h; sourceTree = "<group>"; };
+		0EA882CA175C25AF001100A7 /* TrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrustIncreaseViewController.m; sourceTree = "<group>"; };
 		0EA882CB175C25AF001100A7 /* BondBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondBasicInfoViewController.h; sourceTree = "<group>"; };
 		0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondBasicInfoViewController.m; sourceTree = "<group>"; };
 		0EA882CD175C25AF001100A7 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondRemarkViewController.h; sourceTree = "<group>"; };
@@ -259,8 +259,8 @@
 		0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnhancementsViewController.m; sourceTree = "<group>"; };
 		0EA882D6175C25AF001100A7 /* BankSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSupportViewController.h; sourceTree = "<group>"; };
 		0EA882D7175C25AF001100A7 /* BankSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSupportViewController.m; sourceTree = "<group>"; };
-		0EA882D8175C25AF001100A7 /* OtherTrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTrustWaysViewController.h; sourceTree = "<group>"; };
-		0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTrustWaysViewController.m; sourceTree = "<group>"; };
+		0EA882D8175C25AF001100A7 /* OtherTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTrustIncreaseViewController.h; sourceTree = "<group>"; };
+		0EA882D9175C25AF001100A7 /* OtherTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTrustIncreaseViewController.m; sourceTree = "<group>"; };
 		0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherTrustWaysViewController.xib; sourceTree = "<group>"; };
 		0EA882E6175C25BB001100A7 /* LandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
 		0EA882E7175C25BB001100A7 /* LandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
@@ -368,8 +368,8 @@
 		CA8A1EE7175C8A6700E87946 /* MyBondsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBondsViewController.m; sourceTree = "<group>"; };
 		CA8AEF8C175ECC30000F37FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		CA8AEF90175ECCE2000F37FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CA8AEF92175ECD77000F37FA /* CreateTrustWaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTrustWaysViewController.h; sourceTree = "<group>"; };
-		CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrustWaysViewController.m; sourceTree = "<group>"; };
+		CA8AEF92175ECD77000F37FA /* CreateTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTrustIncreaseViewController.h; sourceTree = "<group>"; };
+		CA8AEF93175ECD77000F37FA /* CreateTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrustIncreaseViewController.m; sourceTree = "<group>"; };
 		CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTrustWaysViewController.xib; sourceTree = "<group>"; };
 		CA8AEF97175ECDA7000F37FA /* BondsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondsTableViewController.h; sourceTree = "<group>"; };
 		CA8AEF98175ECDA8000F37FA /* BondsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondsTableViewController.m; sourceTree = "<group>"; };
@@ -603,10 +603,10 @@
 			isa = PBXGroup;
 			children = (
 				CA8AEFEA17606C4A000F37FA /* AssetBacked */,
-				0EA882C9175C25AF001100A7 /* TrustWaysViewController.h */,
-				0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */,
-				CA8AEF92175ECD77000F37FA /* CreateTrustWaysViewController.h */,
-				CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */,
+				0EA882C9175C25AF001100A7 /* TrustIncreaseViewController.h */,
+				0EA882CA175C25AF001100A7 /* TrustIncreaseViewController.m */,
+				CA8AEF92175ECD77000F37FA /* CreateTrustIncreaseViewController.h */,
+				CA8AEF93175ECD77000F37FA /* CreateTrustIncreaseViewController.m */,
 				CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */,
 				0EA882D0175C25AF001100A7 /* FinancialIndicatorsViewController.h */,
 				0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */,
@@ -616,8 +616,8 @@
 				0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */,
 				0EA882D6175C25AF001100A7 /* BankSupportViewController.h */,
 				0EA882D7175C25AF001100A7 /* BankSupportViewController.m */,
-				0EA882D8175C25AF001100A7 /* OtherTrustWaysViewController.h */,
-				0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */,
+				0EA882D8175C25AF001100A7 /* OtherTrustIncreaseViewController.h */,
+				0EA882D9175C25AF001100A7 /* OtherTrustIncreaseViewController.m */,
 				0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */,
 			);
 			name = TrustIncrease;
@@ -1045,14 +1045,14 @@
 				0EA882AA175C2522001100A7 /* Utils.m in Sources */,
 				0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */,
 				0EA882C7175C25A3001100A7 /* NewBondViewController.m in Sources */,
-				0EA882DB175C25AF001100A7 /* TrustWaysViewController.m in Sources */,
+				0EA882DB175C25AF001100A7 /* TrustIncreaseViewController.m in Sources */,
 				0EA882DC175C25AF001100A7 /* BondBasicInfoViewController.m in Sources */,
 				0EA882DD175C25AF001100A7 /* BondRemarkViewController.m in Sources */,
 				0EA882DF175C25AF001100A7 /* FinancialIndicatorsViewController.m in Sources */,
 				0EA882E0175C25AF001100A7 /* GuaranteeViewController.m in Sources */,
 				0EA882E1175C25AF001100A7 /* EnhancementsViewController.m in Sources */,
 				0EA882E2175C25AF001100A7 /* BankSupportViewController.m in Sources */,
-				0EA882E3175C25AF001100A7 /* OtherTrustWaysViewController.m in Sources */,
+				0EA882E3175C25AF001100A7 /* OtherTrustIncreaseViewController.m in Sources */,
 				0EA882EE175C25BB001100A7 /* LandViewController.m in Sources */,
 				0EA882EF175C25BB001100A7 /* EstateViewController.m in Sources */,
 				0EA882F0175C25BB001100A7 /* EquityViewController.m in Sources */,
@@ -1061,7 +1061,7 @@
 				CA8A1E89175C3FD400E87946 /* BBCustomBackButtonViewController.m in Sources */,
 				CA8A1EE5175C808900E87946 /* BYQuickDialogWrappedViewController.m in Sources */,
 				CA8A1EE8175C8A6800E87946 /* MyBondsViewController.m in Sources */,
-				CA8AEF95175ECD77000F37FA /* CreateTrustWaysViewController.m in Sources */,
+				CA8AEF95175ECD77000F37FA /* CreateTrustIncreaseViewController.m in Sources */,
 				CA8AEF99175ECDA8000F37FA /* BondsTableViewController.m in Sources */,
 				CA8AEF9D175ECDBA000F37FA /* BondTableCell.m in Sources */,
 				CA8AEFA3175ED241000F37FA /* BondTableHeader.m in Sources */,

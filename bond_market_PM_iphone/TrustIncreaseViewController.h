@@ -1,5 +1,5 @@
 //
-//  TrustWaysViewController.h
+//  TrustIncreaseViewController.h
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-29.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrustWaysViewController : BYQuickDialogWrappedViewController
+@interface TrustIncreaseViewController : BYQuickDialogWrappedViewController
 
 @end

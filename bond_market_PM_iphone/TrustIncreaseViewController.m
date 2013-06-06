@@ -1,19 +1,19 @@
 //
-//  TrustWaysViewController.m
+//  TrustIncreaseViewController.m
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-29.
 //  Copyright (c) 2013年 bruce yang. All rights reserved.
 //
 
-#import "TrustWaysViewController.h"
+#import "TrustIncreaseViewController.h"
 
 
-@interface TrustWaysViewController ()
+@interface TrustIncreaseViewController ()
 
 @end
 
-@implementation TrustWaysViewController
+@implementation TrustIncreaseViewController
 
 
 - (void)viewDidLoad
