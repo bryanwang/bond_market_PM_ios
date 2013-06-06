@@ -20,12 +20,23 @@
 
 @implementation MyBondsViewController
 
+- (BondsTableViewController *)tableviewController
+{
+    if (_tableviewController == nil) {
+        _tableviewController = [[BondsTableViewController alloc]init];
+    }
+    
+    return _tableviewController;
+}
+
+
 - (FilterViewController *)filterViewController
 {
     if (_filterViewController == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
         _filterViewController = [[FilterViewController alloc]initWithRoot:root];
         
+        //刷选项选择后的callback
         __block MyBondsViewController *delegate = self;
         _filterViewController.filterCallback = ^ (id filter) {
             [delegate.tableviewController filterBy:(NSArray *)filter];
@@ -36,24 +47,15 @@
 }
 
 
-- (BondsTableViewController *)tableviewController
+- (void)filterMyBonds
 {
-    if (_tableviewController == nil) {
-        _tableviewController = [[BondsTableViewController alloc]init];
-    }
-    
-    return _tableviewController;
+    [self.navigationController pushViewController:self.filterViewController animated:YES];
 }
 
 - (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
 {
     NSUInteger index = [sender.selectedIndexes lastIndex];
     [self.tableviewController orderBy:(BondsOrderType)index];
-}
-
-- (void)filterMyBonds
-{
-    [self.navigationController pushViewController:self.filterViewController animated:YES];
 }
 
 - (void)setUpSegmentedControll
@@ -104,9 +106,7 @@
     [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.segmentedControl = segmentedControl;
     [self.view addSubview:segmentedControl];
-
 }
-
 
 
 - (void)setUpLeftNavigationButton
@@ -144,7 +144,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-
 }
 
 @end

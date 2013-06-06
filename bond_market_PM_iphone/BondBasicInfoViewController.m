@@ -41,7 +41,6 @@
 
 - (void)fetchCitiesWithProvincesIndex: (NSInteger)index
 {
-    
     @autoreleasepool {
         NSArray *cs = [Utils sharedInstance].arears[index][@"cities"];
         NSMutableArray *array = [NSMutableArray array];
@@ -81,13 +80,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    selectedProvince = @0;
+    selectedCity = @0;
   
     QSection *section = [self.root getSectionForIndex:0];
+    //地区选择器
     QPickerElement *element = (QPickerElement *)[section getVisibleElementForIndex:3];
     
     [self fetchProvinces];
-    [self fetchCitiesWithProvincesIndex:0];
-    [self fetchAreasWithCityIndex:0 AndProvincesIndex:0];
+    [self fetchCitiesWithProvincesIndex:[selectedProvince integerValue] ];
+    [self fetchAreasWithCityIndex:[selectedCity integerValue] AndProvincesIndex:[selectedProvince integerValue]];
     
     NSArray *provinces = [self.provinces copy];
     NSArray *cities = [self.cities copy];
@@ -123,6 +126,8 @@
     [super didReceiveMemoryWarning];
 }
 
+
+#pragma quick dialog ation control
 - (void)showTrustWays:(QElement *)element
 {
     CreateTrustWaysViewController *cc = [[CreateTrustWaysViewController alloc]initWithNibName:@"CreateTrustWaysViewController" bundle:nil];

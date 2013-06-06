@@ -14,10 +14,10 @@
 @property (strong, nonatomic) IBOutlet UIView *board45;
 @property (strong, nonatomic) IBOutlet UIView *board44;
 
-@property (weak, nonatomic) IBOutlet UILabel *totalEntryFee;
-@property (weak, nonatomic) IBOutlet UILabel *totalDeductFee;
-@property (weak, nonatomic) IBOutlet UILabel *totalEntryCount;
-@property (weak, nonatomic) IBOutlet UILabel *totalDeductCount;
+@property (weak, nonatomic) IBOutlet UILabel *inputCount;
+@property (weak, nonatomic) IBOutlet UILabel *inputBonus;
+@property (weak, nonatomic) IBOutlet UILabel *estimateCount;
+@property (weak, nonatomic) IBOutlet UILabel *estimateBonus;
 
 @end
 
@@ -47,15 +47,10 @@
         [self.view addSubview:self.board44];
     }
     
-//    NSArray* fontArrays = [[NSArray alloc] initWithArray:[UIFont familyNames]];
-//    for(NSString* temp in fontArrays) {
-//        NSLog(@"Font name  = %@", temp);
-//    }
-    
-    [self.totalDeductFee setFont:[UIFont BertholdFontOfSize:36]];
-    [self.totalEntryFee setFont:[UIFont BertholdFontOfSize:36]];
-    [self.totalEntryCount setFont:[UIFont BertholdFontOfSize:22]];
-    [self.totalDeductCount setFont:[UIFont BertholdFontOfSize:22]];
+    [self.inputBonus setFont:[UIFont BertholdFontOfSize:36]];
+    [self.estimateBonus setFont:[UIFont BertholdFontOfSize:36]];
+    [self.estimateCount setFont:[UIFont BertholdFontOfSize:22]];
+    [self.inputCount setFont:[UIFont BertholdFontOfSize:22]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,7 +73,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -153,7 +153,7 @@
 								<string key="NSFrame">{{20, 70}, {98, 21}}</string>
 								<reference key="NSSuperview" ref="661371333"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="65303942"/>
+								<reference key="NSNextKeyView" ref="861351242"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="58262543"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -178,7 +178,7 @@
 								<string key="NSFrame">{{170, 70}, {98, 21}}</string>
 								<reference key="NSSuperview" ref="661371333"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="35113034"/>
+								<reference key="NSNextKeyView" ref="555870219"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="58262543"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -278,10 +278,10 @@
 							<object class="IBUILabel" id="65303942">
 								<reference key="NSNextResponder" ref="661371333"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{34, 87}, {142, 43}}</string>
+								<string key="NSFrame">{{34, 87}, {128, 43}}</string>
 								<reference key="NSSuperview" ref="661371333"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="861351242"/>
+								<reference key="NSNextKeyView" ref="943112818"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -303,12 +303,13 @@
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUILabel" id="683967685">
+							<object class="IBUILabel" id="555870219">
 								<reference key="NSNextResponder" ref="661371333"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 102}, {17, 21}}</string>
 								<reference key="NSSuperview" ref="661371333"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="65303942"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -329,6 +330,7 @@
 								<string key="NSFrame">{{184, 87}, {142, 43}}</string>
 								<reference key="NSSuperview" ref="661371333"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -343,12 +345,13 @@
 								<reference key="IBUIFont" ref="56152215"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUILabel" id="556021132">
+							<object class="IBUILabel" id="943112818">
 								<reference key="NSNextResponder" ref="661371333"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{170, 102}, {17, 21}}</string>
 								<reference key="NSSuperview" ref="661371333"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="35113034"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -555,6 +558,7 @@
 						<string key="NSFrame">{{172, 223}, {90, 80}}</string>
 						<reference key="NSSuperview" ref="519475802"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -627,6 +631,7 @@
 						<string key="NSFrame">{{210, 120}, {90, 80}}</string>
 						<reference key="NSSuperview" ref="578205588"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -802,35 +807,35 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">totalEntryFee</string>
+						<string key="label">inputBonus</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="65303942"/>
 					</object>
-					<int key="connectionID">52</int>
+					<int key="connectionID">60</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">totalDeductFee</string>
+						<string key="label">estimateBonus</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="35113034"/>
 					</object>
-					<int key="connectionID">55</int>
+					<int key="connectionID">61</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">totalEntryCount</string>
+						<string key="label">inputCount</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="820234337"/>
 					</object>
-					<int key="connectionID">56</int>
+					<int key="connectionID">64</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">totalDeductCount</string>
+						<string key="label">estimateCount</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="753275561"/>
 					</object>
-					<int key="connectionID">57</int>
+					<int key="connectionID">65</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -911,10 +916,10 @@
 							<reference ref="1049770189"/>
 							<reference ref="668499547"/>
 							<reference ref="907613044"/>
-							<reference ref="683967685"/>
+							<reference ref="555870219"/>
 							<reference ref="65303942"/>
 							<reference ref="35113034"/>
-							<reference ref="556021132"/>
+							<reference ref="943112818"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -1071,12 +1076,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">58</int>
-						<reference key="object" ref="683967685"/>
+						<reference key="object" ref="555870219"/>
 						<reference key="parent" ref="661371333"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
-						<reference key="object" ref="556021132"/>
+						<reference key="object" ref="943112818"/>
 						<reference key="parent" ref="661371333"/>
 					</object>
 				</array>
@@ -1134,7 +1139,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">59</int>
+			<int key="maxID">65</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1166,10 +1171,10 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="board44">UIView</string>
 						<string key="board45">UIView</string>
-						<string key="totalDeductCount">UILabel</string>
-						<string key="totalDeductFee">UILabel</string>
-						<string key="totalEntryCount">UILabel</string>
-						<string key="totalEntryFee">UILabel</string>
+						<string key="estimateBonus">UILabel</string>
+						<string key="estimateCount">UILabel</string>
+						<string key="inputBonus">UILabel</string>
+						<string key="inputCount">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="board44">
@@ -1180,20 +1185,20 @@
 							<string key="name">board45</string>
 							<string key="candidateClassName">UIView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="totalDeductCount">
-							<string key="name">totalDeductCount</string>
+						<object class="IBToOneOutletInfo" key="estimateBonus">
+							<string key="name">estimateBonus</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="totalDeductFee">
-							<string key="name">totalDeductFee</string>
+						<object class="IBToOneOutletInfo" key="estimateCount">
+							<string key="name">estimateCount</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="totalEntryCount">
-							<string key="name">totalEntryCount</string>
+						<object class="IBToOneOutletInfo" key="inputBonus">
+							<string key="name">inputBonus</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="totalEntryFee">
-							<string key="name">totalEntryFee</string>
+						<object class="IBToOneOutletInfo" key="inputCount">
+							<string key="name">inputCount</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 					</dictionary>

@@ -78,23 +78,16 @@
     }
 }
 
-- (void)pushNotificationViewContoller: (NSNotification *)notification
+- (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
 {
-    NSDictionary *info = notification.userInfo;
-    UIViewController *vc = [info objectForKey:BYCONTROLLERKEY];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)registerNotification
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationViewContoller:) name:BYPUSHVIEWCONTOLLERNOTIFICATION object:nil];
+    NSUInteger index = [sender.selectedIndexes lastIndex];
+    [self changeFormDetail: index];
 }
 
 - (void)setUpSegmentedController
 {
     CGRect aRect = CGRectMake(0.0f, 0.0f, APP_SCREEN_WIDTH, 44.0f);
     AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect];
-//    [segmentedControl setContentEdgeInsets:UIEdgeInsetsMake(2.0, 2.0, 3.0, 2.0)];
     [segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
 
     UIImage *backgroundImage = [UIImage imageNamed:@"sort-bar"];
@@ -140,6 +133,19 @@
     [self.view addSubview:segmentedControl];
 }
 
+
+- (void)pushNotificationViewContoller: (NSNotification *)notification
+{
+    NSDictionary *info = notification.userInfo;
+    UIViewController *vc = [info objectForKey:BYCONTROLLERKEY];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)registerNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationViewContoller:) name:BYPUSHVIEWCONTOLLERNOTIFICATION object:nil];
+}
+
 - (void)readTablesJsonValues
 {
     NSMutableDictionary *basic_dic = [[NSMutableDictionary alloc] init];
@@ -147,12 +153,13 @@
     [self.bc.root fetchValueUsingBindingsIntoObject:basic_dic];
 
     NSString *userId = [LoginManager sharedInstance].fetchUserId;
-//    NSDictionary *newbondJSON =
     NSError *error = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:basic_dic options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"  > the json string: %@", jsonString);
+    if (error)
+        //todo:
+        return;
     
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
     
     [[PMHttpClient shareIntance] postPath:CREATE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -161,10 +168,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // todo:
     }];
-    
-    NSLog(@"%@", basic_dic);
-    //todo add ex values
-    NSInteger i = 0;
 }
 
 - (void)setUpLeftNavigationButton
@@ -173,7 +176,6 @@
     ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     [((UIButton *)(item.customView)) setTitle:@"完成" forState:UIControlStateNormal];
     [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
-    
     
     self.navigationItem.rightBarButtonItem = item;
 }
@@ -190,22 +192,16 @@
 
     [self.segmentedControl setSelectedIndex:0];
     
+    //bug: 延迟加载 table 信息
     __block NewBondViewController* nc = self;
     RunBlockAfterDelay(0.35f, ^{
         [nc changeFormDetail:0];
     });
 }
 
-- (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
-{
-    NSUInteger index = [sender.selectedIndexes lastIndex];
-    [self changeFormDetail: index];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -18,8 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIView *tagstatus;
 @property (weak, nonatomic) IBOutlet UIView *sepview;
 
-@property (weak, nonatomic) IBOutlet UILabel *entryFee;
-@property (weak, nonatomic) IBOutlet UILabel *deductFee;
+@property (weak, nonatomic) IBOutlet UILabel *inputBonus;
+@property (weak, nonatomic) IBOutlet UILabel *estimateBonus;
 
 @end
 
@@ -36,8 +36,8 @@
         self.title.text = info[@"ShortTitle"];
         self.type.text = info[@"Type"];
         
-        self.entryFee.text = [NSString stringWithFormat:@"%@", inputInfo[@"InputBonus"]];
-        self.deductFee.text = [NSString stringWithFormat:@"%@", inputInfo[@"EstimateBonus"]];
+        self.inputBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"InputBonus"]];
+        self.estimateBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"EstimateBonus"]];
         
         if (![owner[@"Name"] isEqual: NSLocalizedString(@"no owner", "")]) {
              self.captain.text = owner[@"Name"];
@@ -46,6 +46,7 @@
              [self.iconcaptain removeFromSuperview];
          }
         
+        //status
         switch ([info[@"Status"] integerValue]) {
             case Auditing:
                 self.status.image = [UIImage imageNamed:@"status-0"];

@@ -32,8 +32,7 @@
     NSDictionary* dict = [NSDictionary dictionaryWithObject:tc forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
                                                         object:self
-                                                      userInfo:dict];
-}
+                                                      userInfo:dict];}
 
 - (void)setUpLeftNavigationButton
 {
@@ -41,7 +40,6 @@
     ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     [((UIButton *)(item.customView)) setTitle:@"新增" forState:UIControlStateNormal];
     [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
-    
     
     self.navigationItem.rightBarButtonItem = item;
 }

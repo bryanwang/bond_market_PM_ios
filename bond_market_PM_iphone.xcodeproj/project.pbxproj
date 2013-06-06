@@ -181,6 +181,7 @@
 		CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDC175F00D6000F37FA /* table-section@2x.png */; };
 		CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFE0175F2D00000F37FA /* FilterViewController.m */; };
 		CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */; };
+		CA8AEFE917606BB4000F37FA /* no-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE817606BB4000F37FA /* no-item@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -408,6 +409,7 @@
 		CA8AEFDF175F2D00000F37FA /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		CA8AEFE0175F2D00000F37FA /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BondFilterDataBuilder.json; sourceTree = "<group>"; };
+		CA8AEFE817606BB4000F37FA /* no-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,10 +478,11 @@
 		0EA88273175C237A001100A7 /* bond_market_PM_iphone */ = {
 			isa = PBXGroup;
 			children = (
+				0EA8829A175C250B001100A7 /* Bonds */,
+				CA8AEFE617606882000F37FA /* Projects */,
 				CA8AEFD5175EF865000F37FA /* Resource */,
 				0EA8829C175C2517001100A7 /* Utils */,
 				0EA8829B175C250F001100A7 /* DataBuilder */,
-				0EA8829A175C250B001100A7 /* Bonds */,
 				0EA88291175C24DF001100A7 /* AppDelegate.h */,
 				0EA88292175C24DF001100A7 /* AppDelegate.m */,
 				CA8A1E30175C343B00E87946 /* LoginViewController.h */,
@@ -536,6 +539,7 @@
 		0EA8829B175C250F001100A7 /* DataBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				CA8AEFE7176068A0000F37FA /* Projects */,
 				0EA882AB175C253B001100A7 /* Bonds */,
 			);
 			name = DataBuilder;
@@ -585,14 +589,25 @@
 		0EA882C8175C25A7001100A7 /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				0EA882E5175C25B3001100A7 /* TrustWays */,
-				0EA882C9175C25AF001100A7 /* TrustWaysViewController.h */,
-				0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */,
+				0EA882E5175C25B3001100A7 /* TrustIncrease */,
 				0EA882CB175C25AF001100A7 /* BondBasicInfoViewController.h */,
 				0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */,
 				0EA882CD175C25AF001100A7 /* BondRemarkViewController.h */,
 				0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */,
 				0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		0EA882E5175C25B3001100A7 /* TrustIncrease */ = {
+			isa = PBXGroup;
+			children = (
+				CA8AEFEA17606C4A000F37FA /* AssetBacked */,
+				0EA882C9175C25AF001100A7 /* TrustWaysViewController.h */,
+				0EA882CA175C25AF001100A7 /* TrustWaysViewController.m */,
+				CA8AEF92175ECD77000F37FA /* CreateTrustWaysViewController.h */,
+				CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */,
+				CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */,
 				0EA882D0175C25AF001100A7 /* FinancialIndicatorsViewController.h */,
 				0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */,
 				0EA882D2175C25AF001100A7 /* GuaranteeViewController.h */,
@@ -605,25 +620,7 @@
 				0EA882D9175C25AF001100A7 /* OtherTrustWaysViewController.m */,
 				0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */,
 			);
-			name = Form;
-			sourceTree = "<group>";
-		};
-		0EA882E5175C25B3001100A7 /* TrustWays */ = {
-			isa = PBXGroup;
-			children = (
-				CA8AEF92175ECD77000F37FA /* CreateTrustWaysViewController.h */,
-				CA8AEF93175ECD77000F37FA /* CreateTrustWaysViewController.m */,
-				CA8AEF94175ECD77000F37FA /* CreateTrustWaysViewController.xib */,
-				0EA882E6175C25BB001100A7 /* LandViewController.h */,
-				0EA882E7175C25BB001100A7 /* LandViewController.m */,
-				0EA882E8175C25BB001100A7 /* EstateViewController.h */,
-				0EA882E9175C25BB001100A7 /* EstateViewController.m */,
-				0EA882EA175C25BB001100A7 /* EquityViewController.h */,
-				0EA882EB175C25BB001100A7 /* EquityViewController.m */,
-				0EA882EC175C25BB001100A7 /* ReceivablesViewController.h */,
-				0EA882ED175C25BB001100A7 /* ReceivablesViewController.m */,
-			);
-			name = TrustWays;
+			name = TrustIncrease;
 			sourceTree = "<group>";
 		};
 		0EA88303175C2C00001100A7 /* Products */ = {
@@ -638,6 +635,7 @@
 		CA8A1E35175C35D500E87946 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				CA8AEFE817606BB4000F37FA /* no-item@2x.png */,
 				CA8AEFDB175F00D6000F37FA /* table-section.png */,
 				CA8AEFDC175F00D6000F37FA /* table-section@2x.png */,
 				CA8A1ED7175C704D00E87946 /* sort-bar.png */,
@@ -759,6 +757,35 @@
 				CA8AEFD7175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf */,
 			);
 			name = Font;
+			sourceTree = "<group>";
+		};
+		CA8AEFE617606882000F37FA /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		CA8AEFE7176068A0000F37FA /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		CA8AEFEA17606C4A000F37FA /* AssetBacked */ = {
+			isa = PBXGroup;
+			children = (
+				0EA882E6175C25BB001100A7 /* LandViewController.h */,
+				0EA882E7175C25BB001100A7 /* LandViewController.m */,
+				0EA882E8175C25BB001100A7 /* EstateViewController.h */,
+				0EA882E9175C25BB001100A7 /* EstateViewController.m */,
+				0EA882EA175C25BB001100A7 /* EquityViewController.h */,
+				0EA882EB175C25BB001100A7 /* EquityViewController.m */,
+				0EA882EC175C25BB001100A7 /* ReceivablesViewController.h */,
+				0EA882ED175C25BB001100A7 /* ReceivablesViewController.m */,
+			);
+			name = AssetBacked;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -968,6 +995,7 @@
 				CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */,
 				CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */,
 				CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */,
+				CA8AEFE917606BB4000F37FA /* no-item@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
