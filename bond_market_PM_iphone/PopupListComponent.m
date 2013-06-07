@@ -13,11 +13,9 @@
 #define DEFAULT_FONT         [UIFont systemFontOfSize:16]
 #define DEFAULT_FONT_COLOR         RGBCOLOR(255, 255, 255)
 #define DEFAULT_FONT_COLOR_SELECTED  RGBCOLOR(221, 221, 221)
-#define DEFAULT_BUTTON_SPACING      10
-#define DEFAULT_TEXT_PADDING_H      10
-#define DEFAULT_TEXT_PADDING_V      10
-#define DEFAULT_iMAGE_PADDING_H  10
-#define DEFAULT_iMAGE_PADDING_V  10
+#define DEFAULT_ITEM_SPACING_H      20
+#define DEFAULT_ITEM_SPACING_V      10
+#define DEFAULT_TEXT_AND_IMAGE_SAPCING 20
 
 @implementation PopupListComponentItem
 
@@ -53,11 +51,10 @@
         self.font = DEFAULT_FONT;
         self.textColor = DEFAULT_FONT_COLOR;
         self.textHilightedColor = DEFAULT_FONT_COLOR_SELECTED;
-        self.buttonSpacing = DEFAULT_BUTTON_SPACING;
-        self.textPaddingHorizontal = DEFAULT_TEXT_PADDING_H;
-        self.textPaddingVertical = DEFAULT_TEXT_PADDING_V;
-        self.imagePaddingHorizontal = DEFAULT_iMAGE_PADDING_H;
-        self.imagePaddingVertical = DEFAULT_iMAGE_PADDING_V;
+        self.itemSpacingHorizontal = DEFAULT_ITEM_SPACING_H;
+        self.itemSpacingVertica = DEFAULT_ITEM_SPACING_V;
+        self.textAndImageSpacing = DEFAULT_TEXT_AND_IMAGE_SAPCING;
+        
         self.alignment = UIControlContentHorizontalAlignmentCenter;
         self.allowedArrowDirections = UIPopoverArrowDirectionUp;
     }
@@ -101,7 +98,6 @@
               withButtonMaxSize: (CGSize) buttonFrameSize
 {
     CGRect frame = CGRectMake(0, 0, buttonFrameSize.width, buttonFrameSize.height);
-    
     CGRect buttonFrame = CGRectMake(xOffset, yoffset, frame.size.width, frame.size.height);
     UIButton *button = [[UIButton alloc] initWithFrame:buttonFrame];
     
@@ -109,7 +105,6 @@
         [button setImage:item.image forState:UIControlStateNormal];
     }
     if (item.caption) {
-        
         UIColor* textColor = self.textColor;
         UIColor* textColorActive = self.textHilightedColor;
         
@@ -120,20 +115,11 @@
         button.contentHorizontalAlignment =  self.alignment;
     }
     
-    UIEdgeInsets imageInsets = UIEdgeInsetsMake(self.imagePaddingVertical, self.imagePaddingHorizontal,
-                                                self.imagePaddingVertical, self.imagePaddingHorizontal);
-    UIEdgeInsets titleInsets = UIEdgeInsetsMake(self.textPaddingVertical, self.textPaddingHorizontal,
-                                                self.textPaddingVertical, self.textPaddingHorizontal);
-    if (item.image) {
-        button.imageEdgeInsets = imageInsets;
+    button.imageEdgeInsets = UIEdgeInsetsMake(self.itemSpacingVertica, self.itemSpacingHorizontal, self.itemSpacingVertica, self.itemSpacingHorizontal);
+    button.titleEdgeInsets = UIEdgeInsetsMake(self.itemSpacingVertica, self.itemSpacingHorizontal, self.itemSpacingVertica, self.itemSpacingHorizontal);
+    if (item.caption && item.image) {
+         [button setImageEdgeInsets:UIEdgeInsetsMake(self.itemSpacingVertica, self.itemSpacingHorizontal-self.textAndImageSpacing, self.itemSpacingVertica ,self.itemSpacingHorizontal)];
     }
-    if (item.caption) {
-        if (item.image) {
-            titleInsets.left = titleInsets.left + imageInsets.left + imageInsets.right;
-        }
-        button.titleEdgeInsets = titleInsets;
-    }
-    
     
     button.tag = item.itemId;
     [button addTarget:self action:@selector(choosedItemCallback:) forControlEvents:UIControlEventTouchUpInside];
@@ -144,43 +130,26 @@
 
 - (CGSize)calculateNeededButtonSize: (NSArray*) popupListComponentItems
 {
-    CGSize globalMax = CGSizeMake(0, 0);
+    CGSize globalMax = CGSizeZero;
     
     for (PopupListComponentItem* item in popupListComponentItems) {
-        
-        CGSize imageSize = CGSizeMake(0, 0);
-        CGSize textSize = CGSizeMake(0, 0);
-        
-        if (item.image) {
-            CGSize size = [item.image size];
-            NSInteger x = size.width  + 2*self.imagePaddingHorizontal;
-            NSInteger y = size.height + 2*self.imagePaddingVertical;
-            imageSize.width = x;
-            imageSize.height = y;
-        }
-        
-        if (item.caption) {
-            CGSize size;
-            if (item.caption.length < 3)
-                size = [@"MM." sizeWithFont: self.font];
-            else
-                size = [item.caption sizeWithFont: self.font];
-            
-            NSInteger x = size.width  + 2*self.textPaddingHorizontal;
-            NSInteger y = size.height + 2*self.textPaddingVertical;
-            textSize.width = x;
-            textSize.height = y;
-        }
-        
-        CGSize itemSize;
+        CGSize itemSize = CGSizeZero;
+        CGSize textSize = CGSizeZero;
+        CGSize imageSize = CGSizeZero;
+        if (item.image)
+            imageSize = [item.image size];
+        if (item.caption)
+            textSize = [item.caption sizeWithFont: self.font];
+ 
         if (item.image && item.caption) {
-            itemSize = CGSizeMake(imageSize.width + textSize.width, MAX(imageSize.height, textSize.height));
+            itemSize = CGSizeMake(imageSize.width + textSize.width + self.textAndImageSpacing + 2*self.itemSpacingHorizontal,
+                                  MAX(imageSize.height, textSize.height) + 2*self.itemSpacingVertica);
         }
         else if (item.image) {
-            itemSize = imageSize;
+            itemSize = CGSizeMake(imageSize.width + 2 * self.itemSpacingHorizontal, imageSize.height + 2*self.itemSpacingVertica);
         }
         else {
-            itemSize = textSize;
+            itemSize = CGSizeMake(textSize.width + 2 * self.itemSpacingHorizontal, textSize.height + 2*self.itemSpacingVertica);
         }
         
         globalMax.width  = MAX(itemSize.width, globalMax.width);
@@ -213,11 +182,11 @@
         }
         [buttonArray addObject:option];
         
-        yoffset += size.height + self.buttonSpacing;
+        yoffset += size.height;
     }
     
     UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0, 0, maxX, maxY)];
-    for (int i=0; i<numButtons; i++) {
+    for (int i = 0; i < numButtons; i++) {
         UIButton* b = (UIButton*) [buttonArray objectAtIndex:i];
         [view addSubview:b];
     }

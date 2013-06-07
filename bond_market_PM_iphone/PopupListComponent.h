@@ -15,11 +15,9 @@
 
 @interface PopupListComponent : NSObject
 
-@property int textPaddingHorizontal;
-@property int textPaddingVertical;
-@property int imagePaddingHorizontal;
-@property int imagePaddingVertical;
-@property int buttonSpacing;
+@property float itemSpacingHorizontal;
+@property float itemSpacingVertica;
+@property float textAndImageSpacing;
 
 @property (nonatomic, strong) UIFont* font;
 @property (nonatomic, strong) UIColor* textColor;
