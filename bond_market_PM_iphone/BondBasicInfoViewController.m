@@ -20,12 +20,101 @@
 @end
 
 @implementation BondBasicInfoViewController {
-    QElement *areaElement;
     NSNumber *selectedProvince;
     NSNumber *selectedCity;
 }
 
 
+#pragma public methods
+- (void)bindObject: (NSDictionary *)obj
+{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    NSMutableDictionary *info = [obj mutableCopy];
+    //处理所有数字
+    [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (obj != [NSNull null]) {
+            info[key] = [NSString stringWithFormat:@"%@", obj];
+        }
+    }];
+    
+    //询价有效期
+    if(info[@"QueryFrom"] && ![info[@"QueryFrom"] isEqual:[NSNull null]])
+        info[@"QueryFrom"] = [dateFormatter dateFromString: info[@"QueryFrom"] ];
+    
+    //询价有效期截止
+    if(info[@"QueryTo"] && ![info[@"QueryTo"] isEqual:[NSNull null]])
+        info[@"QueryTo"] = [dateFormatter dateFromString: info[@"QueryTo"] ];
+    
+    //利率期间
+    if (info[@"InterestFrom"] && ![info[@"InterestFrom"] isEqual:[NSNull null]]) {
+        info[@"Interest"] = [NSString stringWithFormat:@"%@%%\t%@%%", info[@"InterestFrom"], info[@"InterestTo"]];
+    }
+    
+    //区域
+    if (info[@"AreaProvince"] && ![info[@"AreaProvince"] isEqual:[NSNull null]]) {
+        info[@"Area"] = [NSString stringWithFormat:@"%@\t%@\t%@", info[@"AreaProvince"], info[@"AreaCity"], info[@"AreaDistrict"]];
+    }
+    
+    [self.quickDialogTableView.root bindToObject:info];
+}
+
+- (void)setElementsEnable
+{
+    for(QSection *section in self.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            element.enabled = YES;
+        }
+    }
+ }
+
+- (void)setElementsDisable
+{
+    for(QSection *section in self.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            if (![element.key isEqual: @"TrustIncrease"])
+                element.enabled = NO;
+        }
+    }
+}
+
+- (NSMutableDictionary *)fetchData
+{
+    NSMutableDictionary *newbondInfo = [NSMutableDictionary dictionary];
+    [self.root fetchValueUsingBindingsIntoObject:newbondInfo];
+    
+    // 处理所有日期字段的格式
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    newbondInfo[@"QueryFrom"] = [dateFormatter stringFromDate:newbondInfo[@"QueryFrom"]];
+    newbondInfo[@"QueryTo"] = [dateFormatter stringFromDate:newbondInfo[@"QueryTo"]];
+    
+    // 处理省市区字段
+    QPickerElement *areaElt = (QPickerElement *)[self.root elementWithKey:@"Area"];
+    NSArray *areaArray = [areaElt.value componentsSeparatedByString:@"\t"];
+    if (areaArray.count > 0) {
+        newbondInfo[@"AreaProvince"] = areaArray[0];
+        newbondInfo[@"AreaCity"] = areaArray[1];
+        newbondInfo[@"AreaDistrict"] = areaArray[2];
+    }
+    
+    // 处理利率区间
+    QPickerElement *interestEl = (QPickerElement *)[self.root elementWithKey:@"Interest"];
+    NSArray *interestArray = [interestEl.value componentsSeparatedByString:@"\t"];
+    if (interestArray.count > 0) {
+        newbondInfo[@"InterestFrom"] = [interestArray[0] substringToIndex:[interestArray[0] length] - 1];
+        newbondInfo[@"InterestTo"] = [interestArray[1] substringToIndex:[interestArray[1] length] - 1];
+    }
+    
+    return newbondInfo;
+}
+
+
+#pragma private methods
 - (void)fetchProvinces
 {
     @autoreleasepool {

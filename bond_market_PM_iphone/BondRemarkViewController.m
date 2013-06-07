@@ -13,6 +13,26 @@
 
 @implementation BondRemarkViewController
 
+- (void)bindObject:(NSString *)remark
+{
+    self.textview.text = remark;
+}
+
+- (void)setElementsDisable
+{
+    self.textview.userInteractionEnabled = NO;
+}
+
+- (void)setElementsEnable
+{
+    self.textview.userInteractionEnabled = YES;
+}
+
+- (NSString *)fetchData
+{
+    return self.textview.text;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,11 +47,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-- (NSString *)remarkText
-{
-    return self.textview.text;
 }
 
 @end

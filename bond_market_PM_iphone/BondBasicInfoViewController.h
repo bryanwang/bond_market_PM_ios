@@ -9,4 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface BondBasicInfoViewController : BYBaseQuickDialogViewController
+
+- (void)bindObject: (NSDictionary *)obj;
+- (void)setElementsEnable;
+- (void)setElementsDisable;
+- (NSMutableDictionary *)fetchData;
+
 @end

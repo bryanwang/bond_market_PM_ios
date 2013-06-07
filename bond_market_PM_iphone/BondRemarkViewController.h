@@ -11,5 +11,10 @@
 
 @interface BondRemarkViewController : BBCustomBackButtonViewController
 @property (weak, nonatomic) IBOutlet HDTextView *textview;
-- (NSString *)remarkText;
+
+- (void)bindObject: (NSString *)remark;
+- (void)setElementsEnable;
+- (void)setElementsDisable;
+- (NSString *)fetchData;
+
 @end

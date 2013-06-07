@@ -71,39 +71,15 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (NSMutableDictionary *)buildNewbondInfo
 {
-    NSMutableDictionary *newbondInfo = [[NSMutableDictionary alloc] init];
-    [self.bc.root fetchValueUsingBindingsIntoObject:newbondInfo];
-    
+    NSMutableDictionary *newbondInfo = [self.bc fetchData];;
+    newbondInfo[@"FinanceIndex"] = [self.fc fetchData];
+    newbondInfo[@"Remark"] = [self.rc fetchData];
+
     //如果self.bondInfo 不为空 则 操作为update
     //如果self.bondInfo 为空 则 操作为create
     if (self.bondInfo)
         newbondInfo[@"Id"] = self.bondInfo[@"Id"];
-    
-    newbondInfo[@"FinanceIndex"] = [self.fc buildFinaceIndexJson];
-    newbondInfo[@"Remark"] = [self.rc remarkText];
-    
-    // 处理所有日期字段的格式
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-    newbondInfo[@"QueryFrom"] = [dateFormatter stringFromDate:newbondInfo[@"QueryFrom"]];
-    newbondInfo[@"QueryTo"] = [dateFormatter stringFromDate:newbondInfo[@"QueryTo"]];
-    
-    // 处理省市区字段
-    QPickerElement *areaElement = (QPickerElement *)[self.bc.root elementWithKey:@"Area"];
-    NSArray *areaArray = [areaElement.value componentsSeparatedByString:@"\t"];
-    if (areaArray.count > 0) {
-        newbondInfo[@"AreaProvince"] = areaArray[0];
-        newbondInfo[@"AreaCity"] = areaArray[1];
-        newbondInfo[@"AreaDistrict"] = areaArray[2];
-    }
-    
-    // 处理利率区间
-    QPickerElement *interestElement = (QPickerElement *)[self.bc.root elementWithKey:@"Interest"];
-    NSArray *interestArray = [interestElement.value componentsSeparatedByString:@"\t"];
-    if (interestArray.count > 0) {
-        newbondInfo[@"InterestFrom"] = [interestArray[0] substringToIndex:[interestArray[0] length] - 1];
-        newbondInfo[@"InterestTo"] = [interestArray[1] substringToIndex:[interestArray[1] length] - 1];
-    }
+
     return newbondInfo;
 }
 
@@ -112,10 +88,11 @@ typedef enum BondEditStaus: NSUInteger {
     if (self.popComponent) {
         [self.popComponent hide];
     }
-    
     PopupListComponent *popupList = [[PopupListComponent alloc] init];
+    self.popComponent = popupList;
+    
+    //callbacks
     popupList.choosedItemCallback = ^(int itemid) {
-        NSLog(@"%d", itemid);
         switch (itemid) {
             case 0:
                 [ALToastView toastInView:APP_WINDOW withText:@"进入编辑状态"];
@@ -130,12 +107,11 @@ typedef enum BondEditStaus: NSUInteger {
         NSLog(@"dismissed");
     };
     
+    //items
     [popupList showAnchoredTo:sender withItems:@[
-     [[PopupListComponentItem alloc] initWithCaption:@"修改" image:[UIImage imageNamed:@"operate-edit"] itemId:0],
-     [[PopupListComponentItem alloc] initWithCaption:@"删除" image:[UIImage imageNamed:@"operate-delete"] itemId:1]
+        [[PopupListComponentItem alloc] initWithCaption:@"修改" image:[UIImage imageNamed:@"operate-edit"] itemId:0],
+        [[PopupListComponentItem alloc] initWithCaption:@"删除" image:[UIImage imageNamed:@"operate-delete"] itemId:1]
      ]];
-    
-    self.popComponent = popupList;
 }
 
 - (void)showDeleteAlertView
@@ -173,8 +149,9 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (void)updateBond
 {
-    NSMutableDictionary *newbondInfo = [self buildNewbondInfo];
+    [self hideKeyBoard];
     
+    NSMutableDictionary *newbondInfo = [self buildNewbondInfo];
     // 简称 这个字段必填
     if ([newbondInfo[@"ShortTitle"] length] == 0) {
         [ALToastView toastInView:self.view withText:@"债券简称必填"];
@@ -184,6 +161,7 @@ typedef enum BondEditStaus: NSUInteger {
     NSError *error = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@">json string: %@", jsonString);
     
     NSString *userId = [LoginManager sharedInstance].fetchUserId;
     NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
@@ -201,46 +179,17 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (void)setElementsDisabled
 {
-    for(QSection *section in self.bc.quickDialogTableView.root.sections)
-    {
-        for(QElement *element in section.elements)
-        {
-            if (![element.key isEqual: @"TrustIncrease"])
-                element.enabled = NO;
-        }
-    }
-    
-    for(QSection *section in self.fc.quickDialogTableView.root.sections)
-    {
-        for(QElement *element in section.elements)
-        {
-            element.enabled = NO;
-        }
-    }
-    
-    self.rc.textview.userInteractionEnabled = NO;
+    [self.bc setElementsDisable];
+    [self.fc setElementsDisable];
+    [self.rc setElementsDisable];
 }
 
 
 - (void)setElementsEnable
 {
-    for(QSection *section in self.bc.quickDialogTableView.root.sections)
-    {
-        for(QElement *element in section.elements)
-        {
-            element.enabled = YES;
-        }
-    }
-    
-    for(QSection *section in self.fc.quickDialogTableView.root.sections)
-    {
-        for(QElement *element in section.elements)
-        {
-            element.enabled = YES;
-        }
-    }
-    
-    self.rc.textview.userInteractionEnabled = YES;
+    [self.bc setElementsEnable];
+    [self.fc setElementsEnable];
+    [self.rc setElementsEnable];
 }
 
 
@@ -399,45 +348,13 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (void)setUpTableView
 {
-    [self.view addSubview:self.bc.view];
-    [self.view addSubview:self.fc.view];
-    [self.view addSubview:self.rc.view];
-    [self.view bringSubviewToFront:self.bc.view];
-    
     if (self.bondInfo) {
         self.title = @"新债详情";
         
-        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-        
-        NSMutableDictionary *info = [self.bondInfo mutableCopy];
-        //处理所有数字
-        [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if (obj != [NSNull null]) {
-                info[key] = [NSString stringWithFormat:@"%@", obj];
-            }
-        }];
-        
-        //询价有效期
-        if(info[@"QueryFrom"] && ![info[@"QueryFrom"] isEqual:[NSNull null]])
-           info[@"QueryFrom"] = [dateFormatter dateFromString: info[@"QueryFrom"] ];
-        
-        //询价有效期截止
-        if(info[@"QueryTo"] && ![info[@"QueryTo"] isEqual:[NSNull null]])
-            info[@"QueryTo"] = [dateFormatter dateFromString: info[@"QueryTo"] ];
-        
-        //利率期间
-        if (info[@"InterestFrom"] && ![info[@"InterestFrom"] isEqual:[NSNull null]]) {
-            info[@"Interest"] = [NSString stringWithFormat:@"%@%%\t%@%%", info[@"InterestFrom"], info[@"InterestTo"]];
-        }
+        [self.bc bindObject:self.bondInfo];
+        [self.fc bindObject:self.bondInfo[@"FinanceIndex"]];
+        [self.rc bindObject:self.bondInfo[@"Remark"]];
 
-        //区域
-        if (info[@"AreaProvince"] && ![info[@"AreaProvince"] isEqual:[NSNull null]]) {
-            info[@"Area"] = [NSString stringWithFormat:@"%@\t%@\t%@", info[@"AreaProvince"], info[@"AreaCity"], info[@"AreaDistrict"]];
-        }
-        
-        [self.bc.quickDialogTableView.root bindToObject:info];
-        [self.fc.quickDialogTableView.root bindToObject:info];
         [self setElementsDisabled];
     }
 }
@@ -458,6 +375,10 @@ typedef enum BondEditStaus: NSUInteger {
     //bug: 延迟加载 table 信息
     __block NewBondViewController* nc = self;
     RunBlockAfterDelay(0.35f, ^{
+        [self.view addSubview:self.bc.view];
+        [self.view addSubview:self.fc.view];
+        [self.view addSubview:self.rc.view];
+        
         [nc changeFormDetail:0];
     });
 }
