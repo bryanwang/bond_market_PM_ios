@@ -34,7 +34,7 @@
         NSDictionary *inputInfo = bond[@"InputInfo"];
         
         self.title.text = info[@"ShortTitle"];
-        self.type.text = info[@"Type"];
+        self.type.text = info[@"Type"] && ![info[@"Type"] isEqual:[NSNull null]]? info[@"Type"] : @"";
         
         self.inputBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"InputBonus"]];
         self.estimateBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"EstimateBonus"]];

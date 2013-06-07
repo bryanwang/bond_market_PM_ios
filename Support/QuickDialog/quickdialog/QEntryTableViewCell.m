@@ -113,8 +113,6 @@
 
     _quickformTableView = tableView;
     _entryElement = element;
-    NSLog(@"%@",  _entryElement.title);
-    NSLog(@"%@",  _entryElement.textValue);
     _textField.text = _entryElement.textValue;
     _textField.placeholder = _entryElement.placeholder;
     _textField.prefix = _entryElement.prefix;

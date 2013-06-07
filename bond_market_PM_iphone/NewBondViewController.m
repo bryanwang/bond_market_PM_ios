@@ -12,6 +12,12 @@
 #import "FinancialIndicatorsViewController.h"
 #import "BondRemarkViewController.h"
 
+typedef enum BondEditStaus: NSUInteger {
+    BondView,
+    BondEditing,
+    BondCreate
+} BondEditStaus;
+
 @interface NewBondViewController ()
 @property (nonatomic, strong)NSDictionary *bondInfo;
 
@@ -19,6 +25,7 @@
 @property (nonatomic, strong) FinancialIndicatorsViewController *fc;
 @property (nonatomic, strong) BondRemarkViewController *rc;
 @property (nonatomic, strong) AKSegmentedControl *segmentedControl;
+@property (nonatomic, strong)PopupListComponent *popComponent;
 
 @end
 
@@ -61,6 +68,137 @@
     return _rc;
 }
 
+
+- (NSMutableDictionary *)buildNewbondInfo
+{
+    NSMutableDictionary *newbondInfo = [[NSMutableDictionary alloc] init];
+    [self.bc.root fetchValueUsingBindingsIntoObject:newbondInfo];
+    
+    //如果self.bondInfo 不为空 则 操作为update
+    //如果self.bondInfo 为空 则 操作为create
+    if (self.bondInfo)
+        newbondInfo[@"Id"] = self.bondInfo[@"Id"];
+    
+    newbondInfo[@"FinanceIndex"] = [self.fc buildFinaceIndexJson];
+    newbondInfo[@"Remark"] = [self.rc remarkText];
+    
+    // 处理所有日期字段的格式
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    newbondInfo[@"QueryFrom"] = [dateFormatter stringFromDate:newbondInfo[@"QueryFrom"]];
+    newbondInfo[@"QueryTo"] = [dateFormatter stringFromDate:newbondInfo[@"QueryTo"]];
+    
+    // 处理省市区字段
+    QPickerElement *areaElement = (QPickerElement *)[self.bc.root elementWithKey:@"Area"];
+    NSArray *areaArray = [areaElement.value componentsSeparatedByString:@"\t"];
+    if (areaArray.count > 0) {
+        newbondInfo[@"AreaProvince"] = areaArray[0];
+        newbondInfo[@"AreaCity"] = areaArray[1];
+        newbondInfo[@"AreaDistrict"] = areaArray[2];
+    }
+    
+    // 处理利率区间
+    QPickerElement *interestElement = (QPickerElement *)[self.bc.root elementWithKey:@"Interest"];
+    NSArray *interestArray = [interestElement.value componentsSeparatedByString:@"\t"];
+    if (interestArray.count > 0) {
+        newbondInfo[@"InterestFrom"] = [interestArray[0] substringToIndex:[interestArray[0] length] - 1];
+        newbondInfo[@"InterestTo"] = [interestArray[1] substringToIndex:[interestArray[1] length] - 1];
+    }
+    return newbondInfo;
+}
+
+- (void)operateNewBondInfo: (id)sender
+{
+    if (self.popComponent) {
+        [self.popComponent hide];
+    }
+    
+    PopupListComponent *popupList = [[PopupListComponent alloc] init];
+    popupList.choosedItemCallback = ^(int itemid) {
+        NSLog(@"%d", itemid);
+        switch (itemid) {
+            case 0:
+                [ALToastView toastInView:APP_WINDOW withText:@"进入编辑状态"];
+                [self changeBondViewSatatus:BondEditing];
+                break;
+            case 1:
+                [self showDeleteAlertView];
+                break;
+        }
+    };
+    popupList.popupDismissedCallback = ^() {
+        NSLog(@"dismissed");
+    };
+    
+    [popupList showAnchoredTo:sender withItems:@[
+     [[PopupListComponentItem alloc] initWithCaption:@"修改" image:[UIImage imageNamed:@"operate-edit"] itemId:0],
+     [[PopupListComponentItem alloc] initWithCaption:@"删除" image:[UIImage imageNamed:@"operate-delete"] itemId:1]
+     ]];
+    
+    self.popComponent = popupList;
+}
+
+- (void)showDeleteAlertView
+{
+    [self.popComponent hide];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"删除新债"
+                                                   message:@"确定删除?"
+                                                  delegate:self
+                                         cancelButtonTitle:@"取消"
+                                         otherButtonTitles:@"确定",nil];
+    [alert show];
+}
+
+- (void)deleteBond
+{
+    NSString *userId = [LoginManager sharedInstance].fetchUserId;
+    NSDictionary *parameters = @{@"userid": userId, @"newbondId": self.bondInfo[@"Id"]};
+    
+    [[PMHttpClient shareIntance] postPath:DELETE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *result = responseObject;
+        if ([result[@"Success"] isEqual: @1]) {
+            [self.navigationController popViewControllerAnimated:YES];
+            [ALToastView toastInView:APP_WINDOW withText:@"删除成功"];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+    }];
+}
+
+- (void)cancelEditBond
+{
+    [ALToastView toastInView:APP_WINDOW withText:@"取消编辑状态"];
+    [self changeBondViewSatatus:BondView];
+}
+
+- (void)updateBond
+{
+    NSMutableDictionary *newbondInfo = [self buildNewbondInfo];
+    
+    // 简称 这个字段必填
+    if ([newbondInfo[@"ShortTitle"] length] == 0) {
+        [ALToastView toastInView:self.view withText:@"债券简称必填"];
+        return;
+    }
+    
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSString *userId = [LoginManager sharedInstance].fetchUserId;
+    NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
+    
+    [[PMHttpClient shareIntance] postPath:UPDATE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *result = responseObject;
+        if ([result[@"Success"] isEqual: @1]) {
+            [self.navigationController popViewControllerAnimated:YES];
+            [ALToastView toastInView:APP_WINDOW withText:@"提交成功"];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [ALToastView toastInView:APP_WINDOW withText:@"网络问题，提交失败"];
+    }];
+}
+
 - (void)setElementsDisabled
 {
     for(QSection *section in self.bc.quickDialogTableView.root.sections)
@@ -82,6 +220,29 @@
     
     self.rc.textview.userInteractionEnabled = NO;
 }
+
+
+- (void)setElementsEnable
+{
+    for(QSection *section in self.bc.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            element.enabled = YES;
+        }
+    }
+    
+    for(QSection *section in self.fc.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            element.enabled = YES;
+        }
+    }
+    
+    self.rc.textview.userInteractionEnabled = YES;
+}
+
 
 - (void)changeFormDetail: (NSUInteger)index
 {
@@ -174,84 +335,69 @@
 }
 
 
-
-
-
-- (NSMutableDictionary *)buildNewbondInfo
+- (void)changeBondViewSatatus: (BondEditStaus)status
 {
-    NSMutableDictionary *newbondInfo = [[NSMutableDictionary alloc] init];
-    [self.bc.root fetchValueUsingBindingsIntoObject:newbondInfo];
-    
-    newbondInfo[@"FinanceIndex"] = [self.fc buildFinaceIndexJson];
-    newbondInfo[@"Remark"] = [self.rc remarkText];
-    
-    // 处理所有日期字段的格式
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-    newbondInfo[@"QueryFrom"] = [dateFormatter stringFromDate:newbondInfo[@"QueryFrom"]];
-    newbondInfo[@"QueryTo"] = [dateFormatter stringFromDate:newbondInfo[@"QueryTo"]];
-    
-    // 处理省市区字段
-    QPickerElement *areaElement = (QPickerElement *)[self.bc.root elementWithKey:@"Area"];
-    if ([areaElement.textValue length] > 0) {
-        newbondInfo[@"AreaProvince"] = areaElement.items[0][[areaElement.selectedIndexes[0] intValue]];
-        newbondInfo[@"AreaCity"] = areaElement.items[1][[areaElement.selectedIndexes[1] intValue]];
-        newbondInfo[@"AreaDistrict"] = areaElement.items[2][[areaElement.selectedIndexes[2] intValue]];
+    switch (status) {
+        case BondEditing:
+            [self.popComponent hide];
+            [self setElementsEnable];
+            break;
+        case BondView:
+            [self setElementsDisabled];
+            break;
+        case BondCreate:
+            [self setElementsEnable];
+            break;
     }
-    
-    // 处理利率区间
-    QPickerElement *interestElement = (QPickerElement *)[self.bc.root elementWithKey:@"Interest"];
-    if ([interestElement.textValue length] > 0) {
-        newbondInfo[@"InterestFrom"] = interestElement.items[0][[interestElement.selectedIndexes[0] intValue]];
-        newbondInfo[@"InterestTo"] = interestElement.items[1][[interestElement.selectedIndexes[1] intValue]];
-        // 去掉百分号
-        newbondInfo[@"InterestFrom"] = [newbondInfo[@"InterestFrom"] substringToIndex:[newbondInfo[@"InterestFrom"] length] - 1];
-        newbondInfo[@"InterestTo"] = [newbondInfo[@"InterestTo"] substringToIndex:[newbondInfo[@"InterestTo"] length] - 1];
-    }
-    return newbondInfo;
+
+    [self setUpNavigationButton:status];
+    [self.bc.quickDialogTableView reloadData];
+    [self.fc.quickDialogTableView reloadData];
 }
 
-- (void)submitNewBondInfo
-{  
-    NSMutableDictionary *newbondInfo = [self buildNewbondInfo];  
-   
-    // 简称 这个字段必填
-    if ([newbondInfo[@"ShortTitle"] length] == 0) {
-        [ALToastView toastInView:self.view withText:@"债券简称必填"];
-        return;
-    }    
-    
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"  > the json string: %@", jsonString);
-//
-    NSString *userId = [LoginManager sharedInstance].fetchUserId;
-    NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
-  
-    [[PMHttpClient shareIntance] postPath:CREATE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *result = responseObject;
-        if ([result[@"Success"] isEqual: @1]) {
-            [self.navigationController popViewControllerAnimated:YES];
-            [ALToastView toastInView:APP_WINDOW withText:@"新债提交成功"];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [ALToastView toastInView:APP_WINDOW withText:@"网络问题，提交失败"];
-    }];
-    
-}
 
-- (void)setUpLeftNavigationButton
+- (void)setUpNavigationButton: (BondEditStaus)status
 {
-    UIBarButtonItem *item = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"] highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"] target:self selector:@selector(submitNewBondInfo)];
+    //right button
+    SEL selector  = nil;
+    NSString *title = nil;
+    if (status == BondView) {
+        selector = @selector(operateNewBondInfo:);
+        title = @"操作";
+    } else{
+        selector = @selector(updateBond);
+        title = @"完成";
+    }
+    
+    UIBarButtonItem *item = [UIBarButtonItem
+            barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"]
+            highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"]
+            target:self
+            selector:selector];
     ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-    [((UIButton *)(item.customView)) setTitle:@"完成" forState:UIControlStateNormal];
+    [((UIButton *)(item.customView)) setTitle:title forState:UIControlStateNormal];
     [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
-    
+
     self.navigationItem.rightBarButtonItem = item;
+    
+    //left button
+    if (status == BondEditing) {
+        UIBarButtonItem *item = [UIBarButtonItem
+                                 barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"]
+                                 highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"]
+                                 target:self
+                                 selector:@selector(cancelEditBond)];
+        ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+        [((UIButton *)(item.customView)) setTitle:@"取消" forState:UIControlStateNormal];
+        [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
+        
+       self.navigationItem.leftBarButtonItem = item;
+    } else {
+        [self addCustomBackButtonWithTitle:@"返回"];
+    }
 }
 
-- (void)setUPTableView
+- (void)setUpTableView
 {
     [self.view addSubview:self.bc.view];
     [self.view addSubview:self.fc.view];
@@ -259,18 +405,36 @@
     [self.view bringSubviewToFront:self.bc.view];
     
     if (self.bondInfo) {
+        self.title = @"新债详情";
+        
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+        
         NSMutableDictionary *info = [self.bondInfo mutableCopy];
+        //处理所有数字
         [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             if (obj != [NSNull null]) {
                 info[key] = [NSString stringWithFormat:@"%@", obj];
             }
-            
-            if([key isEqual:@"QueryFrom"])
-                info[key] = [NSDate date];
-            
-            if([key isEqual:@"QueryTo"])
-                info[key] = [NSDate date];
         }];
+        
+        //询价有效期
+        if(info[@"QueryFrom"] && ![info[@"QueryFrom"] isEqual:[NSNull null]])
+           info[@"QueryFrom"] = [dateFormatter dateFromString: info[@"QueryFrom"] ];
+        
+        //询价有效期截止
+        if(info[@"QueryTo"] && ![info[@"QueryTo"] isEqual:[NSNull null]])
+            info[@"QueryTo"] = [dateFormatter dateFromString: info[@"QueryTo"] ];
+        
+        //利率期间
+        if (info[@"InterestFrom"] && ![info[@"InterestFrom"] isEqual:[NSNull null]]) {
+            info[@"Interest"] = [NSString stringWithFormat:@"%@%%\t%@%%", info[@"InterestFrom"], info[@"InterestTo"]];
+        }
+
+        //区域
+        if (info[@"AreaProvince"] && ![info[@"AreaProvince"] isEqual:[NSNull null]]) {
+            info[@"Area"] = [NSString stringWithFormat:@"%@\t%@\t%@", info[@"AreaProvince"], info[@"AreaCity"], info[@"AreaDistrict"]];
+        }
         
         [self.bc.quickDialogTableView.root bindToObject:info];
         [self.fc.quickDialogTableView.root bindToObject:info];
@@ -284,8 +448,8 @@
     self.title = @"新债录入";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setUPTableView];
-    [self setUpLeftNavigationButton];
+    [self setUpTableView];
+    [self changeBondViewSatatus:self.bondInfo? BondView : BondCreate];
     [self setUpSegmentedController];
     [self registerNotification];
 
@@ -301,6 +465,13 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma alert view delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+         [self deleteBond];
+    }
 }
 
 @end

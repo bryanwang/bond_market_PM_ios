@@ -182,6 +182,11 @@
 		CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFE0175F2D00000F37FA /* FilterViewController.m */; };
 		CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */; };
 		CA8AEFE917606BB4000F37FA /* no-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE817606BB4000F37FA /* no-item@2x.png */; };
+		CA8AEFF01761815B000F37FA /* PopupListComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFEF1761815A000F37FA /* PopupListComponent.m */; };
+		CA8AEFF71761915C000F37FA /* operate-delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF31761915C000F37FA /* operate-delete.png */; };
+		CA8AEFF81761915C000F37FA /* operate-delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF41761915C000F37FA /* operate-delete@2x.png */; };
+		CA8AEFF91761915C000F37FA /* operate-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF51761915C000F37FA /* operate-edit.png */; };
+		CA8AEFFA1761915C000F37FA /* operate-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF61761915C000F37FA /* operate-edit@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -410,6 +415,12 @@
 		CA8AEFE0175F2D00000F37FA /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BondFilterDataBuilder.json; sourceTree = "<group>"; };
 		CA8AEFE817606BB4000F37FA /* no-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item@2x.png"; sourceTree = "<group>"; };
+		CA8AEFEE1761815A000F37FA /* PopupListComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupListComponent.h; sourceTree = "<group>"; };
+		CA8AEFEF1761815A000F37FA /* PopupListComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupListComponent.m; sourceTree = "<group>"; };
+		CA8AEFF31761915C000F37FA /* operate-delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-delete.png"; sourceTree = "<group>"; };
+		CA8AEFF41761915C000F37FA /* operate-delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-delete@2x.png"; sourceTree = "<group>"; };
+		CA8AEFF51761915C000F37FA /* operate-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-edit.png"; sourceTree = "<group>"; };
+		CA8AEFF61761915C000F37FA /* operate-edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-edit@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +572,8 @@
 				CA8A1EE4175C808900E87946 /* BYQuickDialogWrappedViewController.m */,
 				0EA882A4175C2522001100A7 /* Utils.h */,
 				0EA882A5175C2522001100A7 /* Utils.m */,
+				CA8AEFEE1761815A000F37FA /* PopupListComponent.h */,
+				CA8AEFEF1761815A000F37FA /* PopupListComponent.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -635,6 +648,10 @@
 		CA8A1E35175C35D500E87946 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				CA8AEFF31761915C000F37FA /* operate-delete.png */,
+				CA8AEFF41761915C000F37FA /* operate-delete@2x.png */,
+				CA8AEFF51761915C000F37FA /* operate-edit.png */,
+				CA8AEFF61761915C000F37FA /* operate-edit@2x.png */,
 				CA8AEFE817606BB4000F37FA /* no-item@2x.png */,
 				CA8AEFDB175F00D6000F37FA /* table-section.png */,
 				CA8AEFDC175F00D6000F37FA /* table-section@2x.png */,
@@ -996,6 +1013,10 @@
 				CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */,
 				CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */,
 				CA8AEFE917606BB4000F37FA /* no-item@2x.png in Resources */,
+				CA8AEFF71761915C000F37FA /* operate-delete.png in Resources */,
+				CA8AEFF81761915C000F37FA /* operate-delete@2x.png in Resources */,
+				CA8AEFF91761915C000F37FA /* operate-edit.png in Resources */,
+				CA8AEFFA1761915C000F37FA /* operate-edit@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,6 +1087,7 @@
 				CA8AEF9D175ECDBA000F37FA /* BondTableCell.m in Sources */,
 				CA8AEFA3175ED241000F37FA /* BondTableHeader.m in Sources */,
 				CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */,
+				CA8AEFF01761815B000F37FA /* PopupListComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

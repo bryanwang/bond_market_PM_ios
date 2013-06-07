@@ -57,7 +57,6 @@
     @autoreleasepool {
         NSArray *as  =[Utils sharedInstance].arears[pindex][@"cities"][cindex][@"areas"];
         NSMutableArray *array = [NSMutableArray array];
-        NSLog(@"%@", as);
         [as enumerateObjectsUsingBlock:^(id a, NSUInteger index, BOOL*stop) {
             [array addObject:a];
         }];

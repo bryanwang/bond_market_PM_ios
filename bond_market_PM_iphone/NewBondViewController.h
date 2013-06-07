@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopupListComponent.h"
 
-@interface NewBondViewController : BBCustomBackButtonViewController
+@interface NewBondViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
 
 - (id)initWithBond: (NSDictionary *)bond;
 

@@ -31,6 +31,22 @@
     UIView *bv = [[UIView alloc]initWithFrame:self.view.bounds];
     bv.backgroundColor = RGBCOLOR(224, 221, 215);
     self.quickDialogTableView.backgroundView =bv;
+    
+    QAppearance *appearance = [QElement appearance];
+    appearance.backgroundColorEnabled = RGBCOLOR(255, 255, 255);
+    appearance.backgroundColorDisabled = RGBCOLOR(255, 255, 255);
+    
+    appearance.labelFont = [UIFont systemFontOfSize:12];
+    appearance.labelColorEnabled = RGBCOLOR(100, 100, 100);
+    appearance.labelColorDisabled = RGBCOLOR(100, 100, 100);
+    
+    appearance.valueFont = [UIFont systemFontOfSize:14];
+    appearance.valueColorEnabled = RGBCOLOR(49, 49, 49);
+    appearance.valueColorDisabled =RGBCOLOR(49, 49, 49);
+    
+    appearance.entryFont = [UIFont systemFontOfSize:14];
+    appearance.entryTextColorEnabled = RGBCOLOR(49, 49, 49);
+    appearance.entryTextColorDisabled =RGBCOLOR(49, 49, 49);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -42,7 +58,6 @@
     QuickDialogController *newController = [QuickDialogController controllerForRoot:element];
     [super displayViewController:newController];
 }
-
 
 
 - (void)postNotificatioWithUserInfoController: (UIViewController *)vc
