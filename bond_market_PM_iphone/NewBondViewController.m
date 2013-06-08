@@ -71,8 +71,8 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (NSMutableDictionary *)buildNewbondInfo
 {
-    NSMutableDictionary *newbondInfo = [self.bc fetchData];;
-    newbondInfo[@"FinanceIndex"] = [self.fc fetchData];
+    NSMutableDictionary *newbondInfo = [self.bc fetchData];
+    newbondInfo[@"FinanceIndex"] = [self.fc fetchData] ;
     newbondInfo[@"Remark"] = [self.rc fetchData];
 
     //如果self.bondInfo 不为空 则 操作为update
@@ -158,13 +158,16 @@ typedef enum BondEditStaus: NSUInteger {
         return;
     }
     
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@">json string: %@", jsonString);
-    
     NSString *userId = [LoginManager sharedInstance].fetchUserId;
-    NSDictionary *parameters = @{@"userid": userId, @"newbond": jsonString};
+    //转成string
+    NSError *error = nil;
+    NSData *finance = [NSJSONSerialization dataWithJSONObject:newbondInfo[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *financeJsonString = [[NSString alloc] initWithData:finance encoding:NSUTF8StringEncoding];
+    newbondInfo[@"FinanceIndex"] = financeJsonString;
+    NSData *bond = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *bondJsonString = [[NSString alloc] initWithData:bond encoding:NSUTF8StringEncoding];
+
+    NSDictionary *parameters = @{@"userid": userId, @"newbond": bondJsonString};
     
     [[PMHttpClient shareIntance] postPath:UPDATE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = responseObject;
@@ -350,9 +353,12 @@ typedef enum BondEditStaus: NSUInteger {
 {
     if (self.bondInfo) {
         self.title = @"新债详情";
-        
         [self.bc bindObject:self.bondInfo];
-        [self.fc bindObject:self.bondInfo[@"FinanceIndex"]];
+        
+        NSData *financeData = [self.bondInfo[@"FinanceIndex"] dataUsingEncoding:NSUTF8StringEncoding];
+        id finance = [NSJSONSerialization JSONObjectWithData:financeData options:0 error:nil];
+        [self.fc bindObject:finance];
+        
         [self.rc bindObject:self.bondInfo[@"Remark"]];
 
         [self setElementsDisabled];
