@@ -7,8 +7,8 @@
 //
 
 #import "BondBasicInfoViewController.h"
+#import "AddTrustIncreaseViewController.h"
 #import "TrustIncreaseViewController.h"
-#import "CreateTrustIncreaseViewController.h"
 
 
 @interface BondBasicInfoViewController ()
@@ -16,6 +16,10 @@
 @property (nonatomic, strong) NSArray *provinces;
 @property (nonatomic, strong) NSArray *cities;
 @property (nonatomic, strong) NSArray *areas;
+
+@property (nonatomic, strong) NSMutableDictionary *bondInfo;
+
+@property (nonatomic, strong)TrustIncreaseViewController *trustIncreaseViewController;
 
 @end
 
@@ -55,7 +59,7 @@
     if (info[@"AreaProvince"] && ![info[@"AreaProvince"] isEqual:[NSNull null]]) {
         info[@"Area"] = [NSString stringWithFormat:@"%@\t%@\t%@", info[@"AreaProvince"], info[@"AreaCity"], info[@"AreaDistrict"]];
     }
-    
+    self.bondInfo = info;
     [self.quickDialogTableView.root bindToObject:info];
 }
 
@@ -68,6 +72,8 @@
             element.enabled = YES;
         }
     }
+    
+    self.trustIncreaseViewController.status = TrustIncreaseEditing;
  }
 
 - (void)setElementsDisable
@@ -80,6 +86,8 @@
                 element.enabled = NO;
         }
     }
+    
+    self.trustIncreaseViewController.status = TrustIncreaseNormal;
 }
 
 - (NSMutableDictionary *)fetchData
@@ -110,11 +118,35 @@
         newbondInfo[@"InterestTo"] = [interestArray[1] substringToIndex:[interestArray[1] length] - 1];
     }
     
+    //增信方式
+    NSMutableArray *trustIncreaseArray = self.trustIncreaseViewController.trustIncreaseArray;
+    NSError *error = nil;
+    NSData *trustIncreaseData = [NSJSONSerialization dataWithJSONObject:trustIncreaseArray options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *trustIncreaseJsonStr = [[NSString alloc] initWithData:trustIncreaseData encoding:NSUTF8StringEncoding];
+
+    newbondInfo[@"trustIncrease"] = trustIncreaseJsonStr;
+    
+    NSLog(@"%@", newbondInfo);
     return newbondInfo;
 }
 
 
 #pragma private methods
+- (TrustIncreaseViewController *)trustIncreaseViewController
+{
+    if (_trustIncreaseViewController == nil) {
+        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]initWithNibName:@"TrustWaysViewController" bundle:nil];
+        if (self.bondInfo) {
+            NSData *TrustIncreaseData = [self.bondInfo[@"TrustIncrease"] dataUsingEncoding:NSUTF8StringEncoding];
+            NSError *error = nil;
+            id TrustIncrease = [NSJSONSerialization JSONObjectWithData:TrustIncreaseData options:0 error:&error];
+            _trustIncreaseViewController.trustIncreaseArray = TrustIncrease;
+        }
+    }
+    
+    return _trustIncreaseViewController;
+}
+
 - (void)fetchProvinces
 {
     @autoreleasepool {
@@ -218,8 +250,7 @@
 #pragma quick dialog ation control
 - (void)showTrustWays:(QElement *)element
 {
-    CreateTrustIncreaseViewController *cc = [[CreateTrustIncreaseViewController alloc]initWithNibName:@"CreateTrustWaysViewController" bundle:nil];
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:cc forKey:BYCONTROLLERKEY];
+    NSDictionary* dict = [NSDictionary dictionaryWithObject:self.trustIncreaseViewController forKey:BYCONTROLLERKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
                                                         object:self
                                                       userInfo:dict];

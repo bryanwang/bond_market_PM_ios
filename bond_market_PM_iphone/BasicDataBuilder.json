@@ -33,7 +33,7 @@
                         { "type":"QLabelElement", "key":"TrustIncrease", "title":"增信方式",
                         "controllerAction": "showTrustWays:"},
                         { "type":"QEntryElement", "key":"Underwriter", "title":"主承销商",
-                        "bind": "textValue: TrustIncrease"}
+                        "bind": "textValue: Underwriter"}
                   ]
                 }
     ]
