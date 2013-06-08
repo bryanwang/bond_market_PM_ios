@@ -9,12 +9,7 @@
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleEquityAddButtonTapped:"}
                         ]
                 },
-                {"elements":
-                      [
-                          { "type":"QEntryElement", "key": "others", "placeholder": "其他性质"},
-                      ]
-                },
-                { "elements":
+               { "elements":
                         [
                                 { "type":"QEntryElement", "key": "others", "title": "质押金额", "placeholder": "亿", "prefix": " 亿", "keyboardType":"NumbersAndPunctuation"},
                                 { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumbersAndPunctuation", "prefix": " 倍", "bind": "textValue: IssueScale"},

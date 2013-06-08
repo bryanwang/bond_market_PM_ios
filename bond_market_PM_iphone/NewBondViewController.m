@@ -18,7 +18,9 @@ typedef enum BondEditStaus: NSUInteger {
     BondCreate
 } BondEditStaus;
 
-@interface NewBondViewController ()
+@interface NewBondViewController () {
+    NSDictionary *storedBondInfo;
+}
 @property (nonatomic, strong)NSDictionary *bondInfo;
 
 @property (nonatomic, strong) BondBasicInfoViewController *bc;
@@ -99,7 +101,7 @@ typedef enum BondEditStaus: NSUInteger {
                 [self changeBondViewSatatus:BondEditing];
                 break;
             case 1:
-                [self showDeleteAlertView];
+                [self applyToDeleteBond];
                 break;
         }
     };
@@ -114,37 +116,45 @@ typedef enum BondEditStaus: NSUInteger {
      ]];
 }
 
-- (void)showDeleteAlertView
+
+- (void)applyToDeleteBond
+{
+    //todo: 发送删除申请
+    
+//    NSString *userId = [LoginManager sharedInstance].fetchUserId;
+//    NSDictionary *parameters = @{@"userid": userId, @"newbondId": self.bondInfo[@"Id"]};
+//    
+//    [[PMHttpClient shareIntance] postPath:DELETE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSDictionary *result = responseObject;
+//        if ([result[@"Success"] isEqual: @1]) {
+//            [self.navigationController popViewControllerAnimated:YES];
+//            [ALToastView toastInView:APP_WINDOW withText:@"删除成功"];
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//
+//    }];
+}
+
+
+- (void)cancelEditBond
+{
+    //还原数据
+    self.bondInfo = [storedBondInfo copy];
+    [self bindBondInfo:self.bondInfo];
+    //切换状态
+    [self changeBondViewSatatus:BondView];
+    [ALToastView toastInView:APP_WINDOW withText:@"取消编辑状态"];
+}
+
+- (void)showCancelEditBondAlert
 {
     [self.popComponent hide];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"删除新债"
-                                                   message:@"确定删除?"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"取消编辑"
+                                                   message:@"确定取消修改?"
                                                   delegate:self
                                          cancelButtonTitle:@"取消"
                                          otherButtonTitles:@"确定",nil];
     [alert show];
-}
-
-- (void)deleteBond
-{
-    NSString *userId = [LoginManager sharedInstance].fetchUserId;
-    NSDictionary *parameters = @{@"userid": userId, @"newbondId": self.bondInfo[@"Id"]};
-    
-    [[PMHttpClient shareIntance] postPath:DELETE_NEWBOND_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *result = responseObject;
-        if ([result[@"Success"] isEqual: @1]) {
-            [self.navigationController popViewControllerAnimated:YES];
-            [ALToastView toastInView:APP_WINDOW withText:@"删除成功"];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
-    }];
-}
-
-- (void)cancelEditBond
-{
-    [ALToastView toastInView:APP_WINDOW withText:@"取消编辑状态"];
-    [self changeBondViewSatatus:BondView];
 }
 
 - (void)updateBond
@@ -338,7 +348,7 @@ typedef enum BondEditStaus: NSUInteger {
                                  barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"]
                                  highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"]
                                  target:self
-                                 selector:@selector(cancelEditBond)];
+                                 selector:@selector(showCancelEditBondAlert)];
         ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
         [((UIButton *)(item.customView)) setTitle:@"取消" forState:UIControlStateNormal];
         [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
@@ -349,34 +359,38 @@ typedef enum BondEditStaus: NSUInteger {
     }
 }
 
-- (void)setUpTableView
+- (void)bindBondInfo: (NSDictionary *)bondInfo
 {
-    if (self.bondInfo) {
-        self.title = @"新债详情";
-        [self.bc bindObject:self.bondInfo];
-        
-        NSData *financeData = [self.bondInfo[@"FinanceIndex"] dataUsingEncoding:NSUTF8StringEncoding];
-        id finance = [NSJSONSerialization JSONObjectWithData:financeData options:0 error:nil];
-        [self.fc bindObject:finance];
-        
-        [self.rc bindObject:self.bondInfo[@"Remark"]];
-
-        [self setElementsDisabled];
-    }
+    [self.bc bindObject:bondInfo];
+    
+    NSData *financeData = [bondInfo[@"FinanceIndex"] dataUsingEncoding:NSUTF8StringEncoding];
+    id finance = [NSJSONSerialization JSONObjectWithData:financeData options:0 error:nil];
+    [self.fc bindObject:finance];
+    
+    [self.rc bindObject:bondInfo[@"Remark"]];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"新债录入";
-    self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setUpTableView];
-    [self changeBondViewSatatus:self.bondInfo? BondView : BondCreate];
-    [self setUpSegmentedController];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self registerNotification];
-
+    [self setUpSegmentedController];
     [self.segmentedControl setSelectedIndex:0];
+    
+    if (self.bondInfo) {
+            //保存原始数据
+            storedBondInfo = [self.bondInfo copy];
+        
+            self.title = @"新债详情";
+            [self bindBondInfo:self.bondInfo];
+            [self setElementsDisabled];
+            [self changeBondViewSatatus:BondView];
+    } else {
+        self.title = @"新债录入";
+        [self changeBondViewSatatus:BondCreate];
+    }
     
     //bug: 延迟加载 table 信息
     __block NewBondViewController* nc = self;
@@ -397,7 +411,7 @@ typedef enum BondEditStaus: NSUInteger {
 #pragma alert view delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-         [self deleteBond];
+         [self cancelEditBond];
     }
 }
 

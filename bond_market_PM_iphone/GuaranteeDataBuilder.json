@@ -9,7 +9,8 @@
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleGuaranteeAddButtonTapped:"}
                         ]
                  },
-                 { 
+                 {
+                    "title": "担保方式",
                     "type": "QSelectSection",
                     "multipleAllowed": true,
                     "items": [

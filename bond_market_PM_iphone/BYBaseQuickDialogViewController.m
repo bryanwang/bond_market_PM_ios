@@ -47,6 +47,9 @@
     appearance.entryFont = [UIFont systemFontOfSize:14];
     appearance.entryTextColorEnabled = RGBCOLOR(49, 49, 49);
     appearance.entryTextColorDisabled =RGBCOLOR(49, 49, 49);
+    
+    appearance.sectionTitleFont = [UIFont systemFontOfSize:14];
+    appearance.sectionTitleColor = RGBCOLOR(49, 49, 49);
 }
 
 - (void)viewWillAppear:(BOOL)animated
