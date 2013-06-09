@@ -115,6 +115,13 @@
 
 @implementation TrustIncreaseViewController
 
+- (NSMutableArray *)trustIncreaseArray
+{
+    if (_trustIncreaseArray == nil)
+        _trustIncreaseArray = [NSMutableArray array];
+    return _trustIncreaseArray;
+}
+
 - (void)setStatus:(TrustIncreaseEditStatus)status
 {
     _status = status;
@@ -132,6 +139,7 @@
         table.delegate = self;
         table.dataSource = self;
         table.backgroundColor = RGBCOLOR(224, 221, 215);
+        [self.view addSubview:table];
         _table = table;
     }
     return _table;
@@ -143,7 +151,6 @@
         self.trustIncreaseArray = [trustIncreaseArray mutableCopy];
         if (trustIncreaseArray.count > 0) {
 //            self.noitemTips.layer.hidden = YES;
-            [self.view addSubview:self.table];
             [self.table reloadData];
         }
     }
@@ -154,10 +161,23 @@
     return self.trustIncreaseArray;
 }
 
+- (void)popViewController:  (NSNotification *)notification
+{
+    [self.navigationController popToViewController:self animated:YES];
+    
+    NSDictionary *info = notification.userInfo;
+    NSDictionary *increase = [info objectForKey:BYTRUSTINCREASEKEY];
+    [self.trustIncreaseArray addObject:increase];
+    NSLog(@"%@", self.trustIncreaseArray);
+    [self.table reloadData];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"增信方式";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popViewController:) name:BYPOPVIEWCONTOLLERNOTIFICATION object:nil];
 }
 
 

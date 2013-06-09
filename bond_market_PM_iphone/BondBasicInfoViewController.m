@@ -8,7 +8,6 @@
 
 #import "BondBasicInfoViewController.h"
 #import "AddTrustIncreaseViewController.h"
-#import "TrustIncreaseViewController.h"
 
 
 @interface BondBasicInfoViewController ()
@@ -18,8 +17,6 @@
 @property (nonatomic, strong) NSArray *areas;
 
 @property (nonatomic, strong) NSMutableDictionary *bondInfo;
-
-@property (nonatomic, strong)TrustIncreaseViewController *trustIncreaseViewController;
 
 @end
 

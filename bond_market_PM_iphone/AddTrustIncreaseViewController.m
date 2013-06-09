@@ -51,6 +51,14 @@
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
     LandViewController *lc = [[LandViewController alloc]initWithRoot:root];
+    lc.landAddedCallback = ^(id dic) {
+        NSLog(@"%@", dic);
+        NSDictionary* info = [NSDictionary dictionaryWithObject:dic forKey:BYTRUSTINCREASEKEY];
+        [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
+                                                            object:self
+                                                          userInfo:info];
+    };
+    
     [self postNotificatioWithUserInfoController:lc];
 }
 

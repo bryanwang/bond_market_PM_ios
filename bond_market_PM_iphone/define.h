@@ -19,6 +19,8 @@
 
 #define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
 #define BYCONTROLLERKEY @"viewcontroller"
+#define BYPOPVIEWCONTOLLERNOTIFICATION @"popviewcontroller"
+#define BYTRUSTINCREASEKEY @"trustincreasedic"
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 )

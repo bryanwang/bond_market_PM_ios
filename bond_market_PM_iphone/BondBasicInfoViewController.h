@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TrustIncreaseViewController.h"
 
 @interface BondBasicInfoViewController : BYBaseQuickDialogViewController
+
+@property (nonatomic, strong)TrustIncreaseViewController *trustIncreaseViewController;
 
 - (void)bindObject: (NSDictionary *)obj;
 - (void)setElementsEnable;
