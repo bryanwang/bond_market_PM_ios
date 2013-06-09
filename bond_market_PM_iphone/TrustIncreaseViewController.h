@@ -14,6 +14,9 @@ typedef enum TrustIncreaseEditStatus: NSUInteger {
 }TrustIncreaseEditStatus;
 
 @interface TrustIncreaseViewController : BBCustomBackButtonViewController <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong)NSMutableArray *trustIncreaseArray;
 @property (nonatomic)TrustIncreaseEditStatus status;
+
+- (void)bindObject: (NSMutableArray *)trustIncreaseArray;
+- (NSMutableArray *)fetchData;
+
 @end

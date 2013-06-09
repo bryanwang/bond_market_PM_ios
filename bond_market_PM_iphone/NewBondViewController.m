@@ -330,30 +330,14 @@ typedef enum BondEditStaus: NSUInteger {
         selector = @selector(updateBond);
         title = @"完成";
     }
-    
-    UIBarButtonItem *item = [UIBarButtonItem
-            barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"]
-            highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"]
-            target:self
-            selector:selector];
-    ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-    [((UIButton *)(item.customView)) setTitle:title forState:UIControlStateNormal];
-    [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
 
+    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:title target:self selector:selector];
     self.navigationItem.rightBarButtonItem = item;
     
     //left button
     if (status == BondEditing) {
-        UIBarButtonItem *item = [UIBarButtonItem
-                                 barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"]
-                                 highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"]
-                                 target:self
-                                 selector:@selector(showCancelEditBondAlert)];
-        ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-        [((UIButton *)(item.customView)) setTitle:@"取消" forState:UIControlStateNormal];
-        [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
-        
-       self.navigationItem.leftBarButtonItem = item;
+        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消"  target:self selector:@selector(showCancelEditBondAlert)];
+        self.navigationItem.leftBarButtonItem = item;
     } else {
         [self addCustomBackButtonWithTitle:@"返回"];
     }

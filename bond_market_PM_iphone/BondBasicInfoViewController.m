@@ -28,7 +28,6 @@
     NSNumber *selectedCity;
 }
 
-
 #pragma public methods
 - (void)bindObject: (NSDictionary *)obj
 {
@@ -59,6 +58,15 @@
     if (info[@"AreaProvince"] && ![info[@"AreaProvince"] isEqual:[NSNull null]]) {
         info[@"Area"] = [NSString stringWithFormat:@"%@\t%@\t%@", info[@"AreaProvince"], info[@"AreaCity"], info[@"AreaDistrict"]];
     }
+    
+    //增信方式
+    if (info[@"TrustIncrease"]) {
+        NSData *TrustIncreaseData = [info[@"TrustIncrease"] dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+        id TrustIncrease = [NSJSONSerialization JSONObjectWithData:TrustIncreaseData options:0 error:&error];
+        [self.trustIncreaseViewController bindObject:TrustIncrease];
+    }
+    
     self.bondInfo = info;
     [self.quickDialogTableView.root bindToObject:info];
 }
@@ -119,7 +127,7 @@
     }
     
     //增信方式
-    NSMutableArray *trustIncreaseArray = self.trustIncreaseViewController.trustIncreaseArray;
+    NSMutableArray *trustIncreaseArray = [self.trustIncreaseViewController fetchData];
     NSError *error = nil;
     NSData *trustIncreaseData = [NSJSONSerialization dataWithJSONObject:trustIncreaseArray options:NSJSONWritingPrettyPrinted error:&error];
     NSString *trustIncreaseJsonStr = [[NSString alloc] initWithData:trustIncreaseData encoding:NSUTF8StringEncoding];
@@ -135,13 +143,7 @@
 - (TrustIncreaseViewController *)trustIncreaseViewController
 {
     if (_trustIncreaseViewController == nil) {
-        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]initWithNibName:@"TrustWaysViewController" bundle:nil];
-        if (self.bondInfo) {
-            NSData *TrustIncreaseData = [self.bondInfo[@"TrustIncrease"] dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *error = nil;
-            id TrustIncrease = [NSJSONSerialization JSONObjectWithData:TrustIncreaseData options:0 error:&error];
-            _trustIncreaseViewController.trustIncreaseArray = TrustIncrease;
-        }
+        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]init];
     }
     
     return _trustIncreaseViewController;

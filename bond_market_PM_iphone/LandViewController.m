@@ -14,11 +14,16 @@
 
 @implementation LandViewController
 
+- (void)addLandAssertBacked
+{
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"土地";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addLandAssertBacked)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +31,9 @@
     [super didReceiveMemoryWarning];
 }
 
+
+- (void)xx
+{
+    NSLog(@"xx");
+}
 @end

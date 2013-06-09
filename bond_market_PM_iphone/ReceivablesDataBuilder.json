@@ -3,16 +3,19 @@
 	"title": "应收账款",
       "controllerName": "ReceivablesViewController",
 	"sections": [
-                 { "title": "应收账款对象", "elements":
+                 { "title": "应收账款对象", "key":"Receivables", "elements":
                         [
-                                { "type":"QEntryElement", "key":"TrustIncrease", "placeholder":"应收账款对象"},
+                                { "type":"QEntryElement", "key":"应收账款对象", "placeholder":"应收账款对象",
+                                 "bind": "textValue: 应收账款对"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleReceivablesAddButtonTapped:"}
                         ]
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "title": "应收账款余额", "placeholder": "亿", "prefix": " 亿", "keyboardType":"NumbersAndPunctuation"},
-                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumbersAndPunctuation", "prefix": " 倍", "bind": "textValue: IssueScale"},
+                                { "type":"QEntryElement", "key": "应收账款余额", "title": "应收账款余额", "placeholder": "亿", "prefix": " 亿", "keyboardType":"NumbersAndPunctuation",
+                                "bind": "textValue: 应收账款余额"},
+                                { "type":"QEntryElement", "key":"覆盖倍数", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumbersAndPunctuation", "prefix": " 倍",
+                                "bind": "textValue: 覆盖倍数"},
                         ]
                  }
         ]

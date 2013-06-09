@@ -3,9 +3,9 @@
 	"title": "保证担保",
             "controllerName": "GuaranteeViewController",
 	"sections": [
-                 { "elements":
+                 { "key": "Guarantee", "elements":
                         [
-                                { "type":"QEntryElement", "key":"TrustIncrease", "placeholder":"担保方"},
+                                { "type":"QEntryElement", "key":"担保方", "placeholder":"担保方",  "bind": "textValue: 担保方"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleGuaranteeAddButtonTapped:"}
                         ]
                  },
@@ -17,11 +17,12 @@
                             "全额无条件不可撤销连带责任",
                             "有限责任",
                             "部分担保"
-                    ]
+                    ],
+                     "bind": "textValue: 担保方式"
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "placeholder": "其他"},
+                                { "type":"QEntryElement", "key": "其他", "placeholder": "其他",  "bind": "textValue: 其他"},
                         ]
                  }
         ]

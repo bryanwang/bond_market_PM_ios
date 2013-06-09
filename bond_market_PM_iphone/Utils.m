@@ -111,6 +111,21 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 @implementation UIBarButtonItem (BY)
 
++ (UIBarButtonItem *)redBarButtonItemWithtitle:(NSString *)title
+                                        target:(id)target
+                                      selector:(SEL)selector
+{
+    UIBarButtonItem *redButton =   [self barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"]
+                highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"]
+                          target:target
+                        selector:selector];
+    ((UIButton *)redButton.customView).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+    [((UIButton *)redButton.customView) setTitle:title forState:UIControlStateNormal];
+    [((UIButton *)redButton.customView) setTintColor: RGBCOLOR(255, 255, 255)];
+
+    return redButton;
+}
+
 + (UIBarButtonItem *)barButtonItemWithImage:(UIImage *)normalImage
                            highlightedImage:(UIImage *)highlightedImage
                                      target:(id)target
@@ -124,7 +139,6 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 	[innerButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     [innerButton setBackgroundImage:normalImage forState:UIControlStateNormal];
     [innerButton setBackgroundImage:highlightedImage forState:UIControlStateHighlighted];
-    
 	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:innerButton];
 	barButtonItem.target = target;
 	barButtonItem.action = selector;

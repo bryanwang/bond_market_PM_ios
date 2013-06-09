@@ -8,16 +8,6 @@
 
 #import "BYBaseQuickDialogViewController.h"
 #import "BBCustomBackButtonViewController.h"
-#import "LandViewController.h"
-#import "EstateViewController.h"
-#import "EquityViewController.h"
-#import "ReceivablesViewController.h"
-#import "OtherTrustIncreaseViewController.h"
-#import "GuaranteeViewController.h"
-#import "EnhancementsViewController.h"
-#import "BankSupportViewController.h"
-#import "OtherTrustIncreaseViewController.h"
-
 
 @interface BYBaseQuickDialogViewController ()
 
@@ -63,93 +53,87 @@
 }
 
 
-- (void)postNotificatioWithUserInfoController: (UIViewController *)vc
-{
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:vc forKey:BYCONTROLLERKEY];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
-                                                        object:self
-                                                      userInfo:dict];
-}
-
+// BYBaseQuickDialogViewController 主要作为 QuickDialog 中 ActionControl 的转发中转站
+// 接收到 ActionControl 时间时 转发给 delegate 是完成具体实现
 - (void)showLandTypes:(QElement *)element
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
-    LandViewController *lc = [[LandViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:lc];
+    if ([self.delegate respondsToSelector:@selector(showLandTypes)])
+        [self.delegate showLandTypes];
 }
 
 - (void)showEstateTypes:(QElement *)element
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EstateTypesDataBuilder" andData:nil];
-    EstateViewController *ec = [[EstateViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:ec];
+    if ([self.delegate respondsToSelector:@selector(showEstateTypes)])
+        [self.delegate showEstateTypes];
 }
 
 - (void)showEquityTypes:(QElement *)element
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EquityDataBuilder" andData:nil];
-    EquityViewController *ec = [[EquityViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:ec];
+    if ([self.delegate respondsToSelector:@selector(showEquityTypes)])
+        [self.delegate showEquityTypes];
 }
 
 - (void)showReceivablesTypes:(QElement *)element
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ReceivablesDataBuilder" andData:nil];
-    ReceivablesViewController *rc = [[ReceivablesViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:rc];
+    if ([self.delegate respondsToSelector:@selector(showReceivablesTypes)])
+        [self.delegate showReceivablesTypes];
 }
 
-
-- (void)showGuaranteeTypes:(QElement *)element{
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"GuaranteeDataBuilder" andData:nil];
-    GuaranteeViewController *gc = [[GuaranteeViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:gc];
+- (void)showGuaranteeTypes:(QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(showGuaranteeTypes)])
+        [self.delegate showGuaranteeTypes];
 }
 
-- (void)showEnhancementsWays:(QElement *)element{
-    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"EnhancementsDataBuilder" andData:nil];
-    EnhancementsViewController *ec = [[EnhancementsViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:ec];
+- (void)showEnhancementsWays:(QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(showEnhancementsWays)])
+        [self.delegate showEnhancementsWays];
 }
 
-- (void)showBankSupportWays:(QElement *)element{
-    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"BankSupportDataBuilder" andData:nil];
-    BankSupportViewController *bc = [[BankSupportViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:bc];
+- (void)showBankSupportWays:(QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(showBankSupportWays)])
+        [self.delegate showBankSupportWays];
 }
 
-- (void)showOtherTrustWays:(QElement *)element{
-    OtherTrustIncreaseViewController *oc = [[OtherTrustIncreaseViewController alloc]initWithNibName:@"OtherTrustWaysViewController" bundle:nil];
-    [self postNotificatioWithUserInfoController:oc];
+- (void)showOtherTrustWays:(QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(showOtherTrustWays)])
+        [self.delegate showOtherTrustWays];
 }
-
 
 - (void)handleEquityAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root getSectionForIndex:0];
-    QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"股权所有人"];
-    [section insertElement:e1 atIndex: section.elements.count - 1];
-    [self.quickDialogTableView reloadData];
+    QSection  *section = [root sectionWithKey:@"Enhancements"];
+    if (section) {
+        QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"股权所有人"];
+        [section insertElement:e1 atIndex: section.elements.count - 1];
+        [self.quickDialogTableView reloadData];
+    }
 }
 
 - (void)handleGuaranteeAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root getSectionForIndex:0];
-    QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"担保方"];
-    [section insertElement:e1 atIndex: section.elements.count - 1];
-    [self.quickDialogTableView reloadData];
+    QSection  *section = [root sectionWithKey:@"Guarantee"];
+    if (section) {
+        QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"担保方"];
+        [section insertElement:e1 atIndex: section.elements.count - 1];
+        [self.quickDialogTableView reloadData];
+    }
 }
 
 - (void)handleReceivablesAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root getSectionForIndex:0];
-    QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"应收账款对象"];
-    [section insertElement:e1 atIndex: section.elements.count - 1];
-    [self.quickDialogTableView reloadData];
+    QSection  *section = [root sectionWithKey:@"Receivables"];
+    if (section) {
+        QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"应收账款对象"];
+        [section insertElement:e1 atIndex: section.elements.count - 1];
+        [self.quickDialogTableView reloadData];
+    }
 }
-
 
 @end

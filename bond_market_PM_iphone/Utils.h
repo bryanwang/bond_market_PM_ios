@@ -38,11 +38,15 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
 @interface UIBarButtonItem (BY)
 
++ (UIBarButtonItem *)redBarButtonItemWithtitle: (NSString *)title
+                                     target:(id)target
+                                      selector:(SEL)selector;
+
+
 + (UIBarButtonItem *)barButtonItemWithImage:(UIImage *)normalImage
                            highlightedImage:(UIImage *)highlightedImage
                                      target:(id)target
                                    selector:(SEL)selector;
-
 
 @end
 

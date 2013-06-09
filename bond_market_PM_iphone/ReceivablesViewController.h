@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ReceivablesViewController : BYQuickDialogWrappedViewController
-
+@property (nonatomic, strong) void(^receivablesAddedCallback)  (id dic);
 @end

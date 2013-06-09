@@ -16,7 +16,8 @@
 @end
 
 @interface TrustIncreaseViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *noitemTips;
+@property (nonatomic, strong)NSMutableArray *trustIncreaseArray;
+//@property (weak, nonatomic) IBOutlet UIImageView *noitemTips;
 @property (strong, nonatomic)UITableView *table;
 @end
 
@@ -39,9 +40,9 @@
     _increase = increase;
     //background
     UIView *bg = [[UIView alloc]initWithFrame:CGRectZero];
-    bg.layer.borderColor = RGBCOLOR(191, 189, 184).CGColor;
+    bg.layer.borderColor = RGBCOLOR(197, 193, 186).CGColor;
     bg.backgroundColor = [UIColor whiteColor];
-    bg.layer.shadowColor = RGBCOLOR(209, 206, 201).CGColor;
+    bg.layer.shadowColor = RGBCOLOR(224, 221, 215).CGColor;
     bg.layer.shadowOffset = CGSizeMake(3, 3);
     bg.layer.borderWidth = 1.0f;
     bg.layer.cornerRadius = 6.0f;
@@ -117,17 +118,11 @@
 - (void)setStatus:(TrustIncreaseEditStatus)status
 {
     _status = status;
+    UIBarButtonItem *item = nil;
     if (status == TrustIncreaseEditing) {
-        UIBarButtonItem *item = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"] highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"] target:self selector:@selector(addTrustWay)];
-        ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-        [((UIButton *)(item.customView)) setTitle:@"新增" forState:UIControlStateNormal];
-        [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
-        
-        self.navigationItem.rightBarButtonItem = item;
+        item = [UIBarButtonItem redBarButtonItemWithtitle:@"新增"  target:self selector:@selector(addTrustWay)];
     }
-    else {
-        self.navigationController.navigationItem.rightBarButtonItem = nil;
-    }
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (UITableView *)table
@@ -142,15 +137,21 @@
     return _table;
 }
 
-- (void)setTrustIncreaseArray:(NSMutableArray *)trustIncreaseArray
+- (void)bindObject:(NSMutableArray *)trustIncreaseArray
 {
-    if (![trustIncreaseArray isEqual:_trustIncreaseArray]) {
-        _trustIncreaseArray = [trustIncreaseArray mutableCopy];
+    if (![trustIncreaseArray isEqual:self.trustIncreaseArray]) {
+        self.trustIncreaseArray = [trustIncreaseArray mutableCopy];
         if (trustIncreaseArray.count > 0) {
+//            self.noitemTips.layer.hidden = YES;
             [self.view addSubview:self.table];
             [self.table reloadData];
         }
     }
+}
+
+- (NSMutableArray *)fetchData
+{
+    return self.trustIncreaseArray;
 }
 
 - (void)viewDidLoad

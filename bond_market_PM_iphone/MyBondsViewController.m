@@ -113,11 +113,7 @@
 
 - (void)setUpLeftNavigationButton
 {
-    UIBarButtonItem *item = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"nav-btn-red-nor"] highlightedImage:[UIImage imageNamed:@"nav-btn-red-sel"] target:self selector:@selector(filterMyBonds)];
-    ((UIButton *)(item.customView)).titleLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-    [((UIButton *)(item.customView)) setTitle:@"筛选" forState:UIControlStateNormal];
-    [((UIButton *)(item.customView)) setTintColor: RGBCOLOR(255, 255, 255)];
-    
+    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterMyBonds)];
     self.navigationItem.rightBarButtonItem = item;
 }
 

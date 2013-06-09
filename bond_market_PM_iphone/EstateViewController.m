@@ -14,10 +14,17 @@
 
 @implementation EstateViewController
 
+
+- (void)addEstateAssertBacked
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"房产";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addEstateAssertBacked)];
 }
 
 - (void)didReceiveMemoryWarning

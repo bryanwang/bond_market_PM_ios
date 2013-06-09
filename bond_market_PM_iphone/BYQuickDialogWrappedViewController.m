@@ -7,8 +7,9 @@
 //
 
 #import "BYQuickDialogWrappedViewController.h"
+#import "BYBaseQuickDialogViewController.h"
 
-@interface BYQuickDialogWrappedViewController ()
+@interface BYQuickDialogWrappedViewController () <BYBaseQuickDialogDelegate>
 
 @end
 
@@ -19,6 +20,7 @@
     self = [super init];
     if (self) {
         self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:rootElement];
+        self.qc.delegate = self;
         UIView *bv = [[UIView alloc]initWithFrame:self.view.bounds];
         bv.backgroundColor = RGBCOLOR(224, 221, 215);
         self.qc.quickDialogTableView.backgroundView =bv;
@@ -26,7 +28,6 @@
     }
     return self;
 }
-
 
 
 - (void)viewDidLoad

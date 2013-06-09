@@ -14,10 +14,15 @@
 
 @implementation EquityViewController
 
+- (void)addEquityAssertBacked
+{
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"股权";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addEquityAssertBacked)];
 }
 
 - (void)didReceiveMemoryWarning
