@@ -11,7 +11,7 @@
 @protocol BYBaseQuickDialogDelegate <NSObject>
 
 @optional
-- (void)postNotificatioWithUserInfoController: (UIViewController *)vc;
+
 - (void)showLandTypes;
 - (void)showEstateTypes;
 - (void)showEquityTypes;

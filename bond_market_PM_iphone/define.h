@@ -9,16 +9,14 @@
 #ifndef define_h
 #define define_h
 
-//#define BASE_URL @"http://192.168.1.139:7000/"
-#define BASE_URL @"http://192.168.1.139:63000/"
+//#define BASE_URL @"http://192.168.1.152:7000/"
+#define BASE_URL @"http://192.168.1.152:63000/"
 #define LOGIN_INTERFACE @"/api/ios/signin"
 #define MY_BONDS_INTERFACE @"/api/ios/newbond/mine"
 #define UPDATE_NEWBOND_INTERFACE @"/api/ios/newbond/update"
 #define DELETE_NEWBOND_INTERFACE @"/api/ios/newbond/delete"
 #define MY_BONDS_INPUTUBFI_INTERFACE @"/api/ios/newbond/bonus"
 
-#define BYPUSHVIEWCONTOLLERNOTIFICATION @"pushviewcontroller"
-#define BYCONTROLLERKEY @"viewcontroller"
 #define BYPOPVIEWCONTOLLERNOTIFICATION @"popviewcontroller"
 #define BYTRUSTINCREASEKEY @"trustincreasedic"
 

@@ -64,7 +64,7 @@ typedef enum BondEditStaus: NSUInteger {
 - (BondRemarkViewController *)rc
 {
     if (_rc == nil) {
-        _rc = [[BondRemarkViewController alloc]initWithNibName:@"BondRemarkViewController" bundle:nil];
+        _rc = [[BondRemarkViewController alloc]init];
         _rc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
     }
     return _rc;
@@ -284,19 +284,6 @@ typedef enum BondEditStaus: NSUInteger {
 }
 
 
-- (void)pushNotificationViewContoller: (NSNotification *)notification
-{
-    NSDictionary *info = notification.userInfo;
-    UIViewController *vc = [info objectForKey:BYCONTROLLERKEY];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)registerNotification
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotificationViewContoller:) name:BYPUSHVIEWCONTOLLERNOTIFICATION object:nil];
-}
-
-
 - (void)changeBondViewSatatus: (BondEditStaus)status
 {
     switch (status) {
@@ -359,18 +346,17 @@ typedef enum BondEditStaus: NSUInteger {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self registerNotification];
     [self setUpSegmentedController];
     [self.segmentedControl setSelectedIndex:0];
     
     if (self.bondInfo) {
-            //保存原始数据
-            storedBondInfo = [self.bondInfo copy];
-        
-            self.title = @"新债详情";
-            [self bindBondInfo:self.bondInfo];
-            [self setElementsDisabled];
-            [self changeBondViewSatatus:BondView];
+        //保存原始数据
+        storedBondInfo = [self.bondInfo copy];
+    
+        self.title = @"新债详情";
+        [self bindBondInfo:self.bondInfo];
+        [self setElementsDisabled];
+        [self changeBondViewSatatus:BondView];
     } else {
         self.title = @"新债录入";
         [self changeBondViewSatatus:BondCreate];

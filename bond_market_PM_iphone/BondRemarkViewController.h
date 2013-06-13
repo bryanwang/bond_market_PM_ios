@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HDTextView.h"
 
 @interface BondRemarkViewController : BBCustomBackButtonViewController
-@property (weak, nonatomic) IBOutlet HDTextView *textview;
 
 - (void)bindObject: (NSString *)remark;
 - (void)setElementsEnable;

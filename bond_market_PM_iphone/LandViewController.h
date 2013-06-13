@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface LandViewController : BYQuickDialogWrappedViewController
-@property (nonatomic, strong) void(^landAddedCallback)  (id dic);
 @end

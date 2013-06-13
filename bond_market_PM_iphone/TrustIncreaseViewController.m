@@ -167,8 +167,8 @@
     
     NSDictionary *info = notification.userInfo;
     NSDictionary *increase = [info objectForKey:BYTRUSTINCREASEKEY];
+    NSLog(@"%@", increase);
     [self.trustIncreaseArray addObject:increase];
-    NSLog(@"%@", self.trustIncreaseArray);
     [self.table reloadData];
 }
 
@@ -185,10 +185,8 @@
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
     AddTrustIncreaseViewController *tc = [[AddTrustIncreaseViewController alloc]initWithRoot:root];
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:tc forKey:BYCONTROLLERKEY];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
-                                                        object:self
-                                                      userInfo:dict];}
+    [self.navigationController pushViewController:tc animated:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {

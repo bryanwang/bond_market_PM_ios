@@ -36,78 +36,60 @@
     [super didReceiveMemoryWarning];
 }
 
-
-- (void)postNotificatioWithUserInfoController: (UIViewController *)vc
-{
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:vc forKey:BYCONTROLLERKEY];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
-                                                        object:self
-                                                      userInfo:dict];
-}
-
-
 #pragma base quick dialog delegate
 - (void)showLandTypes
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
     LandViewController *lc = [[LandViewController alloc]initWithRoot:root];
-    lc.landAddedCallback = ^(id dic) {
-        NSLog(@"%@", dic);
-        NSDictionary* info = [NSDictionary dictionaryWithObject:dic forKey:BYTRUSTINCREASEKEY];
-        [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
-                                                            object:self
-                                                          userInfo:info];
-    };
-    
-    [self postNotificatioWithUserInfoController:lc];
+    [self.navigationController pushViewController:lc animated:YES];
 }
 
 - (void)showEstateTypes
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EstateTypesDataBuilder" andData:nil];
     EstateViewController *ec = [[EstateViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:ec];
+    [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)showEquityTypes
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EquityDataBuilder" andData:nil];
     EquityViewController *ec = [[EquityViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:ec];
+    [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)showReceivablesTypes
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ReceivablesDataBuilder" andData:nil];
     ReceivablesViewController *rc = [[ReceivablesViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:rc];
+    [self.navigationController pushViewController:rc animated:YES];
 }
 
 - (void)showGuaranteeTypes
 {
     QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"GuaranteeDataBuilder" andData:nil];
     GuaranteeViewController *gc = [[GuaranteeViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:gc];
+   [self.navigationController pushViewController:gc animated:YES];
 }
 
 - (void)showEnhancementsWays
 {
     QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"EnhancementsDataBuilder" andData:nil];
     EnhancementsViewController *ec = [[EnhancementsViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:ec];
+    [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)showBankSupportWays
 {
     QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"BankSupportDataBuilder" andData:nil];
     BankSupportViewController *bc = [[BankSupportViewController alloc]initWithRoot:root];
-    [self postNotificatioWithUserInfoController:bc];
+    [self.navigationController pushViewController:bc animated:YES];
 }
 
 - (void)showOtherTrustWays
 {
-    OtherTrustIncreaseViewController *oc = [[OtherTrustIncreaseViewController alloc]initWithNibName:@"OtherTrustWaysViewController" bundle:nil];
-    [self postNotificatioWithUserInfoController:oc];
+    OtherTrustIncreaseViewController *oc = [[OtherTrustIncreaseViewController alloc]init];
+  [self.navigationController pushViewController:oc animated:YES];
 }
 
 @end

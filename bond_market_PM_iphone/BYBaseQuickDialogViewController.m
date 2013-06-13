@@ -106,7 +106,7 @@
 - (void)handleEquityAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root sectionWithKey:@"Enhancements"];
+    QSection  *section = [root sectionWithKey:@"Equity"];
     if (section) {
         QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"股权所有人"];
         [section insertElement:e1 atIndex: section.elements.count - 1];

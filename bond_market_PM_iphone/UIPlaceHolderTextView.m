@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 HaidaoFM. All rights reserved.
 //
 
-#import "HDTextView.h"
+#import "UIPlaceHolderTextView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface HDTextView ()
+@interface UIPlaceHolderTextView ()
 
 @property (nonatomic, readonly) NSString* realText;
 
@@ -18,31 +18,45 @@
 
 @end
 
-@implementation HDTextView
-@synthesize placeholder = _placeholder;
+@implementation UIPlaceHolderTextView
 
+- (id)initWithFrame:(CGRect)frame
+{
+    if( (self = [super initWithFrame:frame]) ) {
+        [self setPlaceholder:@""];
+        [self setPlaceholderColor:RGBCOLOR(149, 149, 149)];
+        [self setRealTextColor:RGBCOLOR(100, 100, 100)];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginEditing:) name:UITextViewTextDidBeginEditingNotification object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endEditing:) name:UITextViewTextDidEndEditingNotification object:self];
+    }
+    return self;
+}
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
 
+    if (!self.placeholder) {
+        [self setPlaceholder:@""];
+    }
+    
+    if (!self.placeholderColor) {
+        [self setPlaceholderColor:RGBCOLOR(149, 149, 149)];
+    }
+    
+    if (!self.realTextColor) {
+        [self setRealTextColor:RGBCOLOR(100, 100, 100)];
+    }
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginEditing:) name:UITextViewTextDidBeginEditingNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endEditing:) name:UITextViewTextDidEndEditingNotification object:self];
-    
-    self.layer.borderColor = [UIColor grayColor].CGColor;
-    self.layer.backgroundColor = [UIColor whiteColor].CGColor;
-    self.layer.borderWidth = 1.0f;
-    self.layer.cornerRadius = 4.0f;
-    self.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-    self.layer.shadowOpacity = 1.0;
-    self.layer.shadowRadius= 0.5f;
 }
 
 
 - (void) setPlaceholder:(NSString *)aPlaceholder {
     _placeholder = aPlaceholder;
     self.text = aPlaceholder;
-    [self endEditing:nil];
 }
 
 - (NSString *) text {
@@ -59,7 +73,7 @@
         super.text = text;
     
     if ([text isEqualToString:self.placeholder])
-        self.textColor = [UIColor lightGrayColor];
+        self.textColor = self.placeholderColor;
 }
 
 - (NSString *) realText {
@@ -70,41 +84,33 @@
     if ([self.realText isEqualToString:self.placeholder]) {
         super.text = nil;
     }
-    self.textColor = [UIColor blackColor];
+    self.textColor = self.realTextColor;
 }
 
 - (void) endEditing:(NSNotification*) notification {
     if ([self.realText isEqualToString:@""] || self.realText == nil) {
         super.text = self.placeholder;
-        self.textColor = [UIColor lightGrayColor];
+        self.textColor = self.placeholderColor;
     }
 }
 
-
-@end
-
-
-@implementation HDTextField
-
-- (void)awakeFromNib
+- (void)drawRect:(CGRect)rect
 {
-    [super awakeFromNib];
+    [super drawRect:rect];
     
     self.layer.borderColor = [UIColor grayColor].CGColor;
-    self.layer.backgroundColor = [UIColor whiteColor].CGColor;
     self.layer.borderWidth = 1.0f;
     self.layer.cornerRadius = 4.0f;
     self.layer.shadowOffset = CGSizeMake(1.0, 1.0);
     self.layer.shadowOpacity = 1.0;
     self.layer.shadowRadius= 0.5f;
+    self.layer.masksToBounds = YES;
 }
 
-- (CGRect)textRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 10 , 0 );
-}
-
-- (CGRect)editingRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 10 , 0 );
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
+ 

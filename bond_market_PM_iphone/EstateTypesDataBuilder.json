@@ -4,24 +4,26 @@
             "controllerName": "EnhancementsViewController",
   "sections": [
                 { 
-                    "title": "性质", 
+                    "title": "性质",
+                    "key": "性质",
                     "type": "QSelectSection",
                     "multipleAllowed": true,
                     "items": [
                             "商业",
                             "住宅",
-                    ]
+                    ],
+                    "bind": "value: 性质"
                 },
                 {"elements":
                       [
-                          { "type":"QEntryElement", "key": "others", "placeholder": "其他性质"},
+                          { "type":"QEntryElement", "key": "其他性质", "placeholder": "其他性质"},
                       ]
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "title": "评估价值", "placeholder": "万平方米", "prefix": " 万平方米", "keyboardType":"NumbersAndPunctuation"},
-                                { "type":"QEntryElement", "key":"IssueScale", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumbersAndPunctuation", "prefix": " 倍", "bind": "textValue: IssueScale"},
-                                 { "type":"QPickerElement", "key":"", "title":"房产证", "items":[["有", "无", " "]]},
+                                { "type":"QEntryElement", "key": "评估价值", "title": "评估价值", "placeholder": "万平方米", "prefix": " 万平方米", "keyboardType":"NumbersAndPunctuation"},
+                                { "type":"QEntryElement", "key":"覆盖倍数", "title":"覆盖倍数", "placeholder": "倍", "keyboardType":"NumbersAndPunctuation", "prefix": " 倍",},
+                                 { "type":"QPickerElement", "key":"房产证", "title":"房产证", "items":[["有", "无", " "]]},
                         ]
                  }
         ]

@@ -16,23 +16,38 @@
 
 - (void)addReceivalesAssertBacked
 {
-    QRootElement *root = self.qc.quickDialogTableView.root ;
-    NSMutableDictionary *result = [[NSMutableDictionary alloc]init];
-     [root fetchValueIntoObject:result];
+    NSMutableDictionary *result = [@{@"type": @"资产抵质押 - 应收账款", @"data": [@[] mutableCopy]} mutableCopy];
     
-    //应收账款对象
-    result[@"应收账款对象"] = [NSMutableArray array];
+    //read data from table
+    QRootElement *root = self.qc.quickDialogTableView.root ;
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [root fetchValueIntoObject:dic];
+    
+    if (dic.count == 0) return;
+    
+    if (dic[@"应收账款余额"])
+        [result[@"data"] addObject: @{@"key": @"应收账款余额", @"value": dic[@"应收账款余额"]}];
+    
+    if (dic[@"覆盖倍数"])
+        [result[@"data"] addObject: @{@"key": @"覆盖倍数", @"value": dic[@"覆盖倍数"]}];
+    
+    //股权所有人
+    NSMutableArray *array = [NSMutableArray array];
     QSection *section = [root sectionWithKey:@"Receivables"];
     for (id el in section.elements) {
         if ([el isKindOfClass:[QEntryElement class]]) {
             NSString *textValue = ((QEntryElement *)el).textValue;
             if (textValue.length > 0)
-                [(NSMutableArray *)result[@"应收账款对象"]   addObject: ((QEntryElement *)el).textValue];
+                [array addObject:textValue];
         }
     }
+    if (array.count > 0)
+        [result[@"data"] addObject: @{@"key": @"应收账款对象", @"value":array}];
     
-    if (result.count > 0 && self.receivablesAddedCallback)
-        self.receivablesAddedCallback(result);
+    NSDictionary* info = [NSDictionary dictionaryWithObject:result forKey:BYTRUSTINCREASEKEY];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
+                                                        object:self
+                                                      userInfo:info];
 }
 
 - (void)viewDidLoad

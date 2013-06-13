@@ -5,12 +5,12 @@
 	"sections": [
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "placeholder": "银行名称"},
+                                { "type":"QEntryElement", "key": "银行名称", "placeholder": "银行名称"},
                         ]
                  },
                   { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "placeholder": "其他"},
+                                { "type":"QEntryElement", "key": "银行其他", "placeholder": "其他"},
                         ]
                  }
         ]

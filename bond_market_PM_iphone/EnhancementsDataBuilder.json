@@ -3,7 +3,8 @@
 	"title": "内部增级",
             "controllerName": "EnhancementsViewController",
 	"sections": [
-                { 
+                {
+                    "key":"内部增级",
                     "type": "QSelectSection",
                     "multipleAllowed": true,
                     "items": [
@@ -13,7 +14,7 @@
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "others", "placeholder": "其他"},
+                                { "type":"QEntryElement", "key": "其他内部增级", "placeholder": "其他"},
                         ]
                  }
         ]

@@ -195,14 +195,11 @@
     [super displayViewController:newController];
 }
 
-
-- (void)viewDidLoad
+- (void)setupAreaPicker
 {
-    [super viewDidLoad];
-    
     selectedProvince = @0;
     selectedCity = @0;
-  
+    
     QSection *section = [self.root getSectionForIndex:0];
     //地区选择器
     QPickerElement *element = (QPickerElement *)[section getVisibleElementForIndex:3];
@@ -240,6 +237,12 @@
     };
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setupAreaPicker];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -249,12 +252,8 @@
 #pragma quick dialog ation control
 - (void)showTrustWays:(QElement *)element
 {
-    NSDictionary* dict = [NSDictionary dictionaryWithObject:self.trustIncreaseViewController forKey:BYCONTROLLERKEY];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BYPUSHVIEWCONTOLLERNOTIFICATION
-                                                        object:self
-                                                      userInfo:dict];
+    id vc = [self.view.superview nextResponder];
+    [((UIViewController *)vc).navigationController pushViewController:self.trustIncreaseViewController animated:YES];
 }
-
-
 
 @end

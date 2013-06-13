@@ -3,7 +3,7 @@
 	"title": "股权",
             "controllerName": "EnhancementsViewController",
             "sections": [
-                 { "title": "股权所有人", "key": "Enhancements","elements":
+                 { "title": "股权所有人", "key": "Equity","elements":
                         [
                                 { "type":"QEntryElement", "key":"股权所有人", "placeholder":"股权所有人", "bind": "textValue: 股权所有人"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleEquityAddButtonTapped:"}

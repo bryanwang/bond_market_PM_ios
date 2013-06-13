@@ -11,6 +11,7 @@
                  },
                  {
                     "title": "担保方式",
+                    "key": "担保方式",
                     "type": "QSelectSection",
                     "multipleAllowed": true,
                     "items": [
@@ -22,7 +23,7 @@
                 },
                 { "elements":
                         [
-                                { "type":"QEntryElement", "key": "其他", "placeholder": "其他",  "bind": "textValue: 其他"},
+                                { "type":"QEntryElement", "key": "其他担保方式", "placeholder": "其他",  "bind": "textValue: 其他担保方式"},
                         ]
                  }
         ]

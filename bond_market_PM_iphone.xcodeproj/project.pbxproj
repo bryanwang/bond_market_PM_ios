@@ -22,7 +22,7 @@
 		0EA88298175C24DF001100A7 /* BoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA88295175C24DF001100A7 /* BoardViewController.xib */; };
 		0EA882A6175C2522001100A7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829D175C2522001100A7 /* area.plist */; };
 		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
-		0EA882A8175C2522001100A7 /* HDTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A1175C2522001100A7 /* HDTextView.m */; };
+		0EA882A8175C2522001100A7 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */; };
 		0EA882A9175C2522001100A7 /* BYBaseQuickDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */; };
 		0EA882AA175C2522001100A7 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A5175C2522001100A7 /* Utils.m */; };
 		0EA882B9175C2545001100A7 /* BankSupportDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */; };
@@ -41,13 +41,11 @@
 		0EA882DB175C25AF001100A7 /* AddTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CA175C25AF001100A7 /* AddTrustIncreaseViewController.m */; };
 		0EA882DC175C25AF001100A7 /* BondBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */; };
 		0EA882DD175C25AF001100A7 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */; };
-		0EA882DE175C25AF001100A7 /* BondRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */; };
 		0EA882DF175C25AF001100A7 /* FinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */; };
 		0EA882E0175C25AF001100A7 /* GuaranteeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D3175C25AF001100A7 /* GuaranteeViewController.m */; };
 		0EA882E1175C25AF001100A7 /* EnhancementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D5175C25AF001100A7 /* EnhancementsViewController.m */; };
 		0EA882E2175C25AF001100A7 /* BankSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D7175C25AF001100A7 /* BankSupportViewController.m */; };
 		0EA882E3175C25AF001100A7 /* OtherTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882D9175C25AF001100A7 /* OtherTrustIncreaseViewController.m */; };
-		0EA882E4175C25AF001100A7 /* OtherTrustWaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */; };
 		0EA882EE175C25BB001100A7 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882E7175C25BB001100A7 /* LandViewController.m */; };
 		0EA882EF175C25BB001100A7 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882E9175C25BB001100A7 /* EstateViewController.m */; };
 		0EA882F0175C25BB001100A7 /* EquityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882EB175C25BB001100A7 /* EquityViewController.m */; };
@@ -227,8 +225,8 @@
 		0EA8829D175C2522001100A7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		0EA8829E175C2522001100A7 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		0EA8829F175C2522001100A7 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
-		0EA882A0175C2522001100A7 /* HDTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTextView.h; sourceTree = "<group>"; };
-		0EA882A1175C2522001100A7 /* HDTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTextView.m; sourceTree = "<group>"; };
+		0EA882A0175C2522001100A7 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		0EA882A2175C2522001100A7 /* BYBaseQuickDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYBaseQuickDialogViewController.h; sourceTree = "<group>"; };
 		0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYBaseQuickDialogViewController.m; sourceTree = "<group>"; };
 		0EA882A4175C2522001100A7 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		0EA882CC175C25AF001100A7 /* BondBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondBasicInfoViewController.m; sourceTree = "<group>"; };
 		0EA882CD175C25AF001100A7 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BondRemarkViewController.h; sourceTree = "<group>"; };
 		0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BondRemarkViewController.m; sourceTree = "<group>"; };
-		0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BondRemarkViewController.xib; sourceTree = "<group>"; };
 		0EA882D0175C25AF001100A7 /* FinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialIndicatorsViewController.h; sourceTree = "<group>"; };
 		0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialIndicatorsViewController.m; sourceTree = "<group>"; };
 		0EA882D2175C25AF001100A7 /* GuaranteeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuaranteeViewController.h; sourceTree = "<group>"; };
@@ -265,7 +262,6 @@
 		0EA882D7175C25AF001100A7 /* BankSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSupportViewController.m; sourceTree = "<group>"; };
 		0EA882D8175C25AF001100A7 /* OtherTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTrustIncreaseViewController.h; sourceTree = "<group>"; };
 		0EA882D9175C25AF001100A7 /* OtherTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTrustIncreaseViewController.m; sourceTree = "<group>"; };
-		0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherTrustWaysViewController.xib; sourceTree = "<group>"; };
 		0EA882E6175C25BB001100A7 /* LandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
 		0EA882E7175C25BB001100A7 /* LandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
 		0EA882E8175C25BB001100A7 /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstateViewController.h; sourceTree = "<group>"; };
@@ -560,8 +556,8 @@
 				0EA8829D175C2522001100A7 /* area.plist */,
 				0EA8829E175C2522001100A7 /* city.plist */,
 				0EA8829F175C2522001100A7 /* define.h */,
-				0EA882A0175C2522001100A7 /* HDTextView.h */,
-				0EA882A1175C2522001100A7 /* HDTextView.m */,
+				0EA882A0175C2522001100A7 /* UIPlaceHolderTextView.h */,
+				0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */,
 				CA8A1E87175C3FD400E87946 /* BBCustomBackButtonViewController.h */,
 				CA8A1E88175C3FD400E87946 /* BBCustomBackButtonViewController.m */,
 				0EA882A2175C2522001100A7 /* BYBaseQuickDialogViewController.h */,
@@ -607,7 +603,6 @@
 				0EA882D1175C25AF001100A7 /* FinancialIndicatorsViewController.m */,
 				0EA882CD175C25AF001100A7 /* BondRemarkViewController.h */,
 				0EA882CE175C25AF001100A7 /* BondRemarkViewController.m */,
-				0EA882CF175C25AF001100A7 /* BondRemarkViewController.xib */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -628,7 +623,6 @@
 				0EA882D7175C25AF001100A7 /* BankSupportViewController.m */,
 				0EA882D8175C25AF001100A7 /* OtherTrustIncreaseViewController.h */,
 				0EA882D9175C25AF001100A7 /* OtherTrustIncreaseViewController.m */,
-				0EA882DA175C25AF001100A7 /* OtherTrustWaysViewController.xib */,
 			);
 			name = TrustIncrease;
 			sourceTree = "<group>";
@@ -896,8 +890,6 @@
 				0EA882C1175C2545001100A7 /* EstateTypesDataBuilder.json in Resources */,
 				0EA882C2175C2545001100A7 /* EquityDataBuilder.json in Resources */,
 				0EA882C3175C2545001100A7 /* ReceivablesDataBuilder.json in Resources */,
-				0EA882DE175C25AF001100A7 /* BondRemarkViewController.xib in Resources */,
-				0EA882E4175C25AF001100A7 /* OtherTrustWaysViewController.xib in Resources */,
 				CA8A1E2D175C336E00E87946 /* Icon.png in Resources */,
 				CA8A1E2F175C337600E87946 /* Icon@2x.png in Resources */,
 				CA8A1E34175C343B00E87946 /* LoginViewController.xib in Resources */,
@@ -1057,7 +1049,7 @@
 				0EA8827A175C237A001100A7 /* main.m in Sources */,
 				0EA88296175C24DF001100A7 /* AppDelegate.m in Sources */,
 				0EA88297175C24DF001100A7 /* BoardViewController.m in Sources */,
-				0EA882A8175C2522001100A7 /* HDTextView.m in Sources */,
+				0EA882A8175C2522001100A7 /* UIPlaceHolderTextView.m in Sources */,
 				0EA882A9175C2522001100A7 /* BYBaseQuickDialogViewController.m in Sources */,
 				0EA882AA175C2522001100A7 /* Utils.m in Sources */,
 				0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */,
