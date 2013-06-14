@@ -23,7 +23,6 @@
 		0EA882A6175C2522001100A7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829D175C2522001100A7 /* area.plist */; };
 		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
 		0EA882A8175C2522001100A7 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */; };
-		0EA882A9175C2522001100A7 /* BYBaseQuickDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */; };
 		0EA882AA175C2522001100A7 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A5175C2522001100A7 /* Utils.m */; };
 		0EA882B9175C2545001100A7 /* BankSupportDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */; };
 		0EA882BA175C2545001100A7 /* BasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AD175C2545001100A7 /* BasicDataBuilder.json */; };
@@ -227,8 +226,6 @@
 		0EA8829F175C2522001100A7 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		0EA882A0175C2522001100A7 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
-		0EA882A2175C2522001100A7 /* BYBaseQuickDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYBaseQuickDialogViewController.h; sourceTree = "<group>"; };
-		0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYBaseQuickDialogViewController.m; sourceTree = "<group>"; };
 		0EA882A4175C2522001100A7 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		0EA882A5175C2522001100A7 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BankSupportDataBuilder.json; sourceTree = "<group>"; };
@@ -560,8 +557,6 @@
 				0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */,
 				CA8A1E87175C3FD400E87946 /* BBCustomBackButtonViewController.h */,
 				CA8A1E88175C3FD400E87946 /* BBCustomBackButtonViewController.m */,
-				0EA882A2175C2522001100A7 /* BYBaseQuickDialogViewController.h */,
-				0EA882A3175C2522001100A7 /* BYBaseQuickDialogViewController.m */,
 				CA8A1EE3175C808900E87946 /* BYQuickDialogWrappedViewController.h */,
 				CA8A1EE4175C808900E87946 /* BYQuickDialogWrappedViewController.m */,
 				0EA882A4175C2522001100A7 /* Utils.h */,
@@ -1050,7 +1045,6 @@
 				0EA88296175C24DF001100A7 /* AppDelegate.m in Sources */,
 				0EA88297175C24DF001100A7 /* BoardViewController.m in Sources */,
 				0EA882A8175C2522001100A7 /* UIPlaceHolderTextView.m in Sources */,
-				0EA882A9175C2522001100A7 /* BYBaseQuickDialogViewController.m in Sources */,
 				0EA882AA175C2522001100A7 /* Utils.m in Sources */,
 				0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */,
 				0EA882C7175C25A3001100A7 /* NewBondViewController.m in Sources */,

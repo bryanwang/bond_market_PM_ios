@@ -60,6 +60,9 @@
     [super viewDidLoad];
     self.title = @"按状态筛选";
     
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
+    [self setupQuickDialogControllerWithRoot:root];
+    
     [self setUpSeletedRole];
     [self setUpLeftNavigationButton];
 }

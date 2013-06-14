@@ -8,10 +8,34 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BYBaseQuickDialogDelegate <NSObject>
+
+@optional
+
+- (void)showLandTypes;
+- (void)showEstateTypes;
+- (void)showEquityTypes;
+- (void)showReceivablesTypes;
+- (void)showGuaranteeTypes;
+- (void)showEnhancementsWays;
+- (void)showBankSupportWays;
+- (void)showOtherTrustWays;
+- (void)showTrustWays;
+
+@end
+
+
+@interface BYBaseQuickDialogViewController : QuickDialogController
+
+@property (nonatomic, strong) id<BYBaseQuickDialogDelegate> delegate;
+
+@end
+
+
 @interface BYQuickDialogWrappedViewController : BBCustomBackButtonViewController
 
 @property (strong, nonatomic) BYBaseQuickDialogViewController *qc;
 
-- (BYQuickDialogWrappedViewController *)initWithRoot:(QRootElement *)rootElement;
+- (void)setupQuickDialogControllerWithRoot: (QRootElement *)root;
 
 @end

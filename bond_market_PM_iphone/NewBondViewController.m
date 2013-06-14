@@ -363,13 +363,12 @@ typedef enum BondEditStaus: NSUInteger {
     }
     
     //bug: 延迟加载 table 信息
-    __block NewBondViewController* nc = self;
-    RunBlockAfterDelay(0.35f, ^{
+    RunBlockAfterDelay(.3, ^{
         [self.view addSubview:self.bc.view];
         [self.view addSubview:self.fc.view];
         [self.view addSubview:self.rc.view];
         
-        [nc changeFormDetail:0];
+        [self changeFormDetail:0];
     });
 }
 

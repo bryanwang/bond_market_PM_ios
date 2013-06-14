@@ -56,6 +56,9 @@
     [super viewDidLoad];
     self.title = @"股权";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addEquityAssertBacked)];
+    
+    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EquityDataBuilder" andData:nil];
+    [self setupQuickDialogControllerWithRoot:root];
 }
 
 - (void)didReceiveMemoryWarning

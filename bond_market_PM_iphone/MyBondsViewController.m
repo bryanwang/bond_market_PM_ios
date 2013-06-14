@@ -35,8 +35,7 @@
 - (FilterViewController *)filterViewController
 {
     if (_filterViewController == nil) {
-        QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
-        _filterViewController = [[FilterViewController alloc]initWithRoot:root];
+        _filterViewController = [[FilterViewController alloc] init];
         
         //刷选项选择后的callback
         __block MyBondsViewController *delegate = self;

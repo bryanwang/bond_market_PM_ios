@@ -183,8 +183,7 @@
 
 -  (void)addTrustWay
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
-    AddTrustIncreaseViewController *tc = [[AddTrustIncreaseViewController alloc]initWithRoot:root];
+    AddTrustIncreaseViewController *tc = [[AddTrustIncreaseViewController alloc] init];
     [self.navigationController pushViewController:tc animated:YES];
 }
 

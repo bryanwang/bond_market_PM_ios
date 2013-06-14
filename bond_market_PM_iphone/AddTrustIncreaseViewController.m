@@ -17,7 +17,6 @@
 #import "BankSupportViewController.h"
 #import "OtherTrustIncreaseViewController.h"
 
-
 @interface AddTrustIncreaseViewController ()
 
 @end
@@ -29,6 +28,9 @@
 {
     [super viewDidLoad];
     self.title = @"新建增信方式";
+    
+    QRootElement *root =  [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
+    [self setupQuickDialogControllerWithRoot:root];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,50 +41,43 @@
 #pragma base quick dialog delegate
 - (void)showLandTypes
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
-    LandViewController *lc = [[LandViewController alloc]initWithRoot:root];
+    LandViewController *lc = [[LandViewController alloc] init];
     [self.navigationController pushViewController:lc animated:YES];
 }
 
 - (void)showEstateTypes
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EstateTypesDataBuilder" andData:nil];
-    EstateViewController *ec = [[EstateViewController alloc]initWithRoot:root];
+    EstateViewController *ec = [[EstateViewController alloc] init];
     [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)showEquityTypes
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EquityDataBuilder" andData:nil];
-    EquityViewController *ec = [[EquityViewController alloc]initWithRoot:root];
+    EquityViewController *ec = [[EquityViewController alloc] init];
     [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)showReceivablesTypes
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ReceivablesDataBuilder" andData:nil];
-    ReceivablesViewController *rc = [[ReceivablesViewController alloc]initWithRoot:root];
+    ReceivablesViewController *rc = [[ReceivablesViewController alloc] init];
     [self.navigationController pushViewController:rc animated:YES];
 }
 
 - (void)showGuaranteeTypes
 {
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"GuaranteeDataBuilder" andData:nil];
-    GuaranteeViewController *gc = [[GuaranteeViewController alloc]initWithRoot:root];
+    GuaranteeViewController *gc = [[GuaranteeViewController alloc] init];
    [self.navigationController pushViewController:gc animated:YES];
 }
 
 - (void)showEnhancementsWays
 {
-    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"EnhancementsDataBuilder" andData:nil];
-    EnhancementsViewController *ec = [[EnhancementsViewController alloc]initWithRoot:root];
+    EnhancementsViewController *ec = [[EnhancementsViewController alloc] init];
     [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)showBankSupportWays
 {
-    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"BankSupportDataBuilder" andData:nil];
-    BankSupportViewController *bc = [[BankSupportViewController alloc]initWithRoot:root];
+    BankSupportViewController *bc = [[BankSupportViewController alloc] init];
     [self.navigationController pushViewController:bc animated:YES];
 }
 

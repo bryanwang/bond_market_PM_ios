@@ -26,7 +26,6 @@
 #import <define.h>
 #import "Utils.h"
 #import "BBCustomBackButtonViewController.h"
-#import "BYBaseQuickDialogViewController.h"
 #import "BYQuickDialogWrappedViewController.h"
 
 
