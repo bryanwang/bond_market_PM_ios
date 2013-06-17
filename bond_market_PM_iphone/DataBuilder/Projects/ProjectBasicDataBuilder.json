@@ -1,0 +1,58 @@
+{
+	"grouped": true,
+	"title": "Json Data",
+    "controllerName": "NonPlatformProjectBasicInfoViewController",
+	"sections": [
+                 { "elements":
+                        [
+                                { "type":"QEntryElement", "key":"ShortTitle", "title":"融资主体",
+                                    "bind": "textValue: ShortTitle"},
+                                { "type":"QEntryElement", "key":"ShortTitle", "title":"股东结构",
+                                    "bind": "textValue: ShortTitle"},
+                                { "type":"QEntryElement", "key":"ShortTitle", "title":"大股东背景",
+                                    "bind": "textValue: ShortTitle"},
+                                { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "其他"]],
+                                    "bind": "value: EntNature"},
+                                { "type":"QPickerElement", "key":"EntNature", "title":"行业", "items":[["农林牧渔", "科教文卫", "矿产", "制造", "能源", "金融", "房地产", "基建类"]],
+                                    "bind": "value: EntNature"},
+                                { "type":"QPickerElement", "key":"Area", "title":"所在地区", "bind": "value: Area"},
+                                { "type":"QEntryElement", "key":"IssueScale", "title":"发行规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿元", "placeholder": "亿元",
+                                    "bind": "textValue: IssueScale"},
+                                 { "type":"QEntryElement", "key":"ShortTitle", "title":"实际控制人",
+                                 "bind": "textValue: ShortTitle"},
+                                 { "type":"QEntryElement", "key":"ShortTitle", "title":"主营业务",
+                                 "bind": "textValue: ShortTitle"}
+                        ]
+                 },
+                 { "elements":
+                    [
+                        { "type":"QEntryElement", "key":"AvailableLimit", "title":"融资规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿", "placeholder": "亿",
+                        "bind": "textValue: AvailableLimit"},
+                        { "type":"QEntryElement", "key":"AvailableLimit", "title":"期限", "keyboardType":"NumbersAndPunctuation", "prefix": " 年", "placeholder": "年",
+                        "bind": "textValue: AvailableLimit"},
+                        { "type":"QPickerElement", "key":"Interest", "title":"融资成本", "items":[["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%"],
+                        ["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%", "11%", "12%", "13%", "14%", "15%", "16%", "17%", "18%", "19%", "20%"]],
+                        "bind": "value:  Interest "}
+                     ]
+                 },
+                 { "elements":
+                    [
+                        { "type":"QDateTimeInlineElement", "key":"QueryFrom", "title":"项目有效期起", "_mode":"1",
+                        "bind": "dateValue: QueryFrom"},
+                        { "type":"QDateTimeInlineElement", "key":"QueryTo", "title":"项目有效期止",  "_mode":"1", "bind": "dateValue: QueryTo"},
+                        { "type":"QLabelElement", "key":"TrustIncrease", "title":"增信方式",
+                        "controllerAction": "showTrustWays:"},
+                        { "type":"QLabelElement", "key":"TrustIncrease", "title":"资金用途",
+                        "controllerAction": "showTrustWays:"},
+                        { "type":"QLabelElement", "key":"TrustIncrease", "title":"融资方式",
+                        "controllerAction": "showTrustWays:"}
+                  ]
+                },
+                 { "elements":
+                     [
+                      { "type":"QEntryElement", "key":"Source", "title":"项目来源",
+                      "bind": "textValue: Source"}
+                      ]
+                 }
+        ]
+}

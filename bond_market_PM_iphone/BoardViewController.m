@@ -9,8 +9,10 @@
 #import "BoardViewController.h"
 #import "NewBondViewController.h"
 #import "MyBondsViewController.h"
+#import "NewPlatformProjectViewController.h"
+#import "NewNonPlatformProjectViewController.h"
 
-@interface BoardViewController ()
+@interface BoardViewController () <UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UIView *board45;
 @property (strong, nonatomic) IBOutlet UIView *board44;
 
@@ -22,6 +24,29 @@
 @end
 
 @implementation BoardViewController
+- (void)createNonPlatformProject
+{
+    NewNonPlatformProjectViewController *nc = [[NewNonPlatformProjectViewController alloc]init];
+    [self.navigationController pushViewController:nc animated:YES];
+}
+
+- (void)createPlatformProject
+{
+    NewPlatformProjectViewController *nc = [[NewPlatformProjectViewController alloc]init];
+    [self.navigationController pushViewController:nc animated:YES];
+}
+
+- (IBAction)createProject:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"项目录入"
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"平台项目", @"非平台项目",nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [actionSheet showInView:self.view];
+}
+
 
 - (IBAction)createBond:(id)sender
 {
@@ -73,6 +98,16 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma action sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self createPlatformProject];
+    } else if (buttonIndex == 1) {
+        [self createNonPlatformProject];
+    }
 }
 
 @end

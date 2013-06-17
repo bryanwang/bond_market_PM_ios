@@ -345,7 +345,6 @@ typedef enum BondEditStaus: NSUInteger {
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
     [self setUpSegmentedController];
     [self.segmentedControl setSelectedIndex:0];
     

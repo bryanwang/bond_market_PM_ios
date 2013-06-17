@@ -24,17 +24,6 @@
 		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
 		0EA882A8175C2522001100A7 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */; };
 		0EA882AA175C2522001100A7 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882A5175C2522001100A7 /* Utils.m */; };
-		0EA882B9175C2545001100A7 /* BankSupportDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */; };
-		0EA882BA175C2545001100A7 /* BasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AD175C2545001100A7 /* BasicDataBuilder.json */; };
-		0EA882BB175C2545001100A7 /* FinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */; };
-		0EA882BC175C2545001100A7 /* TrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */; };
-		0EA882BD175C2545001100A7 /* AssertsTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B0175C2545001100A7 /* AssertsTypesDataBuilder.json */; };
-		0EA882BE175C2545001100A7 /* GuaranteeDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B1175C2545001100A7 /* GuaranteeDataBuilder.json */; };
-		0EA882BF175C2545001100A7 /* EnhancementsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B2175C2545001100A7 /* EnhancementsDataBuilder.json */; };
-		0EA882C0175C2545001100A7 /* LandTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B3175C2545001100A7 /* LandTypesDataBuilder.json */; };
-		0EA882C1175C2545001100A7 /* EstateTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B4175C2545001100A7 /* EstateTypesDataBuilder.json */; };
-		0EA882C2175C2545001100A7 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B5175C2545001100A7 /* EquityDataBuilder.json */; };
-		0EA882C3175C2545001100A7 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */; };
 		0EA882C4175C2545001100A7 /* SampleDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882B8175C2545001100A7 /* SampleDataBuilder.m */; };
 		0EA882C7175C25A3001100A7 /* NewBondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882C6175C25A3001100A7 /* NewBondViewController.m */; };
 		0EA882DB175C25AF001100A7 /* AddTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA882CA175C25AF001100A7 /* AddTrustIncreaseViewController.m */; };
@@ -53,6 +42,24 @@
 		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
 		CA3B9C23176EA23E00E2D7B8 /* no-item.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C21176EA23E00E2D7B8 /* no-item.png */; };
 		CA3B9C24176EA23E00E2D7B8 /* no-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */; };
+		CA3B9C27176EAAFC00E2D7B8 /* NewPlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C26176EAAFC00E2D7B8 /* NewPlatformProjectViewController.m */; };
+		CA3B9C2A176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C29176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.m */; };
+		CA3B9C30176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C2F176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */; };
+		CA3B9C33176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C32176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m */; };
+		CA3B9C36176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C35176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m */; };
+		CA3B9C56176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */; };
+		CA3B9C57176EAF9C00E2D7B8 /* BankSupportDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4C176EAF9C00E2D7B8 /* BankSupportDataBuilder.json */; };
+		CA3B9C58176EAF9C00E2D7B8 /* BasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4D176EAF9C00E2D7B8 /* BasicDataBuilder.json */; };
+		CA3B9C59176EAF9C00E2D7B8 /* BondFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4E176EAF9C00E2D7B8 /* BondFilterDataBuilder.json */; };
+		CA3B9C5A176EAF9C00E2D7B8 /* EnhancementsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4F176EAF9C00E2D7B8 /* EnhancementsDataBuilder.json */; };
+		CA3B9C5B176EAF9C00E2D7B8 /* EstateTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C50176EAF9C00E2D7B8 /* EstateTypesDataBuilder.json */; };
+		CA3B9C5C176EAF9C00E2D7B8 /* FinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C51176EAF9C00E2D7B8 /* FinanceDataBuilder.json */; };
+		CA3B9C5D176EAF9C00E2D7B8 /* GuaranteeDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C52176EAF9C00E2D7B8 /* GuaranteeDataBuilder.json */; };
+		CA3B9C5E176EAF9C00E2D7B8 /* LandTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C53176EAF9C00E2D7B8 /* LandTypesDataBuilder.json */; };
+		CA3B9C5F176EAF9C00E2D7B8 /* ReceivablesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C54176EAF9C00E2D7B8 /* ReceivablesDataBuilder.json */; };
+		CA3B9C60176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C55176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json */; };
+		CA3B9C64176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */; };
+		CA3B9C66176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */; };
 		CA8A1E2D175C336E00E87946 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1E2C175C336E00E87946 /* Icon.png */; };
 		CA8A1E2F175C337600E87946 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1E2E175C337600E87946 /* Icon@2x.png */; };
 		CA8A1E33175C343B00E87946 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1E31175C343B00E87946 /* LoginViewController.m */; };
@@ -178,7 +185,6 @@
 		CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDB175F00D6000F37FA /* table-section.png */; };
 		CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFDC175F00D6000F37FA /* table-section@2x.png */; };
 		CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFE0175F2D00000F37FA /* FilterViewController.m */; };
-		CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */; };
 		CA8AEFE917606BB4000F37FA /* no-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFE817606BB4000F37FA /* no-item@2x.png */; };
 		CA8AEFF01761815B000F37FA /* PopupListComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8AEFEF1761815A000F37FA /* PopupListComponent.m */; };
 		CA8AEFF71761915C000F37FA /* operate-delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF31761915C000F37FA /* operate-delete.png */; };
@@ -230,17 +236,6 @@
 		0EA882A1175C2522001100A7 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		0EA882A4175C2522001100A7 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		0EA882A5175C2522001100A7 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BankSupportDataBuilder.json; sourceTree = "<group>"; };
-		0EA882AD175C2545001100A7 /* BasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BasicDataBuilder.json; sourceTree = "<group>"; };
-		0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FinanceDataBuilder.json; sourceTree = "<group>"; };
-		0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TrutWaysDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B0175C2545001100A7 /* AssertsTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AssertsTypesDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B1175C2545001100A7 /* GuaranteeDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuaranteeDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B2175C2545001100A7 /* EnhancementsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EnhancementsDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B3175C2545001100A7 /* LandTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LandTypesDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B4175C2545001100A7 /* EstateTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EstateTypesDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B5175C2545001100A7 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EquityDataBuilder.json; sourceTree = "<group>"; };
-		0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReceivablesDataBuilder.json; sourceTree = "<group>"; };
 		0EA882B7175C2545001100A7 /* SampleDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDataBuilder.h; sourceTree = "<group>"; };
 		0EA882B8175C2545001100A7 /* SampleDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleDataBuilder.m; sourceTree = "<group>"; };
 		0EA882C5175C25A3001100A7 /* NewBondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBondViewController.h; sourceTree = "<group>"; };
@@ -274,6 +269,29 @@
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CA3B9C21176EA23E00E2D7B8 /* no-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item.png"; sourceTree = "<group>"; };
 		CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item@2x.png"; sourceTree = "<group>"; };
+		CA3B9C25176EAAFC00E2D7B8 /* NewPlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPlatformProjectViewController.h; sourceTree = "<group>"; };
+		CA3B9C26176EAAFC00E2D7B8 /* NewPlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPlatformProjectViewController.m; sourceTree = "<group>"; };
+		CA3B9C28176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNonPlatformProjectViewController.h; sourceTree = "<group>"; };
+		CA3B9C29176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNonPlatformProjectViewController.m; sourceTree = "<group>"; };
+		CA3B9C2E176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonPlatformProjectBasicInfoViewController.h; sourceTree = "<group>"; };
+		CA3B9C2F176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonPlatformProjectBasicInfoViewController.m; sourceTree = "<group>"; };
+		CA3B9C31176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonPlatformProjectFinancialIndicatorsViewController.h; sourceTree = "<group>"; };
+		CA3B9C32176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonPlatformProjectFinancialIndicatorsViewController.m; sourceTree = "<group>"; };
+		CA3B9C34176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonPlatformProjectRemarkViewController.h; sourceTree = "<group>"; };
+		CA3B9C35176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonPlatformProjectRemarkViewController.m; sourceTree = "<group>"; };
+		CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AssertsTypesDataBuilder.json; path = DataBuilder/Bonds/AssertsTypesDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C4C176EAF9C00E2D7B8 /* BankSupportDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BankSupportDataBuilder.json; path = DataBuilder/Bonds/BankSupportDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C4D176EAF9C00E2D7B8 /* BasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BasicDataBuilder.json; path = DataBuilder/Bonds/BasicDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C4E176EAF9C00E2D7B8 /* BondFilterDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BondFilterDataBuilder.json; path = DataBuilder/Bonds/BondFilterDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C4F176EAF9C00E2D7B8 /* EnhancementsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EnhancementsDataBuilder.json; path = DataBuilder/Bonds/EnhancementsDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C50176EAF9C00E2D7B8 /* EstateTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EstateTypesDataBuilder.json; path = DataBuilder/Bonds/EstateTypesDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C51176EAF9C00E2D7B8 /* FinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FinanceDataBuilder.json; path = DataBuilder/Bonds/FinanceDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C52176EAF9C00E2D7B8 /* GuaranteeDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GuaranteeDataBuilder.json; path = DataBuilder/Bonds/GuaranteeDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C53176EAF9C00E2D7B8 /* LandTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LandTypesDataBuilder.json; path = DataBuilder/Bonds/LandTypesDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C54176EAF9C00E2D7B8 /* ReceivablesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ReceivablesDataBuilder.json; path = DataBuilder/Bonds/ReceivablesDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C55176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TrutWaysDataBuilder.json; path = DataBuilder/Bonds/TrutWaysDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectBasicDataBuilder.json; path = DataBuilder/Projects/ProjectBasicDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectFinanceDataBuilder.json; path = DataBuilder/Projects/ProjectFinanceDataBuilder.json; sourceTree = "<group>"; };
 		CA8A1E2C175C336E00E87946 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		CA8A1E2E175C337600E87946 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		CA8A1E30175C343B00E87946 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -408,7 +426,6 @@
 		CA8AEFDC175F00D6000F37FA /* table-section@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-section@2x.png"; sourceTree = "<group>"; };
 		CA8AEFDF175F2D00000F37FA /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		CA8AEFE0175F2D00000F37FA /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
-		CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BondFilterDataBuilder.json; sourceTree = "<group>"; };
 		CA8AEFE817606BB4000F37FA /* no-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item@2x.png"; sourceTree = "<group>"; };
 		CA8AEFEE1761815A000F37FA /* PopupListComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupListComponent.h; sourceTree = "<group>"; };
 		CA8AEFEF1761815A000F37FA /* PopupListComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupListComponent.m; sourceTree = "<group>"; };
@@ -574,18 +591,17 @@
 		0EA882AB175C253B001100A7 /* Bonds */ = {
 			isa = PBXGroup;
 			children = (
-				0EA882AC175C2545001100A7 /* BankSupportDataBuilder.json */,
-				CA8AEFE4175F2DFD000F37FA /* BondFilterDataBuilder.json */,
-				0EA882AD175C2545001100A7 /* BasicDataBuilder.json */,
-				0EA882AE175C2545001100A7 /* FinanceDataBuilder.json */,
-				0EA882AF175C2545001100A7 /* TrutWaysDataBuilder.json */,
-				0EA882B0175C2545001100A7 /* AssertsTypesDataBuilder.json */,
-				0EA882B1175C2545001100A7 /* GuaranteeDataBuilder.json */,
-				0EA882B2175C2545001100A7 /* EnhancementsDataBuilder.json */,
-				0EA882B3175C2545001100A7 /* LandTypesDataBuilder.json */,
-				0EA882B4175C2545001100A7 /* EstateTypesDataBuilder.json */,
-				0EA882B5175C2545001100A7 /* EquityDataBuilder.json */,
-				0EA882B6175C2545001100A7 /* ReceivablesDataBuilder.json */,
+				CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */,
+				CA3B9C4C176EAF9C00E2D7B8 /* BankSupportDataBuilder.json */,
+				CA3B9C4D176EAF9C00E2D7B8 /* BasicDataBuilder.json */,
+				CA3B9C4E176EAF9C00E2D7B8 /* BondFilterDataBuilder.json */,
+				CA3B9C4F176EAF9C00E2D7B8 /* EnhancementsDataBuilder.json */,
+				CA3B9C50176EAF9C00E2D7B8 /* EstateTypesDataBuilder.json */,
+				CA3B9C51176EAF9C00E2D7B8 /* FinanceDataBuilder.json */,
+				CA3B9C52176EAF9C00E2D7B8 /* GuaranteeDataBuilder.json */,
+				CA3B9C53176EAF9C00E2D7B8 /* LandTypesDataBuilder.json */,
+				CA3B9C54176EAF9C00E2D7B8 /* ReceivablesDataBuilder.json */,
+				CA3B9C55176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json */,
 				0EA882B7175C2545001100A7 /* SampleDataBuilder.h */,
 				0EA882B8175C2545001100A7 /* SampleDataBuilder.m */,
 			);
@@ -633,6 +649,38 @@
 				0EA8830A175C2C01001100A7 /* libQuickDialog.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CA3B9C2B176EACA900E2D7B8 /* NonPlatformProject */ = {
+			isa = PBXGroup;
+			children = (
+				CA3B9C2D176EACC700E2D7B8 /* Form */,
+				CA3B9C28176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.h */,
+				CA3B9C29176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.m */,
+			);
+			name = NonPlatformProject;
+			sourceTree = "<group>";
+		};
+		CA3B9C2C176EACB000E2D7B8 /* PlatformProject */ = {
+			isa = PBXGroup;
+			children = (
+				CA3B9C25176EAAFC00E2D7B8 /* NewPlatformProjectViewController.h */,
+				CA3B9C26176EAAFC00E2D7B8 /* NewPlatformProjectViewController.m */,
+			);
+			name = PlatformProject;
+			sourceTree = "<group>";
+		};
+		CA3B9C2D176EACC700E2D7B8 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				CA3B9C2E176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.h */,
+				CA3B9C2F176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */,
+				CA3B9C31176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.h */,
+				CA3B9C32176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m */,
+				CA3B9C34176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.h */,
+				CA3B9C35176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m */,
+			);
+			name = Form;
 			sourceTree = "<group>";
 		};
 		CA8A1E35175C35D500E87946 /* Image */ = {
@@ -771,6 +819,8 @@
 		CA8AEFE617606882000F37FA /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				CA3B9C2C176EACB000E2D7B8 /* PlatformProject */,
+				CA3B9C2B176EACA900E2D7B8 /* NonPlatformProject */,
 			);
 			name = Projects;
 			sourceTree = "<group>";
@@ -778,6 +828,8 @@
 		CA8AEFE7176068A0000F37FA /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */,
+				CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */,
 			);
 			name = Projects;
 			sourceTree = "<group>";
@@ -880,17 +932,6 @@
 				0EA88298175C24DF001100A7 /* BoardViewController.xib in Resources */,
 				0EA882A6175C2522001100A7 /* area.plist in Resources */,
 				0EA882A7175C2522001100A7 /* city.plist in Resources */,
-				0EA882B9175C2545001100A7 /* BankSupportDataBuilder.json in Resources */,
-				0EA882BA175C2545001100A7 /* BasicDataBuilder.json in Resources */,
-				0EA882BB175C2545001100A7 /* FinanceDataBuilder.json in Resources */,
-				0EA882BC175C2545001100A7 /* TrutWaysDataBuilder.json in Resources */,
-				0EA882BD175C2545001100A7 /* AssertsTypesDataBuilder.json in Resources */,
-				0EA882BE175C2545001100A7 /* GuaranteeDataBuilder.json in Resources */,
-				0EA882BF175C2545001100A7 /* EnhancementsDataBuilder.json in Resources */,
-				0EA882C0175C2545001100A7 /* LandTypesDataBuilder.json in Resources */,
-				0EA882C1175C2545001100A7 /* EstateTypesDataBuilder.json in Resources */,
-				0EA882C2175C2545001100A7 /* EquityDataBuilder.json in Resources */,
-				0EA882C3175C2545001100A7 /* ReceivablesDataBuilder.json in Resources */,
 				CA8A1E2D175C336E00E87946 /* Icon.png in Resources */,
 				CA8A1E2F175C337600E87946 /* Icon@2x.png in Resources */,
 				CA8A1E34175C343B00E87946 /* LoginViewController.xib in Resources */,
@@ -1000,7 +1041,6 @@
 				CA8AEFD8175EF87B000F37FA /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */,
 				CA8AEFDD175F00D6000F37FA /* table-section.png in Resources */,
 				CA8AEFDE175F00D6000F37FA /* table-section@2x.png in Resources */,
-				CA8AEFE5175F2DFF000F37FA /* BondFilterDataBuilder.json in Resources */,
 				CA8AEFE917606BB4000F37FA /* no-item@2x.png in Resources */,
 				CA8AEFF71761915C000F37FA /* operate-delete.png in Resources */,
 				CA8AEFF81761915C000F37FA /* operate-delete@2x.png in Resources */,
@@ -1008,6 +1048,19 @@
 				CA8AEFFA1761915C000F37FA /* operate-edit@2x.png in Resources */,
 				CA3B9C23176EA23E00E2D7B8 /* no-item.png in Resources */,
 				CA3B9C24176EA23E00E2D7B8 /* no-item@2x.png in Resources */,
+				CA3B9C56176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json in Resources */,
+				CA3B9C57176EAF9C00E2D7B8 /* BankSupportDataBuilder.json in Resources */,
+				CA3B9C58176EAF9C00E2D7B8 /* BasicDataBuilder.json in Resources */,
+				CA3B9C59176EAF9C00E2D7B8 /* BondFilterDataBuilder.json in Resources */,
+				CA3B9C5A176EAF9C00E2D7B8 /* EnhancementsDataBuilder.json in Resources */,
+				CA3B9C5B176EAF9C00E2D7B8 /* EstateTypesDataBuilder.json in Resources */,
+				CA3B9C5C176EAF9C00E2D7B8 /* FinanceDataBuilder.json in Resources */,
+				CA3B9C5D176EAF9C00E2D7B8 /* GuaranteeDataBuilder.json in Resources */,
+				CA3B9C5E176EAF9C00E2D7B8 /* LandTypesDataBuilder.json in Resources */,
+				CA3B9C5F176EAF9C00E2D7B8 /* ReceivablesDataBuilder.json in Resources */,
+				CA3B9C60176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json in Resources */,
+				CA3B9C64176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json in Resources */,
+				CA3B9C66176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,6 +1131,11 @@
 				CA8AEFA3175ED241000F37FA /* BondTableHeader.m in Sources */,
 				CA8AEFE1175F2D01000F37FA /* FilterViewController.m in Sources */,
 				CA8AEFF01761815B000F37FA /* PopupListComponent.m in Sources */,
+				CA3B9C27176EAAFC00E2D7B8 /* NewPlatformProjectViewController.m in Sources */,
+				CA3B9C2A176EAB4900E2D7B8 /* NewNonPlatformProjectViewController.m in Sources */,
+				CA3B9C30176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m in Sources */,
+				CA3B9C33176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m in Sources */,
+				CA3B9C36176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
