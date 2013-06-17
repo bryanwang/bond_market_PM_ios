@@ -8,6 +8,7 @@
 
 #import "NonPlatformProjectBasicInfoViewController.h"
 #import "UseOfFoundsViewController.h"
+#import "FinancingViewController.h"
 
 @interface NonPlatformProjectBasicInfoViewController ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) NSMutableDictionary *projectInfo;
 
 @property (nonatomic, strong) UseOfFoundsViewController *useOfFoundsViewController;
+@property (nonatomic, strong) FinancingViewController *financingViewController;
 
 @end
 
@@ -71,6 +73,13 @@
 
 
 #pragma private methods
+- (FinancingViewController *)financingViewController
+{
+    if (_financingViewController == nil) {
+        _financingViewController = [[FinancingViewController alloc]init];
+    }
+    return _financingViewController;
+}
 
 - (UseOfFoundsViewController *)useOfFoundsViewController
 {
@@ -186,13 +195,19 @@
 - (void)showTrustWays:(QElement *)element
 {
     id vc = [self.view.superview nextResponder];
-    NSLog(@"add trust ways");
+
 }
 
 - (void)showUseOfFunds: (QElement *)element
 {
     id vc = [self.view.superview nextResponder];
     [((UIViewController *)vc).navigationController pushViewController:self.useOfFoundsViewController animated:YES];
+}
+
+- (void)showFinancing: (QElement *)element
+{
+    id vc = [self.view.superview nextResponder];
+    [((UIViewController *)vc).navigationController pushViewController:self.financingViewController animated:YES];
 }
 
 @end

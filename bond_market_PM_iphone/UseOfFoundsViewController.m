@@ -7,6 +7,7 @@
 //
 
 #import "UseOfFoundsViewController.h"
+#import "AddUseOfFoundsViewController.h"
 
 @interface UseOfFoundsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *useOfFoundsArray;
@@ -62,7 +63,8 @@
 
 - (void)addUseOfFounds
 {
-    
+    AddUseOfFoundsViewController *ac = [[AddUseOfFoundsViewController alloc]init];
+    [self.navigationController pushViewController:ac animated:YES];
 }
 
 - (void)popViewController:  (NSNotification *)notification

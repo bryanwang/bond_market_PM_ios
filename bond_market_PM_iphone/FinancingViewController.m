@@ -1,34 +1,18 @@
 //
-//  FilterViewController.m
+//  FinancingViewController.m
 //  bond_market_PM_iphone
 //
-//  Created by Bruce yang on 13-6-5.
+//  Created by Bruce yang on 13-6-17.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "FilterViewController.h"
+#import "FinancingViewController.h"
 
-@interface FilterViewController ()
+@interface FinancingViewController ()
 
 @end
 
-@implementation FilterViewController
-
-- (void)filterBonds
-{
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    QRootElement *root = self.qc.quickDialogTableView.root;
-    [root fetchValueIntoObject:dic];
-    //只返回 “query”字段 如果"query: 为空 则默认为 按“全部”筛选
-    self.filterCallback(dic[@"query"]);
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)setUpLeftNavigationButton
-{
-    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"完成" target:self selector:@selector(filterBonds)];
-    self.navigationItem.rightBarButtonItem = item;
-}
+@implementation FinancingViewController
 
 - (void)setUpSeletedRole
 {
@@ -58,20 +42,14 @@
     };
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"按状态筛选";
-    
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
+    self.title = @"融资方式";
+    QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"FinancingDataBuilder" andData:nil];
     [self setupQuickDialogControllerWithRoot:root];
-    
     [self setUpSeletedRole];
-    [self setUpLeftNavigationButton];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 @end

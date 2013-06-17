@@ -19,6 +19,7 @@
     self.qc = [[BYBaseQuickDialogViewController alloc] initWithRoot:root];
     self.qc.delegate = self;
     self.qc.view.frame = self.view.bounds;
+    SET_VIEW_HEIGHT(self.qc.view, self.qc.view.bounds.size.height - 44.0f);
     
     RunBlockAfterDelay(.3, ^{
         [self.view addSubview:self.qc.view];
@@ -160,5 +161,32 @@
         [self.quickDialogTableView reloadData];
     }
 }
+
+//projects
+- (void)AddLiquidity: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(AddLiquidity)])
+        [self.delegate AddLiquidity];
+}
+
+- (void)DebtRestructuring: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(DebtRestructuring)])
+        [self.delegate DebtRestructuring];
+}
+
+- (void)EquityInvestmentProjects: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(EquityInvestmentProjects)])
+        [self.delegate EquityInvestmentProjects];
+}
+
+- (void)OtherPurposes: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(OtherPurposes)])
+        [self.delegate OtherPurposes];
+}
+
+
 
 @end

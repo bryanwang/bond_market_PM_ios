@@ -12,6 +12,7 @@
 
 @optional
 
+//bonds
 - (void)showLandTypes;
 - (void)showEstateTypes;
 - (void)showEquityTypes;
@@ -21,6 +22,12 @@
 - (void)showBankSupportWays;
 - (void)showOtherTrustWays;
 - (void)showTrustWays;
+
+//projects
+- (void)AddLiquidity;
+- (void)DebtRestructuring;
+- (void)EquityInvestmentProjects;
+- (void)OtherPurposes;
 
 @end
 
