@@ -12,6 +12,7 @@
                                 { "type":"QLabelElement", "key":"", "title":"担保保证", "controllerAction": "showGuaranteeTypes:"},
                                 { "type":"QLabelElement", "key":"", "title":"内部增级", "controllerAction": "showEnhancementsWays:"},
                                 { "type":"QLabelElement", "key":"", "title":"银行流动性支持", "controllerAction": "showBankSupportWays:"},
+                                { "type":"QLabelElement", "key":"", "title":"反担保人", "controllerAction": "showAntiGuarantor:"},
                                 { "type":"QLabelElement", "key":"", "title":"其他增信方式", "controllerAction": "showOtherTrustWays:"},
                         ]
                  }

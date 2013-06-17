@@ -28,6 +28,7 @@
 - (void)DebtRestructuring;
 - (void)EquityInvestmentProjects;
 - (void)OtherPurposes;
+- (void)showAntiGuarantor;
 
 @end
 

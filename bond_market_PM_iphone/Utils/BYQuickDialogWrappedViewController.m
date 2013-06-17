@@ -187,6 +187,10 @@
         [self.delegate OtherPurposes];
 }
 
-
+- (void)showAntiGuarantor: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(showAntiGuarantor)])
+        [self.delegate showAntiGuarantor];
+}
 
 @end
