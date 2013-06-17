@@ -140,6 +140,40 @@
 }
 
 
+- (void)setElementsDisabled
+{
+    [self.bc setElementsDisable];
+    [self.fc setElementsDisable];
+    [self.rc setElementsDisable];
+}
+
+
+- (void)setElementsEnable
+{
+    [self.bc setElementsEnable];
+    [self.fc setElementsEnable];
+    [self.rc setElementsEnable];
+}
+
+- (void)changeProjectViewSatatus: (ProjectEditStaus)status
+{
+    switch (status) {
+        case ProjectEditing:
+            [self setElementsEnable];
+            break;
+        case ProjectView:
+            [self setElementsDisabled];
+            break;
+        case ProjectCreate:
+            [self setElementsEnable];
+            break;
+    }
+    
+    [self.bc.quickDialogTableView reloadData];
+    [self.fc.quickDialogTableView reloadData];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -148,6 +182,9 @@
     
     [self setUpSegmentedController];
     [self.segmentedControl setSelectedIndex:0];
+    
+    //todo:..
+    [self changeProjectViewSatatus:ProjectCreate];
     
     RunBlockAfterDelay(.3, ^{
         [self.view addSubview:self.bc.view];

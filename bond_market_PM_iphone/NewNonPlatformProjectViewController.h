@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum ProjectEditStaus: NSUInteger {
+    ProjectView,
+    ProjectEditing,
+    ProjectCreate
+} ProjectEditStaus;
+
 @interface NewNonPlatformProjectViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
 
 - (id)initWithProject: (NSDictionary *)project;

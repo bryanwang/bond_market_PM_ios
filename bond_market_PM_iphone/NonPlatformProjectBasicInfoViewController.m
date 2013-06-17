@@ -7,6 +7,7 @@
 //
 
 #import "NonPlatformProjectBasicInfoViewController.h"
+#import "UseOfFoundsViewController.h"
 
 @interface NonPlatformProjectBasicInfoViewController ()
 
@@ -15,6 +16,8 @@
 @property (nonatomic, strong) NSArray *areas;
 
 @property (nonatomic, strong) NSMutableDictionary *projectInfo;
+
+@property (nonatomic, strong) UseOfFoundsViewController *useOfFoundsViewController;
 
 @end
 
@@ -40,6 +43,8 @@
             element.enabled = YES;
         }
     }
+    
+    self.useOfFoundsViewController.status = UseOfFoundsEditing;
 }
 
 - (void)setElementsDisable
@@ -52,6 +57,8 @@
                 element.enabled = NO;
         }
     }
+    
+    self.useOfFoundsViewController.status = UseOfFoundsNormal;
 }
 
 - (NSMutableDictionary *)fetchData
@@ -64,6 +71,14 @@
 
 
 #pragma private methods
+
+- (UseOfFoundsViewController *)useOfFoundsViewController
+{
+    if (_useOfFoundsViewController == nil) {
+        _useOfFoundsViewController = [[UseOfFoundsViewController alloc]init];
+    }
+    return _useOfFoundsViewController;
+}
 
 - (void)fetchProvinces
 {
@@ -172,6 +187,12 @@
 {
     id vc = [self.view.superview nextResponder];
     NSLog(@"add trust ways");
+}
+
+- (void)showUseOfFunds: (QElement *)element
+{
+    id vc = [self.view.superview nextResponder];
+    [((UIViewController *)vc).navigationController pushViewController:self.useOfFoundsViewController animated:YES];
 }
 
 @end

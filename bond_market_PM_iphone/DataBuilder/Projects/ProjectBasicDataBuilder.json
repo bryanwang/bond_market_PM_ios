@@ -43,7 +43,7 @@
                         { "type":"QLabelElement", "key":"TrustIncrease", "title":"增信方式",
                         "controllerAction": "showTrustWays:"},
                         { "type":"QLabelElement", "key":"TrustIncrease", "title":"资金用途",
-                        "controllerAction": "showTrustWays:"},
+                        "controllerAction": "showUseOfFunds:"},
                         { "type":"QLabelElement", "key":"TrustIncrease", "title":"融资方式",
                         "controllerAction": "showTrustWays:"}
                   ]

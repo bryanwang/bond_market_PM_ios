@@ -60,6 +60,7 @@
 		CA3B9C60176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C55176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json */; };
 		CA3B9C64176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */; };
 		CA3B9C66176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */; };
+		CA3B9C6B176EBC7000E2D7B8 /* UseOfFoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C6A176EBC7000E2D7B8 /* UseOfFoundsViewController.m */; };
 		CA8A1E2D175C336E00E87946 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1E2C175C336E00E87946 /* Icon.png */; };
 		CA8A1E2F175C337600E87946 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1E2E175C337600E87946 /* Icon@2x.png */; };
 		CA8A1E33175C343B00E87946 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1E31175C343B00E87946 /* LoginViewController.m */; };
@@ -292,6 +293,8 @@
 		CA3B9C55176EAF9C00E2D7B8 /* TrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TrutWaysDataBuilder.json; path = DataBuilder/Bonds/TrutWaysDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectBasicDataBuilder.json; path = DataBuilder/Projects/ProjectBasicDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectFinanceDataBuilder.json; path = DataBuilder/Projects/ProjectFinanceDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C69176EBC7000E2D7B8 /* UseOfFoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseOfFoundsViewController.h; sourceTree = "<group>"; };
+		CA3B9C6A176EBC7000E2D7B8 /* UseOfFoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseOfFoundsViewController.m; sourceTree = "<group>"; };
 		CA8A1E2C175C336E00E87946 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		CA8A1E2E175C337600E87946 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		CA8A1E30175C343B00E87946 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -673,6 +676,8 @@
 		CA3B9C2D176EACC700E2D7B8 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				CA3B9C68176EBC5C00E2D7B8 /* UseOfFounds */,
+				CA3B9C67176EBC5300E2D7B8 /* TrustIncrease */,
 				CA3B9C2E176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.h */,
 				CA3B9C2F176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */,
 				CA3B9C31176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.h */,
@@ -681,6 +686,22 @@
 				CA3B9C35176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m */,
 			);
 			name = Form;
+			sourceTree = "<group>";
+		};
+		CA3B9C67176EBC5300E2D7B8 /* TrustIncrease */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TrustIncrease;
+			sourceTree = "<group>";
+		};
+		CA3B9C68176EBC5C00E2D7B8 /* UseOfFounds */ = {
+			isa = PBXGroup;
+			children = (
+				CA3B9C69176EBC7000E2D7B8 /* UseOfFoundsViewController.h */,
+				CA3B9C6A176EBC7000E2D7B8 /* UseOfFoundsViewController.m */,
+			);
+			name = UseOfFounds;
 			sourceTree = "<group>";
 		};
 		CA8A1E35175C35D500E87946 /* Image */ = {
@@ -1136,6 +1157,7 @@
 				CA3B9C30176EACD200E2D7B8 /* NonPlatformProjectBasicInfoViewController.m in Sources */,
 				CA3B9C33176EACF200E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m in Sources */,
 				CA3B9C36176EACFE00E2D7B8 /* NonPlatformProjectRemarkViewController.m in Sources */,
+				CA3B9C6B176EBC7000E2D7B8 /* UseOfFoundsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
