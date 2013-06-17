@@ -16,20 +16,28 @@
 #import "EnhancementsViewController.h"
 #import "BankSupportViewController.h"
 #import "OtherTrustIncreaseViewController.h"
+#import "AntiGuarantorViewController.h"
 
 @interface AddTrustIncreaseViewController ()
-
+@property (strong, nonatomic) NSString *dataBuilderFile;
 @end
 
 @implementation AddTrustIncreaseViewController
-
+- (id)initWithDataBuilder:(NSString *)builder
+{
+    self = [super init];
+    if (self != nil) {
+        self.dataBuilderFile = builder;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"新建增信方式";
     
-    QRootElement *root =  [[QRootElement alloc] initWithJSONFile:@"TrutWaysDataBuilder" andData:nil];
+    QRootElement *root =  [[QRootElement alloc] initWithJSONFile:self.dataBuilderFile andData:nil];
     [self setupQuickDialogControllerWithRoot:root];
 }
 
@@ -79,6 +87,12 @@
 {
     BankSupportViewController *bc = [[BankSupportViewController alloc] init];
     [self.navigationController pushViewController:bc animated:YES];
+}
+
+- (void)showAntiGuarantor
+{
+    AntiGuarantorViewController *ac = [[AntiGuarantorViewController alloc] init];
+    [self.navigationController pushViewController:ac animated:YES];
 }
 
 - (void)showOtherTrustWays

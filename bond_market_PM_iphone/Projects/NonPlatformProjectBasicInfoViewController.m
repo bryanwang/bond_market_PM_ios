@@ -9,6 +9,8 @@
 #import "NonPlatformProjectBasicInfoViewController.h"
 #import "UseOfFoundsViewController.h"
 #import "FinancingViewController.h"
+#import "TrustIncreaseViewController.h"
+
 
 @interface NonPlatformProjectBasicInfoViewController ()
 
@@ -20,6 +22,7 @@
 
 @property (nonatomic, strong) UseOfFoundsViewController *useOfFoundsViewController;
 @property (nonatomic, strong) FinancingViewController *financingViewController;
+@property (nonatomic, strong) TrustIncreaseViewController *trustIncreaseViewController;
 
 @end
 
@@ -46,6 +49,7 @@
         }
     }
     
+    self.trustIncreaseViewController.status = TrustIncreaseEditing;
     self.useOfFoundsViewController.status = UseOfFoundsEditing;
 }
 
@@ -59,7 +63,8 @@
                 element.enabled = NO;
         }
     }
-    
+
+    self.trustIncreaseViewController.status = TrustIncreaseNormal;
     self.useOfFoundsViewController.status = UseOfFoundsNormal;
 }
 
@@ -73,6 +78,15 @@
 
 
 #pragma private methods
+- (TrustIncreaseViewController *)trustIncreaseViewController
+{
+    if (_trustIncreaseViewController == nil) {
+        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]initWithTrustIncreaseStatus:NonPlatformProjectTrustIncrease];
+    }
+    
+    return _trustIncreaseViewController;
+}
+
 - (FinancingViewController *)financingViewController
 {
     if (_financingViewController == nil) {
@@ -195,7 +209,7 @@
 - (void)showTrustWays:(QElement *)element
 {
     id vc = [self.view.superview nextResponder];
-
+    [((UIViewController *)vc).navigationController pushViewController:self.trustIncreaseViewController animated:YES];
 }
 
 - (void)showUseOfFunds: (QElement *)element

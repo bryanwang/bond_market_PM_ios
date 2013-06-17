@@ -139,7 +139,7 @@
 - (TrustIncreaseViewController *)trustIncreaseViewController
 {
     if (_trustIncreaseViewController == nil) {
-        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]init];
+        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]initWithTrustIncreaseStatus:BondTrustIncrease];
     }
     
     return _trustIncreaseViewController;

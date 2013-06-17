@@ -15,12 +15,6 @@
 - (float)cellHeight;
 @end
 
-@interface TrustIncreaseViewController ()
-@property (nonatomic, strong)NSMutableArray *trustIncreaseArray;
-//@property (weak, nonatomic) IBOutlet UIImageView *noitemTips;
-@property (strong, nonatomic)UITableView *table;
-@end
-
 @implementation TrustIncreaseCell {
     float y;
 }
@@ -113,7 +107,23 @@
 @end
 
 
+@interface TrustIncreaseViewController ()
+@property (nonatomic)TrustIncreaseSpecies trustIncreaseSpecies;
+@property (nonatomic, strong)NSMutableArray *trustIncreaseArray;
+@property (strong, nonatomic)UITableView *table;
+@end
+
+
 @implementation TrustIncreaseViewController
+
+- (id)initWithTrustIncreaseStatus:(TrustIncreaseSpecies)status
+{
+    self = [super init];
+    if (self != nil) {
+        self.trustIncreaseSpecies = status;
+    }
+    return self;
+}
 
 - (NSMutableArray *)trustIncreaseArray
 {
@@ -195,7 +205,20 @@
 
 -  (void)addTrustWay
 {
-    AddTrustIncreaseViewController *tc = [[AddTrustIncreaseViewController alloc] init];
+    NSString *bulider = nil;
+    switch (self.trustIncreaseSpecies) {
+        case BondTrustIncrease:
+            bulider = @"TrutWaysDataBuilder";
+            break;
+        case PlatformProjectTrustIncrease:
+            bulider = @"NonPlatformTrutWaysDataBuilder";
+        case NonPlatformProjectTrustIncrease:
+            bulider= @"NonPlatformTrutWaysDataBuilder";
+        default:
+            break;
+    }
+
+    AddTrustIncreaseViewController *tc = [[AddTrustIncreaseViewController alloc] initWithDataBuilder: bulider];
     [self.navigationController pushViewController:tc animated:YES];
 }
 

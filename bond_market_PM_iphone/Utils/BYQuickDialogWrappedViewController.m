@@ -162,6 +162,19 @@
     }
 }
 
+- (void)handleAntiGuarantorAddButtonTapped: (QElement *)element
+{
+    QRootElement *root = self.root;
+    QSection  *section = [root sectionWithKey:@"AntiGuarantor"];
+    if (section) {
+        QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"反担保人"];
+        [section insertElement:e1 atIndex: section.elements.count - 1];
+        [self.quickDialogTableView reloadData];
+    }
+}
+
+
+
 //projects
 - (void)AddLiquidity: (QElement *)element
 {

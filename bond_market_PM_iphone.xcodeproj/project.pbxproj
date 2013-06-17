@@ -44,7 +44,6 @@
 		CA3B9C84176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C81176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json */; };
 		CA3B9C85176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C82176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json */; };
 		CA3B9C8D176EF4CE00E2D7B8 /* FinancingDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C8C176EF4CD00E2D7B8 /* FinancingDataBuilder.json */; };
-		CA3B9C8F176EF85A00E2D7B8 /* ProjectTrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C8E176EF85900E2D7B8 /* ProjectTrutWaysDataBuilder.json */; };
 		CA3B9C9C176EFA4200E2D7B8 /* AddTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C91176EFA3C00E2D7B8 /* AddTrustIncreaseViewController.m */; };
 		CA3B9C9D176EFA4200E2D7B8 /* BankSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C93176EFA3D00E2D7B8 /* BankSupportViewController.m */; };
 		CA3B9C9E176EFA4200E2D7B8 /* EnhancementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9C95176EFA3E00E2D7B8 /* EnhancementsViewController.m */; };
@@ -85,6 +84,7 @@
 		CA3B9CFF176EFC1E00E2D7B8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CFA176EFC1D00E2D7B8 /* Utils.m */; };
 		CA3B9D02176EFE0600E2D7B8 /* SampleDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9D01176EFE0500E2D7B8 /* SampleDataBuilder.m */; };
 		CA3B9D07176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9D06176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf */; };
+		CA475337176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA475336176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json */; };
 		CA8A1E2D175C336E00E87946 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1E2C175C336E00E87946 /* Icon.png */; };
 		CA8A1E2F175C337600E87946 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A1E2E175C337600E87946 /* Icon@2x.png */; };
 		CA8A1E33175C343B00E87946 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A1E31175C343B00E87946 /* LoginViewController.m */; };
@@ -204,6 +204,8 @@
 		CA8AEFF81761915C000F37FA /* operate-delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF41761915C000F37FA /* operate-delete@2x.png */; };
 		CA8AEFF91761915C000F37FA /* operate-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF51761915C000F37FA /* operate-edit.png */; };
 		CA8AEFFA1761915C000F37FA /* operate-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF61761915C000F37FA /* operate-edit@2x.png */; };
+		CACD4170176F0B13005E12E8 /* AntiGuarantorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD416F176F0B13005E12E8 /* AntiGuarantorViewController.m */; };
+		CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,7 +270,6 @@
 		CA3B9C81176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DebtRestructuringDataBuilder.json; path = DataBuilder/Projects/DebtRestructuringDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C82176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EquityInvestmentProjectsDataBuilder.json; path = DataBuilder/Projects/EquityInvestmentProjectsDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C8C176EF4CD00E2D7B8 /* FinancingDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FinancingDataBuilder.json; path = DataBuilder/Projects/FinancingDataBuilder.json; sourceTree = "<group>"; };
-		CA3B9C8E176EF85900E2D7B8 /* ProjectTrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectTrutWaysDataBuilder.json; path = DataBuilder/Projects/ProjectTrutWaysDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C90176EFA3B00E2D7B8 /* AddTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTrustIncreaseViewController.h; path = Bonds/AddTrustIncreaseViewController.h; sourceTree = "<group>"; };
 		CA3B9C91176EFA3C00E2D7B8 /* AddTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTrustIncreaseViewController.m; path = Bonds/AddTrustIncreaseViewController.m; sourceTree = "<group>"; };
 		CA3B9C92176EFA3C00E2D7B8 /* BankSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BankSupportViewController.h; path = Bonds/BankSupportViewController.h; sourceTree = "<group>"; };
@@ -346,6 +347,7 @@
 		CA3B9D00176EFE0500E2D7B8 /* SampleDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleDataBuilder.h; path = DataBuilder/SampleDataBuilder.h; sourceTree = "<group>"; };
 		CA3B9D01176EFE0500E2D7B8 /* SampleDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleDataBuilder.m; path = DataBuilder/SampleDataBuilder.m; sourceTree = "<group>"; };
 		CA3B9D06176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Berthold Akzidenz Grotesk BE Condensed.ttf"; path = "Font/Berthold Akzidenz Grotesk BE Condensed.ttf"; sourceTree = "<group>"; };
+		CA475336176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = NonPlatformTrutWaysDataBuilder.json; path = DataBuilder/Projects/NonPlatformTrutWaysDataBuilder.json; sourceTree = "<group>"; };
 		CA8A1E2C175C336E00E87946 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		CA8A1E2E175C337600E87946 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		CA8A1E30175C343B00E87946 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -466,6 +468,9 @@
 		CA8AEFF41761915C000F37FA /* operate-delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-delete@2x.png"; sourceTree = "<group>"; };
 		CA8AEFF51761915C000F37FA /* operate-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-edit.png"; sourceTree = "<group>"; };
 		CA8AEFF61761915C000F37FA /* operate-edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "operate-edit@2x.png"; sourceTree = "<group>"; };
+		CACD416E176F0B13005E12E8 /* AntiGuarantorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AntiGuarantorViewController.h; path = Bonds/AntiGuarantorViewController.h; sourceTree = "<group>"; };
+		CACD416F176F0B13005E12E8 /* AntiGuarantorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntiGuarantorViewController.m; path = Bonds/AntiGuarantorViewController.m; sourceTree = "<group>"; };
+		CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AntiGuarantorDataBuilder.json; path = DataBuilder/Projects/AntiGuarantorDataBuilder.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -658,6 +663,8 @@
 		0EA882E5175C25B3001100A7 /* TrustIncrease */ = {
 			isa = PBXGroup;
 			children = (
+				CA3B9C9A176EFA4100E2D7B8 /* TrustIncreaseViewController.h */,
+				CA3B9C9B176EFA4200E2D7B8 /* TrustIncreaseViewController.m */,
 				CA3B9C90176EFA3B00E2D7B8 /* AddTrustIncreaseViewController.h */,
 				CA3B9C91176EFA3C00E2D7B8 /* AddTrustIncreaseViewController.m */,
 				CA3B9C92176EFA3C00E2D7B8 /* BankSupportViewController.h */,
@@ -668,8 +675,8 @@
 				CA3B9C97176EFA3F00E2D7B8 /* GuaranteeViewController.m */,
 				CA3B9C98176EFA4000E2D7B8 /* OtherTrustIncreaseViewController.h */,
 				CA3B9C99176EFA4100E2D7B8 /* OtherTrustIncreaseViewController.m */,
-				CA3B9C9A176EFA4100E2D7B8 /* TrustIncreaseViewController.h */,
-				CA3B9C9B176EFA4200E2D7B8 /* TrustIncreaseViewController.m */,
+				CACD416E176F0B13005E12E8 /* AntiGuarantorViewController.h */,
+				CACD416F176F0B13005E12E8 /* AntiGuarantorViewController.m */,
 				CA8AEFEA17606C4A000F37FA /* AssetBacked */,
 			);
 			name = TrustIncrease;
@@ -899,7 +906,8 @@
 		CA8AEFE7176068A0000F37FA /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				CA3B9C8E176EF85900E2D7B8 /* ProjectTrutWaysDataBuilder.json */,
+				CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */,
+				CA475336176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json */,
 				CA3B9C8C176EF4CD00E2D7B8 /* FinancingDataBuilder.json */,
 				CA3B9C80176EEF6700E2D7B8 /* AddLiquidityDataBuilder.json */,
 				CA3B9C81176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json */,
@@ -1140,10 +1148,11 @@
 				CA3B9C84176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json in Resources */,
 				CA3B9C85176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json in Resources */,
 				CA3B9C8D176EF4CE00E2D7B8 /* FinancingDataBuilder.json in Resources */,
-				CA3B9C8F176EF85A00E2D7B8 /* ProjectTrutWaysDataBuilder.json in Resources */,
 				CA3B9CBD176EFAC200E2D7B8 /* BondTableCell.xib in Resources */,
 				CA3B9CBF176EFAC200E2D7B8 /* BondTableHeader.xib in Resources */,
 				CA3B9D07176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */,
+				CA475337176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json in Resources */,
+				CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1235,7 @@
 				CA3B9CFE176EFC1E00E2D7B8 /* UIPlaceHolderTextView.m in Sources */,
 				CA3B9CFF176EFC1E00E2D7B8 /* Utils.m in Sources */,
 				CA3B9D02176EFE0600E2D7B8 /* SampleDataBuilder.m in Sources */,
+				CACD4170176F0B13005E12E8 /* AntiGuarantorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

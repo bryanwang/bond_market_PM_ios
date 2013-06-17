@@ -37,7 +37,7 @@
     if (_bc == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ProjectBasicDataBuilder" andData:nil];
         _bc = [[NonPlatformProjectBasicInfoViewController alloc]initWithRoot:root];
-        _bc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
+        _bc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _bc;
 }
@@ -47,7 +47,7 @@
     if (_fc == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ProjectFinanceDataBuilder" andData:nil];
         _fc = [[NonPlatformProjectFinancialIndicatorsViewController alloc]initWithRoot:root];
-        _fc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
+        _fc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _fc;
 }
@@ -56,7 +56,7 @@
 {
     if (_rc == nil) {
         _rc = [[NonPlatformProjectRemarkViewController alloc]init];
-        _rc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 44.0f);
+        _rc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _rc;
 }

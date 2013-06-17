@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddTrustIncreaseViewController : BYQuickDialogWrappedViewController
-
+- (id)initWithDataBuilder: (NSString *)builder;
 @end
