@@ -167,7 +167,6 @@
     
     NSDictionary *info = notification.userInfo;
     NSDictionary *increase = [info objectForKey:BYTRUSTINCREASEKEY];
-    NSLog(@"%@", increase);
     [self.trustIncreaseArray addObject:increase];
     [self.table reloadData];
 }
@@ -178,6 +177,19 @@
     [super viewDidLoad];
     self.title = @"增信方式";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popViewController:) name:BYPOPVIEWCONTOLLERNOTIFICATION object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.status == TrustIncreaseEditing) {
+        if (self.trustIncreaseArray.count == 0) {
+            UIImageView *noItem = [[UIImageView alloc]initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"no-item" ofType:@"png"]]];
+            SET_VIEW_X(noItem, 80.0f);
+            SET_VIEW_Y(noItem, 20.0f);
+            [self.view addSubview:noItem];
+        }
+    }
 }
 
 

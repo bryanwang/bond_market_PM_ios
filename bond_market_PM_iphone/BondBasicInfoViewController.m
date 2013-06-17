@@ -131,7 +131,6 @@
 
     newbondInfo[@"trustIncrease"] = trustIncreaseJsonStr;
     
-    NSLog(@"%@", newbondInfo);
     return newbondInfo;
 }
 

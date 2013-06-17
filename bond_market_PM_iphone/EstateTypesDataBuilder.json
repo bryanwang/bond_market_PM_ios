@@ -7,7 +7,6 @@
                     "title": "性质",
                     "key": "性质",
                     "type": "QSelectSection",
-                    "multipleAllowed": true,
                     "items": [
                             "商业",
                             "住宅",

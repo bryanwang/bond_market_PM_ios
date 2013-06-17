@@ -35,6 +35,14 @@
                         { "type":"QEntryElement", "key":"Underwriter", "title":"主承销商",
                         "bind": "textValue: Underwriter"}
                   ]
-                }
+                },
+                 { "elements":
+                     [
+                      { "type":"QEntryElement", "key":"Source", "title":"新债来源",
+                      "bind": "textValue: Source"},
+                      { "type":"QEntryElement", "key":"AvailableLimit", "title":"可拿额度", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿", "placeholder": "亿",
+                      "bind": "textValue: AvailableLimit"}
+                      ]
+                 }
     ]
 }
