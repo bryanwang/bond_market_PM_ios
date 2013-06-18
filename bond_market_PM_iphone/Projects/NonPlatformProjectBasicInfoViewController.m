@@ -70,10 +70,55 @@
 
 - (NSMutableDictionary *)fetchData
 {
-    NSMutableDictionary *newbondInfo = [NSMutableDictionary dictionary];
-    [self.root fetchValueUsingBindingsIntoObject:newbondInfo];
+    NSMutableDictionary *project = [NSMutableDictionary dictionary];
+    [self.root fetchValueUsingBindingsIntoObject:project];
     
-    return newbondInfo;
+    // 处理所有日期字段的格式
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    project[@"ValidFrom"] = [dateFormatter stringFromDate:project[@"ValidFrom"]];
+    project[@"ValidTo"] = [dateFormatter stringFromDate:project[@"ValidTo"]];
+    
+    // 处理省市区字段
+    QPickerElement *areaElt = (QPickerElement *)[self.root elementWithKey:@"Area"];
+    NSArray *areaArray = [areaElt.value componentsSeparatedByString:@"\t"];
+    if (areaArray.count > 0) {
+        project[@"AreaProvince"] = areaArray[0];
+        project[@"AreaCity"] = areaArray[1];
+        project[@"AreaDistrict"] = areaArray[2];
+    }
+    
+    // 融资成本
+    QPickerElement *costEl = (QPickerElement *)[self.root elementWithKey:@"Cost"];
+    NSArray *interestArray = [costEl.value componentsSeparatedByString:@"\t"];
+    if (interestArray.count > 0) {
+        project[@"CostFrom"] = [interestArray[0] substringToIndex:[interestArray[0] length] - 1];
+        project[@"CostTo"] = [interestArray[1] substringToIndex:[interestArray[1] length] - 1];
+    }
+    
+    //增信方式
+    NSMutableArray *trustIncreaseArray = [self.trustIncreaseViewController fetchData];
+    NSError *error = nil;
+    NSData *trustIncreaseData = [NSJSONSerialization dataWithJSONObject:trustIncreaseArray options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *trustIncreaseJsonStr = [[NSString alloc] initWithData:trustIncreaseData encoding:NSUTF8StringEncoding];
+    
+    project[@"trustIncrease"] = trustIncreaseJsonStr;
+    
+    //资金用途
+    NSMutableArray *useOfFundsArray = [self.useOfFoundsViewController fetchData];
+    NSData *useOfFundsData = [NSJSONSerialization dataWithJSONObject:useOfFundsArray options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *useOfFundsJsonStr = [[NSString alloc] initWithData:useOfFundsData encoding:NSUTF8StringEncoding];
+
+    project[@"UseOfFunds"] = useOfFundsJsonStr;
+    
+    //融资方式
+    id financing = [self.financingViewController fetchData];
+    NSData *financingMethodData = [NSJSONSerialization dataWithJSONObject:financing options:NSJSONWritingPrettyPrinted error:&error];
+    NSString * financingMethodJsonStr = [[NSString alloc] initWithData:financingMethodData encoding:NSUTF8StringEncoding];
+
+    project[@"FinancingMethod"] = financingMethodJsonStr;
+    
+    return project;
 }
 
 

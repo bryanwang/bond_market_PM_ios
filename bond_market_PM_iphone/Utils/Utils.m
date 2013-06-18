@@ -54,6 +54,57 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
     return _arears;
 }
 
+- (NSArray *)financingArray
+{
+    return @[
+             @"银行贷款",
+             @"信托",
+             @"债券",
+             @"股权质押",
+             @"委托贷款",
+             @"融资租赁",
+             @"大股东支持",
+             @"注册资本金",
+             @"项目盈利",
+             @"其他"
+             ];
+}
+
+- (NSArray *)LandAndEstateProperties
+{
+    return @[
+                    @"商业",
+                    @"住宅"
+                ];
+}
+
+
+- (NSArray *)SecurityWays
+{
+    return @[
+                 @"全额无条件不可撤销连带责任",
+                 @"有限责任",
+                 @"部分担保"
+                 ];
+}
+
+- (NSArray *)EnhancementsProperties
+{
+    return @[
+             @"偿债基金",
+             @"结构化分级"
+             ];
+}
+
+- (NSArray *)ApprovalTypes
+{
+    return @[
+            @"发改委批文",
+            @"环评",
+            @"用地许可"
+            ];
+}
+
 + (Utils *)sharedInstance
 {
     static Utils *sharedInstance = nil;

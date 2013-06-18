@@ -169,10 +169,43 @@
             break;
     }
     
+    [self setUpNavigationButton: status];
     [self.bc.quickDialogTableView reloadData];
     [self.fc.quickDialogTableView reloadData];
 }
 
+
+- (void)updateProjectInfo
+{
+    //todo:
+    [self.bc fetchData];
+}
+
+
+- (void)setUpNavigationButton: (ProjectEditStaus)status
+{
+    //right button
+    SEL selector  = nil;
+    NSString *title = nil;
+    if (status == ProjectView) {
+        selector = @selector(operateProjectInfo:);
+        title = @"操作";
+    } else{
+        selector = @selector(updateProjectInfo);
+        title = @"完成";
+    }
+    
+    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:title target:self selector:selector];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    //left button
+    if (status == ProjectEditing) {
+        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消"  target:self selector:@selector(showCancelEditBondAlert)];
+        self.navigationItem.leftBarButtonItem = item;
+    } else {
+        [self addCustomBackButtonWithTitle:@"返回"];
+    }
+}
 
 - (void)viewDidLoad
 {

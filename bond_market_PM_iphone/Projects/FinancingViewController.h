@@ -10,4 +10,7 @@
 
 @interface FinancingViewController : BYQuickDialogWrappedViewController
 
+- (void)bindObject: (id)financing;
+- (id)fetchData;
+
 @end

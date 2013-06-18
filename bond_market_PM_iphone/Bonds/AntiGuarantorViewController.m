@@ -37,11 +37,7 @@
         [result[@"data"] addObject: @{@"key": @"反担保人", @"value":array}];
     
     //担保方式
-    NSMutableArray *kinds = [@[
-                             @"全额无条件不可撤销连带责任",
-                             @"有限责任",
-                             @"部分担保"
-                             ] mutableCopy];
+    NSMutableArray *kinds =[[Utils sharedInstance].SecurityWays mutableCopy];
     NSMutableArray *a = [NSMutableArray array];
     [(NSArray *)dic[@"担保方式"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [a addObject: kinds[[obj integerValue]]];

@@ -39,11 +39,7 @@
         [result[@"data"] addObject: @{@"key": @"项目简介", @"value": dic[@"项目简介"]}];
     
     //批文
-    NSMutableArray *kinds = [@[
-                             @"发改委批文",
-                             @"环评",
-                             @"用地许可"
-                             ] mutableCopy];
+    NSArray *kinds =[Utils sharedInstance].ApprovalTypes;
     NSMutableArray *a = [NSMutableArray array];
     [(NSArray *)dic[@"批文"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [a addObject: kinds[[obj integerValue]]];

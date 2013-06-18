@@ -23,12 +23,8 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-   NSMutableArray *kinds = [@[
-                             @"全额无条件不可撤销连带责任",
-                             @"有限责任",
-                             @"部分担保"
-                             ] mutableCopy];
     //性质
+    NSArray *kinds =[Utils sharedInstance].SecurityWays;
     NSMutableArray *a = [NSMutableArray array];
     [(NSArray *)dic[@"担保方式"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [a addObject: kinds[[obj integerValue]]];

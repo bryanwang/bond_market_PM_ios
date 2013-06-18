@@ -24,17 +24,8 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    NSMutableArray *kinds = [@[
-                             @"商业",
-                             @"住宅"
-                             ] mutableCopy];
-    NSMutableArray *cards = [@[
-                             @"有",
-                             @"无",
-                             @"",
-                             ] mutableCopy];
-    
     //性质
+    NSArray *kinds =[Utils sharedInstance].LandAndEstateProperties;
     NSMutableArray *a = [NSMutableArray array];
     [(NSArray *)dic[@"性质"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [a addObject: kinds[[obj integerValue]]];
@@ -45,6 +36,12 @@
         [result[@"data"] addObject: @{@"key": @"性质", @"value": a}];
     
     //房产证
+    
+    NSMutableArray *cards = [@[
+                             @"有",
+                             @"无",
+                             @"",
+                             ] mutableCopy];
     if (dic[@"房产证"])
         [result[@"data"] addObject: @{@"key": @"房产证", @"value": cards[[dic[@"房产证"] integerValue]]}];
     
