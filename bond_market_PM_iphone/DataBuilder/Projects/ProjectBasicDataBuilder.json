@@ -5,31 +5,31 @@
 	"sections": [
                  { "elements":
                         [
-                                { "type":"QEntryElement", "key":"ShortTitle", "title":"融资主体",
-                                    "bind": "textValue: ShortTitle"},
-                                { "type":"QEntryElement", "key":"ShortTitle", "title":"股东结构",
-                                    "bind": "textValue: ShortTitle"},
-                                { "type":"QEntryElement", "key":"ShortTitle", "title":"大股东背景",
-                                    "bind": "textValue: ShortTitle"},
+                                { "type":"QEntryElement", "key":"Subject", "title":"融资主体",
+                                    "bind": "textValue: Subject"},
+                                { "type":"QEntryElement", "key":"StockholderStructure", "title":"股东结构",
+                                    "bind": "textValue: StockholderStructure"},
+                                { "type":"QEntryElement", "key":"StockholderBackground", "title":"大股东背景",
+                                    "bind": "textValue: StockholderBackground"},
                                 { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "其他"]],
                                     "bind": "value: EntNature"},
-                                { "type":"QPickerElement", "key":"EntNature", "title":"行业", "items":[["农林牧渔", "科教文卫", "矿产", "制造", "能源", "金融", "房地产", "基建类"]],
-                                    "bind": "value: EntNature"},
+                                { "type":"QPickerElement", "key":"Industry", "title":"行业", "items":[["农林牧渔", "科教文卫", "矿产", "制造", "能源", "金融", "房地产", "基建类"]],
+                                    "bind": "value: Industry"},
                                 { "type":"QPickerElement", "key":"Area", "title":"所在地区", "bind": "value: Area"},
                                 { "type":"QEntryElement", "key":"IssueScale", "title":"发行规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿元", "placeholder": "亿元",
                                     "bind": "textValue: IssueScale"},
-                                 { "type":"QEntryElement", "key":"ShortTitle", "title":"实际控制人",
-                                 "bind": "textValue: ShortTitle"},
-                                 { "type":"QEntryElement", "key":"ShortTitle", "title":"主营业务",
-                                 "bind": "textValue: ShortTitle"}
+                                 { "type":"QEntryElement", "key":"Controller", "title":"实际控制人",
+                                 "bind": "textValue: Controller"},
+                                 { "type":"QEntryElement", "key":"PrimaryBusiness", "title":"主营业务",
+                                 "bind": "textValue: PrimaryBusiness"}
                         ]
                  },
                  { "elements":
                     [
-                        { "type":"QEntryElement", "key":"AvailableLimit", "title":"融资规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿", "placeholder": "亿",
-                        "bind": "textValue: AvailableLimit"},
-                        { "type":"QEntryElement", "key":"AvailableLimit", "title":"期限", "keyboardType":"NumbersAndPunctuation", "prefix": " 年", "placeholder": "年",
-                        "bind": "textValue: AvailableLimit"},
+                        { "type":"QEntryElement", "key":"FinancingScale", "title":"融资规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿", "placeholder": "亿",
+                        "bind": "textValue: FinancingScale"},
+                        { "type":"QEntryElement", "key":"Period", "title":"期限", "keyboardType":"NumbersAndPunctuation", "prefix": " 年", "placeholder": "年",
+                        "bind": "textValue: Period"},
                         { "type":"QPickerElement", "key":"Cost", "title":"融资成本", "items":[["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%"],
                         ["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%", "11%", "12%", "13%", "14%", "15%", "16%", "17%", "18%", "19%", "20%"]],
                         "bind": "value:  Cost "}

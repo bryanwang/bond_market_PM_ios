@@ -174,11 +174,48 @@
     [self.fc.quickDialogTableView reloadData];
 }
 
+- (NSMutableDictionary *)buildProjectInfo
+{
+    NSMutableDictionary *project = [self.bc fetchData];
+    project[@"FinanceIndex"] = [self.fc fetchData] ;
+    project[@"Remark"] = [self.rc fetchData];
+    
+    return project;
+}
 
 - (void)updateProjectInfo
 {
-    //todo:
-    [self.bc fetchData];
+    [self hideKeyBoard];
+    
+    NSMutableDictionary *project = [self buildProjectInfo];
+    // 简称 这个字段必填
+    if ([project[@"Subject"] length] == 0) {
+        [ALToastView toastInView:self.view withText:@"融资主体必填"];
+        return;
+    }
+    
+    NSString *userId = [LoginManager sharedInstance].fetchUserId;
+    //转成string
+    NSError *error = nil;
+    NSData *finance = [NSJSONSerialization dataWithJSONObject:project[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *financeJsonString = [[NSString alloc] initWithData:finance encoding:NSUTF8StringEncoding];
+    project[@"FinanceIndex"] = financeJsonString;
+    
+    NSData *info = [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *infoJsonString = [[NSString alloc] initWithData:info encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *parameters = @{@"userid": userId, @"project": infoJsonString};
+    
+    [[PMHttpClient shareIntance] postPath:UPDATE_PROJECT_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *result = responseObject;
+        if ([result[@"Success"] isEqual: @1]) {
+            [self.navigationController popViewControllerAnimated:YES];
+            [ALToastView toastInView:APP_WINDOW withText:@"提交成功"];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [ALToastView toastInView:APP_WINDOW withText:@"网络问题，提交失败"];
+    }];
+
 }
 
 

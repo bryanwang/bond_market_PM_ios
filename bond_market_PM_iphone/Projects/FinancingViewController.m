@@ -46,7 +46,7 @@
     if (allsection.selectedItems.count > 0) {
         return @[@"全部"];
     }else {
-        return querysection.selectedItems;
+        return querysection.selectedItems? querysection.selectedItems : @[];
     }
 }
 
