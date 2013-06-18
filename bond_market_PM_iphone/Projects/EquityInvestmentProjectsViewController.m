@@ -51,7 +51,7 @@
     if (dic[@"其他批文"])
         [a addObject: dic[@"其他批文"]];
     if (a.count > 0)
-        [result[@"data"] addObject: @{@"key": @"担保方式", @"value": a}];
+        [result[@"data"] addObject: @{@"key": @"批文", @"value": a}];
 
     
     NSDictionary* info = [NSDictionary dictionaryWithObject:result forKey:BYTRUSTINCREASEKEY];

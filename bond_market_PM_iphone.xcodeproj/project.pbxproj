@@ -207,6 +207,7 @@
 		CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */; };
 		CACD4177176FDFA9005E12E8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD4176176FDFA9005E12E8 /* Utils.m */; };
 		CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4178176FF131005E12E8 /* EquityDataBuilder.json */; };
+		CACD417C17700009005E12E8 /* BYKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD417B17700009005E12E8 /* BYKeyValueCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -473,6 +474,8 @@
 		CACD4175176FDFA9005E12E8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
 		CACD4176176FDFA9005E12E8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utils/Utils.m; sourceTree = "<group>"; };
 		CACD4178176FF131005E12E8 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EquityDataBuilder.json; path = DataBuilder/Bonds/EquityDataBuilder.json; sourceTree = "<group>"; };
+		CACD417A17700009005E12E8 /* BYKeyValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYKeyValueCell.h; path = Utils/BYKeyValueCell.h; sourceTree = "<group>"; };
+		CACD417B17700009005E12E8 /* BYKeyValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYKeyValueCell.m; path = Utils/BYKeyValueCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +622,8 @@
 				CA3B9CF4176EFC1C00E2D7B8 /* BYQuickDialogWrappedViewController.m */,
 				CA3B9CF5176EFC1C00E2D7B8 /* PopupListComponent.h */,
 				CA3B9CF6176EFC1D00E2D7B8 /* PopupListComponent.m */,
+				CACD417A17700009005E12E8 /* BYKeyValueCell.h */,
+				CACD417B17700009005E12E8 /* BYKeyValueCell.m */,
 				CA3B9CF7176EFC1D00E2D7B8 /* UIPlaceHolderTextView.h */,
 				CA3B9CF8176EFC1D00E2D7B8 /* UIPlaceHolderTextView.m */,
 				CACD4175176FDFA9005E12E8 /* Utils.h */,
@@ -1240,6 +1245,7 @@
 				CA3B9D02176EFE0600E2D7B8 /* SampleDataBuilder.m in Sources */,
 				CACD4170176F0B13005E12E8 /* AntiGuarantorViewController.m in Sources */,
 				CACD4177176FDFA9005E12E8 /* Utils.m in Sources */,
+				CACD417C17700009005E12E8 /* BYKeyValueCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

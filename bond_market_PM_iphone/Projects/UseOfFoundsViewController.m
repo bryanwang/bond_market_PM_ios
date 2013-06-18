@@ -8,6 +8,7 @@
 
 #import "UseOfFoundsViewController.h"
 #import "AddUseOfFoundsViewController.h"
+#import "BYKeyValueCell.h"
 
 @interface UseOfFoundsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *useOfFoundsArray;
@@ -96,22 +97,22 @@
     return self.useOfFoundsArray.count;
 }
 
-//todo:..
-//- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    //  这里有性能问题 懒得计算了 就这样把..
-//    TrustIncreaseCell *cell = [[TrustIncreaseCell alloc] init];
-//    cell.increase = self.trustIncreaseArray[indexPath.row];
-//    return [cell cellHeight];
-//}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //  这里有性能问题 懒得计算了 就这样把..
+    BYKeyValueCell *cell = [[BYKeyValueCell alloc] init];
+    cell.data = self.useOfFoundsArray[indexPath.row];
+    return [cell cellHeight];
+}
+
+- (BYKeyValueCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     NSString *CellIdentifier = @"UseOfFoundCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    cell.textLabel.text = @"xx";
+    BYKeyValueCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell = [[BYKeyValueCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell.data = self.useOfFoundsArray[indexPath.row];
     return cell;
 }
 
