@@ -1,11 +1,10 @@
 {
 	"grouped": true,
 	"title": "保证担保",
-            "controllerName": "GuaranteeViewController",
 	"sections": [
-                 { "key": "Guarantee", "elements":
+                 { "key": "担保方", "elements":
                         [
-                                { "type":"QEntryElement", "key":"担保方", "placeholder":"担保方",  "bind": "textValue: 担保方"},
+                                { "type":"QEntryElement", "key":"", "placeholder":"担保方",  "bind": "textValue: 担保方"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleGuaranteeAddButtonTapped:"}
                         ]
                  },

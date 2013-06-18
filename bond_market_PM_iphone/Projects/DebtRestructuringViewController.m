@@ -16,6 +16,23 @@
 
 - (void)doneBtnTapped
 {
+    NSMutableDictionary *result = [@{@"type": @"调整债务结构", @"data": [@[] mutableCopy]} mutableCopy];
+    
+    //read data from table
+    QRootElement *root = self.qc.quickDialogTableView.root ;
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [root fetchValueIntoObject:dic];
+    
+    if (dic[@"偿还银行借款"])
+        [result[@"data"] addObject: @{@"key": @"偿还银行借款", @"value": dic[@"偿还银行借款"]}];
+
+    if (dic[@"评估价值"])
+        [result[@"data"] addObject: @{@"key": @"调整债务结构其他", @"value": dic[@"调整债务结构其他"]}];
+
+    NSDictionary* info = [NSDictionary dictionaryWithObject:result forKey:BYTRUSTINCREASEKEY];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
+                                                        object:self
+                                                      userInfo:info];
 }
 
 - (void)viewDidLoad

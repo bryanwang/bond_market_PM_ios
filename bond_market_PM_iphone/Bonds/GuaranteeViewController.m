@@ -23,8 +23,6 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    if (dic.count == 0) return;
-   
    NSMutableArray *kinds = [@[
                              @"全额无条件不可撤销连带责任",
                              @"有限责任",

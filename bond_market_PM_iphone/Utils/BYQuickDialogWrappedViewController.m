@@ -132,7 +132,7 @@
 - (void)handleEquityAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root sectionWithKey:@"Equity"];
+    QSection  *section = [root sectionWithKey:@"股权所有人"];
     if (section) {
         QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"股权所有人"];
         [section insertElement:e1 atIndex: section.elements.count - 1];
@@ -143,7 +143,7 @@
 - (void)handleGuaranteeAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root sectionWithKey:@"Guarantee"];
+    QSection  *section = [root sectionWithKey:@"担保方"];
     if (section) {
         QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"担保方"];
         [section insertElement:e1 atIndex: section.elements.count - 1];
@@ -154,7 +154,7 @@
 - (void)handleReceivablesAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root sectionWithKey:@"Receivables"];
+    QSection  *section = [root sectionWithKey:@"应收账款对象"];
     if (section) {
         QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"应收账款对象"];
         [section insertElement:e1 atIndex: section.elements.count - 1];
@@ -165,7 +165,7 @@
 - (void)handleAntiGuarantorAddButtonTapped: (QElement *)element
 {
     QRootElement *root = self.root;
-    QSection  *section = [root sectionWithKey:@"AntiGuarantor"];
+    QSection  *section = [root sectionWithKey:@"反担保人"];
     if (section) {
         QEntryElement *e1 = [[QEntryElement alloc]initWithTitle:nil Value:nil Placeholder:@"反担保人"];
         [section insertElement:e1 atIndex: section.elements.count - 1];

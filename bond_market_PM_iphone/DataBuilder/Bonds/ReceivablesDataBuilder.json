@@ -1,11 +1,10 @@
 {
 	"grouped": true,
 	"title": "应收账款",
-      "controllerName": "ReceivablesViewController",
 	"sections": [
-                 { "title": "应收账款对象", "key":"Receivables", "elements":
+                 { "title": "应收账款对象", "key":"应收账款对象", "elements":
                         [
-                                { "type":"QEntryElement", "key":"应收账款对象", "placeholder":"应收账款对象",
+                                { "type":"QEntryElement", "key":"", "placeholder":"应收账款对象",
                                  "bind": "textValue: 应收账款对"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleReceivablesAddButtonTapped:"}
                         ]

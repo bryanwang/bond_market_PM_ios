@@ -24,8 +24,6 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    if (dic.count == 0) return;
-    
     NSMutableArray *kinds = [@[
                              @"商业",
                              @"住宅"

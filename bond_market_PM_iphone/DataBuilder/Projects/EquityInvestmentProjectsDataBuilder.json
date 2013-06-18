@@ -14,7 +14,9 @@
                  {
                     "title": "批文",
                      "key": "批文",
+                     
                      "type": "QSelectSection",
+                    "multipleAllowed": true,
                      "items": ["发改委批文", "环评", "用地许可"],
                      "bind": "value: 补充流动资金"
                  },

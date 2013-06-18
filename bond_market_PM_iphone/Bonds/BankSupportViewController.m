@@ -23,8 +23,6 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    if (dic.count == 0) return;
-    
     if(dic[@"银行名称"])
         [result[@"data"] addObject: @{@"key": @"银行名称", @"value": dic[@"银行名称"]}];
     

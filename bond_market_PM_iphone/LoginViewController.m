@@ -51,9 +51,9 @@
             [ALToastView toastInView:APP_ROOT_VIEW withText:@"登录失败"];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //todo:
+        //todo: 
     }];
-}
+ }
 
 - (void)viewTapped: (id)sender
 {

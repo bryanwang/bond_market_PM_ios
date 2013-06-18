@@ -17,6 +17,15 @@
 
 - (void)doneBtnTapped
 {
+    NSMutableDictionary *result = [
+                                   @{@"type": @"其它资金用途",
+                                   @"data": @[@{@"key": @"其他", @"value": self.textview.text}]}
+                                   mutableCopy];
+    
+    NSDictionary* info = [NSDictionary dictionaryWithObject:result forKey:BYTRUSTINCREASEKEY];
+    [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
+                                                        object:self
+                                                      userInfo:info];
 }
 
 - (void)viewDidLoad

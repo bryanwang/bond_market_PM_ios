@@ -1,9 +1,9 @@
 {
 	"grouped": true,
 	"sections": [
-                 { "key": "AntiGuarantor", "elements":
+                 { "key": "反担保人", "elements":
                         [
-                                { "type":"QEntryElement", "key":"反担保人", "placeholder":"反担保人",  "bind": "textValue: 反担保人"},
+                                { "type":"QEntryElement", "key":"", "placeholder":"反担保人",  "bind": "textValue: 反担保人"},
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleAntiGuarantorAddButtonTapped:"}
                         ]
                  },

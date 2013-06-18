@@ -1,7 +1,6 @@
 {
 	"grouped": true,
 	"title": "增信方式",
-            "controllerName": "AddTrustIncreaseViewController",
 	"sections": [
                  { "elements":
                         [

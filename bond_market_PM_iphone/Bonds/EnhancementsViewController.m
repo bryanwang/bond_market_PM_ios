@@ -23,8 +23,6 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    if (dic.count == 0) return;
-    
     NSMutableArray *kinds = [@[
                              @"偿债基金",
                              @"结构化分级"

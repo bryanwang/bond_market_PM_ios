@@ -1,7 +1,6 @@
 {
 	"grouped": true,
 	"title": "土地",
-            "controllerName": "EnhancementsViewController",
 	"sections": [
                 { 
                     "title": "性质",

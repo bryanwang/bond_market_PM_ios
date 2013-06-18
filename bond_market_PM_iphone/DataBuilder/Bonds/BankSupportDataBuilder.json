@@ -1,7 +1,6 @@
 {
 	"grouped": true,
 	"title": "银行流动性支持",
-            "controllerName": "EnhancementsViewController",
 	"sections": [
                 { "elements":
                         [

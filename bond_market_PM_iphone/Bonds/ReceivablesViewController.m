@@ -23,8 +23,6 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    if (dic.count == 0) return;
-    
     if (dic[@"应收账款余额"])
         [result[@"data"] addObject: @{@"key": @"应收账款余额", @"value": dic[@"应收账款余额"]}];
     
@@ -33,7 +31,7 @@
     
     //股权所有人
     NSMutableArray *array = [NSMutableArray array];
-    QSection *section = [root sectionWithKey:@"Receivables"];
+    QSection *section = [root sectionWithKey:@"应收账款对象"];
     for (id el in section.elements) {
         if ([el isKindOfClass:[QEntryElement class]]) {
             NSString *textValue = ((QEntryElement *)el).textValue;

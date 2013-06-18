@@ -81,7 +81,6 @@
 		CA3B9CFC176EFC1E00E2D7B8 /* BYQuickDialogWrappedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CF4176EFC1C00E2D7B8 /* BYQuickDialogWrappedViewController.m */; };
 		CA3B9CFD176EFC1E00E2D7B8 /* PopupListComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CF6176EFC1D00E2D7B8 /* PopupListComponent.m */; };
 		CA3B9CFE176EFC1E00E2D7B8 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CF8176EFC1D00E2D7B8 /* UIPlaceHolderTextView.m */; };
-		CA3B9CFF176EFC1E00E2D7B8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CFA176EFC1D00E2D7B8 /* Utils.m */; };
 		CA3B9D02176EFE0600E2D7B8 /* SampleDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9D01176EFE0500E2D7B8 /* SampleDataBuilder.m */; };
 		CA3B9D07176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9D06176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf */; };
 		CA475337176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA475336176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json */; };
@@ -206,6 +205,8 @@
 		CA8AEFFA1761915C000F37FA /* operate-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8AEFF61761915C000F37FA /* operate-edit@2x.png */; };
 		CACD4170176F0B13005E12E8 /* AntiGuarantorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD416F176F0B13005E12E8 /* AntiGuarantorViewController.m */; };
 		CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */; };
+		CACD4177176FDFA9005E12E8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD4176176FDFA9005E12E8 /* Utils.m */; };
+		CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4178176FF131005E12E8 /* EquityDataBuilder.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,8 +343,6 @@
 		CA3B9CF6176EFC1D00E2D7B8 /* PopupListComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopupListComponent.m; path = Utils/PopupListComponent.m; sourceTree = "<group>"; };
 		CA3B9CF7176EFC1D00E2D7B8 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPlaceHolderTextView.h; path = Utils/UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		CA3B9CF8176EFC1D00E2D7B8 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = Utils/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
-		CA3B9CF9176EFC1D00E2D7B8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
-		CA3B9CFA176EFC1D00E2D7B8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utils/Utils.m; sourceTree = "<group>"; };
 		CA3B9D00176EFE0500E2D7B8 /* SampleDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleDataBuilder.h; path = DataBuilder/SampleDataBuilder.h; sourceTree = "<group>"; };
 		CA3B9D01176EFE0500E2D7B8 /* SampleDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleDataBuilder.m; path = DataBuilder/SampleDataBuilder.m; sourceTree = "<group>"; };
 		CA3B9D06176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Berthold Akzidenz Grotesk BE Condensed.ttf"; path = "Font/Berthold Akzidenz Grotesk BE Condensed.ttf"; sourceTree = "<group>"; };
@@ -471,6 +470,9 @@
 		CACD416E176F0B13005E12E8 /* AntiGuarantorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AntiGuarantorViewController.h; path = Bonds/AntiGuarantorViewController.h; sourceTree = "<group>"; };
 		CACD416F176F0B13005E12E8 /* AntiGuarantorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntiGuarantorViewController.m; path = Bonds/AntiGuarantorViewController.m; sourceTree = "<group>"; };
 		CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AntiGuarantorDataBuilder.json; path = DataBuilder/Projects/AntiGuarantorDataBuilder.json; sourceTree = "<group>"; };
+		CACD4175176FDFA9005E12E8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
+		CACD4176176FDFA9005E12E8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utils/Utils.m; sourceTree = "<group>"; };
+		CACD4178176FF131005E12E8 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EquityDataBuilder.json; path = DataBuilder/Bonds/EquityDataBuilder.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,8 +621,8 @@
 				CA3B9CF6176EFC1D00E2D7B8 /* PopupListComponent.m */,
 				CA3B9CF7176EFC1D00E2D7B8 /* UIPlaceHolderTextView.h */,
 				CA3B9CF8176EFC1D00E2D7B8 /* UIPlaceHolderTextView.m */,
-				CA3B9CF9176EFC1D00E2D7B8 /* Utils.h */,
-				CA3B9CFA176EFC1D00E2D7B8 /* Utils.m */,
+				CACD4175176FDFA9005E12E8 /* Utils.h */,
+				CACD4176176FDFA9005E12E8 /* Utils.m */,
 				0EA8829D175C2522001100A7 /* area.plist */,
 				0EA8829E175C2522001100A7 /* city.plist */,
 				0EA8829F175C2522001100A7 /* define.h */,
@@ -635,6 +637,7 @@
 				CA3B9C4C176EAF9C00E2D7B8 /* BankSupportDataBuilder.json */,
 				CA3B9C4D176EAF9C00E2D7B8 /* BasicDataBuilder.json */,
 				CA3B9C4E176EAF9C00E2D7B8 /* BondFilterDataBuilder.json */,
+				CACD4178176FF131005E12E8 /* EquityDataBuilder.json */,
 				CA3B9C4F176EAF9C00E2D7B8 /* EnhancementsDataBuilder.json */,
 				CA3B9C50176EAF9C00E2D7B8 /* EstateTypesDataBuilder.json */,
 				CA3B9C51176EAF9C00E2D7B8 /* FinanceDataBuilder.json */,
@@ -736,18 +739,18 @@
 		CA3B9C68176EBC5C00E2D7B8 /* UseOfFounds */ = {
 			isa = PBXGroup;
 			children = (
-				CA3B9CDF176EFBFA00E2D7B8 /* AddLiquidityViewController.h */,
-				CA3B9CE0176EFBFB00E2D7B8 /* AddLiquidityViewController.m */,
+				CA3B9CE9176EFC0400E2D7B8 /* UseOfFoundsViewController.h */,
+				CA3B9CEA176EFC0500E2D7B8 /* UseOfFoundsViewController.m */,
 				CA3B9CE1176EFBFC00E2D7B8 /* AddUseOfFoundsViewController.h */,
 				CA3B9CE2176EFBFD00E2D7B8 /* AddUseOfFoundsViewController.m */,
+				CA3B9CDF176EFBFA00E2D7B8 /* AddLiquidityViewController.h */,
+				CA3B9CE0176EFBFB00E2D7B8 /* AddLiquidityViewController.m */,
 				CA3B9CE3176EFBFE00E2D7B8 /* DebtRestructuringViewController.h */,
 				CA3B9CE4176EFBFF00E2D7B8 /* DebtRestructuringViewController.m */,
 				CA3B9CE5176EFC0000E2D7B8 /* EquityInvestmentProjectsViewController.h */,
 				CA3B9CE6176EFC0100E2D7B8 /* EquityInvestmentProjectsViewController.m */,
 				CA3B9CE7176EFC0200E2D7B8 /* OtherPurposesViewController.h */,
 				CA3B9CE8176EFC0300E2D7B8 /* OtherPurposesViewController.m */,
-				CA3B9CE9176EFC0400E2D7B8 /* UseOfFoundsViewController.h */,
-				CA3B9CEA176EFC0500E2D7B8 /* UseOfFoundsViewController.m */,
 			);
 			name = UseOfFounds;
 			sourceTree = "<group>";
@@ -1153,6 +1156,7 @@
 				CA3B9D07176EFF2900E2D7B8 /* Berthold Akzidenz Grotesk BE Condensed.ttf in Resources */,
 				CA475337176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json in Resources */,
 				CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */,
+				CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,9 +1237,9 @@
 				CA3B9CFC176EFC1E00E2D7B8 /* BYQuickDialogWrappedViewController.m in Sources */,
 				CA3B9CFD176EFC1E00E2D7B8 /* PopupListComponent.m in Sources */,
 				CA3B9CFE176EFC1E00E2D7B8 /* UIPlaceHolderTextView.m in Sources */,
-				CA3B9CFF176EFC1E00E2D7B8 /* Utils.m in Sources */,
 				CA3B9D02176EFE0600E2D7B8 /* SampleDataBuilder.m in Sources */,
 				CACD4170176F0B13005E12E8 /* AntiGuarantorViewController.m in Sources */,
+				CACD4177176FDFA9005E12E8 /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

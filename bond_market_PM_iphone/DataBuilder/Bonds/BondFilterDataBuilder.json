@@ -1,6 +1,5 @@
 {
 	"grouped": true,
-	"controllerName": "FilterViewController",
 	"sections": [
                  {
                  "type": "QSelectSection",

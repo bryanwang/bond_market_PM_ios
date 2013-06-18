@@ -1,8 +1,7 @@
 {
 	"grouped": true,
 	"title": "内部增级",
-            "controllerName": "EnhancementsViewController",
-	"sections": [
+    "sections": [
                 {
                     "key":"内部增级",
                     "type": "QSelectSection",
