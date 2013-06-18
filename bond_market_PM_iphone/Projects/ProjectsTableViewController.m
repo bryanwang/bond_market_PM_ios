@@ -9,6 +9,7 @@
 #import "ProjectsTableViewController.h"
 #import "BondTableHeader.h"
 #import "NewNonPlatformProjectViewController.h"
+#import "ProjectTableCell.h"
 
 @interface ProjectsTableViewController () {
     //存储原始数据
@@ -236,12 +237,12 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ProjectTableCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ProjectTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = (ProjectTableCell *)[[[NSBundle mainBundle]loadNibNamed:@"ProjectTableCell" owner:self options:nil] lastObject];
     }
     
-    cell.textLabel.text = self.projects[indexPath.section][indexPath.row][@"ProjectInfo"][@"Subject"];
+    cell.project = self.projects[indexPath.section][indexPath.row];
     return cell;
 }
 

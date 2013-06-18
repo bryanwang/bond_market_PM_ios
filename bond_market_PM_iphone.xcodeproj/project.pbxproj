@@ -24,8 +24,10 @@
 		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
 		0EA8830B175C2C81001100A7 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8830A175C2C01001100A7 /* libQuickDialog.a */; };
 		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
-		CA33997317704633008977EB /* NonPlatformProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA33997217704633008977EB /* NonPlatformProjectsViewController.m */; };
-		CA33997817704BF8008977EB /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA33997717704BF8008977EB /* ProjectsTableViewController.m */; };
+		CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494017705C2400D6FBE8 /* ProjectTableCell.m */; };
+		CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */; };
+		CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */; };
+		CA04494B17705E0200D6FBE8 /* NonPlatformProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494A17705E0200D6FBE8 /* NonPlatformProjectsViewController.m */; };
 		CA3B9C23176EA23E00E2D7B8 /* no-item.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C21176EA23E00E2D7B8 /* no-item.png */; };
 		CA3B9C24176EA23E00E2D7B8 /* no-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */; };
 		CA3B9C56176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */; };
@@ -253,10 +255,13 @@
 		0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Support/QuickDialog/QuickDialog.xcodeproj; sourceTree = SOURCE_ROOT; };
 		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		CA33997117704633008977EB /* NonPlatformProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonPlatformProjectsViewController.h; sourceTree = "<group>"; };
-		CA33997217704633008977EB /* NonPlatformProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonPlatformProjectsViewController.m; sourceTree = "<group>"; };
-		CA33997617704BF8008977EB /* ProjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectsTableViewController.h; path = Projects/ProjectsTableViewController.h; sourceTree = "<group>"; };
-		CA33997717704BF8008977EB /* ProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectsTableViewController.m; path = Projects/ProjectsTableViewController.m; sourceTree = "<group>"; };
+		CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTableCell.h; path = Projects/ProjectTableCell.h; sourceTree = "<group>"; };
+		CA04494017705C2400D6FBE8 /* ProjectTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectTableCell.m; path = Projects/ProjectTableCell.m; sourceTree = "<group>"; };
+		CA04494417705CE800D6FBE8 /* ProjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectsTableViewController.h; path = Projects/ProjectsTableViewController.h; sourceTree = "<group>"; };
+		CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectsTableViewController.m; path = Projects/ProjectsTableViewController.m; sourceTree = "<group>"; };
+		CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectTableCell.xib; path = Projects/ProjectTableCell.xib; sourceTree = "<group>"; };
+		CA04494917705E0200D6FBE8 /* NonPlatformProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NonPlatformProjectsViewController.h; path = Projects/NonPlatformProjectsViewController.h; sourceTree = "<group>"; };
+		CA04494A17705E0200D6FBE8 /* NonPlatformProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NonPlatformProjectsViewController.m; path = Projects/NonPlatformProjectsViewController.m; sourceTree = "<group>"; };
 		CA3B9C21176EA23E00E2D7B8 /* no-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item.png"; sourceTree = "<group>"; };
 		CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item@2x.png"; sourceTree = "<group>"; };
 		CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AssertsTypesDataBuilder.json; path = DataBuilder/Bonds/AssertsTypesDataBuilder.json; sourceTree = "<group>"; };
@@ -704,12 +709,15 @@
 		CA3B9C2B176EACA900E2D7B8 /* NonPlatformProject */ = {
 			isa = PBXGroup;
 			children = (
-				CA33997617704BF8008977EB /* ProjectsTableViewController.h */,
-				CA33997717704BF8008977EB /* ProjectsTableViewController.m */,
+				CA04494917705E0200D6FBE8 /* NonPlatformProjectsViewController.h */,
+				CA04494A17705E0200D6FBE8 /* NonPlatformProjectsViewController.m */,
+				CA04494417705CE800D6FBE8 /* ProjectsTableViewController.h */,
+				CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */,
+				CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */,
+				CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */,
+				CA04494017705C2400D6FBE8 /* ProjectTableCell.m */,
 				CA3B9CD0176EFB9B00E2D7B8 /* NewNonPlatformProjectViewController.h */,
 				CA3B9CD1176EFB9C00E2D7B8 /* NewNonPlatformProjectViewController.m */,
-				CA33997117704633008977EB /* NonPlatformProjectsViewController.h */,
-				CA33997217704633008977EB /* NonPlatformProjectsViewController.m */,
 				CA3B9C2D176EACC700E2D7B8 /* Form */,
 			);
 			name = NonPlatformProject;
@@ -1168,6 +1176,7 @@
 				CA475337176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json in Resources */,
 				CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */,
 				CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */,
+				CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1252,8 +1261,9 @@
 				CACD4170176F0B13005E12E8 /* AntiGuarantorViewController.m in Sources */,
 				CACD4177176FDFA9005E12E8 /* Utils.m in Sources */,
 				CACD417C17700009005E12E8 /* BYKeyValueCell.m in Sources */,
-				CA33997317704633008977EB /* NonPlatformProjectsViewController.m in Sources */,
-				CA33997817704BF8008977EB /* ProjectsTableViewController.m in Sources */,
+				CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */,
+				CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */,
+				CA04494B17705E0200D6FBE8 /* NonPlatformProjectsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
