@@ -77,11 +77,6 @@ typedef enum BondEditStaus: NSUInteger {
     newbondInfo[@"FinanceIndex"] = [self.fc fetchData] ;
     newbondInfo[@"Remark"] = [self.rc fetchData];
 
-    //如果self.bondInfo 不为空 则 操作为update
-    //如果self.bondInfo 为空 则 操作为create
-    if (self.bondInfo)
-        newbondInfo[@"Id"] = self.bondInfo[@"Id"];
-
     return newbondInfo;
 }
 
@@ -169,6 +164,12 @@ typedef enum BondEditStaus: NSUInteger {
     }
     
     NSString *userId = [LoginManager sharedInstance].fetchUserId;
+
+    //如果self.bondInfo 不为空 则 操作为update
+    //如果self.bondInfo 为空 则 操作为create
+    if (self.bondInfo)
+        newbondInfo[@"Id"] = self.bondInfo[@"Id"];
+    
     //转成string
     NSError *error = nil;
     NSData *finance = [NSJSONSerialization dataWithJSONObject:newbondInfo[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
