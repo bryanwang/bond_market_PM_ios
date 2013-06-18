@@ -1,27 +1,26 @@
 //
-//  BondsTableViewController.m
+//  ProjectsViewController.m
 //  bond_market_PM_iphone
 //
-//  Created by Bruce yang on 13-6-4.
+//  Created by Bruce yang on 13-6-18.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "BondsTableViewController.h"
-#import "BondTableCell.h"
+#import "ProjectsTableViewController.h"
 #import "BondTableHeader.h"
-#import "NewBondViewController.h"
+#import "NewNonPlatformProjectViewController.h"
 
-@interface BondsTableViewController () {
+@interface ProjectsTableViewController () {
     //存储原始数据
     NSMutableArray *bondsJson;
     // 用作筛选
     NSMutableArray *filterBondsJson;
     // 当前的 排序方式
-    BondsOrderType curOrderType;
+    ProjectsOrderType curOrderType;
 }
 
 @property (nonatomic, strong) NSMutableArray *sections;
-@property (nonatomic, strong) NSMutableArray *bonds;
+@property (nonatomic, strong) NSMutableArray *projects;
 @property (nonatomic, strong) NSDateFormatter *fomart;
 
 @property (nonatomic, strong) BondTableHeader *bondHeader;
@@ -32,7 +31,7 @@
 static float TABLE_SECTION_HEIGHT = 23.0f;
 static float TABLE_CELL_HEIGHT = 74.0f;
 
-@implementation BondsTableViewController
+@implementation ProjectsTableViewController
 
 - (NSDateFormatter *)fomart
 {
@@ -54,14 +53,14 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         //全部
     }
     else {
-        NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.NewBondInfo.Status in %@", query];
+        NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.ProjectInfo.Status in %@", query];
         [filterBondsJson filterUsingPredicate:thePredicate];
     }
-
+    
     [self orderBy:curOrderType];
 }
 
-- (void)orderBy:(BondsOrderType)orderType
+- (void)orderBy:(ProjectsOrderType)orderType
 {
     curOrderType = orderType;
     
@@ -73,9 +72,9 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         predicateStr = @"(OwnerInfo.Name like %@)";
     } else {
         //sections for update time
-        NSSet *uniques = [NSSet setWithArray: [filterBondsJson valueForKeyPath:@"NewBondInfo.UpdateTime"]];
+        NSSet *uniques = [NSSet setWithArray: [filterBondsJson valueForKeyPath:@"ProjectInfo.UpdateTime"]];
         self.sections = [[uniques allObjects] mutableCopy];
-        predicateStr = @"(NewBondInfo.UpdateTime like %@)";
+        predicateStr = @"(ProjectInfo.UpdateTime like %@)";
         
         // update time sort
         if (orderType == OrderByTime) {
@@ -89,8 +88,6 @@ static float TABLE_CELL_HEIGHT = 74.0f;
             self.sections = [[self.sections sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
                 NSDate *aDate= [self.fomart dateFromString:a];
                 NSDate *bDate = [self.fomart dateFromString:b];
-                NSLog(@"%@", aDate);
-                NSLog(@"%@", bDate);
                 return [bDate compare:aDate];
             }] mutableCopy];
         }
@@ -104,21 +101,21 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         [tmps2 addObject:temp];
     }];
     
-    self.bonds = tmps2;
+    self.projects = tmps2;
     
     [self.tableView reloadData];
 }
 
-- (void)convertBondsUpdateTimeFormaterAndOwner: (NSMutableArray *)bonds
+- (void)convertBondsUpdateTimeFormaterAndOwner: (NSMutableArray *)projects
 {
     //change every bond create time
     NSMutableArray *tmps = [NSMutableArray array];
-    [bonds enumerateObjectsUsingBlock:^(id bond, NSUInteger index, BOOL *stop) {
+    [projects enumerateObjectsUsingBlock:^(id bond, NSUInteger index, BOOL *stop) {
         NSMutableDictionary *mutBond = [bond mutableCopy];
-        NSMutableDictionary *mutInfo = [mutBond[@"NewBondInfo"] mutableCopy];
+        NSMutableDictionary *mutInfo = [mutBond[@"ProjectInfo"] mutableCopy];
         //only date
         mutInfo[@"UpdateTime"] = [mutInfo[@"UpdateTime"] substringToIndex:10];
-        mutBond[@"NewBondInfo"] = [mutInfo copy];
+        mutBond[@"ProjectInfo"] = [mutInfo copy];
         //owner
         if (mutBond[@"OwnerInfo"] == nil ||[mutBond[@"OwnerInfo"] isEqual:[NSNull null]]) {
             NSMutableDictionary *mutOwner = [NSMutableDictionary dictionary];
@@ -134,15 +131,15 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 }
 
 
-- (void) fetchMyBonds
+- (void) fetchMyProjects
 {
     [MBProgressHUD showHUDAddedTo:self.view.superview animated:YES];
     NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
-        [[PMHttpClient shareIntance]getPath:MY_BONDS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [MBProgressHUD hideAllHUDsForView:self.view.superview animated:YES];
-            
+
             [self convertBondsUpdateTimeFormaterAndOwner:  (NSMutableArray *)responseObject];
             [self orderBy:OrderByTime];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -159,7 +156,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
-        [[PMHttpClient shareIntance]getPath:MY_BONDS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSDictionary *info = (NSDictionary *)responseObject;
             self.bondHeader.inputInfo= info;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -169,7 +166,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     else {
         //todo: not login
     }
-
+    
 }
 
 - (void)reloadTableview
@@ -200,7 +197,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *array = self.bonds[section];
+    NSArray *array = self.projects[section];
     return array.count;
 }
 
@@ -236,16 +233,15 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     return TABLE_CELL_HEIGHT;
 }
 
-- (BondTableCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
- 
-    static NSString *CellIdentifier = @"BondTableCell";
-    BondTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"ProjectTableCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = (BondTableCell *)[[[NSBundle mainBundle]loadNibNamed:@"BondTableCell" owner:self options:nil] lastObject];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.bond = self.bonds[indexPath.section][indexPath.row];
+    cell.textLabel.text = self.projects[indexPath.section][indexPath.row][@"ProjectInfo"][@"Subject"];
     return cell;
 }
 
@@ -254,7 +250,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NewBondViewController *nc = [[NewBondViewController alloc]initWithBond:self.bonds[indexPath.section][indexPath.row]];
+    NewNonPlatformProjectViewController *nc = [[NewNonPlatformProjectViewController alloc]init];
     [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
 }
 

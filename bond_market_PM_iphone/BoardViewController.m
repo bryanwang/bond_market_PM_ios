@@ -11,8 +11,12 @@
 #import "MyBondsViewController.h"
 #import "NewPlatformProjectViewController.h"
 #import "NewNonPlatformProjectViewController.h"
+#import "NonPlatformProjectsViewController.h"
 
-@interface BoardViewController () <UIActionSheetDelegate>
+@interface BoardViewController () <UIActionSheetDelegate> {
+    UIActionSheet *createProjectActionSheet;
+    UIActionSheet *viewProjectActionSheet;
+}
 @property (strong, nonatomic) IBOutlet UIView *board45;
 @property (strong, nonatomic) IBOutlet UIView *board44;
 
@@ -24,6 +28,30 @@
 @end
 
 @implementation BoardViewController
+
+- (void)showPlatformProjects
+{
+    
+}
+
+- (void)showNonPlatFormPorjects
+{
+    NonPlatformProjectsViewController *nc = [[NonPlatformProjectsViewController alloc] init];
+    [self.navigationController pushViewController:nc animated:YES];
+}
+
+- (IBAction)showProjectActionSheet:(id)sender
+{
+    viewProjectActionSheet = [[UIActionSheet alloc]
+                                initWithTitle:@"项目查看"
+                                delegate:self
+                                cancelButtonTitle:@"取消"
+                                destructiveButtonTitle:nil
+                                otherButtonTitles:@"平台项目", @"非平台项目",nil];
+    viewProjectActionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [viewProjectActionSheet showInView:self.view];
+}
+
 - (void)createNonPlatformProject
 {
     NewNonPlatformProjectViewController *nc = [[NewNonPlatformProjectViewController alloc]init];
@@ -37,14 +65,14 @@
 }
 
 - (IBAction)createProject:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+    createProjectActionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"项目录入"
                                   delegate:self
                                   cancelButtonTitle:@"取消"
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:@"平台项目", @"非平台项目",nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-    [actionSheet showInView:self.view];
+    createProjectActionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [createProjectActionSheet showInView:self.view];
 }
 
 
@@ -103,10 +131,18 @@
 #pragma action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0) {
-        [self createPlatformProject];
-    } else if (buttonIndex == 1) {
-        [self createNonPlatformProject];
+    if ([actionSheet isEqual:createProjectActionSheet]) {
+        if (buttonIndex == 0) {
+            [self createPlatformProject];
+        } else if (buttonIndex == 1) {
+            [self createNonPlatformProject];
+        }
+    }
+    else {
+        if(buttonIndex == 0)
+           [self showPlatformProjects];
+        else
+            [self showNonPlatFormPorjects];
     }
 }
 

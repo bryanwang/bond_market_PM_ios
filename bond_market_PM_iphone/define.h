@@ -12,12 +12,17 @@
 //#define BASE_URL @"http://192.168.1.152:7000/"
 #define BASE_URL @"http://192.168.1.152:63000/"
 #define LOGIN_INTERFACE @"/api/ios/signin"
+
+//bond
 #define MY_BONDS_INTERFACE @"/api/ios/newbond/mine"
 #define UPDATE_NEWBOND_INTERFACE @"/api/ios/newbond/update"
 #define DELETE_NEWBOND_INTERFACE @"/api/ios/newbond/delete"
 #define MY_BONDS_INPUTUBFI_INTERFACE @"/api/ios/newbond/bonus"
 
+//project
 #define UPDATE_PROJECT_INTERFACE @"/api/ios/project/update"
+#define MY_PROJECTS_INTERFACE @"/api/ios/project/mine"
+#define MY_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/project/bonus"
 
 #define BYPOPVIEWCONTOLLERNOTIFICATION @"popviewcontroller"
 #define BYTRUSTINCREASEKEY @"trustincreasedic"
