@@ -324,7 +324,7 @@ typedef enum BondEditStaus: NSUInteger {
     
     //left button
     if (status == BondEditing) {
-        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消"  target:self selector:@selector(showCancelEditBondAlert)];
+        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消" target:self selector:@selector(showCancelEditProjectAlert)];
         self.navigationItem.leftBarButtonItem = item;
     } else {
         [self addCustomBackButtonWithTitle:@"返回"];

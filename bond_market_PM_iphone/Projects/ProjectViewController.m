@@ -191,7 +191,7 @@
     [ALToastView toastInView:APP_WINDOW withText:@"取消编辑状态"];
 }
 
-- (void)showCancelEditBondAlert
+- (void)showCancelEditProjectAlert
 {
     [self.popComponent hide];
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"取消编辑"
@@ -308,7 +308,7 @@
     
     //left button
     if (status == ProjectEditing) {
-        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消"  target:self selector:@selector(showCancelEditBondAlert)];
+        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消" target:self selector:@selector(showCancelEditProjectAlert)];
         self.navigationItem.leftBarButtonItem = item;
     } else {
         [self addCustomBackButtonWithTitle:@"返回"];
