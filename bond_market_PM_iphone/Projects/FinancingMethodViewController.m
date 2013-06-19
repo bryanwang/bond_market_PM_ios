@@ -1,18 +1,57 @@
 //
-//  FinancingViewController.m
+//  FinancingMethodViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "FinancingViewController.h"
+#import "FinancingMethodViewController.h"
 
-@interface FinancingViewController ()
+@interface FinancingMethodViewController ()
 
 @end
 
-@implementation FinancingViewController
+@implementation FinancingMethodViewController
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"FinancingDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
+- (void)setStatus:(FinancingMethodEditStatus)status
+{
+    _status = status;
+    QRootElement *root = self.qc.quickDialogTableView.root;
+    
+    if (status == FinancingMethodEditing) {
+        for(QSection *section in root.sections)
+        {
+            for(QElement *element in section.elements)
+            {
+                element.enabled = YES;
+            }
+        }
+    } else {
+        for(QSection *section in root.sections)
+        {
+            for(QElement *element in section.elements)
+            {
+                    element.enabled = NO;
+            }
+        }
+    }
+    
+    [self.qc.quickDialogTableView reloadData];
+}
+
 
 - (void)bindObject:(id)financing
 {
@@ -26,13 +65,13 @@
     else if ([financing isKindOfClass:[NSArray class]]) {
         NSArray *kinds = [Utils sharedInstance].FinancingArray;
         NSMutableArray *items = [NSMutableArray array];
-        [financing enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            NSInteger index = [kinds indexOfObject:obj];
-            if (index >= 0 && index != NSNotFound) {
+        [(NSArray *)financing enumerateObjectsUsingBlock:^(id obj, NSUInteger i, BOOL *stop) {
+            NSUInteger index = [kinds indexOfObject:obj];
+            if (index != NSNotFound)
                 [items addObject: [NSNumber numberWithInt:index]];
-            }
         }];
         
+        NSLog(@"%@", items);
         [querysection setSelectedIndexes:items];
     }
 }
@@ -83,8 +122,6 @@
 {
     [super viewDidLoad];
     self.title = @"融资方式";
-    QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"FinancingDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
     [self setUpSeletedRole];
 }
 

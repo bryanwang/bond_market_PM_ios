@@ -14,6 +14,18 @@
 
 @implementation EquityInvestmentProjectsViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"EquityInvestmentProjectsDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
 - (void)doneBtnTapped
 {
     NSMutableDictionary *result = [@{@"type": @"募投项目", @"data": [@[] mutableCopy]} mutableCopy];
@@ -54,16 +66,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
                                                         object:self
                                                       userInfo:info];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.title = @"募投项目";
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(doneBtnTapped)];
-    
-    QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"EquityInvestmentProjectsDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
 }
 
 @end

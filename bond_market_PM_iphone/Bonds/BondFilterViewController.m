@@ -14,6 +14,19 @@
 
 @implementation BondFilterViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
+
 - (void)filterBonds
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
@@ -62,9 +75,6 @@
 {
     [super viewDidLoad];
     self.title = @"按状态筛选";
-    
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"BondFilterDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
     
     [self setUpSeletedRole];
     [self setUpLeftNavigationButton];

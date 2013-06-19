@@ -14,6 +14,19 @@
 
 @implementation EnhancementsViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"EnhancementsDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
+
 - (void)addEnhancements
 {
     NSMutableDictionary *result = [@{@"type": @"内部增级", @"data": [@[] mutableCopy]} mutableCopy];
@@ -46,9 +59,6 @@
     [super viewDidLoad];
     self.title = @"内部增级";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addEnhancements)];
-    
-    QRootElement *root = [[QRootElement alloc] initWithJSONFile:@"EnhancementsDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
 }
 
 - (void)didReceiveMemoryWarning

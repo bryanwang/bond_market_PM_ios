@@ -14,6 +14,18 @@
 
 @implementation LandViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
 - (void)addLandAssertBacked
 {
     NSMutableDictionary *result = [@{@"type": @"资产抵质押 - 土地", @"data": [@[] mutableCopy]} mutableCopy];
@@ -64,9 +76,6 @@
     [super viewDidLoad];
     self.title = @"土地";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addLandAssertBacked)];
-    
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"LandTypesDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
 }
 
 - (void)didReceiveMemoryWarning

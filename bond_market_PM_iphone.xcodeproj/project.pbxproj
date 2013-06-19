@@ -74,7 +74,7 @@
 		CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD4176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m */; };
 		CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */; };
 		CA3B9CDB176EFBB300E2D7B8 /* ProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CDA176EFBB300E2D7B8 /* ProjectRemarkViewController.m */; };
-		CA3B9CDE176EFBD200E2D7B8 /* FinancingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CDD176EFBD100E2D7B8 /* FinancingViewController.m */; };
+		CA3B9CDE176EFBD200E2D7B8 /* FinancingMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CDD176EFBD100E2D7B8 /* FinancingMethodViewController.m */; };
 		CA3B9CEB176EFC0600E2D7B8 /* LiquidityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE0176EFBFB00E2D7B8 /* LiquidityViewController.m */; };
 		CA3B9CEC176EFC0600E2D7B8 /* AddUseOfFoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE2176EFBFD00E2D7B8 /* AddUseOfFoundsViewController.m */; };
 		CA3B9CED176EFC0600E2D7B8 /* DebtRestructuringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE4176EFBFF00E2D7B8 /* DebtRestructuringViewController.m */; };
@@ -332,8 +332,8 @@
 		CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectFinancialIndicatorsViewController.m; path = Projects/ProjectFinancialIndicatorsViewController.m; sourceTree = "<group>"; };
 		CA3B9CD9176EFBB300E2D7B8 /* ProjectRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectRemarkViewController.h; path = Projects/ProjectRemarkViewController.h; sourceTree = "<group>"; };
 		CA3B9CDA176EFBB300E2D7B8 /* ProjectRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectRemarkViewController.m; path = Projects/ProjectRemarkViewController.m; sourceTree = "<group>"; };
-		CA3B9CDC176EFBD100E2D7B8 /* FinancingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancingViewController.h; path = Projects/FinancingViewController.h; sourceTree = "<group>"; };
-		CA3B9CDD176EFBD100E2D7B8 /* FinancingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancingViewController.m; path = Projects/FinancingViewController.m; sourceTree = "<group>"; };
+		CA3B9CDC176EFBD100E2D7B8 /* FinancingMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancingMethodViewController.h; path = Projects/FinancingMethodViewController.h; sourceTree = "<group>"; };
+		CA3B9CDD176EFBD100E2D7B8 /* FinancingMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancingMethodViewController.m; path = Projects/FinancingMethodViewController.m; sourceTree = "<group>"; };
 		CA3B9CDF176EFBFA00E2D7B8 /* LiquidityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiquidityViewController.h; path = Projects/LiquidityViewController.h; sourceTree = "<group>"; };
 		CA3B9CE0176EFBFB00E2D7B8 /* LiquidityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiquidityViewController.m; path = Projects/LiquidityViewController.m; sourceTree = "<group>"; };
 		CA3B9CE1176EFBFC00E2D7B8 /* AddUseOfFoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddUseOfFoundsViewController.h; path = Projects/AddUseOfFoundsViewController.h; sourceTree = "<group>"; };
@@ -741,7 +741,7 @@
 				CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */,
 				CA3B9CD9176EFBB300E2D7B8 /* ProjectRemarkViewController.h */,
 				CA3B9CDA176EFBB300E2D7B8 /* ProjectRemarkViewController.m */,
-				CA3B9C88176EF41800E2D7B8 /* Financing */,
+				CA3B9C88176EF41800E2D7B8 /* FinancingMethod */,
 				CA3B9C68176EBC5C00E2D7B8 /* UseOfFounds */,
 				CA3B9C67176EBC5300E2D7B8 /* TrustIncrease */,
 			);
@@ -774,13 +774,13 @@
 			name = UseOfFounds;
 			sourceTree = "<group>";
 		};
-		CA3B9C88176EF41800E2D7B8 /* Financing */ = {
+		CA3B9C88176EF41800E2D7B8 /* FinancingMethod */ = {
 			isa = PBXGroup;
 			children = (
-				CA3B9CDC176EFBD100E2D7B8 /* FinancingViewController.h */,
-				CA3B9CDD176EFBD100E2D7B8 /* FinancingViewController.m */,
+				CA3B9CDC176EFBD100E2D7B8 /* FinancingMethodViewController.h */,
+				CA3B9CDD176EFBD100E2D7B8 /* FinancingMethodViewController.m */,
 			);
-			name = Financing;
+			name = FinancingMethod;
 			sourceTree = "<group>";
 		};
 		CA8A1E35175C35D500E87946 /* Image */ = {
@@ -1246,7 +1246,7 @@
 				CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */,
 				CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */,
 				CA3B9CDB176EFBB300E2D7B8 /* ProjectRemarkViewController.m in Sources */,
-				CA3B9CDE176EFBD200E2D7B8 /* FinancingViewController.m in Sources */,
+				CA3B9CDE176EFBD200E2D7B8 /* FinancingMethodViewController.m in Sources */,
 				CA3B9CEB176EFC0600E2D7B8 /* LiquidityViewController.m in Sources */,
 				CA3B9CEC176EFC0600E2D7B8 /* AddUseOfFoundsViewController.m in Sources */,
 				CA3B9CED176EFC0600E2D7B8 /* DebtRestructuringViewController.m in Sources */,

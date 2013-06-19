@@ -44,6 +44,4 @@
 
 @property (strong, nonatomic) BYBaseQuickDialogViewController *qc;
 
-- (void)setupQuickDialogControllerWithRoot: (QRootElement *)root;
-
 @end

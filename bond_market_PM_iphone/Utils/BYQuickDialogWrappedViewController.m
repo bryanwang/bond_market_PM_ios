@@ -8,27 +8,20 @@
 
 #import "BYQuickDialogWrappedViewController.h"
 
-@interface BYQuickDialogWrappedViewController () <BYBaseQuickDialogDelegate>
+@interface BYQuickDialogWrappedViewController () 
 
 @end
 
 @implementation BYQuickDialogWrappedViewController
 
-- (void)setupQuickDialogControllerWithRoot:(QRootElement *)root
-{
-    self.qc = [[BYBaseQuickDialogViewController alloc] initWithRoot:root];
-    self.qc.delegate = self;
-    self.qc.view.frame = self.view.bounds;
-    SET_VIEW_HEIGHT(self.qc.view, self.qc.view.bounds.size.height - 44.0f);
-    
-    RunBlockAfterDelay(.3, ^{
-        [self.view addSubview:self.qc.view];
-    });
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    RunBlockAfterDelay(.3, ^{
+        [self.view addSubview:self.qc.view];
+    });
+
 }
 
 - (void)didReceiveMemoryWarning
