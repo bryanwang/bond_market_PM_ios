@@ -276,15 +276,10 @@
         platformProject[@"Id"] = self.platformProject[@"Id"];
     
     //转成string
-    NSError *error = nil;
-    NSData *finance = [NSJSONSerialization dataWithJSONObject:platformProject[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *financeJsonString = [[NSString alloc] initWithData:finance encoding:NSUTF8StringEncoding];
-    platformProject[@"FinanceIndex"] = financeJsonString;
+    platformProject[@"FinanceIndex"] = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:platformProject[@"FinanceIndex"]];
+    NSString *projectJsonString = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:platformProject];
     
-    NSData *info = [NSJSONSerialization dataWithJSONObject:platformProject options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *infoJsonString = [[NSString alloc] initWithData:info encoding:NSUTF8StringEncoding];
-    
-    NSDictionary *parameters = @{@"userid": userId, @"platformproject": infoJsonString};
+    NSDictionary *parameters = @{@"userid": userId, @"platformproject": projectJsonString};
     
     [[PMHttpClient shareIntance] postPath:UPDATE_PLATFORMPROJECT_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = responseObject;

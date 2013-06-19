@@ -774,9 +774,9 @@
 			children = (
 				12BC5FBF177175E00088517A /* PlatformProjectViewController.h */,
 				12BC5FC0177175E00088517A /* PlatformProjectViewController.m */,
-				12BC5F8E177175480088517A /* Form */,
 				12BE3869177192FD0090E0BD /* MyPlatformProjectViewController.h */,
 				12BE386A177192FD0090E0BD /* MyPlatformProjectViewController.m */,
+				12BC5F8E177175480088517A /* Form */,
 			);
 			name = PlatformProject;
 			sourceTree = "<group>";
