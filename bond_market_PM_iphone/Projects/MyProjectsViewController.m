@@ -85,10 +85,16 @@
 }
 
 
+
 - (void)setUpLeftNavigationButton
 {
-    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterMyBonds)];
+    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterMyProject)];
     self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)filterMyProject
+{
+    
 }
 
 - (void)fetchMyBonds
