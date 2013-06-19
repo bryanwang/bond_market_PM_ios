@@ -30,13 +30,14 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
 + (QuickDialogHelper *)sharedInstance;
 
+@property (nonatomic, strong)  NSDateFormatter *fulldateFormater;
+@property (nonatomic, strong)  NSDateFormatter *dateFormater;
+
+
 - (void)setUpArearsPickerRoles: (QPickerElement *)picker;
 
 - (id)convertJSONStrToObject: (NSString *)str;
 - (NSString *)convertObjectToJSONStr: (id)obj;
-
-- (NSDateFormatter *)fulldateFormater;
-- (NSDateFormatter *)dateFormater;
 
 @end
 

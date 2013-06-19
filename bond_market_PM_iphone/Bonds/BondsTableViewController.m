@@ -97,7 +97,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     [self.tableView reloadData];
 }
 
-- (void)convertBondsUpdateTimeFormaterAndOwner: (NSMutableArray *)bonds
+- (void)convertBondsUpdateTimeAndOwner: (NSMutableArray *)bonds
 {
     //change every bond create time
     NSMutableArray *tmps = [NSMutableArray array];
@@ -130,8 +130,8 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         NSDictionary *params = @{@"userid": userid};
         [[PMHttpClient shareIntance]getPath:MY_BONDS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [MBProgressHUD hideAllHUDsForView:self.view.superview animated:YES];
-            
-            [self convertBondsUpdateTimeFormaterAndOwner:  (NSMutableArray *)responseObject];
+
+            [self convertBondsUpdateTimeAndOwner:(NSMutableArray *) responseObject];
             [self orderBy:OrderByTime];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);

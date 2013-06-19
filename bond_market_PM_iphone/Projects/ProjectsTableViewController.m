@@ -13,9 +13,9 @@
 
 @interface ProjectsTableViewController () {
     //存储原始数据
-    NSMutableArray *bondsJson;
+    NSMutableArray *projectsJson;
     // 用作筛选
-    NSMutableArray *filterBondsJson;
+    NSMutableArray *filterProjectsJson;
     // 当前的 排序方式
     ProjectsOrderType curOrderType;
 }
@@ -36,14 +36,14 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)filterBy: (NSArray *)query
 {
     //还原数据
-    filterBondsJson = [bondsJson mutableCopy];
+    filterProjectsJson = [projectsJson mutableCopy];
     
     if (query.count == 0) {
         //全部
     }
     else {
         NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.ProjectInfo.Status in %@", query];
-        [filterBondsJson filterUsingPredicate:thePredicate];
+        [filterProjectsJson filterUsingPredicate:thePredicate];
     }
     
     [self orderBy:curOrderType];
@@ -56,12 +56,12 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     NSString *predicateStr = @"";
     if (orderType == OrderByChargePerson) {
         //sections for owner
-        NSSet *uniques = [NSSet setWithArray: [filterBondsJson valueForKeyPath:@"OwnerInfo.Name"]];
+        NSSet *uniques = [NSSet setWithArray: [filterProjectsJson valueForKeyPath:@"OwnerInfo.Name"]];
         self.sections = [[uniques allObjects] mutableCopy];
         predicateStr = @"(OwnerInfo.Name like %@)";
     } else {
         //sections for update time
-        NSSet *uniques = [NSSet setWithArray: [filterBondsJson valueForKeyPath:@"ProjectInfo.UpdateTime"]];
+        NSSet *uniques = [NSSet setWithArray: [filterProjectsJson valueForKeyPath:@"ProjectInfo.UpdateTime"]];
         self.sections = [[uniques allObjects] mutableCopy];
         predicateStr = @"(ProjectInfo.UpdateTime like %@)";
         
@@ -82,11 +82,11 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         }
     }
     
-    //generate bonds array for each section
+    //generate projects array for each section
     NSMutableArray *tmps2 = [NSMutableArray array];
     [self.sections enumerateObjectsUsingBlock:^(id section, NSUInteger index, BOOL *stop) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateStr, section];
-        NSArray *temp = [filterBondsJson filteredArrayUsingPredicate:predicate];
+        NSArray *temp = [filterProjectsJson filteredArrayUsingPredicate:predicate];
         [tmps2 addObject:temp];
     }];
     
@@ -95,28 +95,28 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     [self.tableView reloadData];
 }
 
-- (void)convertBondsUpdateTimeFormaterAndOwner: (NSMutableArray *)projects
+- (void)convertProjectsUpdateTimeAndOwner: (NSMutableArray *)projects
 {
-    //change every bond create time
+    //change every project create time
     NSMutableArray *tmps = [NSMutableArray array];
-    [projects enumerateObjectsUsingBlock:^(id bond, NSUInteger index, BOOL *stop) {
-        NSMutableDictionary *mutBond = [bond mutableCopy];
-        NSMutableDictionary *mutInfo = [mutBond[@"ProjectInfo"] mutableCopy];
+    [projects enumerateObjectsUsingBlock:^(id project, NSUInteger index, BOOL *stop) {
+        NSMutableDictionary *mutProject = [project mutableCopy];
+        NSMutableDictionary *mutInfo = [mutProject[@"ProjectInfo"] mutableCopy];
         //only date
         mutInfo[@"UpdateTime"] = [mutInfo[@"UpdateTime"] substringToIndex:10];
-        mutBond[@"ProjectInfo"] = [mutInfo copy];
+        mutProject[@"ProjectInfo"] = [mutInfo copy];
         //owner
-        if (mutBond[@"OwnerInfo"] == nil ||[mutBond[@"OwnerInfo"] isEqual:[NSNull null]]) {
+        if (mutProject[@"OwnerInfo"] == nil ||[mutProject[@"OwnerInfo"] isEqual:[NSNull null]]) {
             NSMutableDictionary *mutOwner = [NSMutableDictionary dictionary];
             mutOwner[@"Name"] = NSLocalizedString(@"no owner", "");
-            mutBond[@"OwnerInfo"] = mutOwner;
+            mutProject[@"OwnerInfo"] = mutOwner;
         }
-        
-        [tmps addObject:mutBond];
+
+        [tmps addObject:mutProject];
     }];
     
-    filterBondsJson =  [tmps mutableCopy];
-    bondsJson =  [tmps mutableCopy];
+    filterProjectsJson =  [tmps mutableCopy];
+    projectsJson =  [tmps mutableCopy];
 }
 
 
@@ -129,7 +129,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [MBProgressHUD hideAllHUDsForView:self.view.superview animated:YES];
 
-            [self convertBondsUpdateTimeFormaterAndOwner:  (NSMutableArray *)responseObject];
+            [self convertProjectsUpdateTimeAndOwner:(NSMutableArray *) responseObject];
             [self orderBy:OrderByTime];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);

@@ -10,7 +10,7 @@
 #import <AKSegmentedControl.h>
 #import "BondBasicInfoViewController.h"
 #import "FinancialIndicatorsViewController.h"
-#import "NewBondRemarkViewController.h"
+#import "BondRemarkViewController.h"
 
 typedef enum BondEditStaus: NSUInteger {
     BondView,
@@ -25,7 +25,7 @@ typedef enum BondEditStaus: NSUInteger {
 
 @property (nonatomic, strong) BondBasicInfoViewController *bc;
 @property (nonatomic, strong) FinancialIndicatorsViewController *fc;
-@property (nonatomic, strong) NewBondRemarkViewController *rc;
+@property (nonatomic, strong) BondRemarkViewController *rc;
 @property (nonatomic, strong) AKSegmentedControl *segmentedControl;
 @property (nonatomic, strong)PopupListComponent *popComponent;
 
@@ -61,10 +61,10 @@ typedef enum BondEditStaus: NSUInteger {
     return _fc;
 }
 
-- (NewBondRemarkViewController *)rc
+- (BondRemarkViewController *)rc
 {
     if (_rc == nil) {
-        _rc = [[NewBondRemarkViewController alloc]init];
+        _rc = [[BondRemarkViewController alloc]init];
         _rc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _rc;
@@ -324,7 +324,7 @@ typedef enum BondEditStaus: NSUInteger {
     
     //left button
     if (status == BondEditing) {
-        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消"  target:self selector:@selector(showCancelEditBondAlert)];
+        UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"取消" target:self selector:@selector(showCancelEditBondAlert)];
         self.navigationItem.leftBarButtonItem = item;
     } else {
         [self addCustomBackButtonWithTitle:@"返回"];

@@ -23,9 +23,10 @@
 		0EA882A6175C2522001100A7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829D175C2522001100A7 /* area.plist */; };
 		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
 		0EA8830B175C2C81001100A7 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8830A175C2C01001100A7 /* libQuickDialog.a */; };
-		12BC5F7F1771735A0088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1247508317715B9300A67431 /* PlatformProjectFinancialIndicatorsViewController.m */; };
-		12C80438177168D200FA4056 /* PlatformProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1247507D17715B5800A67431 /* PlatformProjectBasicInfoViewController.m */; };
-		12C8043B177168E200FA4056 /* PlatformProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1247508117715B7800A67431 /* PlatformProjectRemarkViewController.m */; };
+		12BC5F89177175430088517A /* PlatformProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F84177175430088517A /* PlatformProjectBasicInfoViewController.m */; };
+		12BC5F8A177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F86177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m */; };
+		12BC5F8B177175430088517A /* PlatformProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F88177175430088517A /* PlatformProjectRemarkViewController.m */; };
+		12BC5FC1177175E00088517A /* PlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5FC0177175E00088517A /* PlatformProjectViewController.m */; };
 		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
 		CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494017705C2400D6FBE8 /* ProjectTableCell.m */; };
 		CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */; };
@@ -62,7 +63,7 @@
 		CA3B9CAC176EFA7E00E2D7B8 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CA7176EFA7C00E2D7B8 /* LandViewController.m */; };
 		CA3B9CAD176EFA7E00E2D7B8 /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CA9176EFA7D00E2D7B8 /* ReceivablesViewController.m */; };
 		CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */; };
-		CA3B9CBA176EFAC200E2D7B8 /* NewBondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB0176EFA9900E2D7B8 /* NewBondRemarkViewController.m */; };
+		CA3B9CBA176EFAC200E2D7B8 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */; };
 		CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB2176EFA9F00E2D7B8 /* BondsTableViewController.m */; };
 		CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB4176EFAA800E2D7B8 /* BondTableCell.m */; };
 		CA3B9CBD176EFAC200E2D7B8 /* BondTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9CB5176EFAAB00E2D7B8 /* BondTableCell.xib */; };
@@ -72,7 +73,6 @@
 		CA3B9CC8176EFB2400E2D7B8 /* BondFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC5176EFB2300E2D7B8 /* BondFilterViewController.m */; };
 		CA3B9CC9176EFB2400E2D7B8 /* BondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC7176EFB2400E2D7B8 /* BondViewController.m */; };
 		CA3B9CCC176EFB4100E2D7B8 /* MyBondsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CCB176EFB4000E2D7B8 /* MyBondsViewController.m */; };
-		CA3B9CCF176EFB9500E2D7B8 /* PlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CCE176EFB9500E2D7B8 /* PlatformProjectViewController.m */; };
 		CA3B9CD2176EFB9E00E2D7B8 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD1176EFB9C00E2D7B8 /* ProjectViewController.m */; };
 		CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD4176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m */; };
 		CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */; };
@@ -214,6 +214,8 @@
 		CACD4177176FDFA9005E12E8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD4176176FDFA9005E12E8 /* Utils.m */; };
 		CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4178176FF131005E12E8 /* EquityDataBuilder.json */; };
 		CACD417C17700009005E12E8 /* BYKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD417B17700009005E12E8 /* BYKeyValueCell.m */; };
+		CAD4F3451771735200F01C13 /* no-use.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD4F3431771735200F01C13 /* no-use.png */; };
+		CAD4F3461771735200F01C13 /* no-use@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD4F3441771735200F01C13 /* no-use@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,13 +258,14 @@
 		0EA8829E175C2522001100A7 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		0EA8829F175C2522001100A7 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Support/QuickDialog/QuickDialog.xcodeproj; sourceTree = SOURCE_ROOT; };
-		124750771771561C00A67431 /* NewBondRemarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewBondRemarkViewController.h; path = ../../../Downloads/market_PM/bond_market_PM_ios/bond_market_PM_iphone/NewBondRemarkViewController.h; sourceTree = "<group>"; };
-		1247507C17715B5800A67431 /* PlatformProjectBasicInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlatformProjectBasicInfoViewController.h; sourceTree = "<group>"; };
-		1247507D17715B5800A67431 /* PlatformProjectBasicInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectBasicInfoViewController.m; sourceTree = "<group>"; };
-		1247508017715B7800A67431 /* PlatformProjectRemarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlatformProjectRemarkViewController.h; sourceTree = "<group>"; };
-		1247508117715B7800A67431 /* PlatformProjectRemarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectRemarkViewController.m; sourceTree = "<group>"; };
-		1247508217715B9300A67431 /* PlatformProjectFinancialIndicatorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlatformProjectFinancialIndicatorsViewController.h; sourceTree = "<group>"; };
-		1247508317715B9300A67431 /* PlatformProjectFinancialIndicatorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectFinancialIndicatorsViewController.m; sourceTree = "<group>"; };
+		12BC5F83177175430088517A /* PlatformProjectBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectBasicInfoViewController.h; sourceTree = "<group>"; };
+		12BC5F84177175430088517A /* PlatformProjectBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectBasicInfoViewController.m; sourceTree = "<group>"; };
+		12BC5F85177175430088517A /* PlatformProjectFinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectFinancialIndicatorsViewController.h; sourceTree = "<group>"; };
+		12BC5F86177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectFinancialIndicatorsViewController.m; sourceTree = "<group>"; };
+		12BC5F87177175430088517A /* PlatformProjectRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectRemarkViewController.h; sourceTree = "<group>"; };
+		12BC5F88177175430088517A /* PlatformProjectRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectRemarkViewController.m; sourceTree = "<group>"; };
+		12BC5FBF177175E00088517A /* PlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectViewController.h; sourceTree = "<group>"; };
+		12BC5FC0177175E00088517A /* PlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectViewController.m; sourceTree = "<group>"; };
 		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTableCell.h; path = Projects/ProjectTableCell.h; sourceTree = "<group>"; };
@@ -313,7 +316,7 @@
 		CA3B9CA8176EFA7C00E2D7B8 /* ReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceivablesViewController.h; path = Bonds/ReceivablesViewController.h; sourceTree = "<group>"; };
 		CA3B9CA9176EFA7D00E2D7B8 /* ReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceivablesViewController.m; path = Bonds/ReceivablesViewController.m; sourceTree = "<group>"; };
 		CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondBasicInfoViewController.m; path = Bonds/BondBasicInfoViewController.m; sourceTree = "<group>"; };
-		CA3B9CB0176EFA9900E2D7B8 /* NewBondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewBondRemarkViewController.m; path = Bonds/NewBondRemarkViewController.m; sourceTree = "<group>"; };
+		CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondRemarkViewController.m; path = Bonds/BondRemarkViewController.m; sourceTree = "<group>"; };
 		CA3B9CB1176EFA9D00E2D7B8 /* BondsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondsTableViewController.h; path = Bonds/BondsTableViewController.h; sourceTree = "<group>"; };
 		CA3B9CB2176EFA9F00E2D7B8 /* BondsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondsTableViewController.m; path = Bonds/BondsTableViewController.m; sourceTree = "<group>"; };
 		CA3B9CB3176EFAA600E2D7B8 /* BondTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondTableCell.h; path = Bonds/BondTableCell.h; sourceTree = "<group>"; };
@@ -331,8 +334,6 @@
 		CA3B9CC7176EFB2400E2D7B8 /* BondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondViewController.m; path = Bonds/BondViewController.m; sourceTree = "<group>"; };
 		CA3B9CCA176EFB3F00E2D7B8 /* MyBondsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyBondsViewController.h; path = Bonds/MyBondsViewController.h; sourceTree = "<group>"; };
 		CA3B9CCB176EFB4000E2D7B8 /* MyBondsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyBondsViewController.m; path = Bonds/MyBondsViewController.m; sourceTree = "<group>"; };
-		CA3B9CCD176EFB9500E2D7B8 /* PlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformProjectViewController.h; path = Projects/PlatformProjectViewController.h; sourceTree = "<group>"; };
-		CA3B9CCE176EFB9500E2D7B8 /* PlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformProjectViewController.m; path = Projects/PlatformProjectViewController.m; sourceTree = "<group>"; };
 		CA3B9CD0176EFB9B00E2D7B8 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectViewController.h; path = Projects/ProjectViewController.h; sourceTree = "<group>"; };
 		CA3B9CD1176EFB9C00E2D7B8 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectViewController.m; path = Projects/ProjectViewController.m; sourceTree = "<group>"; };
 		CA3B9CD3176EFBA600E2D7B8 /* ProjectBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectBasicInfoViewController.h; path = Projects/ProjectBasicInfoViewController.h; sourceTree = "<group>"; };
@@ -494,6 +495,9 @@
 		CACD4178176FF131005E12E8 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EquityDataBuilder.json; path = DataBuilder/Bonds/EquityDataBuilder.json; sourceTree = "<group>"; };
 		CACD417A17700009005E12E8 /* BYKeyValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYKeyValueCell.h; path = Utils/BYKeyValueCell.h; sourceTree = "<group>"; };
 		CACD417B17700009005E12E8 /* BYKeyValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYKeyValueCell.m; path = Utils/BYKeyValueCell.m; sourceTree = "<group>"; };
+		CAD4F33F1771707400F01C13 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondRemarkViewController.h; path = Bonds/BondRemarkViewController.h; sourceTree = "<group>"; };
+		CAD4F3431771735200F01C13 /* no-use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-use.png"; sourceTree = "<group>"; };
+		CAD4F3441771735200F01C13 /* no-use@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-use@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,8 +681,8 @@
 				CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */,
 				CA3B9CC1176EFB0500E2D7B8 /* FinancialIndicatorsViewController.h */,
 				CA3B9CC2176EFB0500E2D7B8 /* FinancialIndicatorsViewController.m */,
-				124750771771561C00A67431 /* NewBondRemarkViewController.h */,
-				CA3B9CB0176EFA9900E2D7B8 /* NewBondRemarkViewController.m */,
+				CAD4F33F1771707400F01C13 /* BondRemarkViewController.h */,
+				CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */,
 				0EA882E5175C25B3001100A7 /* TrustIncrease */,
 			);
 			name = Form;
@@ -715,15 +719,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1247507917715B4500A67431 /* Form */ = {
+		12BC5F8E177175480088517A /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				1247507C17715B5800A67431 /* PlatformProjectBasicInfoViewController.h */,
-				1247507D17715B5800A67431 /* PlatformProjectBasicInfoViewController.m */,
-				1247508017715B7800A67431 /* PlatformProjectRemarkViewController.h */,
-				1247508117715B7800A67431 /* PlatformProjectRemarkViewController.m */,
-				1247508217715B9300A67431 /* PlatformProjectFinancialIndicatorsViewController.h */,
-				1247508317715B9300A67431 /* PlatformProjectFinancialIndicatorsViewController.m */,
+				12BC5F83177175430088517A /* PlatformProjectBasicInfoViewController.h */,
+				12BC5F84177175430088517A /* PlatformProjectBasicInfoViewController.m */,
+				12BC5F85177175430088517A /* PlatformProjectFinancialIndicatorsViewController.h */,
+				12BC5F86177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m */,
+				12BC5F87177175430088517A /* PlatformProjectRemarkViewController.h */,
+				12BC5F88177175430088517A /* PlatformProjectRemarkViewController.m */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -748,9 +752,9 @@
 		CA3B9C2C176EACB000E2D7B8 /* PlatformProject */ = {
 			isa = PBXGroup;
 			children = (
-				1247507917715B4500A67431 /* Form */,
-				CA3B9CCD176EFB9500E2D7B8 /* PlatformProjectViewController.h */,
-				CA3B9CCE176EFB9500E2D7B8 /* PlatformProjectViewController.m */,
+				12BC5FBF177175E00088517A /* PlatformProjectViewController.h */,
+				12BC5FC0177175E00088517A /* PlatformProjectViewController.m */,
+				12BC5F8E177175480088517A /* Form */,
 			);
 			name = PlatformProject;
 			sourceTree = "<group>";
@@ -809,6 +813,8 @@
 		CA8A1E35175C35D500E87946 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				CAD4F3431771735200F01C13 /* no-use.png */,
+				CAD4F3441771735200F01C13 /* no-use@2x.png */,
 				CA3B9C21176EA23E00E2D7B8 /* no-item.png */,
 				CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */,
 				CA8AEFF31761915C000F37FA /* operate-delete.png */,
@@ -1200,6 +1206,8 @@
 				CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */,
 				CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */,
 				CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */,
+				CAD4F3451771735200F01C13 /* no-use.png in Resources */,
+				CAD4F3461771735200F01C13 /* no-use@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,9 +1249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12BC5F7F1771735A0088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */,
-				12C8043B177168E200FA4056 /* PlatformProjectRemarkViewController.m in Sources */,
-				12C80438177168D200FA4056 /* PlatformProjectBasicInfoViewController.m in Sources */,
 				0EA8827A175C237A001100A7 /* main.m in Sources */,
 				0EA88296175C24DF001100A7 /* AppDelegate.m in Sources */,
 				0EA88297175C24DF001100A7 /* BoardViewController.m in Sources */,
@@ -1259,7 +1264,7 @@
 				CA3B9CAC176EFA7E00E2D7B8 /* LandViewController.m in Sources */,
 				CA3B9CAD176EFA7E00E2D7B8 /* ReceivablesViewController.m in Sources */,
 				CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */,
-				CA3B9CBA176EFAC200E2D7B8 /* NewBondRemarkViewController.m in Sources */,
+				CA3B9CBA176EFAC200E2D7B8 /* BondRemarkViewController.m in Sources */,
 				CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */,
 				CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */,
 				CA3B9CBE176EFAC200E2D7B8 /* BondTableHeader.m in Sources */,
@@ -1267,7 +1272,6 @@
 				CA3B9CC8176EFB2400E2D7B8 /* BondFilterViewController.m in Sources */,
 				CA3B9CC9176EFB2400E2D7B8 /* BondViewController.m in Sources */,
 				CA3B9CCC176EFB4100E2D7B8 /* MyBondsViewController.m in Sources */,
-				CA3B9CCF176EFB9500E2D7B8 /* PlatformProjectViewController.m in Sources */,
 				CA3B9CD2176EFB9E00E2D7B8 /* ProjectViewController.m in Sources */,
 				CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */,
 				CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */,
@@ -1290,6 +1294,10 @@
 				CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */,
 				CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */,
 				CA04494B17705E0200D6FBE8 /* MyProjectsViewController.m in Sources */,
+				12BC5F89177175430088517A /* PlatformProjectBasicInfoViewController.m in Sources */,
+				12BC5F8A177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */,
+				12BC5F8B177175430088517A /* PlatformProjectRemarkViewController.m in Sources */,
+				12BC5FC1177175E00088517A /* PlatformProjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
