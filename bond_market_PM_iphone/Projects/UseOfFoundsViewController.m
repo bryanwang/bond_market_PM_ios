@@ -86,6 +86,20 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    if (self.status == UseOfFoundsEditing) {
+        if (self.useOfFoundsArray.count == 0) {
+            UIImageView *noItem = [[UIImageView alloc]initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"no-use" ofType:@"png"]]];
+            SET_VIEW_X(noItem, 80.0f);
+            SET_VIEW_Y(noItem, 20.0f);
+            [self.view addSubview:noItem];
+        }
+    }
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

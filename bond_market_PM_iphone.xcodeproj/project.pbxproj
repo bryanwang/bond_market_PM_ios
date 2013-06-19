@@ -211,6 +211,8 @@
 		CACD4177176FDFA9005E12E8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD4176176FDFA9005E12E8 /* Utils.m */; };
 		CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CACD4178176FF131005E12E8 /* EquityDataBuilder.json */; };
 		CACD417C17700009005E12E8 /* BYKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CACD417B17700009005E12E8 /* BYKeyValueCell.m */; };
+		CAD4F3451771735200F01C13 /* no-use.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD4F3431771735200F01C13 /* no-use.png */; };
+		CAD4F3461771735200F01C13 /* no-use@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD4F3441771735200F01C13 /* no-use@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -485,6 +487,8 @@
 		CACD417A17700009005E12E8 /* BYKeyValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYKeyValueCell.h; path = Utils/BYKeyValueCell.h; sourceTree = "<group>"; };
 		CACD417B17700009005E12E8 /* BYKeyValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYKeyValueCell.m; path = Utils/BYKeyValueCell.m; sourceTree = "<group>"; };
 		CAD4F33F1771707400F01C13 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondRemarkViewController.h; path = Bonds/BondRemarkViewController.h; sourceTree = "<group>"; };
+		CAD4F3431771735200F01C13 /* no-use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-use.png"; sourceTree = "<group>"; };
+		CAD4F3441771735200F01C13 /* no-use@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-use@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -786,6 +790,8 @@
 		CA8A1E35175C35D500E87946 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				CAD4F3431771735200F01C13 /* no-use.png */,
+				CAD4F3441771735200F01C13 /* no-use@2x.png */,
 				CA3B9C21176EA23E00E2D7B8 /* no-item.png */,
 				CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */,
 				CA8AEFF31761915C000F37FA /* operate-delete.png */,
@@ -1177,6 +1183,8 @@
 				CACD4174176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json in Resources */,
 				CACD4179176FF132005E12E8 /* EquityDataBuilder.json in Resources */,
 				CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */,
+				CAD4F3451771735200F01C13 /* no-use.png in Resources */,
+				CAD4F3461771735200F01C13 /* no-use@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
