@@ -77,8 +77,6 @@ static float TABLE_CELL_HEIGHT = 74.0f;
             self.sections = [[self.sections sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
                 NSDate *aDate= [[[QuickDialogHelper sharedInstance] dateFormater]  dateFromString:a];
                 NSDate *bDate = [[[QuickDialogHelper sharedInstance] dateFormater]  dateFromString:b];
-                NSLog(@"%@", aDate);
-                NSLog(@"%@", bDate);
                 return [bDate compare:aDate];
             }] mutableCopy];
         }

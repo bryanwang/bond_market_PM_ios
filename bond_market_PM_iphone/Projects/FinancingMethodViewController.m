@@ -71,7 +71,6 @@
                 [items addObject: [NSNumber numberWithInt:index]];
         }];
         
-        NSLog(@"%@", items);
         [querysection setSelectedIndexes:items];
     }
 }

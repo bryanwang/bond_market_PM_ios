@@ -9,13 +9,30 @@
 #import "MyProjectsViewController.h"
 #import <AKSegmentedControl.h>
 #import "ProjectsTableViewController.h"
+#import "BondFilterViewController.h"
 
 @interface MyProjectsViewController ()
 @property (strong, nonatomic)ProjectsTableViewController *tableviewController;
+@property (strong, nonatomic)BondFilterViewController *filterViewController;
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
 @end
 
 @implementation MyProjectsViewController
+
+- (BondFilterViewController *)filterViewController
+{
+    if (_filterViewController == nil) {
+        _filterViewController = [[BondFilterViewController alloc] init];
+        
+        __block MyProjectsViewController *delegate = self;
+        _filterViewController.filterCallback = ^ (id filter) {
+            [delegate.tableviewController filterBy:(NSArray *)filter];
+        };
+
+    }
+    
+    return _filterViewController;
+}
 
 - (ProjectsTableViewController *)tableviewController
 {
@@ -88,13 +105,13 @@
 
 - (void)setUpLeftNavigationButton
 {
-    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterMyProject)];
+    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterMyProjects)];
     self.navigationItem.rightBarButtonItem = item;
 }
 
-- (void)filterMyProject
+- (void)filterMyProjects
 {
-    
+    [self.navigationController pushViewController:self.filterViewController animated:YES];
 }
 
 - (void)fetchMyBonds
