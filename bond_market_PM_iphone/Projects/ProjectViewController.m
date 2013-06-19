@@ -231,15 +231,10 @@
         project[@"Id"] = self.project[@"Id"];
     
     //转成string
-    NSError *error = nil;
-    NSData *finance = [NSJSONSerialization dataWithJSONObject:project[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *financeJsonString = [[NSString alloc] initWithData:finance encoding:NSUTF8StringEncoding];
-    project[@"FinanceIndex"] = financeJsonString;
+    project[@"FinanceIndex"] = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:project[@"FinanceIndex"]];
+    NSString *projectJsonString = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:project];
     
-    NSData *info = [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *infoJsonString = [[NSString alloc] initWithData:info encoding:NSUTF8StringEncoding];
-    
-    NSDictionary *parameters = @{@"userid": userId, @"project": infoJsonString};
+    NSDictionary *parameters = @{@"userid": userId, @"project": projectJsonString};
     
     [[PMHttpClient shareIntance] postPath:UPDATE_PROJECT_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = responseObject;

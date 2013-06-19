@@ -171,12 +171,8 @@ typedef enum BondEditStaus: NSUInteger {
         newbondInfo[@"Id"] = self.bondInfo[@"Id"];
     
     //转成string
-    NSError *error = nil;
-    NSData *finance = [NSJSONSerialization dataWithJSONObject:newbondInfo[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *financeJsonString = [[NSString alloc] initWithData:finance encoding:NSUTF8StringEncoding];
-    newbondInfo[@"FinanceIndex"] = financeJsonString;
-    NSData *bond = [NSJSONSerialization dataWithJSONObject:newbondInfo options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *bondJsonString = [[NSString alloc] initWithData:bond encoding:NSUTF8StringEncoding];
+    newbondInfo[@"FinanceIndex"] = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:newbondInfo[@"FinanceIndex"]];
+    NSString *bondJsonString = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:newbondInfo];
 
     NSDictionary *parameters = @{@"userid": userId, @"newbond": bondJsonString};
     
