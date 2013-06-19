@@ -7,12 +7,27 @@
 //
 
 #import "PlatformProjectViewController.h"
+#import <AKSegmentedControl.h>
 
 @interface PlatformProjectViewController ()
+@property (strong, nonatomic) AKSegmentedControl *segmentedControl;
+//@property (strong, nonatomic) ProjectBasicInfoViewController *bc;
+//@property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
+//@property (strong, nonatomic) ProjectRemarkViewController *rc;
+
+@property (strong, nonatomic)NSMutableDictionary *platformProject;
 
 @end
 
 @implementation PlatformProjectViewController
+
+- (id)initWithPlatformProject: (NSDictionary *)platformProject
+{
+    if( self = [super init] ) {
+        self.platformProject = platformProject[@"ProjectInfo"];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {

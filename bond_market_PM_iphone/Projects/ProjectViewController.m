@@ -13,11 +13,11 @@
 #import "PopupListComponent.h"
 #import <AKSegmentedControl.h>
 
-@interface ProjectViewController () {
+
+@interface ProjectViewController (){
     NSDictionary *storedProject;
 }
-
-@property (strong, nonatomic)AKSegmentedControl *segmentedControl;
+@property (strong, nonatomic) AKSegmentedControl *segmentedControl;
 @property (strong, nonatomic) ProjectBasicInfoViewController *bc;
 @property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
 @property (strong, nonatomic) ProjectRemarkViewController *rc;

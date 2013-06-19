@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlatformProjectViewController : BBCustomBackButtonViewController
+typedef enum PlatformProjectEditStaus: NSUInteger {
+    PlatformProjectView,
+    PlatformProjectEditing,
+    PlatformProjectCreate
+} PlatformProjectEditStaus;
 
+@interface PlatformProjectViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
+- (id)initWithPlatformProject: (NSDictionary *)platformProject;
 @end
