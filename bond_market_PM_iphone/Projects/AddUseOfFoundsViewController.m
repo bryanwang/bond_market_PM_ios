@@ -12,20 +12,30 @@
 #import "EquityInvestmentProjectsViewController.h"
 #import "OtherPurposesViewController.h"
 
-@interface AddUseOfFoundsViewController ()
+@interface AddUseOfFoundsViewController () <BYBaseQuickDialogDelegate>
 
 @end
 
 @implementation AddUseOfFoundsViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"UseOfFoundsDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+        self.qc.delegate = self;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"新建资金用途";
-    
-    QRootElement *root =  [[QRootElement alloc] initWithJSONFile:@"UseOfFoundsDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
-}
+ }
 
 - (void)didReceiveMemoryWarning
 {

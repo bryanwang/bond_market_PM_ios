@@ -14,6 +14,18 @@
 
 @implementation EquityViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"EquityDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
 - (void)addEquityAssertBacked
 {
     NSMutableDictionary *result = [@{@"type": @"资产抵质押 - 股权", @"data": [@[] mutableCopy]} mutableCopy];
@@ -54,9 +66,6 @@
     [super viewDidLoad];
     self.title = @"股权";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(addEquityAssertBacked)];
-    
-    QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"EquityDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
 }
 
 - (void)didReceiveMemoryWarning

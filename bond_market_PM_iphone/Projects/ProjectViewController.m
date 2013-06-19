@@ -10,15 +10,20 @@
 #import "ProjectBasicInfoViewController.h"
 #import "ProjectFinancialIndicatorsViewController.h"
 #import "ProjectRemarkViewController.h"
+#import "PopupListComponent.h"
 #import <AKSegmentedControl.h>
 
-@interface ProjectViewController ()
+@interface ProjectViewController () {
+    NSDictionary *storedProject;
+}
+
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
 @property (strong, nonatomic) ProjectBasicInfoViewController *bc;
 @property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
 @property (strong, nonatomic) ProjectRemarkViewController *rc;
 
 @property (strong, nonatomic)NSMutableDictionary *project;
+@property (nonatomic, strong)PopupListComponent *popComponent;
 
 @end
 
@@ -159,6 +164,7 @@
 {
     switch (status) {
         case ProjectEditing:
+            [self.popComponent hide];
             [self setElementsEnable];
             break;
         case ProjectView:
@@ -173,6 +179,29 @@
     [self.bc.quickDialogTableView reloadData];
     [self.fc.quickDialogTableView reloadData];
 }
+
+
+- (void)cancelEditProject
+{
+    //还原数据
+    self.project = [storedProject copy];
+    [self bindProjectInfo: self.project];
+    //切换状态
+    [self changeProjectViewSatatus:ProjectView];
+    [ALToastView toastInView:APP_WINDOW withText:@"取消编辑状态"];
+}
+
+- (void)showCancelEditBondAlert
+{
+    [self.popComponent hide];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"取消编辑"
+                                                   message:@"确定取消修改?"
+                                                  delegate:self
+                                         cancelButtonTitle:@"取消"
+                                         otherButtonTitles:@"确定",nil];
+    [alert show];
+}
+
 
 - (NSMutableDictionary *)buildProjectInfo
 {
@@ -195,6 +224,12 @@
     }
     
     NSString *userId = [LoginManager sharedInstance].fetchUserId;
+    
+    //如果self.project 不为空 则 操作为update
+    //如果self.project 为空 则 操作为create
+    if (self.project)
+        project[@"Id"] = self.project[@"Id"];
+    
     //转成string
     NSError *error = nil;
     NSData *finance = [NSJSONSerialization dataWithJSONObject:project[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
@@ -216,6 +251,42 @@
         [ALToastView toastInView:APP_WINDOW withText:@"网络问题，提交失败"];
     }];
 
+}
+
+- (void)applyToDeleteProject
+{
+    //todo:apply to delete project
+}
+
+- (void)operateProjectInfo: (id)sender
+{
+    if (self.popComponent) {
+        [self.popComponent hide];
+    }
+    PopupListComponent *popupList = [[PopupListComponent alloc] init];
+    self.popComponent = popupList;
+    
+    //callbacks
+    popupList.choosedItemCallback = ^(int itemid) {
+        switch (itemid) {
+            case 0:
+                [ALToastView toastInView:APP_WINDOW withText:@"进入编辑状态"];
+                [self changeProjectViewSatatus:ProjectEditing];
+                break;
+            case 1:
+                [self applyToDeleteProject];
+                break;
+        }
+    };
+    popupList.popupDismissedCallback = ^() {
+        NSLog(@"dismissed");
+    };
+    
+    //items
+    [popupList showAnchoredTo:sender withItems:@[
+        [[PopupListComponentItem alloc] initWithCaption:@"修改" image:[UIImage imageNamed:@"operate-edit"] itemId:0],
+        [[PopupListComponentItem alloc] initWithCaption:@"删除" image:[UIImage imageNamed:@"operate-delete"] itemId:1]
+     ]];
 }
 
 
@@ -244,6 +315,17 @@
     }
 }
 
+- (void)bindProjectInfo: (NSDictionary *)project
+{
+    [self.bc bindObject:project];
+    
+    NSData *financeData = [project[@"FinanceIndex"] dataUsingEncoding:NSUTF8StringEncoding];
+    id finance = [NSJSONSerialization JSONObjectWithData:financeData options:0 error:nil];
+    [self.fc bindObject:finance];
+    
+    [self.rc bindObject:project[@"Remark"]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -253,8 +335,18 @@
     [self setUpSegmentedController];
     [self.segmentedControl setSelectedIndex:0];
     
-    //todo:..
-    [self changeProjectViewSatatus:ProjectCreate];
+    if (self.project) {
+        //保存原始数据
+        storedProject = [self.project copy];
+        
+        self.title = @"项目详情";
+        [self bindProjectInfo:self.project];
+        [self setElementsDisabled];
+        [self changeProjectViewSatatus:ProjectView];
+    } else {
+        self.title = @"非平台项目录入";
+        [self changeProjectViewSatatus:ProjectCreate];
+    }
     
     RunBlockAfterDelay(.3, ^{
         [self.view addSubview:self.bc.view];
@@ -268,6 +360,13 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma alert view delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self cancelEditProject];
+    }
 }
 
 @end

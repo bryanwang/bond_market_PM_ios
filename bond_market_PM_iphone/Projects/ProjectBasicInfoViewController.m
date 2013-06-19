@@ -8,7 +8,7 @@
 
 #import "ProjectBasicInfoViewController.h"
 #import "UseOfFoundsViewController.h"
-#import "FinancingViewController.h"
+#import "FinancingMethodViewController.h"
 #import "TrustIncreaseViewController.h"
 
 
@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSMutableDictionary *projectInfo;
 
 @property (nonatomic, strong) UseOfFoundsViewController *useOfFoundsViewController;
-@property (nonatomic, strong) FinancingViewController *financingViewController;
+@property (nonatomic, strong) FinancingMethodViewController *financingViewController;
 @property (nonatomic, strong) TrustIncreaseViewController *trustIncreaseViewController;
 
 @end
@@ -34,39 +34,61 @@
 #pragma public methods
 - (void)bindObject: (NSDictionary *)obj
 {
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
     NSMutableDictionary *info = [obj mutableCopy];
+    
+    //处理所有数字
+    [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (obj != [NSNull null]) {
+            info[key] = [NSString stringWithFormat:@"%@", obj];
+        }
+    }];
+    
+    //询价有效期
+    if(info[@"ValidFrom"] && ![info[@"ValidFrom"] isEqual:[NSNull null]])
+        info[@"ValidFrom"] = [dateFormatter dateFromString: info[@"ValidFrom"] ];
+    
+    //询价有效期截止
+    if(info[@"ValidTo"] && ![info[@"ValidTo"] isEqual:[NSNull null]])
+        info[@"ValidTo"] = [dateFormatter dateFromString: info[@"ValidTo"] ];
+    
+    //融资成本
+    if (info[@"CostFrom"] && ![info[@"CostFrom"] isEqual:[NSNull null]]) {
+        info[@"CostFrom"] = [NSString stringWithFormat:@"%@%%\t%@%%", info[@"CostFrom"], info[@"CostTo"]];
+    }
+    
+    //区域
+    if (info[@"AreaProvince"] && ![info[@"AreaProvince"] isEqual:[NSNull null]]) {
+        info[@"Area"] = [NSString stringWithFormat:@"%@\t%@\t%@", info[@"AreaProvince"], info[@"AreaCity"], info[@"AreaDistrict"]];
+    }
+
+    NSError *error = nil;
+    //增信方式
+    if (info[@"TrustIncrease"]) {
+        NSData *trustIncreaseData = [info[@"TrustIncrease"] dataUsingEncoding:NSUTF8StringEncoding];
+        id trustIncrease = [NSJSONSerialization JSONObjectWithData:trustIncreaseData options:0 error:&error];
+        [self.trustIncreaseViewController bindObject:trustIncrease];
+    }
+    
+    //资金用途
+    if (info[@"UseOfFunds"]) {
+        NSData *useOfFundsData = [info[@"UseOfFunds"] dataUsingEncoding:NSUTF8StringEncoding];
+        id useOfFunds = [NSJSONSerialization JSONObjectWithData:useOfFundsData options:0 error:&error];
+        [self.useOfFoundsViewController bindObject:useOfFunds];
+    }
+    
+    //融资方式
+    if (info[@"FinancingMethod"]) {
+        NSData *financingMethodData = [info[@"FinancingMethod"] dataUsingEncoding:NSUTF8StringEncoding];
+        id financingMethod = [NSJSONSerialization JSONObjectWithData:financingMethodData options:0 error:&error];
+        [self.financingViewController bindObject:financingMethod];
+    }
+    
     self.projectInfo = info;
     [self.quickDialogTableView.root bindToObject:info];
 }
 
-- (void)setElementsEnable
-{
-    for(QSection *section in self.quickDialogTableView.root.sections)
-    {
-        for(QElement *element in section.elements)
-        {
-            element.enabled = YES;
-        }
-    }
-    
-    self.trustIncreaseViewController.status = TrustIncreaseEditing;
-    self.useOfFoundsViewController.status = UseOfFoundsEditing;
-}
-
-- (void)setElementsDisable
-{
-    for(QSection *section in self.quickDialogTableView.root.sections)
-    {
-        for(QElement *element in section.elements)
-        {
-            if (![element.key isEqual: @"TrustIncrease"])
-                element.enabled = NO;
-        }
-    }
-
-    self.trustIncreaseViewController.status = TrustIncreaseNormal;
-    self.useOfFoundsViewController.status = UseOfFoundsNormal;
-}
 
 - (NSMutableDictionary *)fetchData
 {
@@ -108,17 +130,49 @@
     NSMutableArray *useOfFundsArray = [self.useOfFoundsViewController fetchData];
     NSData *useOfFundsData = [NSJSONSerialization dataWithJSONObject:useOfFundsArray options:NSJSONWritingPrettyPrinted error:&error];
     NSString *useOfFundsJsonStr = [[NSString alloc] initWithData:useOfFundsData encoding:NSUTF8StringEncoding];
-
+    
     project[@"UseOfFunds"] = useOfFundsJsonStr;
     
     //融资方式
     id financing = [self.financingViewController fetchData];
     NSData *financingMethodData = [NSJSONSerialization dataWithJSONObject:financing options:NSJSONWritingPrettyPrinted error:&error];
     NSString * financingMethodJsonStr = [[NSString alloc] initWithData:financingMethodData encoding:NSUTF8StringEncoding];
-
+    
     project[@"FinancingMethod"] = financingMethodJsonStr;
     
     return project;
+}
+
+
+- (void)setElementsEnable
+{
+    for(QSection *section in self.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            element.enabled = YES;
+        }
+    }
+    
+    self.trustIncreaseViewController.status = TrustIncreaseEditing;
+    self.useOfFoundsViewController.status = UseOfFoundsEditing;
+    self.financingViewController.status = FinancingMethodEditing;
+}
+
+- (void)setElementsDisable
+{
+    for(QSection *section in self.quickDialogTableView.root.sections)
+    {
+        for(QElement *element in section.elements)
+        {
+            if (![element.key isEqual: @"TrustIncrease"])
+                element.enabled = NO;
+        }
+    }
+
+    self.trustIncreaseViewController.status = TrustIncreaseNormal;
+    self.useOfFoundsViewController.status = UseOfFoundsNormal;
+    self.financingViewController.status = FinancingMethodNormal;
 }
 
 
@@ -132,10 +186,10 @@
     return _trustIncreaseViewController;
 }
 
-- (FinancingViewController *)financingViewController
+- (FinancingMethodViewController *)financingViewController
 {
     if (_financingViewController == nil) {
-        _financingViewController = [[FinancingViewController alloc]init];
+        _financingViewController = [[FinancingMethodViewController alloc]init];
     }
     return _financingViewController;
 }

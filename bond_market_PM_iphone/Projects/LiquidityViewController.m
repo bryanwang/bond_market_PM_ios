@@ -14,6 +14,18 @@
 
 @implementation LiquidityViewController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"LiquidityDataBuilder" andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+    }
+    
+    return self;
+}
+
 - (void)doneBtnTapped
 {
     NSMutableDictionary *result = [@{@"type": @"补充流动资金", @"data": [@[] mutableCopy]} mutableCopy];
@@ -36,9 +48,6 @@
     [super viewDidLoad];
     self.title = @"补充流动资金";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(doneBtnTapped)];
-    
-    QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"LiquidityDataBuilder" andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
 }
 
 @end

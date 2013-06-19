@@ -251,7 +251,8 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ProjectViewController *nc = [[ProjectViewController alloc]init];
+    NSDictionary *project = self.projects[indexPath.section][indexPath.row];
+    ProjectViewController *nc = [[ProjectViewController alloc]initWithProject:project];
     [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
 }
 

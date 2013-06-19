@@ -18,16 +18,21 @@
 #import "OtherTrustIncreaseViewController.h"
 #import "AntiGuarantorViewController.h"
 
-@interface AddTrustIncreaseViewController ()
+@interface AddTrustIncreaseViewController () <BYBaseQuickDialogDelegate>
 @property (strong, nonatomic) NSString *dataBuilderFile;
 @end
 
 @implementation AddTrustIncreaseViewController
+
 - (id)initWithDataBuilder:(NSString *)builder
 {
     self = [super init];
     if (self != nil) {
         self.dataBuilderFile = builder;
+        QRootElement *root =  [[QRootElement alloc] initWithJSONFile:self.dataBuilderFile andData:nil];
+        self.qc = [[BYBaseQuickDialogViewController alloc]initWithRoot:root];
+        self.qc.view.frame = self.view.bounds;
+        self.qc.delegate = self;
     }
     return self;
 }
@@ -36,9 +41,6 @@
 {
     [super viewDidLoad];
     self.title = @"新建增信方式";
-    
-    QRootElement *root =  [[QRootElement alloc] initWithJSONFile:self.dataBuilderFile andData:nil];
-    [self setupQuickDialogControllerWithRoot:root];
 }
 
 - (void)didReceiveMemoryWarning
