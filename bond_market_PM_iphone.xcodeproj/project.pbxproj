@@ -59,7 +59,7 @@
 		CA3B9CAC176EFA7E00E2D7B8 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CA7176EFA7C00E2D7B8 /* LandViewController.m */; };
 		CA3B9CAD176EFA7E00E2D7B8 /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CA9176EFA7D00E2D7B8 /* ReceivablesViewController.m */; };
 		CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */; };
-		CA3B9CBA176EFAC200E2D7B8 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */; };
+		CA3B9CBA176EFAC200E2D7B8 /* NewBondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB0176EFA9900E2D7B8 /* NewBondRemarkViewController.m */; };
 		CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB2176EFA9F00E2D7B8 /* BondsTableViewController.m */; };
 		CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB4176EFAA800E2D7B8 /* BondTableCell.m */; };
 		CA3B9CBD176EFAC200E2D7B8 /* BondTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9CB5176EFAAB00E2D7B8 /* BondTableCell.xib */; };
@@ -253,6 +253,7 @@
 		0EA8829E175C2522001100A7 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		0EA8829F175C2522001100A7 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Support/QuickDialog/QuickDialog.xcodeproj; sourceTree = SOURCE_ROOT; };
+		124750771771561C00A67431 /* NewBondRemarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewBondRemarkViewController.h; path = ../../../Downloads/market_PM/bond_market_PM_ios/bond_market_PM_iphone/NewBondRemarkViewController.h; sourceTree = "<group>"; };
 		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTableCell.h; path = Projects/ProjectTableCell.h; sourceTree = "<group>"; };
@@ -303,8 +304,7 @@
 		CA3B9CA8176EFA7C00E2D7B8 /* ReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceivablesViewController.h; path = Bonds/ReceivablesViewController.h; sourceTree = "<group>"; };
 		CA3B9CA9176EFA7D00E2D7B8 /* ReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceivablesViewController.m; path = Bonds/ReceivablesViewController.m; sourceTree = "<group>"; };
 		CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondBasicInfoViewController.m; path = Bonds/BondBasicInfoViewController.m; sourceTree = "<group>"; };
-		CA3B9CAF176EFA9700E2D7B8 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondRemarkViewController.h; path = Bonds/BondRemarkViewController.h; sourceTree = "<group>"; };
-		CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondRemarkViewController.m; path = Bonds/BondRemarkViewController.m; sourceTree = "<group>"; };
+		CA3B9CB0176EFA9900E2D7B8 /* NewBondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewBondRemarkViewController.m; path = Bonds/NewBondRemarkViewController.m; sourceTree = "<group>"; };
 		CA3B9CB1176EFA9D00E2D7B8 /* BondsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondsTableViewController.h; path = Bonds/BondsTableViewController.h; sourceTree = "<group>"; };
 		CA3B9CB2176EFA9F00E2D7B8 /* BondsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondsTableViewController.m; path = Bonds/BondsTableViewController.m; sourceTree = "<group>"; };
 		CA3B9CB3176EFAA600E2D7B8 /* BondTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondTableCell.h; path = Bonds/BondTableCell.h; sourceTree = "<group>"; };
@@ -668,8 +668,8 @@
 				CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */,
 				CA3B9CC1176EFB0500E2D7B8 /* FinancialIndicatorsViewController.h */,
 				CA3B9CC2176EFB0500E2D7B8 /* FinancialIndicatorsViewController.m */,
-				CA3B9CAF176EFA9700E2D7B8 /* BondRemarkViewController.h */,
-				CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */,
+				124750771771561C00A67431 /* NewBondRemarkViewController.h */,
+				CA3B9CB0176EFA9900E2D7B8 /* NewBondRemarkViewController.m */,
 				0EA882E5175C25B3001100A7 /* TrustIncrease */,
 			);
 			name = Form;
@@ -1233,7 +1233,7 @@
 				CA3B9CAC176EFA7E00E2D7B8 /* LandViewController.m in Sources */,
 				CA3B9CAD176EFA7E00E2D7B8 /* ReceivablesViewController.m in Sources */,
 				CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */,
-				CA3B9CBA176EFAC200E2D7B8 /* BondRemarkViewController.m in Sources */,
+				CA3B9CBA176EFAC200E2D7B8 /* NewBondRemarkViewController.m in Sources */,
 				CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */,
 				CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */,
 				CA3B9CBE176EFAC200E2D7B8 /* BondTableHeader.m in Sources */,

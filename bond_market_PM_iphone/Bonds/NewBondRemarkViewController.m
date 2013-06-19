@@ -6,14 +6,14 @@
 //  Copyright (c) 2013年 bruce yang. All rights reserved.
 //
 
-#import "BondRemarkViewController.h"
+#import "NewBondRemarkViewController.h"
 #import "UIPlaceHolderTextView.h"
 
-@interface BondRemarkViewController ()
+@interface NewBondRemarkViewController ()
 @property (strong, nonatomic) UIPlaceHolderTextView *textview;
 @end
 
-@implementation BondRemarkViewController
+@implementation NewBondRemarkViewController
 
 - (void)bindObject:(NSString *)remark
 {

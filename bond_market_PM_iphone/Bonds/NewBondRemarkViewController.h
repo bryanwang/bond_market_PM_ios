@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BondRemarkViewController : BBCustomBackButtonViewController
+@interface NewBondRemarkViewController : BBCustomBackButtonViewController
 
 - (void)bindObject: (NSString *)remark;
 - (void)setElementsEnable;
