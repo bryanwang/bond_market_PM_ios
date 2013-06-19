@@ -13,7 +13,7 @@
 #import <AKSegmentedControl.h>
 
 @interface ProjectViewController ()
-@property (strong, nonatomic)AKSegmentedControl *segmentedControl;
+@property (strong, nonatomic) AKSegmentedControl *segmentedControl;
 @property (strong, nonatomic) ProjectBasicInfoViewController *bc;
 @property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
 @property (strong, nonatomic) ProjectRemarkViewController *rc;
