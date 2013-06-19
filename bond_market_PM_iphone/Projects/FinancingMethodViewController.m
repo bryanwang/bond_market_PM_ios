@@ -44,7 +44,7 @@
         {
             for(QElement *element in section.elements)
             {
-                    element.enabled = NO;
+                element.enabled = NO;
             }
         }
     }
@@ -71,7 +71,6 @@
                 [items addObject: [NSNumber numberWithInt:index]];
         }];
         
-        NSLog(@"%@", items);
         [querysection setSelectedIndexes:items];
     }
 }
