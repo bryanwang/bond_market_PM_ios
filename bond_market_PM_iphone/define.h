@@ -1,14 +1,15 @@
 //
-//  HDTextView.m
-//  HaidaoFM_ios
+//  define.h
+//  bond_market_PM_iphone
 //
-//  Created by Bruce Yang on 1/27/13.
-//  Copyright (c) 2013 HaidaoFM. All rights reserved.
+//  Created by Bruce yang on 13-6-18.
+//  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
 #ifndef define_h
 #define define_h
 
+//web api
 //#define BASE_URL @"http://192.168.1.152:7000/"
 #define BASE_URL @"http://192.168.1.152:63000/"
 #define LOGIN_INTERFACE @"/api/ios/signin"
@@ -24,9 +25,14 @@
 #define MY_PROJECTS_INTERFACE @"/api/ios/project/mine"
 #define MY_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/project/bonus"
 
+
+//notification
 #define BYPOPVIEWCONTOLLERNOTIFICATION @"popviewcontroller"
 #define BYTRUSTINCREASEKEY @"trustincreasedic"
 
+
+
+//basic tools
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 )
 #define APP_SCREEN_BOUNDS   [[UIScreen mainScreen] bounds]

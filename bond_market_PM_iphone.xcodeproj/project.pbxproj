@@ -635,9 +635,9 @@
 				CA3B9CF8176EFC1D00E2D7B8 /* UIPlaceHolderTextView.m */,
 				CACD4175176FDFA9005E12E8 /* Utils.h */,
 				CACD4176176FDFA9005E12E8 /* Utils.m */,
+				0EA8829F175C2522001100A7 /* define.h */,
 				0EA8829D175C2522001100A7 /* area.plist */,
 				0EA8829E175C2522001100A7 /* city.plist */,
-				0EA8829F175C2522001100A7 /* define.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

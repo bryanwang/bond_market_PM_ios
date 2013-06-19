@@ -1,9 +1,9 @@
 //
-//  HDTextView.h
-//  HaidaoFM_ios
+//  UIPlaceHolderTextView.h
+//  bond_market_PM_iphone
 //
-//  Created by Bruce Yang on 1/27/13.
-//  Copyright (c) 2013 HaidaoFM. All rights reserved.
+//  Created by Bruce yang on 13-6-18.
+//  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
