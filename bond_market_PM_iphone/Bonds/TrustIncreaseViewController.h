@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-//平台项目 非平台项目 新债 增信方式不同
+//修改和查看 两种状态
 typedef enum TrustIncreaseEditStatus: NSUInteger {
     TrustIncreaseEditing,
     TrustIncreaseNormal
 }TrustIncreaseEditStatus;
 
-//修改和查看 两种状态
+//平台项目 非平台项目 新债 增信方式不同
 typedef enum TrustIncreaseSpecies: NSUInteger {
     PlatformProjectTrustIncrease,
     NonPlatformProjectTrustIncrease,
