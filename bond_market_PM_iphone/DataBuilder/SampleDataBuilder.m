@@ -156,7 +156,7 @@
     root.title = @"增信方式";
 	QSection *section = [[QSection alloc] init];
     
-    QLabelElement *assets_pledge = [[QLabelElement alloc] initWithTitle:@"资产抵押" Value:nil];
+    QLabelElement *assets_pledge = [[QLabelElement alloc] initWithTitle:@"资产抵质押" Value:nil];
     assets_pledge.controllerAction = @"showAssertsTypes:";
     [section addElement:assets_pledge];
     
@@ -190,7 +190,7 @@
 + (QRootElement *)create {
     QRootElement *root = [[QRootElement alloc] init];
     root.grouped = YES;
-    root.title = @"新增资产抵制押";
+    root.title = @"新增资产抵质押";
 	QSection *section = [[QSection alloc] init];
     
     QLabelElement *land = [[QLabelElement alloc] initWithTitle:@"土地" Value:nil];
