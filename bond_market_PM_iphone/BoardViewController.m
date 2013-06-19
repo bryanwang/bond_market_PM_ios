@@ -12,6 +12,7 @@
 #import "PlatformProjectViewController.h"
 #import "ProjectViewController.h"
 #import "MyProjectsViewController.h"
+#import "MyPlatformProjectViewController.h"
 
 @interface BoardViewController () <UIActionSheetDelegate> {
     UIActionSheet *createProjectActionSheet;
@@ -31,7 +32,8 @@
 
 - (void)showPlatformProjects
 {
-    
+    MyPlatformProjectViewController *nc = [[MyPlatformProjectViewController alloc] init];
+    [self.navigationController pushViewController:nc animated:YES];
 }
 
 - (void)showNonPlatFormPorjects

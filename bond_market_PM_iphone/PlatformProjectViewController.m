@@ -123,6 +123,43 @@
     [self.rc bindObject:platformProject[@"Remark"]];
 }
 
+- (void)applyToDeleteProject
+{
+    //todo:apply to delete project
+}
+
+- (void)operateProjectInfo: (id)sender
+{
+    if (self.popComponent) {
+        [self.popComponent hide];
+    }
+    PopupListComponent *popupList = [[PopupListComponent alloc] init];
+    self.popComponent = popupList;
+    
+    //callbacks
+    popupList.choosedItemCallback = ^(int itemid) {
+        switch (itemid) {
+            case 0:
+                [ALToastView toastInView:APP_WINDOW withText:@"进入编辑状态"];
+                [self changePlatformProjectViewSatatus:PlatformProjectEditing];
+                break;
+            case 1:
+                [self applyToDeleteProject];
+                break;
+        }
+    };
+    popupList.popupDismissedCallback = ^() {
+        NSLog(@"dismissed");
+    };
+    
+    //items
+    [popupList showAnchoredTo:sender withItems:@[
+     [[PopupListComponentItem alloc] initWithCaption:@"修改" image:[UIImage imageNamed:@"operate-edit"] itemId:0],
+     [[PopupListComponentItem alloc] initWithCaption:@"删除" image:[UIImage imageNamed:@"operate-delete"] itemId:1]
+     ]];
+}
+
+
 - (void)setUpNavigationButton: (PlatformProjectEditStaus)status
 {
     //right button

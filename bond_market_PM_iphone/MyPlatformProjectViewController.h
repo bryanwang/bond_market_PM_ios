@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyPlatformProjectViewController : UIViewController
+@interface MyPlatformProjectViewController : BBCustomBackButtonViewController
 
 @end
