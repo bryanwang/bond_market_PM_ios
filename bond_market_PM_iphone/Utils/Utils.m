@@ -256,18 +256,22 @@ const char ArearsPickerSelectedCity;
 
 - (NSDateFormatter *)fulldateFormater
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    if (_fulldateFormater == nil) {
+        _fulldateFormater = [[NSDateFormatter alloc] init];
+        [_fulldateFormater setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    }
 
-    return dateFormatter;
+    return _fulldateFormater;
 }
 
 - (NSDateFormatter *)dateFormater
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    if (_dateFormater == nil) {
+        _dateFormater = [[NSDateFormatter alloc] init];
+        [_dateFormater setDateFormat:@"yyyy-MM-dd"];
+    }
     
-    return dateFormatter;
+    return _dateFormater;
 }
 
 @end
