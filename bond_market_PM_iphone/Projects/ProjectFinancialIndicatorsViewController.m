@@ -1,18 +1,18 @@
 //
-//  NonPlatformProjectFinancialIndicatorsViewController.m
+//  ProjectFinancialIndicatorsViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "NonPlatformProjectFinancialIndicatorsViewController.h"
+#import "ProjectFinancialIndicatorsViewController.h"
 
-@interface NonPlatformProjectFinancialIndicatorsViewController ()
+@interface ProjectFinancialIndicatorsViewController ()
 
 @end
 
-@implementation NonPlatformProjectFinancialIndicatorsViewController
+@implementation ProjectFinancialIndicatorsViewController
 
 - (void)bindObject: (NSDictionary *)obj
 {

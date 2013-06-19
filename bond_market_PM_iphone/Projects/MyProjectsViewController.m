@@ -1,21 +1,21 @@
 //
-//  NonPlatformProjectsViewController.m
+//  MyProjectsViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-18.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "NonPlatformProjectsViewController.h"
+#import "MyProjectsViewController.h"
 #import <AKSegmentedControl.h>
 #import "ProjectsTableViewController.h"
 
-@interface NonPlatformProjectsViewController ()
+@interface MyProjectsViewController ()
 @property (strong, nonatomic)ProjectsTableViewController *tableviewController;
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
 @end
 
-@implementation NonPlatformProjectsViewController
+@implementation MyProjectsViewController
 
 - (ProjectsTableViewController *)tableviewController
 {

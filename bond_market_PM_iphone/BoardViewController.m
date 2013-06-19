@@ -7,11 +7,11 @@
 //
 
 #import "BoardViewController.h"
-#import "NewBondViewController.h"
+#import "BondViewController.h"
 #import "MyBondsViewController.h"
-#import "NewPlatformProjectViewController.h"
-#import "NewNonPlatformProjectViewController.h"
-#import "NonPlatformProjectsViewController.h"
+#import "PlatformProjectViewController.h"
+#import "ProjectViewController.h"
+#import "MyProjectsViewController.h"
 
 @interface BoardViewController () <UIActionSheetDelegate> {
     UIActionSheet *createProjectActionSheet;
@@ -36,7 +36,7 @@
 
 - (void)showNonPlatFormPorjects
 {
-    NonPlatformProjectsViewController *nc = [[NonPlatformProjectsViewController alloc] init];
+    MyProjectsViewController *nc = [[MyProjectsViewController alloc] init];
     [self.navigationController pushViewController:nc animated:YES];
 }
 
@@ -54,13 +54,13 @@
 
 - (void)createNonPlatformProject
 {
-    NewNonPlatformProjectViewController *nc = [[NewNonPlatformProjectViewController alloc]init];
+    ProjectViewController *nc = [[ProjectViewController alloc]init];
     [self.navigationController pushViewController:nc animated:YES];
 }
 
 - (void)createPlatformProject
 {
-    NewPlatformProjectViewController *nc = [[NewPlatformProjectViewController alloc]init];
+    PlatformProjectViewController *nc = [[PlatformProjectViewController alloc]init];
     [self.navigationController pushViewController:nc animated:YES];
 }
 
@@ -78,7 +78,7 @@
 
 - (IBAction)createBond:(id)sender
 {
-    NewBondViewController *nc = [[NewBondViewController alloc]init];
+    BondViewController *nc = [[BondViewController alloc]init];
     [self.navigationController pushViewController:nc animated:YES];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "AddUseOfFoundsViewController.h"
-#import "AddLiquidityViewController.h"
+#import "LiquidityViewController.h"
 #import "DebtRestructuringViewController.h"
 #import "EquityInvestmentProjectsViewController.h"
 #import "OtherPurposesViewController.h"
@@ -36,7 +36,7 @@
 #pragma base quick dialog delegate
 - (void)AddLiquidity
 {
-    AddLiquidityViewController *ac = [[AddLiquidityViewController alloc] init];
+    LiquidityViewController *ac = [[LiquidityViewController alloc] init];
     [self.navigationController pushViewController:ac animated:YES];
 }
 

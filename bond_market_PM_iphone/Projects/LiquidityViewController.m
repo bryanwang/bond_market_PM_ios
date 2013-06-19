@@ -1,18 +1,18 @@
 //
-//  AddLiquidityViewController.m
+//  LiquidityViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "AddLiquidityViewController.h"
+#import "LiquidityViewController.h"
 
-@interface AddLiquidityViewController ()
+@interface LiquidityViewController ()
 
 @end
 
-@implementation AddLiquidityViewController
+@implementation LiquidityViewController
 
 - (void)doneBtnTapped
 {
@@ -37,7 +37,7 @@
     self.title = @"补充流动资金";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(doneBtnTapped)];
     
-    QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"AddLiquidityDataBuilder" andData:nil];
+    QRootElement *root = [[QRootElement alloc]initWithJSONFile:@"LiquidityDataBuilder" andData:nil];
     [self setupQuickDialogControllerWithRoot:root];
 }
 

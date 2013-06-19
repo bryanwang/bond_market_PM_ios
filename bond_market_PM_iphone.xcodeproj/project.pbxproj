@@ -27,7 +27,7 @@
 		CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494017705C2400D6FBE8 /* ProjectTableCell.m */; };
 		CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */; };
 		CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */; };
-		CA04494B17705E0200D6FBE8 /* NonPlatformProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494A17705E0200D6FBE8 /* NonPlatformProjectsViewController.m */; };
+		CA04494B17705E0200D6FBE8 /* MyProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494A17705E0200D6FBE8 /* MyProjectsViewController.m */; };
 		CA3B9C23176EA23E00E2D7B8 /* no-item.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C21176EA23E00E2D7B8 /* no-item.png */; };
 		CA3B9C24176EA23E00E2D7B8 /* no-item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */; };
 		CA3B9C56176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */; };
@@ -44,7 +44,7 @@
 		CA3B9C64176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */; };
 		CA3B9C66176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */; };
 		CA3B9C73176EE7DD00E2D7B8 /* UseOfFoundsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C72176EE7DD00E2D7B8 /* UseOfFoundsDataBuilder.json */; };
-		CA3B9C83176EEF6800E2D7B8 /* AddLiquidityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C80176EEF6700E2D7B8 /* AddLiquidityDataBuilder.json */; };
+		CA3B9C83176EEF6800E2D7B8 /* LiquidityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C80176EEF6700E2D7B8 /* LiquidityDataBuilder.json */; };
 		CA3B9C84176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C81176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json */; };
 		CA3B9C85176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C82176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json */; };
 		CA3B9C8D176EF4CE00E2D7B8 /* FinancingDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9C8C176EF4CD00E2D7B8 /* FinancingDataBuilder.json */; };
@@ -66,16 +66,16 @@
 		CA3B9CBE176EFAC200E2D7B8 /* BondTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB7176EFAAF00E2D7B8 /* BondTableHeader.m */; };
 		CA3B9CBF176EFAC200E2D7B8 /* BondTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9CB8176EFABD00E2D7B8 /* BondTableHeader.xib */; };
 		CA3B9CC3176EFB0600E2D7B8 /* FinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC2176EFB0500E2D7B8 /* FinancialIndicatorsViewController.m */; };
-		CA3B9CC8176EFB2400E2D7B8 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC5176EFB2300E2D7B8 /* FilterViewController.m */; };
-		CA3B9CC9176EFB2400E2D7B8 /* NewBondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC7176EFB2400E2D7B8 /* NewBondViewController.m */; };
+		CA3B9CC8176EFB2400E2D7B8 /* BondFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC5176EFB2300E2D7B8 /* BondFilterViewController.m */; };
+		CA3B9CC9176EFB2400E2D7B8 /* BondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CC7176EFB2400E2D7B8 /* BondViewController.m */; };
 		CA3B9CCC176EFB4100E2D7B8 /* MyBondsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CCB176EFB4000E2D7B8 /* MyBondsViewController.m */; };
-		CA3B9CCF176EFB9500E2D7B8 /* NewPlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CCE176EFB9500E2D7B8 /* NewPlatformProjectViewController.m */; };
-		CA3B9CD2176EFB9E00E2D7B8 /* NewNonPlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD1176EFB9C00E2D7B8 /* NewNonPlatformProjectViewController.m */; };
-		CA3B9CD7176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD4176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */; };
-		CA3B9CD8176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD6176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m */; };
-		CA3B9CDB176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CDA176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.m */; };
+		CA3B9CCF176EFB9500E2D7B8 /* PlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CCE176EFB9500E2D7B8 /* PlatformProjectViewController.m */; };
+		CA3B9CD2176EFB9E00E2D7B8 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD1176EFB9C00E2D7B8 /* ProjectViewController.m */; };
+		CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD4176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m */; };
+		CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */; };
+		CA3B9CDB176EFBB300E2D7B8 /* ProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CDA176EFBB300E2D7B8 /* ProjectRemarkViewController.m */; };
 		CA3B9CDE176EFBD200E2D7B8 /* FinancingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CDD176EFBD100E2D7B8 /* FinancingViewController.m */; };
-		CA3B9CEB176EFC0600E2D7B8 /* AddLiquidityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE0176EFBFB00E2D7B8 /* AddLiquidityViewController.m */; };
+		CA3B9CEB176EFC0600E2D7B8 /* LiquidityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE0176EFBFB00E2D7B8 /* LiquidityViewController.m */; };
 		CA3B9CEC176EFC0600E2D7B8 /* AddUseOfFoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE2176EFBFD00E2D7B8 /* AddUseOfFoundsViewController.m */; };
 		CA3B9CED176EFC0600E2D7B8 /* DebtRestructuringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE4176EFBFF00E2D7B8 /* DebtRestructuringViewController.m */; };
 		CA3B9CEE176EFC0600E2D7B8 /* EquityInvestmentProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CE6176EFC0100E2D7B8 /* EquityInvestmentProjectsViewController.m */; };
@@ -260,8 +260,8 @@
 		CA04494417705CE800D6FBE8 /* ProjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectsTableViewController.h; path = Projects/ProjectsTableViewController.h; sourceTree = "<group>"; };
 		CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectsTableViewController.m; path = Projects/ProjectsTableViewController.m; sourceTree = "<group>"; };
 		CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectTableCell.xib; path = Projects/ProjectTableCell.xib; sourceTree = "<group>"; };
-		CA04494917705E0200D6FBE8 /* NonPlatformProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NonPlatformProjectsViewController.h; path = Projects/NonPlatformProjectsViewController.h; sourceTree = "<group>"; };
-		CA04494A17705E0200D6FBE8 /* NonPlatformProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NonPlatformProjectsViewController.m; path = Projects/NonPlatformProjectsViewController.m; sourceTree = "<group>"; };
+		CA04494917705E0200D6FBE8 /* MyProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyProjectsViewController.h; path = Projects/MyProjectsViewController.h; sourceTree = "<group>"; };
+		CA04494A17705E0200D6FBE8 /* MyProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyProjectsViewController.m; path = Projects/MyProjectsViewController.m; sourceTree = "<group>"; };
 		CA3B9C21176EA23E00E2D7B8 /* no-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item.png"; sourceTree = "<group>"; };
 		CA3B9C22176EA23E00E2D7B8 /* no-item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-item@2x.png"; sourceTree = "<group>"; };
 		CA3B9C4B176EAF9C00E2D7B8 /* AssertsTypesDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AssertsTypesDataBuilder.json; path = DataBuilder/Bonds/AssertsTypesDataBuilder.json; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		CA3B9C62176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectBasicDataBuilder.json; path = DataBuilder/Projects/ProjectBasicDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C65176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectFinanceDataBuilder.json; path = DataBuilder/Projects/ProjectFinanceDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C72176EE7DD00E2D7B8 /* UseOfFoundsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = UseOfFoundsDataBuilder.json; path = DataBuilder/Projects/UseOfFoundsDataBuilder.json; sourceTree = "<group>"; };
-		CA3B9C80176EEF6700E2D7B8 /* AddLiquidityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AddLiquidityDataBuilder.json; path = DataBuilder/Projects/AddLiquidityDataBuilder.json; sourceTree = "<group>"; };
+		CA3B9C80176EEF6700E2D7B8 /* LiquidityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LiquidityDataBuilder.json; path = DataBuilder/Projects/LiquidityDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C81176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DebtRestructuringDataBuilder.json; path = DataBuilder/Projects/DebtRestructuringDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C82176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EquityInvestmentProjectsDataBuilder.json; path = DataBuilder/Projects/EquityInvestmentProjectsDataBuilder.json; sourceTree = "<group>"; };
 		CA3B9C8C176EF4CD00E2D7B8 /* FinancingDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FinancingDataBuilder.json; path = DataBuilder/Projects/FinancingDataBuilder.json; sourceTree = "<group>"; };
@@ -316,26 +316,26 @@
 		CA3B9CC0176EFAFC00E2D7B8 /* BondBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondBasicInfoViewController.h; path = Bonds/BondBasicInfoViewController.h; sourceTree = "<group>"; };
 		CA3B9CC1176EFB0500E2D7B8 /* FinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancialIndicatorsViewController.h; path = Bonds/FinancialIndicatorsViewController.h; sourceTree = "<group>"; };
 		CA3B9CC2176EFB0500E2D7B8 /* FinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancialIndicatorsViewController.m; path = Bonds/FinancialIndicatorsViewController.m; sourceTree = "<group>"; };
-		CA3B9CC4176EFB2300E2D7B8 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterViewController.h; path = Bonds/FilterViewController.h; sourceTree = "<group>"; };
-		CA3B9CC5176EFB2300E2D7B8 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterViewController.m; path = Bonds/FilterViewController.m; sourceTree = "<group>"; };
-		CA3B9CC6176EFB2400E2D7B8 /* NewBondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewBondViewController.h; path = Bonds/NewBondViewController.h; sourceTree = "<group>"; };
-		CA3B9CC7176EFB2400E2D7B8 /* NewBondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewBondViewController.m; path = Bonds/NewBondViewController.m; sourceTree = "<group>"; };
+		CA3B9CC4176EFB2300E2D7B8 /* BondFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondFilterViewController.h; path = Bonds/BondFilterViewController.h; sourceTree = "<group>"; };
+		CA3B9CC5176EFB2300E2D7B8 /* BondFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondFilterViewController.m; path = Bonds/BondFilterViewController.m; sourceTree = "<group>"; };
+		CA3B9CC6176EFB2400E2D7B8 /* BondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondViewController.h; path = Bonds/BondViewController.h; sourceTree = "<group>"; };
+		CA3B9CC7176EFB2400E2D7B8 /* BondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondViewController.m; path = Bonds/BondViewController.m; sourceTree = "<group>"; };
 		CA3B9CCA176EFB3F00E2D7B8 /* MyBondsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyBondsViewController.h; path = Bonds/MyBondsViewController.h; sourceTree = "<group>"; };
 		CA3B9CCB176EFB4000E2D7B8 /* MyBondsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyBondsViewController.m; path = Bonds/MyBondsViewController.m; sourceTree = "<group>"; };
-		CA3B9CCD176EFB9500E2D7B8 /* NewPlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewPlatformProjectViewController.h; path = Projects/NewPlatformProjectViewController.h; sourceTree = "<group>"; };
-		CA3B9CCE176EFB9500E2D7B8 /* NewPlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewPlatformProjectViewController.m; path = Projects/NewPlatformProjectViewController.m; sourceTree = "<group>"; };
-		CA3B9CD0176EFB9B00E2D7B8 /* NewNonPlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewNonPlatformProjectViewController.h; path = Projects/NewNonPlatformProjectViewController.h; sourceTree = "<group>"; };
-		CA3B9CD1176EFB9C00E2D7B8 /* NewNonPlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewNonPlatformProjectViewController.m; path = Projects/NewNonPlatformProjectViewController.m; sourceTree = "<group>"; };
-		CA3B9CD3176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NonPlatformProjectBasicInfoViewController.h; path = Projects/NonPlatformProjectBasicInfoViewController.h; sourceTree = "<group>"; };
-		CA3B9CD4176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NonPlatformProjectBasicInfoViewController.m; path = Projects/NonPlatformProjectBasicInfoViewController.m; sourceTree = "<group>"; };
-		CA3B9CD5176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NonPlatformProjectFinancialIndicatorsViewController.h; path = Projects/NonPlatformProjectFinancialIndicatorsViewController.h; sourceTree = "<group>"; };
-		CA3B9CD6176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NonPlatformProjectFinancialIndicatorsViewController.m; path = Projects/NonPlatformProjectFinancialIndicatorsViewController.m; sourceTree = "<group>"; };
-		CA3B9CD9176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NonPlatformProjectRemarkViewController.h; path = Projects/NonPlatformProjectRemarkViewController.h; sourceTree = "<group>"; };
-		CA3B9CDA176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NonPlatformProjectRemarkViewController.m; path = Projects/NonPlatformProjectRemarkViewController.m; sourceTree = "<group>"; };
+		CA3B9CCD176EFB9500E2D7B8 /* PlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformProjectViewController.h; path = Projects/PlatformProjectViewController.h; sourceTree = "<group>"; };
+		CA3B9CCE176EFB9500E2D7B8 /* PlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformProjectViewController.m; path = Projects/PlatformProjectViewController.m; sourceTree = "<group>"; };
+		CA3B9CD0176EFB9B00E2D7B8 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectViewController.h; path = Projects/ProjectViewController.h; sourceTree = "<group>"; };
+		CA3B9CD1176EFB9C00E2D7B8 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectViewController.m; path = Projects/ProjectViewController.m; sourceTree = "<group>"; };
+		CA3B9CD3176EFBA600E2D7B8 /* ProjectBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectBasicInfoViewController.h; path = Projects/ProjectBasicInfoViewController.h; sourceTree = "<group>"; };
+		CA3B9CD4176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectBasicInfoViewController.m; path = Projects/ProjectBasicInfoViewController.m; sourceTree = "<group>"; };
+		CA3B9CD5176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectFinancialIndicatorsViewController.h; path = Projects/ProjectFinancialIndicatorsViewController.h; sourceTree = "<group>"; };
+		CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectFinancialIndicatorsViewController.m; path = Projects/ProjectFinancialIndicatorsViewController.m; sourceTree = "<group>"; };
+		CA3B9CD9176EFBB300E2D7B8 /* ProjectRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectRemarkViewController.h; path = Projects/ProjectRemarkViewController.h; sourceTree = "<group>"; };
+		CA3B9CDA176EFBB300E2D7B8 /* ProjectRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectRemarkViewController.m; path = Projects/ProjectRemarkViewController.m; sourceTree = "<group>"; };
 		CA3B9CDC176EFBD100E2D7B8 /* FinancingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancingViewController.h; path = Projects/FinancingViewController.h; sourceTree = "<group>"; };
 		CA3B9CDD176EFBD100E2D7B8 /* FinancingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancingViewController.m; path = Projects/FinancingViewController.m; sourceTree = "<group>"; };
-		CA3B9CDF176EFBFA00E2D7B8 /* AddLiquidityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLiquidityViewController.h; path = Projects/AddLiquidityViewController.h; sourceTree = "<group>"; };
-		CA3B9CE0176EFBFB00E2D7B8 /* AddLiquidityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddLiquidityViewController.m; path = Projects/AddLiquidityViewController.m; sourceTree = "<group>"; };
+		CA3B9CDF176EFBFA00E2D7B8 /* LiquidityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiquidityViewController.h; path = Projects/LiquidityViewController.h; sourceTree = "<group>"; };
+		CA3B9CE0176EFBFB00E2D7B8 /* LiquidityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiquidityViewController.m; path = Projects/LiquidityViewController.m; sourceTree = "<group>"; };
 		CA3B9CE1176EFBFC00E2D7B8 /* AddUseOfFoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddUseOfFoundsViewController.h; path = Projects/AddUseOfFoundsViewController.h; sourceTree = "<group>"; };
 		CA3B9CE2176EFBFD00E2D7B8 /* AddUseOfFoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddUseOfFoundsViewController.m; path = Projects/AddUseOfFoundsViewController.m; sourceTree = "<group>"; };
 		CA3B9CE3176EFBFE00E2D7B8 /* DebtRestructuringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebtRestructuringViewController.h; path = Projects/DebtRestructuringViewController.h; sourceTree = "<group>"; };
@@ -598,10 +598,10 @@
 				CA3B9CB6176EFAAD00E2D7B8 /* BondTableHeader.h */,
 				CA3B9CB7176EFAAF00E2D7B8 /* BondTableHeader.m */,
 				CA3B9CB8176EFABD00E2D7B8 /* BondTableHeader.xib */,
-				CA3B9CC4176EFB2300E2D7B8 /* FilterViewController.h */,
-				CA3B9CC5176EFB2300E2D7B8 /* FilterViewController.m */,
-				CA3B9CC6176EFB2400E2D7B8 /* NewBondViewController.h */,
-				CA3B9CC7176EFB2400E2D7B8 /* NewBondViewController.m */,
+				CA3B9CC4176EFB2300E2D7B8 /* BondFilterViewController.h */,
+				CA3B9CC5176EFB2300E2D7B8 /* BondFilterViewController.m */,
+				CA3B9CC6176EFB2400E2D7B8 /* BondViewController.h */,
+				CA3B9CC7176EFB2400E2D7B8 /* BondViewController.m */,
 				CA3B9CCA176EFB3F00E2D7B8 /* MyBondsViewController.h */,
 				CA3B9CCB176EFB4000E2D7B8 /* MyBondsViewController.m */,
 				0EA882C8175C25A7001100A7 /* Form */,
@@ -706,28 +706,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CA3B9C2B176EACA900E2D7B8 /* NonPlatformProject */ = {
+		CA3B9C2B176EACA900E2D7B8 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				CA04494917705E0200D6FBE8 /* NonPlatformProjectsViewController.h */,
-				CA04494A17705E0200D6FBE8 /* NonPlatformProjectsViewController.m */,
+				CA04494917705E0200D6FBE8 /* MyProjectsViewController.h */,
+				CA04494A17705E0200D6FBE8 /* MyProjectsViewController.m */,
 				CA04494417705CE800D6FBE8 /* ProjectsTableViewController.h */,
 				CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */,
 				CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */,
 				CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */,
 				CA04494017705C2400D6FBE8 /* ProjectTableCell.m */,
-				CA3B9CD0176EFB9B00E2D7B8 /* NewNonPlatformProjectViewController.h */,
-				CA3B9CD1176EFB9C00E2D7B8 /* NewNonPlatformProjectViewController.m */,
+				CA3B9CD0176EFB9B00E2D7B8 /* ProjectViewController.h */,
+				CA3B9CD1176EFB9C00E2D7B8 /* ProjectViewController.m */,
 				CA3B9C2D176EACC700E2D7B8 /* Form */,
 			);
-			name = NonPlatformProject;
+			name = Project;
 			sourceTree = "<group>";
 		};
 		CA3B9C2C176EACB000E2D7B8 /* PlatformProject */ = {
 			isa = PBXGroup;
 			children = (
-				CA3B9CCD176EFB9500E2D7B8 /* NewPlatformProjectViewController.h */,
-				CA3B9CCE176EFB9500E2D7B8 /* NewPlatformProjectViewController.m */,
+				CA3B9CCD176EFB9500E2D7B8 /* PlatformProjectViewController.h */,
+				CA3B9CCE176EFB9500E2D7B8 /* PlatformProjectViewController.m */,
 			);
 			name = PlatformProject;
 			sourceTree = "<group>";
@@ -735,12 +735,12 @@
 		CA3B9C2D176EACC700E2D7B8 /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				CA3B9CD3176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.h */,
-				CA3B9CD4176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.m */,
-				CA3B9CD5176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.h */,
-				CA3B9CD6176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m */,
-				CA3B9CD9176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.h */,
-				CA3B9CDA176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.m */,
+				CA3B9CD3176EFBA600E2D7B8 /* ProjectBasicInfoViewController.h */,
+				CA3B9CD4176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m */,
+				CA3B9CD5176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.h */,
+				CA3B9CD6176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m */,
+				CA3B9CD9176EFBB300E2D7B8 /* ProjectRemarkViewController.h */,
+				CA3B9CDA176EFBB300E2D7B8 /* ProjectRemarkViewController.m */,
 				CA3B9C88176EF41800E2D7B8 /* Financing */,
 				CA3B9C68176EBC5C00E2D7B8 /* UseOfFounds */,
 				CA3B9C67176EBC5300E2D7B8 /* TrustIncrease */,
@@ -762,8 +762,8 @@
 				CA3B9CEA176EFC0500E2D7B8 /* UseOfFoundsViewController.m */,
 				CA3B9CE1176EFBFC00E2D7B8 /* AddUseOfFoundsViewController.h */,
 				CA3B9CE2176EFBFD00E2D7B8 /* AddUseOfFoundsViewController.m */,
-				CA3B9CDF176EFBFA00E2D7B8 /* AddLiquidityViewController.h */,
-				CA3B9CE0176EFBFB00E2D7B8 /* AddLiquidityViewController.m */,
+				CA3B9CDF176EFBFA00E2D7B8 /* LiquidityViewController.h */,
+				CA3B9CE0176EFBFB00E2D7B8 /* LiquidityViewController.m */,
 				CA3B9CE3176EFBFE00E2D7B8 /* DebtRestructuringViewController.h */,
 				CA3B9CE4176EFBFF00E2D7B8 /* DebtRestructuringViewController.m */,
 				CA3B9CE5176EFC0000E2D7B8 /* EquityInvestmentProjectsViewController.h */,
@@ -920,7 +920,7 @@
 			isa = PBXGroup;
 			children = (
 				CA3B9C2C176EACB000E2D7B8 /* PlatformProject */,
-				CA3B9C2B176EACA900E2D7B8 /* NonPlatformProject */,
+				CA3B9C2B176EACA900E2D7B8 /* Project */,
 			);
 			name = Projects;
 			sourceTree = "<group>";
@@ -931,7 +931,7 @@
 				CACD4173176F0BF8005E12E8 /* AntiGuarantorDataBuilder.json */,
 				CA475336176F016A00CAEF5E /* NonPlatformTrutWaysDataBuilder.json */,
 				CA3B9C8C176EF4CD00E2D7B8 /* FinancingDataBuilder.json */,
-				CA3B9C80176EEF6700E2D7B8 /* AddLiquidityDataBuilder.json */,
+				CA3B9C80176EEF6700E2D7B8 /* LiquidityDataBuilder.json */,
 				CA3B9C81176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json */,
 				CA3B9C82176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json */,
 				CA3B9C72176EE7DD00E2D7B8 /* UseOfFoundsDataBuilder.json */,
@@ -1166,7 +1166,7 @@
 				CA3B9C64176EAFBD00E2D7B8 /* ProjectBasicDataBuilder.json in Resources */,
 				CA3B9C66176EAFF500E2D7B8 /* ProjectFinanceDataBuilder.json in Resources */,
 				CA3B9C73176EE7DD00E2D7B8 /* UseOfFoundsDataBuilder.json in Resources */,
-				CA3B9C83176EEF6800E2D7B8 /* AddLiquidityDataBuilder.json in Resources */,
+				CA3B9C83176EEF6800E2D7B8 /* LiquidityDataBuilder.json in Resources */,
 				CA3B9C84176EEF6800E2D7B8 /* DebtRestructuringDataBuilder.json in Resources */,
 				CA3B9C85176EEF6800E2D7B8 /* EquityInvestmentProjectsDataBuilder.json in Resources */,
 				CA3B9C8D176EF4CE00E2D7B8 /* FinancingDataBuilder.json in Resources */,
@@ -1238,16 +1238,16 @@
 				CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */,
 				CA3B9CBE176EFAC200E2D7B8 /* BondTableHeader.m in Sources */,
 				CA3B9CC3176EFB0600E2D7B8 /* FinancialIndicatorsViewController.m in Sources */,
-				CA3B9CC8176EFB2400E2D7B8 /* FilterViewController.m in Sources */,
-				CA3B9CC9176EFB2400E2D7B8 /* NewBondViewController.m in Sources */,
+				CA3B9CC8176EFB2400E2D7B8 /* BondFilterViewController.m in Sources */,
+				CA3B9CC9176EFB2400E2D7B8 /* BondViewController.m in Sources */,
 				CA3B9CCC176EFB4100E2D7B8 /* MyBondsViewController.m in Sources */,
-				CA3B9CCF176EFB9500E2D7B8 /* NewPlatformProjectViewController.m in Sources */,
-				CA3B9CD2176EFB9E00E2D7B8 /* NewNonPlatformProjectViewController.m in Sources */,
-				CA3B9CD7176EFBA600E2D7B8 /* NonPlatformProjectBasicInfoViewController.m in Sources */,
-				CA3B9CD8176EFBA600E2D7B8 /* NonPlatformProjectFinancialIndicatorsViewController.m in Sources */,
-				CA3B9CDB176EFBB300E2D7B8 /* NonPlatformProjectRemarkViewController.m in Sources */,
+				CA3B9CCF176EFB9500E2D7B8 /* PlatformProjectViewController.m in Sources */,
+				CA3B9CD2176EFB9E00E2D7B8 /* ProjectViewController.m in Sources */,
+				CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */,
+				CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */,
+				CA3B9CDB176EFBB300E2D7B8 /* ProjectRemarkViewController.m in Sources */,
 				CA3B9CDE176EFBD200E2D7B8 /* FinancingViewController.m in Sources */,
-				CA3B9CEB176EFC0600E2D7B8 /* AddLiquidityViewController.m in Sources */,
+				CA3B9CEB176EFC0600E2D7B8 /* LiquidityViewController.m in Sources */,
 				CA3B9CEC176EFC0600E2D7B8 /* AddUseOfFoundsViewController.m in Sources */,
 				CA3B9CED176EFC0600E2D7B8 /* DebtRestructuringViewController.m in Sources */,
 				CA3B9CEE176EFC0600E2D7B8 /* EquityInvestmentProjectsViewController.m in Sources */,
@@ -1263,7 +1263,7 @@
 				CACD417C17700009005E12E8 /* BYKeyValueCell.m in Sources */,
 				CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */,
 				CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */,
-				CA04494B17705E0200D6FBE8 /* NonPlatformProjectsViewController.m in Sources */,
+				CA04494B17705E0200D6FBE8 /* MyProjectsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  NonPlatformProjectFinancialIndicatorsViewController.h
+//  ProjectBasicInfoViewController.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NonPlatformProjectFinancialIndicatorsViewController : BYBaseQuickDialogViewController
+@interface ProjectBasicInfoViewController : BYBaseQuickDialogViewController
 
 - (void)bindObject: (NSDictionary *)obj;
 - (void)setElementsEnable;

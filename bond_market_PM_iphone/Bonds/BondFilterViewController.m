@@ -1,18 +1,18 @@
 //
-//  FilterViewController.m
+//  BondFilterViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-5.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "FilterViewController.h"
+#import "BondFilterViewController.h"
 
-@interface FilterViewController ()
+@interface BondFilterViewController ()
 
 @end
 
-@implementation FilterViewController
+@implementation BondFilterViewController
 
 - (void)filterBonds
 {

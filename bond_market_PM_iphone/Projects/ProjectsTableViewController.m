@@ -8,7 +8,7 @@
 
 #import "ProjectsTableViewController.h"
 #import "BondTableHeader.h"
-#import "NewNonPlatformProjectViewController.h"
+#import "ProjectViewController.h"
 #import "ProjectTableCell.h"
 
 @interface ProjectsTableViewController () {
@@ -251,7 +251,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NewNonPlatformProjectViewController *nc = [[NewNonPlatformProjectViewController alloc]init];
+    ProjectViewController *nc = [[ProjectViewController alloc]init];
     [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
 }
 

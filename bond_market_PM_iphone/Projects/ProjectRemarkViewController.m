@@ -1,19 +1,19 @@
 //
-//  NonPlatformProjectRemarkViewController.m
+//  ProjectRemarkViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "NonPlatformProjectRemarkViewController.h"
+#import "ProjectRemarkViewController.h"
 #import "UIPlaceHolderTextView.h"
 
-@interface NonPlatformProjectRemarkViewController ()
+@interface ProjectRemarkViewController ()
 @property (strong, nonatomic) UIPlaceHolderTextView *textview;
 @end
 
-@implementation NonPlatformProjectRemarkViewController
+@implementation ProjectRemarkViewController
 
 - (void)bindObject:(NSString *)remark
 {

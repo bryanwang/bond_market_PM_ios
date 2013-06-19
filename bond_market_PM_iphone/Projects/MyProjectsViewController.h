@@ -1,5 +1,5 @@
 //
-//  NonPlatformProjectsViewController.h
+//  MyProjectsViewController.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-18.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NonPlatformProjectsViewController : BBCustomBackButtonViewController
+@interface MyProjectsViewController : BBCustomBackButtonViewController
 
 @end

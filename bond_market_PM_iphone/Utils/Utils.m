@@ -45,16 +45,16 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 @implementation Utils
 
-- (NSArray *)arears
+- (NSArray *)Arears
 {
-    if (_arears == nil) {
-        _arears = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"area.plist" ofType:nil]];
+    if (_Arears == nil) {
+        _Arears = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"area.plist" ofType:nil]];
     }
     
-    return _arears;
+    return _Arears;
 }
 
-- (NSArray *)financingArray
+- (NSArray *)FinancingArray
 {
     return @[
              @"银行贷款",

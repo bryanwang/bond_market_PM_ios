@@ -1,5 +1,5 @@
 //
-//  NonPlatformProjectRemarkViewController.h
+//  ProjectFinancialIndicatorsViewController.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NonPlatformProjectRemarkViewController : BBCustomBackButtonViewController
+@interface ProjectFinancialIndicatorsViewController : BYBaseQuickDialogViewController
 
-- (void)bindObject: (NSString *)remark;
+- (void)bindObject: (NSDictionary *)obj;
 - (void)setElementsEnable;
 - (void)setElementsDisable;
-- (NSString *)fetchData;
+- (NSMutableDictionary *)fetchData;
 
 @end

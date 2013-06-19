@@ -1,7 +1,7 @@
 {
 	"grouped": true,
 	"title": "Json Data",
-    "controllerName": "NonPlatformProjectBasicInfoViewController",
+    "controllerName": "ProjectBasicInfoViewController",
 	"sections": [
                  { "elements":
                         [

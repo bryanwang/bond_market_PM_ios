@@ -1,5 +1,5 @@
 //
-//  NewNonPlatformProjectViewController.h
+//  ProjectViewController.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
@@ -14,7 +14,7 @@ typedef enum ProjectEditStaus: NSUInteger {
     ProjectCreate
 } ProjectEditStaus;
 
-@interface NewNonPlatformProjectViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
+@interface ProjectViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
 
 - (id)initWithProject: (NSDictionary *)project;
 

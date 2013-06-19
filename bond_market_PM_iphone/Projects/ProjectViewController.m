@@ -1,28 +1,28 @@
 //
-//  NewNonPlatformProjectViewController.m
+//  ProjectViewController.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "NewNonPlatformProjectViewController.h"
-#import "NonPlatformProjectBasicInfoViewController.h"
-#import "NonPlatformProjectFinancialIndicatorsViewController.h"
-#import "NonPlatformProjectRemarkViewController.h"
+#import "ProjectViewController.h"
+#import "ProjectBasicInfoViewController.h"
+#import "ProjectFinancialIndicatorsViewController.h"
+#import "ProjectRemarkViewController.h"
 #import <AKSegmentedControl.h>
 
-@interface NewNonPlatformProjectViewController ()
+@interface ProjectViewController ()
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
-@property (strong, nonatomic)NonPlatformProjectBasicInfoViewController *bc;
-@property (strong, nonatomic)NonPlatformProjectFinancialIndicatorsViewController *fc;
-@property (strong, nonatomic)NonPlatformProjectRemarkViewController *rc;
+@property (strong, nonatomic) ProjectBasicInfoViewController *bc;
+@property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
+@property (strong, nonatomic) ProjectRemarkViewController *rc;
 
 @property (strong, nonatomic)NSMutableDictionary *project;
 
 @end
 
-@implementation NewNonPlatformProjectViewController
+@implementation ProjectViewController
 
 - (id)initWithProject:(NSDictionary *)project
 {
@@ -32,30 +32,30 @@
     return self;
 }
 
-- (NonPlatformProjectBasicInfoViewController *)bc
+- (ProjectBasicInfoViewController *)bc
 {
     if (_bc == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ProjectBasicDataBuilder" andData:nil];
-        _bc = [[NonPlatformProjectBasicInfoViewController alloc]initWithRoot:root];
+        _bc = [[ProjectBasicInfoViewController alloc]initWithRoot:root];
         _bc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _bc;
 }
 
-- (NonPlatformProjectFinancialIndicatorsViewController *)fc
+- (ProjectFinancialIndicatorsViewController *)fc
 {
     if (_fc == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"ProjectFinanceDataBuilder" andData:nil];
-        _fc = [[NonPlatformProjectFinancialIndicatorsViewController alloc]initWithRoot:root];
+        _fc = [[ProjectFinancialIndicatorsViewController alloc]initWithRoot:root];
         _fc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _fc;
 }
 
-- (NonPlatformProjectRemarkViewController *)rc
+- (ProjectRemarkViewController *)rc
 {
     if (_rc == nil) {
-        _rc = [[NonPlatformProjectRemarkViewController alloc]init];
+        _rc = [[ProjectRemarkViewController alloc]init];
         _rc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _rc;

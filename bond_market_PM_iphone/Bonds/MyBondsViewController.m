@@ -8,14 +8,14 @@
 
 #import "MyBondsViewController.h"
 #import "BondsTableViewController.h"
-#import "FilterViewController.h"
+#import "BondFilterViewController.h"
 #import "define.h"
 #import <AKSegmentedControl.h>
 
 @interface MyBondsViewController ()
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
 @property (strong, nonatomic)BondsTableViewController *tableviewController;
-@property (strong, nonatomic)FilterViewController *filterViewController;
+@property (strong, nonatomic) BondFilterViewController *filterViewController;
 @end
 
 
@@ -32,10 +32,10 @@
 }
 
 
-- (FilterViewController *)filterViewController
+- (BondFilterViewController *)filterViewController
 {
     if (_filterViewController == nil) {
-        _filterViewController = [[FilterViewController alloc] init];
+        _filterViewController = [[BondFilterViewController alloc] init];
         
         //刷选项选择后的callback
         __block MyBondsViewController *delegate = self;

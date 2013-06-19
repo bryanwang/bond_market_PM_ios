@@ -14,8 +14,8 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 @interface Utils : NSObject
 + (Utils *)sharedInstance;
 
-@property (nonatomic, strong) NSArray *arears;
-@property (nonatomic, strong) NSArray *financingArray;
+@property (nonatomic, strong) NSArray *Arears;
+@property (nonatomic, strong) NSArray *FinancingArray;
 @property (nonatomic, strong) NSArray *LandAndEstateProperties;
 @property (nonatomic, strong) NSArray *EnhancementsProperties;
 @property (nonatomic, strong) NSArray *SecurityWays;

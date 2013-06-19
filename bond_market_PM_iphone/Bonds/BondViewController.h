@@ -1,5 +1,5 @@
 //
-//  NewBondViewController.h
+//  BondViewController.h
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-30.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PopupListComponent.h"
 
-@interface NewBondViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
+@interface BondViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
 
 - (id)initWithBond: (NSDictionary *)bond;
 

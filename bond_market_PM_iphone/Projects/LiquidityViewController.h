@@ -1,5 +1,5 @@
 //
-//  NewPlatformProjectViewController.h
+//  LiquidityViewController.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewPlatformProjectViewController : BBCustomBackButtonViewController
+@interface LiquidityViewController : BYQuickDialogWrappedViewController
 
 @end

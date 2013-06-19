@@ -1,7 +1,7 @@
 {
 	"grouped": true,
 	"title": "Json Data",
-    "controllerName": "NewBondViewController",
+    "controllerName": "BondViewController",
 	"sections": [
                  { "elements":
                         [

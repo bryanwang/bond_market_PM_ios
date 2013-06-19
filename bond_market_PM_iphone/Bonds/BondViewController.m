@@ -1,12 +1,12 @@
 //
-//  NewBondViewController.m
+//  BondViewController.m
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-30.
 //  Copyright (c) 2013年 bruce yang. All rights reserved.
 //
 
-#import "NewBondViewController.h"
+#import "BondViewController.h"
 #import <AKSegmentedControl.h>
 #import "BondBasicInfoViewController.h"
 #import "FinancialIndicatorsViewController.h"
@@ -18,7 +18,7 @@ typedef enum BondEditStaus: NSUInteger {
     BondCreate
 } BondEditStaus;
 
-@interface NewBondViewController () {
+@interface BondViewController () {
     NSDictionary *storedBondInfo;
 }
 @property (nonatomic, strong)NSDictionary *bondInfo;
@@ -31,7 +31,7 @@ typedef enum BondEditStaus: NSUInteger {
 
 @end
 
-@implementation NewBondViewController
+@implementation BondViewController
 
 - (id)initWithBond:(NSDictionary *)bond
 {

@@ -148,7 +148,7 @@
 - (void)fetchProvinces
 {
     @autoreleasepool {
-        NSArray *ps = [Utils sharedInstance].arears;
+        NSArray *ps = [Utils sharedInstance].Arears;
         NSMutableArray *array = [NSMutableArray array];
         [ps enumerateObjectsUsingBlock:^(id p, NSUInteger index, BOOL*stop) {
             [array addObject:p[@"state"]];
@@ -161,7 +161,7 @@
 - (void)fetchCitiesWithProvincesIndex: (NSInteger)index
 {
     @autoreleasepool {
-        NSArray *cs = [Utils sharedInstance].arears[index][@"cities"];
+        NSArray *cs = [Utils sharedInstance].Arears[index][@"cities"];
         NSMutableArray *array = [NSMutableArray array];
         [cs enumerateObjectsUsingBlock:^(id c, NSUInteger index, BOOL*stop) {
             [array addObject:c[@"city"]];
@@ -174,7 +174,7 @@
 - (void)fetchAreasWithCityIndex: (NSInteger)cindex AndProvincesIndex: (NSInteger )pindex
 {
     @autoreleasepool {
-        NSArray *as  =[Utils sharedInstance].arears[pindex][@"cities"][cindex][@"areas"];
+        NSArray *as  =[Utils sharedInstance].Arears[pindex][@"cities"][cindex][@"areas"];
         NSMutableArray *array = [NSMutableArray array];
         [as enumerateObjectsUsingBlock:^(id a, NSUInteger index, BOOL*stop) {
             [array addObject:a];

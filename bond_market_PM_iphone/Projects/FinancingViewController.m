@@ -24,7 +24,7 @@
         [allsection setSelectedIndexes:[@[@0] mutableCopy]];
     }
     else if ([financing isKindOfClass:[NSArray class]]) {
-        NSArray *kinds = [Utils sharedInstance].financingArray;
+        NSArray *kinds = [Utils sharedInstance].FinancingArray;
         NSMutableArray *items = [NSMutableArray array];
         [financing enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             NSInteger index = [kinds indexOfObject:obj];
