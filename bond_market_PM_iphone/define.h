@@ -25,6 +25,11 @@
 #define MY_PROJECTS_INTERFACE @"/api/ios/project/mine"
 #define MY_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/project/bonus"
 
+//platformProject
+#define UPDATE_PLATFORMPROJECT_INTERFACE @"/api/ios/platformproject/update"
+#define MY_PLATFORMPROJECTS_INTERFACE @"/api/ios/platformproject/mine"
+#define MY_PLATFORMPROJECTS_INPUTUBFI_INTERFACE @"/api/ios/platformproject/bonus"
+
 
 //notification
 #define BYPOPVIEWCONTOLLERNOTIFICATION @"popviewcontroller"

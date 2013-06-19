@@ -248,4 +248,56 @@
 
 
 
+- (NSMutableDictionary *)buildPlatformProjectInfo
+{
+    NSMutableDictionary *platformProject = [self.bc fetchData];
+    platformProject[@"FinanceIndex"] = [self.fc fetchData] ;
+    platformProject[@"Remark"] = [self.rc fetchData];
+    
+    return platformProject;
+}
+
+- (void)updateProjectInfo
+{
+    [self hideKeyBoard];
+    
+    NSMutableDictionary *platformProject = [self buildPlatformProjectInfo];
+    // 简称 这个字段必填
+    if ([platformProject[@"Subject"] length] == 0) {
+        [ALToastView toastInView:self.view withText:@"融资主体必填"];
+        return;
+    }
+    
+    NSString *userId = [LoginManager sharedInstance].fetchUserId;
+    
+    //如果self.project 不为空 则 操作为update
+    //如果self.project 为空 则 操作为create
+    if (self.platformProject)
+        platformProject[@"Id"] = self.platformProject[@"Id"];
+    
+    //转成string
+    NSError *error = nil;
+    NSData *finance = [NSJSONSerialization dataWithJSONObject:platformProject[@"FinanceIndex"] options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *financeJsonString = [[NSString alloc] initWithData:finance encoding:NSUTF8StringEncoding];
+    platformProject[@"FinanceIndex"] = financeJsonString;
+    
+    NSData *info = [NSJSONSerialization dataWithJSONObject:platformProject options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *infoJsonString = [[NSString alloc] initWithData:info encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *parameters = @{@"userid": userId, @"platformproject": infoJsonString};
+    
+    [[PMHttpClient shareIntance] postPath:UPDATE_PLATFORMPROJECT_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *result = responseObject;
+        if ([result[@"Success"] isEqual: @1]) {
+            [self.navigationController popViewControllerAnimated:YES];
+            [ALToastView toastInView:APP_WINDOW withText:@"提交成功"];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [ALToastView toastInView:APP_WINDOW withText:@"网络问题，提交失败"];
+    }];
+    
+}
+
+
+
 @end

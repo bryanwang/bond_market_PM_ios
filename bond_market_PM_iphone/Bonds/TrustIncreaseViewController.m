@@ -114,7 +114,7 @@
             bulider = @"TrutWaysDataBuilder";
             break;
         case PlatformProjectTrustIncrease:
-            bulider = @"NonPlatformTrutWaysDataBuilder";
+            bulider = @"PlatformTrutWaysDataBuilder";
         case NonPlatformProjectTrustIncrease:
             bulider= @"NonPlatformTrutWaysDataBuilder";
         default:

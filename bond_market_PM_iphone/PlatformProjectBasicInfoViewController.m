@@ -161,7 +161,7 @@
 - (TrustIncreaseViewController *)trustIncreaseViewController
 {
     if (_trustIncreaseViewController == nil) {
-        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]initWithTrustIncreaseStatus:NonPlatformProjectTrustIncrease];
+        _trustIncreaseViewController = [[TrustIncreaseViewController alloc]initWithTrustIncreaseStatus:PlatformProjectTrustIncrease];
     }
     
     return _trustIncreaseViewController;

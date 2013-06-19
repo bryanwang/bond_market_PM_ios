@@ -10,7 +10,7 @@
                                 { "type":"QPickerElement", "key":"Area", "title":"所在地区", "bind": "value: Area"},
                                 { "type":"QPickerElement", "key":"PlatformLevel", "title":"平台级别", "items":[["省一级", "副省级", "地市级", "市级", "百强县前50", "百强县前100", "非百强县"]],
                                     "bind": "value: PlatformLevel"},
-                                { "type":"QPickerElement", "key":"CorporateRate", "title":"主体评级", "items" :[["无", "AAA", "AA+", "AA", "AA-", "A+", "A", "A-", "BBB+"]]},
+                                { "type":"QPickerElement", "key":"CorporateRate", "title":"主体评级", "items" :[["无", "AAA", "AA+", "AA", "AA-", "A+", "A", "A-", "BBB+"]], "bind": "value: CorporateRate"},
                                 { "type":"QEntryElement", "key":"BondIssued", "title":"已发债金额", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿元", "placeholder": "亿元",
                                     "bind": "textValue: BondIssued"}
                         ]
