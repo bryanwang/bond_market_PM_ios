@@ -9,11 +9,12 @@
 #import "PlatformProjectViewController.h"
 #import <AKSegmentedControl.h>
 
+
 @interface PlatformProjectViewController ()
 @property (strong, nonatomic) AKSegmentedControl *segmentedControl;
-//@property (strong, nonatomic) ProjectBasicInfoViewController *bc;
-//@property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
-//@property (strong, nonatomic) ProjectRemarkViewController *rc;
+@property (strong, nonatomic) PlatformProjectBasicInfoViewController *bc;
+@property (strong, nonatomic) PlatformProjectFinancialIndicatorsViewController *fc;
+@property (strong, nonatomic) PlatformProjectRemarkViewController *rc;
 
 @property (strong, nonatomic)NSMutableDictionary *platformProject;
 
@@ -35,9 +36,36 @@
     self.title = @"平台项目录入";
 }
 
-- (void)didReceiveMemoryWarning
+
+- (PlatformProjectBasicInfoViewController *)bc
 {
-    [super didReceiveMemoryWarning];
+    if (_bc == nil) {
+        QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"PlatformProjectBasicDataBuilder" andData:nil];
+        _bc = [[PlatformProjectBasicInfoViewController alloc]initWithRoot:root];
+        _bc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
+    }
+    return _bc;
 }
+
+- (PlatformProjectFinancialIndicatorsViewController *)fc
+{
+    if (_fc == nil) {
+        QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"PlatformProjectFinanceDataBuilder" andData:nil];
+        _fc = [[PlatformProjectFinancialIndicatorsViewController alloc] initWithRoot:root];
+        _fc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
+    }
+    return _fc;
+}
+
+- (PlatformProjectRemarkViewController *)rc
+{
+    if (_rc == nil) {
+        _rc = [[PlatformProjectRemarkViewController alloc]init];
+        _rc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
+    }
+    return _rc;
+}
+
+
 
 @end

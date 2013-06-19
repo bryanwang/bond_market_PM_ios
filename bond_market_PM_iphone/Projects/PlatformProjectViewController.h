@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlatformProjectBasicInfoViewController.h"
+#import "PlatformProjectFinancialIndicatorsViewController.h"
+#import "PlatformProjectRemarkViewController.h"
+
 
 typedef enum PlatformProjectEditStaus: NSUInteger {
     PlatformProjectView,
