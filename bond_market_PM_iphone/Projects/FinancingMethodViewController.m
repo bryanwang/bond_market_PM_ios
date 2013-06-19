@@ -48,6 +48,8 @@
             }
         }
     }
+    
+    [self.qc.quickDialogTableView reloadData];
 }
 
 
