@@ -44,7 +44,7 @@
         {
             for(QElement *element in section.elements)
             {
-                    element.enabled = NO;
+                element.enabled = NO;
             }
         }
     }

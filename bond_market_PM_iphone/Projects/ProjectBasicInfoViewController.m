@@ -112,7 +112,7 @@
     
     //增信方式
     NSMutableArray *trustIncreaseArray = [self.trustIncreaseViewController fetchData];
-    project[@"trustIncrease"] = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:trustIncreaseArray];
+    project[@"TrustIncrease"] = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:trustIncreaseArray];
     
     //资金用途
     NSMutableArray *useOfFundsArray = [self.useOfFoundsViewController fetchData];
@@ -147,7 +147,9 @@
     {
         for(QElement *element in section.elements)
         {
-            if (![element.key isEqual: @"TrustIncrease"])
+            if (![element.key isEqual: @"TrustIncrease"]
+                    && ![element.key isEqual: @"UseOfFunds"]
+                    && ![element.key isEqual: @"FinancingMethod"])
                 element.enabled = NO;
         }
     }
@@ -211,7 +213,7 @@
     [((UIViewController *)vc).navigationController pushViewController:self.useOfFoundsViewController animated:YES];
 }
 
-- (void)showFinancing: (QElement *)element
+- (void)showFinancingMethods: (QElement *)element
 {
     id vc = [self.view.superview nextResponder];
     [((UIViewController *)vc).navigationController pushViewController:self.financingViewController animated:YES];

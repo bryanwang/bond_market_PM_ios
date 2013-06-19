@@ -42,10 +42,10 @@
                         { "type":"QDateTimeInlineElement", "key":"ValidTo", "title":"项目有效期止",  "_mode":"1", "bind": "dateValue: ValidTo"},
                         { "type":"QLabelElement", "key":"TrustIncrease", "title":"增信方式",
                         "controllerAction": "showTrustWays:"},
-                        { "type":"QLabelElement", "key":"TrustIncrease", "title":"资金用途",
+                        { "type":"QLabelElement", "key":"UseOfFunds", "title":"资金用途",
                         "controllerAction": "showUseOfFunds:"},
-                        { "type":"QLabelElement", "key":"TrustIncrease", "title":"融资方式",
-                        "controllerAction": "showFinancing:"}
+                        { "type":"QLabelElement", "key":"FinancingMethod", "title":"融资方式",
+                        "controllerAction": "showFinancingMethods:"}
                   ]
                 },
                  { "elements":
