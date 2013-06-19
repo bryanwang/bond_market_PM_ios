@@ -125,7 +125,6 @@
     [self.tableviewController fetchMyInputInfo];
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

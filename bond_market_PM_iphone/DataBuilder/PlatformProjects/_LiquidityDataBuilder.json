@@ -1,0 +1,11 @@
+{
+    "grouped": true,
+    "sections": [
+             {
+             "key": "补充流动资金",
+             "type": "QSelectSection",
+             "items": ["补充流动资金"],
+             "bind": "value: 补充流动资金"
+             }
+         ]
+}
