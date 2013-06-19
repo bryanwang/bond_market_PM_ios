@@ -1,0 +1,15 @@
+{
+	"grouped": true,
+	"title": "增信方式",
+    "controllerName": "AddUseOfFoundsViewController",
+	"sections": [
+                 { "elements":
+                 [
+                  { "type":"QLabelElement", "key":"", "title":"补充流动资金", "controllerAction": "AddLiquidity:"},
+                  { "type":"QLabelElement", "key":"", "title":"调整债务结构", "controllerAction": "DebtRestructuring:"},
+                  { "type":"QLabelElement", "key":"", "title":"募投项目", "controllerAction": "EquityInvestmentProjects:"},
+                  { "type":"QLabelElement", "key":"", "title":"其他资金用途", "controllerAction": "OtherPurposes:"}
+                  ]
+                 }
+    ]
+}

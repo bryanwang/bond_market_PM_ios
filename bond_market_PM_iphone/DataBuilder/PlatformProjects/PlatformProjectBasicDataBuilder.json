@@ -1,0 +1,50 @@
+{
+	"grouped": true,
+	"title": "Json Data",
+    "controllerName": "ProjectBasicInfoViewController",
+	"sections": [
+                 { "elements":
+                        [
+                                { "type":"QEntryElement", "key":"Subject", "title":"融资主体",
+                                    "bind": "textValue: Subject"},
+                                { "type":"QPickerElement", "key":"Area", "title":"所在地区", "bind": "value: Area"},
+                                { "type":"QPickerElement", "key":"PlatformLevel", "title":"平台级别", "items":[["省一级", "副省级", "地市级", "市级", "百强县前50", "百强县前100", "非百强县"]],
+                                    "bind": "value: PlatformLevel"},
+                                { "type":"QPickerElement", "key":"CorporateRate", "title":"主体评级", "items" :[["无", "AAA", "AA+", "AA", "AA-", "A+", "A", "A-", "BBB+"]]},
+                                { "type":"QEntryElement", "key":"BondIssued", "title":"已发债金额", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿元", "placeholder": "亿元",
+                                    "bind": "textValue: BondIssued"}
+                        ]
+                 },
+                 { "elements":
+                    [
+
+                     { "type":"QEntryElement", "key":"FinancingScale", "title":"融资规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿元", "placeholder": "亿元",
+                     "bind": "textValue: FinancingScale"},
+                     { "type":"QEntryElement", "key":"Period", "title":"期限", "keyboardType":"NumbersAndPunctuation", "prefix": " 年", "placeholder": "年",
+                     "bind": "textValue: Period"},
+                     { "type":"QPickerElement", "key":"Interest", "title":"成本区间", "items":[["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%"],
+                                                                                           ["1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", "10%", "11%", "12%", "13%", "14%", "15%", "16%", "17%", "18%", "19%", "20%"]],
+                     "bind": "value:  Cost "}
+                     ]
+                 },
+                 { "elements":
+                 [
+                     { "type":"QDateTimeInlineElement", "key":"ValidFrom", "title":"有效期起", "_mode":"1",
+                     "bind": "dateValue: ValidFrom"},
+                     { "type":"QDateTimeInlineElement", "key":"ValidTo", "title":"有效期止",  "_mode":"1", "bind": "dateValue: ValidTo"},
+                  { "type":"QLabelElement", "key":"TrustIncrease", "title":"增信方式",
+                  "controllerAction": "showTrustWays:"},
+                  { "type":"QLabelElement", "key":"TrustIncrease", "title":"资金用途",
+                  "controllerAction": "showUseOfFunds:"},
+                  { "type":"QLabelElement", "key":"TrustIncrease", "title":"融资方式",
+                  "controllerAction": "showFinancing:"}
+                      ]
+                 },
+                 {"elements":
+                 [
+                  { "type":"QEntryElement", "key":"Source", "title":"项目来源",
+                  "bind": "textValue: Source"}
+                 ]
+                 }
+        ]
+}

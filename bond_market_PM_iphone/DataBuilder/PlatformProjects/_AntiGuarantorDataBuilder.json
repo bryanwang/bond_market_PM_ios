@@ -1,0 +1,36 @@
+{
+	"grouped": true,
+	"sections": [
+                 { "key": "反担保人", "elements":
+                        [
+                                { "type":"QEntryElement", "key":"", "placeholder":"反担保人",  "bind": "textValue: 反担保人"},
+                                { "type":"QButtonElement", "title":"添加", "controllerAction": "handleAntiGuarantorAddButtonTapped:"}
+                        ]
+                 },
+                 {
+                    "title": "担保方式",
+                    "key": "担保方式",
+                    "type": "QSelectSection",
+                    "multipleAllowed": true,
+                    "items": [
+                            "全额无条件不可撤销连带责任",
+                            "有限责任",
+                            "部分担保"
+                    ],
+                     "bind": "textValue: 担保方式"
+                },
+                { "elements":
+                        [
+                                { "type":"QEntryElement", "key": "其他担保方式", "placeholder": "其他",  "bind": "textValue: 其他担保方式"},
+                        ]
+                 },
+                 { "elements":
+                     [
+                      { "type":"QPickerElement", "key":"反担保人主体评级", "title":"反担保人主体评级", "items":[["AAA", "AA+", "AA", "AA-", "A+", "A-", "BBB+", "无"]]},
+                      { "type":"QEntryElement", "key":"反担保人发债情况", "title":"反担保人发债情况", "placeholder": "亿", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿"},
+                      { "type":"QEntryElement", "key":"反担保人发债情况", "title":"反担保人发债情况", "placeholder": "年", "keyboardType":"NumbersAndPunctuation", "prefix": " 年"}
+                      ]
+                 }
+
+        ]
+}

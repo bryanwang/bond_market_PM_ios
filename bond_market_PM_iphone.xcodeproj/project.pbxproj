@@ -27,6 +27,15 @@
 		12BC5F8A177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F86177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m */; };
 		12BC5F8B177175430088517A /* PlatformProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F88177175430088517A /* PlatformProjectRemarkViewController.m */; };
 		12BC5FC1177175E00088517A /* PlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5FC0177175E00088517A /* PlatformProjectViewController.m */; };
+		12BE385B17717A5D0090E0BD /* _AntiGuarantorDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385217717A5D0090E0BD /* _AntiGuarantorDataBuilder.json */; };
+		12BE385C17717A5D0090E0BD /* _DebtRestructuringDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385317717A5D0090E0BD /* _DebtRestructuringDataBuilder.json */; };
+		12BE385D17717A5D0090E0BD /* _EquityInvestmentProjectsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385417717A5D0090E0BD /* _EquityInvestmentProjectsDataBuilder.json */; };
+		12BE385E17717A5D0090E0BD /* _FinancingDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385517717A5D0090E0BD /* _FinancingDataBuilder.json */; };
+		12BE385F17717A5D0090E0BD /* _LiquidityDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385617717A5D0090E0BD /* _LiquidityDataBuilder.json */; };
+		12BE386017717A5D0090E0BD /* _NonPlatformTrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385717717A5D0090E0BD /* _NonPlatformTrutWaysDataBuilder.json */; };
+		12BE386117717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */; };
+		12BE386217717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */; };
+		12BE386317717A5D0090E0BD /* _UseOfFoundsDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385A17717A5D0090E0BD /* _UseOfFoundsDataBuilder.json */; };
 		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
 		CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494017705C2400D6FBE8 /* ProjectTableCell.m */; };
 		CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */; };
@@ -266,6 +275,15 @@
 		12BC5F88177175430088517A /* PlatformProjectRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectRemarkViewController.m; sourceTree = "<group>"; };
 		12BC5FBF177175E00088517A /* PlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectViewController.h; sourceTree = "<group>"; };
 		12BC5FC0177175E00088517A /* PlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectViewController.m; sourceTree = "<group>"; };
+		12BE385217717A5D0090E0BD /* _AntiGuarantorDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _AntiGuarantorDataBuilder.json; path = DataBuilder/PlatformProjects/_AntiGuarantorDataBuilder.json; sourceTree = "<group>"; };
+		12BE385317717A5D0090E0BD /* _DebtRestructuringDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _DebtRestructuringDataBuilder.json; path = DataBuilder/PlatformProjects/_DebtRestructuringDataBuilder.json; sourceTree = "<group>"; };
+		12BE385417717A5D0090E0BD /* _EquityInvestmentProjectsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _EquityInvestmentProjectsDataBuilder.json; path = DataBuilder/PlatformProjects/_EquityInvestmentProjectsDataBuilder.json; sourceTree = "<group>"; };
+		12BE385517717A5D0090E0BD /* _FinancingDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _FinancingDataBuilder.json; path = DataBuilder/PlatformProjects/_FinancingDataBuilder.json; sourceTree = "<group>"; };
+		12BE385617717A5D0090E0BD /* _LiquidityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _LiquidityDataBuilder.json; path = DataBuilder/PlatformProjects/_LiquidityDataBuilder.json; sourceTree = "<group>"; };
+		12BE385717717A5D0090E0BD /* _NonPlatformTrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _NonPlatformTrutWaysDataBuilder.json; path = DataBuilder/PlatformProjects/_NonPlatformTrutWaysDataBuilder.json; sourceTree = "<group>"; };
+		12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformProjectBasicDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformProjectBasicDataBuilder.json; sourceTree = "<group>"; };
+		12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformProjectFinanceDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformProjectFinanceDataBuilder.json; sourceTree = "<group>"; };
+		12BE385A17717A5D0090E0BD /* _UseOfFoundsDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = _UseOfFoundsDataBuilder.json; path = DataBuilder/PlatformProjects/_UseOfFoundsDataBuilder.json; sourceTree = "<group>"; };
 		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTableCell.h; path = Projects/ProjectTableCell.h; sourceTree = "<group>"; };
@@ -625,6 +643,7 @@
 		0EA8829B175C250F001100A7 /* DataBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				121F63D917717A0200BB1785 /* PlatformProjects */,
 				CA3B9D00176EFE0500E2D7B8 /* SampleDataBuilder.h */,
 				CA3B9D01176EFE0500E2D7B8 /* SampleDataBuilder.m */,
 				CA8AEFE7176068A0000F37FA /* Projects */,
@@ -717,6 +736,22 @@
 				0EA8830A175C2C01001100A7 /* libQuickDialog.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		121F63D917717A0200BB1785 /* PlatformProjects */ = {
+			isa = PBXGroup;
+			children = (
+				12BE385217717A5D0090E0BD /* _AntiGuarantorDataBuilder.json */,
+				12BE385317717A5D0090E0BD /* _DebtRestructuringDataBuilder.json */,
+				12BE385417717A5D0090E0BD /* _EquityInvestmentProjectsDataBuilder.json */,
+				12BE385517717A5D0090E0BD /* _FinancingDataBuilder.json */,
+				12BE385617717A5D0090E0BD /* _LiquidityDataBuilder.json */,
+				12BE385717717A5D0090E0BD /* _NonPlatformTrutWaysDataBuilder.json */,
+				12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */,
+				12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */,
+				12BE385A17717A5D0090E0BD /* _UseOfFoundsDataBuilder.json */,
+			);
+			name = PlatformProjects;
 			sourceTree = "<group>";
 		};
 		12BC5F8E177175480088517A /* Form */ = {
@@ -1208,6 +1243,15 @@
 				CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */,
 				CAD4F3451771735200F01C13 /* no-use.png in Resources */,
 				CAD4F3461771735200F01C13 /* no-use@2x.png in Resources */,
+				12BE385B17717A5D0090E0BD /* _AntiGuarantorDataBuilder.json in Resources */,
+				12BE385C17717A5D0090E0BD /* _DebtRestructuringDataBuilder.json in Resources */,
+				12BE385D17717A5D0090E0BD /* _EquityInvestmentProjectsDataBuilder.json in Resources */,
+				12BE385E17717A5D0090E0BD /* _FinancingDataBuilder.json in Resources */,
+				12BE385F17717A5D0090E0BD /* _LiquidityDataBuilder.json in Resources */,
+				12BE386017717A5D0090E0BD /* _NonPlatformTrutWaysDataBuilder.json in Resources */,
+				12BE386117717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json in Resources */,
+				12BE386217717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json in Resources */,
+				12BE386317717A5D0090E0BD /* _UseOfFoundsDataBuilder.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

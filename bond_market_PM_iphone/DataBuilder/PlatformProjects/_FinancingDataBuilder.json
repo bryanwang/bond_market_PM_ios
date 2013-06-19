@@ -1,0 +1,30 @@
+{
+	"grouped": true,
+	"sections": [
+                 {
+                 "type": "QSelectSection",
+                 "key": "all",
+                 "multipleAllowed": true,
+                 "items": [
+                           "全部",
+                           ]
+                 },
+                 {
+                 "type": "QSelectSection",
+                 "key": "query",
+                 "multipleAllowed": true,
+                 "items": [
+                           "银行贷款",
+                           "信托",
+                           "债券",
+                           "股权质押",
+                           "委托贷款",
+                           "融资租赁",
+                           "大股东支持",
+                           "注册资本金",
+                           "项目盈利",
+                           "其他"
+                        ]
+                 },
+                 ]
+}

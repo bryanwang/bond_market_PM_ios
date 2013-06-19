@@ -1,0 +1,16 @@
+{
+	"grouped": true,
+	"sections": [
+                 { "elements":
+                     [
+                        { "type":"QEntryElement", "key":"偿还银行借款", "title": "偿还银行借款", "placeholder": "亿", "keyboardType":"NumbersAndPunctuation",
+                        "prefix": " 亿",  "bind": "value: 偿还银行借款"}
+                      ]
+                 },
+                 { "elements":
+                     [
+                        { "type":"QEntryElement", "key":"调整债务结构其他",  "placeholder": "其他"}
+                      ]
+                 }
+    ]
+}
