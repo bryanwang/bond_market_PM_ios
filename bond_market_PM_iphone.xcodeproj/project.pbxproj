@@ -30,6 +30,7 @@
 		12BE386017717A5D0090E0BD /* PlatformTrutWaysDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385717717A5D0090E0BD /* PlatformTrutWaysDataBuilder.json */; };
 		12BE386117717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */; };
 		12BE386217717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */; };
+		12BE386B177192FE0090E0BD /* MyPlatformProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BE386A177192FD0090E0BD /* MyPlatformProjectViewController.m */; };
 		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
 		CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494017705C2400D6FBE8 /* ProjectTableCell.m */; };
 		CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */; };
@@ -272,6 +273,8 @@
 		12BE385717717A5D0090E0BD /* PlatformTrutWaysDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformTrutWaysDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformTrutWaysDataBuilder.json; sourceTree = "<group>"; };
 		12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformProjectBasicDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformProjectBasicDataBuilder.json; sourceTree = "<group>"; };
 		12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformProjectFinanceDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformProjectFinanceDataBuilder.json; sourceTree = "<group>"; };
+		12BE3869177192FD0090E0BD /* MyPlatformProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPlatformProjectViewController.h; sourceTree = "<group>"; };
+		12BE386A177192FD0090E0BD /* MyPlatformProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPlatformProjectViewController.m; sourceTree = "<group>"; };
 		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTableCell.h; path = Projects/ProjectTableCell.h; sourceTree = "<group>"; };
@@ -772,6 +775,8 @@
 				12BC5FBF177175E00088517A /* PlatformProjectViewController.h */,
 				12BC5FC0177175E00088517A /* PlatformProjectViewController.m */,
 				12BC5F8E177175480088517A /* Form */,
+				12BE3869177192FD0090E0BD /* MyPlatformProjectViewController.h */,
+				12BE386A177192FD0090E0BD /* MyPlatformProjectViewController.m */,
 			);
 			name = PlatformProject;
 			sourceTree = "<group>";
@@ -1318,6 +1323,7 @@
 				12BC5F8A177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */,
 				12BC5F8B177175430088517A /* PlatformProjectRemarkViewController.m in Sources */,
 				12BC5FC1177175E00088517A /* PlatformProjectViewController.m in Sources */,
+				12BE386B177192FE0090E0BD /* MyPlatformProjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
