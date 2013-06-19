@@ -118,6 +118,28 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 }
 @end
 
+
+@implementation QuickDialogHelper
+
++ (QuickDialogHelper *)sharedInstance
+{
+    static QuickDialogHelper *sharedInstance = nil;
+    static dispatch_once_t onceToken = 0;
+    
+    dispatch_once(&onceToken,^{
+        sharedInstance = [[QuickDialogHelper alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
+- (void)setUpArearsPickerRoles
+{
+    
+}
+
+@end
+
 @implementation NSObject(BY)
 
 //隐藏键盘

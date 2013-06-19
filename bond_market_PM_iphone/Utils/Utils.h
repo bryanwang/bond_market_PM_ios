@@ -25,6 +25,14 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 @end
 
 
+@interface QuickDialogHelper: NSObject
+
++ (QuickDialogHelper *)sharedInstance;
+
+- (void)setUpArearsPickerRoles;
+
+@end
+
 @interface NSObject(BY)
 - (void)hideKeyBoard;
 @end
