@@ -22,7 +22,6 @@
 
 @property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, strong) NSMutableArray *bonds;
-@property (nonatomic, strong) NSDateFormatter *fomart;
 
 @property (nonatomic, strong) BondTableHeader *bondHeader;
 
@@ -33,17 +32,6 @@ static float TABLE_SECTION_HEIGHT = 23.0f;
 static float TABLE_CELL_HEIGHT = 74.0f;
 
 @implementation BondsTableViewController
-
-- (NSDateFormatter *)fomart
-{
-    if (_fomart == nil) {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat: @"yyyy-MM-dd"];
-        _fomart = dateFormatter;
-    }
-    
-    return _fomart;
-}
 
 - (void)filterBy: (NSArray *)query
 {
@@ -80,15 +68,15 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         // update time sort
         if (orderType == OrderByTime) {
             self.sections = [[self.sections sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-                NSDate *aDate= [self.fomart dateFromString:a];
-                NSDate *bDate = [self.fomart dateFromString:b];
+                NSDate *aDate= [[[QuickDialogHelper sharedInstance] dateFormater] dateFromString:a];
+                NSDate *bDate = [[[QuickDialogHelper sharedInstance] dateFormater]  dateFromString:b];
                 return [aDate compare:bDate];
             }] mutableCopy];
         }
         else if (orderType == OrderByTimeDesc) {
             self.sections = [[self.sections sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-                NSDate *aDate= [self.fomart dateFromString:a];
-                NSDate *bDate = [self.fomart dateFromString:b];
+                NSDate *aDate= [[[QuickDialogHelper sharedInstance] dateFormater]  dateFromString:a];
+                NSDate *bDate = [[[QuickDialogHelper sharedInstance] dateFormater]  dateFromString:b];
                 NSLog(@"%@", aDate);
                 NSLog(@"%@", bDate);
                 return [bDate compare:aDate];

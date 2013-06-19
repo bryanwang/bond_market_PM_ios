@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
+#import <QuickDialog.h>
 
 void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
@@ -29,7 +30,13 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
 + (QuickDialogHelper *)sharedInstance;
 
-- (void)setUpArearsPickerRoles;
+- (void)setUpArearsPickerRoles: (QPickerElement *)picker;
+
+- (id)convertJSONStrToObject: (NSString *)str;
+- (NSString *)convertObjectToJSONStr: (id)obj;
+
+- (NSDateFormatter *)fulldateFormater;
+- (NSDateFormatter *)dateFormater;
 
 @end
 

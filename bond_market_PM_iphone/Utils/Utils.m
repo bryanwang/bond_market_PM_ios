@@ -8,6 +8,7 @@
 
 #import "Utils.h"
 #import "define.h"
+#import <objc/runtime.h>
 #import <AFHTTPClient.h>
 
 void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
@@ -133,9 +134,140 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
     return sharedInstance;
 }
 
-- (void)setUpArearsPickerRoles
+const char ArearsPickerSelectedProvincey;
+const char ArearsPickerSelectedCity;
+
+- (NSArray *)fetchProvinces
 {
+    @autoreleasepool {
+        NSArray *ps = [Utils sharedInstance].Arears;
+        NSMutableArray *array = [NSMutableArray array];
+        [ps enumerateObjectsUsingBlock:^(id p, NSUInteger index, BOOL*stop) {
+            [array addObject:p[@"state"]];
+        }];
+        
+        return [array copy];
+    }
+}
+
+- (NSArray *)fetchCitiesWithProvincesIndex: (NSInteger)index
+{
+    @autoreleasepool {
+        NSArray *cs = [Utils sharedInstance].Arears[index][@"cities"];
+        NSMutableArray *array = [NSMutableArray array];
+        [cs enumerateObjectsUsingBlock:^(id c, NSUInteger index, BOOL*stop) {
+            [array addObject:c[@"city"]];
+        }];
+        
+        return [array copy];
+    }
+}
+
+- (NSArray *)fetchAreasWithCityIndex: (NSInteger)cindex AndProvincesIndex: (NSInteger )pindex
+{
+    @autoreleasepool {
+        NSArray *as  =[Utils sharedInstance].Arears[pindex][@"cities"][cindex][@"areas"];
+        NSMutableArray *array = [NSMutableArray array];
+        [as enumerateObjectsUsingBlock:^(id a, NSUInteger index, BOOL*stop) {
+            [array addObject:a];
+        }];
+        
+        if (array.count == 0) {
+            [array addObject:@""];
+        }
+        
+        return  [array copy];
+    }
+}
+
+- (void)setUpArearsPickerRoles:(QPickerElement *)picker
+{
+    __block id selectedProvince = objc_getAssociatedObject(picker, &ArearsPickerSelectedProvincey);
+    __block id selectedCity = objc_getAssociatedObject(picker, &ArearsPickerSelectedCity);
     
+    if(selectedProvince == nil) {
+        selectedProvince = @0;
+        objc_setAssociatedObject(picker, &ArearsPickerSelectedProvincey, selectedProvince, OBJC_ASSOCIATION_RETAIN);
+    }
+    
+    if(selectedCity == nil) {
+        selectedCity = @0;
+        objc_setAssociatedObject(picker, &ArearsPickerSelectedCity, selectedProvince, OBJC_ASSOCIATION_RETAIN);
+    }
+    
+    
+    __block NSArray *provinces = [self fetchProvinces];
+    __block  NSArray *cities = [self fetchCitiesWithProvincesIndex: [selectedProvince integerValue]];
+    __block  NSArray *areas = [self fetchAreasWithCityIndex:[selectedCity integerValue] AndProvincesIndex:[selectedProvince integerValue]];
+
+    picker.items =  @[provinces, cities, areas];
+    picker.onValueChanged = ^(QRootElement *el) {
+        QPickerElement *p =  (QPickerElement *)el;
+        //provinces selected index
+        NSNumber *pi = p.selectedIndexes[0];
+        //cities selected index
+        NSNumber *ci = p.selectedIndexes[1];
+        if ([pi integerValue] != [selectedProvince integerValue]) { //if provinces selected index changed, set cities and areas selected index to 0
+            [p selectRow:0 inComponent:1 animated:NO];
+            [p selectRow:0 inComponent:2 animated:NO];
+            
+            selectedCity = @0;
+            selectedProvince = pi;
+        } else if ([ci integerValue] != [selectedCity integerValue]) {//if cities selected index changed, set areas selected index to 0
+            [p selectRow:0 inComponent:2 animated:NO];
+            selectedCity = ci;
+        }
+        
+        cities = [self fetchCitiesWithProvincesIndex:[pi integerValue]];
+        areas =  [self fetchAreasWithCityIndex:[ci integerValue] AndProvincesIndex: [pi integerValue]];
+        p.items =  @[provinces, cities, areas];
+        
+        [p reloadAllComponents];
+    };
+}
+
+- (id)convertJSONStrToObject: (NSString *)str
+{
+    NSError *error;
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    id obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (!error)
+        return obj;
+    else
+        return nil;
+}
+
+
+- (NSString *)convertObjectToJSONStr:(id)obj
+{
+    NSError *error = nil;
+    NSData *data;
+    NSString *JsonStr;
+    data = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:&error];
+    if (data)
+         JsonStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    if (!error)
+        return JsonStr;
+    else
+        return  nil;
+}
+
+
+- (NSDateFormatter *)fulldateFormater
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+
+    return dateFormatter;
+}
+
+- (NSDateFormatter *)dateFormater
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    return dateFormatter;
 }
 
 @end

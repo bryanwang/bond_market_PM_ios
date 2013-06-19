@@ -22,9 +22,8 @@
 
 @property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, strong) NSMutableArray *projects;
-@property (nonatomic, strong) NSDateFormatter *fomart;
 
-@property (nonatomic, strong) BondTableHeader *bondHeader;
+@property (nonatomic, strong) BondTableHeader *projectHeader;
 
 @end
 
@@ -33,17 +32,6 @@ static float TABLE_SECTION_HEIGHT = 23.0f;
 static float TABLE_CELL_HEIGHT = 74.0f;
 
 @implementation ProjectsTableViewController
-
-- (NSDateFormatter *)fomart
-{
-    if (_fomart == nil) {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat: @"yyyy-MM-dd"];
-        _fomart = dateFormatter;
-    }
-    
-    return _fomart;
-}
 
 - (void)filterBy: (NSArray *)query
 {
@@ -80,15 +68,15 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         // update time sort
         if (orderType == OrderByTime) {
             self.sections = [[self.sections sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-                NSDate *aDate= [self.fomart dateFromString:a];
-                NSDate *bDate = [self.fomart dateFromString:b];
+                NSDate *aDate= [[[QuickDialogHelper sharedInstance] dateFormater] dateFromString:a];
+                NSDate *bDate = [[[QuickDialogHelper sharedInstance] dateFormater] dateFromString:b];
                 return [aDate compare:bDate];
             }] mutableCopy];
         }
         else if (orderType == OrderByTimeDesc) {
             self.sections = [[self.sections sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-                NSDate *aDate= [self.fomart dateFromString:a];
-                NSDate *bDate = [self.fomart dateFromString:b];
+                NSDate *aDate= [[[QuickDialogHelper sharedInstance] dateFormater] dateFromString:a];
+                NSDate *bDate = [[[QuickDialogHelper sharedInstance] dateFormater] dateFromString:b];
                 return [bDate compare:aDate];
             }] mutableCopy];
         }
@@ -159,7 +147,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
         NSDictionary *params = @{@"userid": userid};
         [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSDictionary *info = (NSDictionary *)responseObject;
-            self.bondHeader.inputInfo= info;
+            self.projectHeader.inputInfo= info;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);
         }];
@@ -178,8 +166,8 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.bondHeader = (BondTableHeader *)[[[NSBundle mainBundle]loadNibNamed:@"BondTableHeader" owner:self options:nil] lastObject];
-    self.tableView.tableHeaderView = self.bondHeader;
+    self.projectHeader = (BondTableHeader *)[[[NSBundle mainBundle]loadNibNamed:@"BondTableHeader" owner:self options:nil] lastObject];
+    self.tableView.tableHeaderView = self.projectHeader;
     
     self.tableView.backgroundColor = RGBCOLOR(255, 255, 255);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
