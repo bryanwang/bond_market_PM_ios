@@ -28,6 +28,8 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
 @interface QuickDialogHelper: NSObject
 
+typedef void (^ selectChangedCallback)();
+
 + (QuickDialogHelper *)sharedInstance;
 
 @property (nonatomic, strong)  NSDateFormatter *fulldateFormater;
@@ -38,6 +40,7 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
 - (id)convertJSONStrToObject: (NSString *)str;
 - (NSString *)convertObjectToJSONStr: (id)obj;
+- (void)setUpSelectRoleWithAllSelecte: (QSelectSection *)all AndQuerySelect: (QSelectSection *)query WithChangedCallback: (selectChangedCallback) callback;
 
 @end
 

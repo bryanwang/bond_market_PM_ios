@@ -1,0 +1,22 @@
+{
+	"grouped": true,
+	"sections": [
+                 {
+                 "type": "QSelectSection",
+                 "key": "all",
+                 "multipleAllowed": true,
+                 "items": [
+                           "全部",
+                           ]
+                 },
+                 {
+                 "type": "QSelectSection",
+                 "key": "query",
+                 "multipleAllowed": true,
+                 "items": [
+                           "非平台类项目",
+                            "平台类项目"
+                           ]
+                 }
+                 ]
+}

@@ -25,19 +25,10 @@
 @property (nonatomic, strong)PopupListComponent *popComponent;
 
 @property (strong, nonatomic)NSMutableDictionary *project;
-@property (nonatomic)ProjectType projectType;
 
 @end
 
 @implementation ProjectViewController
-
-- (id)initWithProjectCreateType:(ProjectType *)projectType
-{
-    if( self = [super init] ) {
-        self.projectType = projectType;
-    }
-    return self;
-}
 
 - (id)initWithProject:(NSDictionary *)project
 {
@@ -246,7 +237,7 @@
     
     NSDictionary *parameters = @{@"userid": userId, @"project": projectJsonString};
     
-    [[PMHttpClient shareIntance] postPath:UPDATE_PROJECT_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[PMHttpClient shareIntance] postPath:UPDATE_NON_PLATFORM_PROJECT_INTERFACE parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = responseObject;
         if ([result[@"Success"] isEqual: @1]) {
             [self.navigationController popViewControllerAnimated:YES];
@@ -344,7 +335,6 @@
     [self.segmentedControl setSelectedIndex:0];
     
     if (self.project) {
-        self.projectType = (ProjectType)self.project[@"Type"];
         //保存原始数据
         storedProject = [self.project copy];
         

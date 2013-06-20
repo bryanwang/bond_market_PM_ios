@@ -199,4 +199,16 @@
         [self.delegate showAntiGuarantor];
 }
 
+- (void)filterProjectByStatus: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(filterProjectByStatus)])
+        [self.delegate filterProjectByStatus];
+}
+
+- (void)filterProjectByType: (QElement *)element
+{
+    if ([self.delegate respondsToSelector:@selector(filterProjectByType)])
+        [self.delegate filterProjectByType];
+}
+
 @end

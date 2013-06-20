@@ -30,6 +30,9 @@
 - (void)OtherPurposes;
 - (void)showAntiGuarantor;
 
+- (void)filterProjectByType;
+- (void)filterProjectByStatus;
+
 @end
 
 

@@ -8,8 +8,10 @@
 
 #import "ProjectsTableViewController.h"
 #import "BondTableHeader.h"
-#import "ProjectViewController.h"
 #import "ProjectTableCell.h"
+#import "ProjectViewController.h"
+#import "PlatformProjectViewController.h"
+
 
 @interface ProjectsTableViewController () {
     //存储原始数据
@@ -18,6 +20,9 @@
     NSMutableArray *filterProjectsJson;
     // 当前的 排序方式
     ProjectsOrderType curOrderType;
+
+    NSArray *curTypeFilterQuery;
+    NSArray *curStatusFilterQuery;
 }
 
 @property (nonatomic, strong) NSMutableArray *sections;
@@ -33,17 +38,26 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 
 @implementation ProjectsTableViewController
 
-- (void)filterBy: (NSArray *)query
+- (void)filterByStatus:(NSArray *)statusquery AndType:(NSArray *)typequery
 {
-    //还原数据
     filterProjectsJson = [projectsJson mutableCopy];
     
-    if (query.count == 0) {
-        //全部
+    if (statusquery.count > 0) {
+        curStatusFilterQuery = statusquery;
     }
-    else {
-        NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.ProjectInfo.Status in %@", query];
+
+    if (typequery.count > 0) {
+        curTypeFilterQuery = typequery;
+    }
+    
+    if (curStatusFilterQuery.count > 0) {
+        NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.ProjectInfo.Status in %@", curStatusFilterQuery];
         [filterProjectsJson filterUsingPredicate:thePredicate];
+    }
+    
+    if (curTypeFilterQuery.count > 0) {
+        NSPredicate *thePredicate2 = [NSPredicate predicateWithFormat:@"(SELF.Type - 1) in %@", curTypeFilterQuery];
+        [filterProjectsJson filterUsingPredicate:thePredicate2];
     }
     
     [self orderBy:curOrderType];
@@ -239,9 +253,16 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *project = self.projects[indexPath.section][indexPath.row];
-    ProjectViewController *nc = [[ProjectViewController alloc]initWithProject:project];
-    [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
+    if ([project[@"Type"] integerValue] == Project) {
+        ProjectViewController *pc = [[ProjectViewController alloc] initWithProject:project];
+        [((UIViewController *)self.delegate).navigationController pushViewController:pc animated:YES];
+    }
+    else if ([project[@"Type"] integerValue] == PlatformProject) {
+        PlatformProjectViewController *pc = [[PlatformProjectViewController alloc] initWithPlatformProject:project];
+        [((UIViewController *)self.delegate).navigationController pushViewController:pc animated:YES];
+    }
 }
+    
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
 {

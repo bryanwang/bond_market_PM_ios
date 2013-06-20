@@ -1,0 +1,13 @@
+{
+	"grouped": true,
+	"sections": [
+             { "elements":
+                    [
+                        { "type":"QLabelElement", "key":"", "title":"按类型",
+                        "controllerAction": "filterProjectByType:"},
+                        { "type":"QLabelElement", "key":"", "title":"按状态",
+                        "controllerAction": "filterProjectByStatus:"}
+                  ]
+                }
+    ]
+}

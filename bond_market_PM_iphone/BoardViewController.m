@@ -12,11 +12,9 @@
 #import "PlatformProjectViewController.h"
 #import "ProjectViewController.h"
 #import "MyProjectsViewController.h"
-#import "MyPlatformProjectViewController.h"
 
 @interface BoardViewController () <UIActionSheetDelegate> {
     UIActionSheet *createProjectActionSheet;
-    UIActionSheet *viewProjectActionSheet;
 }
 @property (strong, nonatomic) IBOutlet UIView *board45;
 @property (strong, nonatomic) IBOutlet UIView *board44;
@@ -30,28 +28,10 @@
 
 @implementation BoardViewController
 
-- (void)showPlatformProjects
-{
-    MyPlatformProjectViewController *nc = [[MyPlatformProjectViewController alloc] init];
-    [self.navigationController pushViewController:nc animated:YES];
-}
-
-- (void)showNonPlatFormPorjects
+- (IBAction)showMyProjects:(id)sender
 {
     MyProjectsViewController *nc = [[MyProjectsViewController alloc] init];
     [self.navigationController pushViewController:nc animated:YES];
-}
-
-- (IBAction)showProjectActionSheet:(id)sender
-{
-    viewProjectActionSheet = [[UIActionSheet alloc]
-                                initWithTitle:@"项目查看"
-                                delegate:self
-                                cancelButtonTitle:@"取消"
-                                destructiveButtonTitle:nil
-                                otherButtonTitles:@"平台项目", @"非平台项目",nil];
-    viewProjectActionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-    [viewProjectActionSheet showInView:self.view];
 }
 
 - (void)createNonPlatformProject
@@ -139,12 +119,6 @@
         } else if (buttonIndex == 1) {
             [self createNonPlatformProject];
         }
-    }
-    else {
-        if(buttonIndex == 0)
-           [self showPlatformProjects];
-        else
-            [self showNonPlatFormPorjects];
     }
 }
 

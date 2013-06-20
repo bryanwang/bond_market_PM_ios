@@ -9,26 +9,20 @@
 #import "MyProjectsViewController.h"
 #import <AKSegmentedControl.h>
 #import "ProjectsTableViewController.h"
-#import "BondFilterViewController.h"
+#import "ProjectFilterViewController.h"
 
 @interface MyProjectsViewController ()
 @property (strong, nonatomic)ProjectsTableViewController *tableviewController;
-@property (strong, nonatomic)BondFilterViewController *filterViewController;
+@property (strong, nonatomic)ProjectFilterViewController *filterViewController;
 @property (strong, nonatomic)AKSegmentedControl *segmentedControl;
 @end
 
 @implementation MyProjectsViewController
 
-- (BondFilterViewController *)filterViewController
+- (ProjectFilterViewController *)filterViewController
 {
     if (_filterViewController == nil) {
-        _filterViewController = [[BondFilterViewController alloc] init];
-        
-        __block MyProjectsViewController *delegate = self;
-        _filterViewController.filterCallback = ^ (id filter) {
-            [delegate.tableviewController filterBy:(NSArray *)filter];
-        };
-
+        _filterViewController = [[ProjectFilterViewController alloc] init];
     }
     
     return _filterViewController;
@@ -105,16 +99,16 @@
 
 - (void)setUpLeftNavigationButton
 {
-    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterMyProjects)];
+    UIBarButtonItem *item = [UIBarButtonItem redBarButtonItemWithtitle:@"筛选" target:self selector:@selector(filterButtonTapped)];
     self.navigationItem.rightBarButtonItem = item;
 }
 
-- (void)filterMyProjects
+- (void)filterButtonTapped
 {
     [self.navigationController pushViewController:self.filterViewController animated:YES];
 }
 
-- (void)fetchMyBonds
+- (void)fetchMyProjects
 {
     UIView *view = self.tableviewController.view;
     CGRect rect = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height - 44);
@@ -125,15 +119,30 @@
     [self.tableviewController fetchMyInputInfo];
 }
 
+
+- (void)filterProjectsByNotification:  (NSNotification *)notification
+{
+    [self.navigationController popToViewController:self animated:YES];
+    
+    NSDictionary *info = notification.userInfo;
+    id typequery = [info objectForKey:BYPROJECTTYPEFILTERQUERY];
+    id statusquery = [info objectForKey:BYPROJECTSTATUSFILTERQUERY];
+    
+    [self.tableviewController filterByStatus:statusquery AndType:typequery];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"非平台项目";
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(filterProjectsByNotification:) name:BYPROJECTFILTERNOTIFICATION object:nil];
+    
     [self setUpLeftNavigationButton];
     [self setUpSegmentedControll];
     
-    [self fetchMyBonds];
+    [self fetchMyProjects];
     
     [self.segmentedControl setSelectedIndex:0];
 }

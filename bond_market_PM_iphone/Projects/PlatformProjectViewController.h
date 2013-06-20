@@ -19,5 +19,7 @@ typedef enum PlatformProjectEditStaus: NSUInteger {
 } PlatformProjectEditStaus;
 
 @interface PlatformProjectViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
+
 - (id)initWithPlatformProject: (NSDictionary *)platformProject;
+
 @end

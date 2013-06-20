@@ -21,7 +21,7 @@
 #define MY_BONDS_INPUTUBFI_INTERFACE @"/api/ios/newbond/bonus"
 
 //non-platform project
-#define UPDATE_NON-PLATFORM_PROJECT_INTERFACE @"/api/ios/nonplatformproject/update"
+#define UPDATE_NON_PLATFORM_PROJECT_INTERFACE @"/api/ios/nonplatformproject/update"
 #define MY_NON-PLATFORM_PROJECTS_INTERFACE @"/api/ios/nonplatformproject/mine"
 #define MY_NON-PLATFORM_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/nonplatformproject/bonus"
 
@@ -38,6 +38,9 @@
 //notification
 #define BYPOPVIEWCONTOLLERNOTIFICATION @"popviewcontroller"
 #define BYTRUSTINCREASEKEY @"trustincreasedic"
+#define BYPROJECTFILTERNOTIFICATION @"filterprojects"
+#define BYPROJECTSTATUSFILTERQUERY @"statusfilterquery"
+#define BYPROJECTTYPEFILTERQUERY @"typefilterquery"
 
 
 

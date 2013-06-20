@@ -226,6 +226,35 @@ const char ArearsPickerSelectedCity;
     };
 }
 
+- (void)setUpSelectRoleWithAllSelecte:(QSelectSection *)all AndQuerySelect:(QSelectSection *)query WithChangedCallback:(selectChangedCallback)callback
+{
+    __weak QSelectSection *allsection = all;
+    __weak QSelectSection *querysection = query;
+    allsection.onSelected = ^{
+        NSMutableArray *items = [NSMutableArray array];
+        if (allsection.selectedIndexes.count == allsection.items.count) {
+            for (QElement *el in querysection.elements) {
+                [items addObject: [NSNumber numberWithInt:((QSelectItemElement *)el).index]];
+            }
+            querysection.selectedIndexes = items;
+        } else {
+            [querysection setSelectedIndexes:items];
+        }
+        
+        if (callback)
+            callback();
+    };
+    
+    querysection.onSelected = ^{
+        if (querysection.selectedIndexes.count > 0) {
+            [allsection setSelectedIndexes:[NSMutableArray array]];
+        }
+        
+        if (callback)
+            callback();
+    };
+}
+
 - (id)convertJSONStrToObject: (NSString *)str
 {
     NSError *error;

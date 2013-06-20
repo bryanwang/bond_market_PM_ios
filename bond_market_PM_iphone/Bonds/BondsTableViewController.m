@@ -38,10 +38,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     //还原数据
     filterBondsJson = [bondsJson mutableCopy];
     
-    if (query.count == 0) {
-        //全部
-    }
-    else {
+    if (query.count > 0) {
         NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"SELF.NewBondInfo.Status in %@", query];
         [filterBondsJson filterUsingPredicate:thePredicate];
     }

@@ -15,6 +15,13 @@ typedef enum ProjectsOrderType: NSUInteger
     OrderByChargePerson
 } ProjectsOrderType;
 
+typedef enum ProjectType: NSUInteger
+{
+    Bond,
+    Project,
+    PlatformProject
+} ProjectType;
+
 
 @interface ProjectsTableViewController : UITableViewController
 
@@ -25,6 +32,6 @@ typedef enum ProjectsOrderType: NSUInteger
 - (void) fetchMyInputInfo;
 
 - (void)orderBy:(ProjectsOrderType)orderType;
-- (void)filterBy: (NSArray *)query;
+- (void)filterByStatus: (NSArray *)statusquery AndType: (NSArray *)typequery;
 
 @end

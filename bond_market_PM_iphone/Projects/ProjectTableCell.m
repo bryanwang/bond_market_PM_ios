@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *status;
 @property (weak, nonatomic) IBOutlet UIView *tagstatus;
 @property (weak, nonatomic) IBOutlet UIView *sepview;
+@property (weak, nonatomic) IBOutlet UILabel *type;
 
 @property (weak, nonatomic) IBOutlet UILabel *inputBonus;
 @property (weak, nonatomic) IBOutlet UILabel *estimateBonus;
@@ -28,11 +29,20 @@
 {
     if (![_project isEqualToDictionary:project]) {
         _project = project;
+        
+        NSArray *projectTypes = @[
+                                  @"新债",
+                                  @"非平台项目",
+                                  @"平台项目"
+                                  ];
+        
         NSDictionary *info = project[@"ProjectInfo"];
         NSDictionary *owner =  project[@"OwnerInfo"];
         NSDictionary *inputInfo = project[@"InputInfo"];
+        NSUInteger type = [project[@"Type"] integerValue];
         
         self.title.text = info[@"Subject"];
+        self.type.text = projectTypes[type];
         self.inputBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"InputBonus"]];
         self.estimateBonus.text = [NSString stringWithFormat:@"%@", inputInfo[@"EstimateBonus"]];
         
