@@ -161,7 +161,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
-        [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INPUTINFO_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSDictionary *info = (NSDictionary *)responseObject;
             self.projectHeader.inputInfo= info;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -152,4 +152,9 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BYPROJECTFILTERNOTIFICATION object:nil];
+}
+
 @end

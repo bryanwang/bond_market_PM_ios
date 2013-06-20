@@ -100,6 +100,13 @@
     }
 }
 
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BYPOPVIEWCONTOLLERNOTIFICATION object:nil];
+}
+
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
