@@ -22,12 +22,22 @@
 @property (strong, nonatomic) ProjectFinancialIndicatorsViewController *fc;
 @property (strong, nonatomic) ProjectRemarkViewController *rc;
 
-@property (strong, nonatomic)NSMutableDictionary *project;
 @property (nonatomic, strong)PopupListComponent *popComponent;
+
+@property (strong, nonatomic)NSMutableDictionary *project;
+@property (nonatomic)ProjectType projectType;
 
 @end
 
 @implementation ProjectViewController
+
+- (id)initWithProjectCreateType:(ProjectType *)projectType
+{
+    if( self = [super init] ) {
+        self.projectType = projectType;
+    }
+    return self;
+}
 
 - (id)initWithProject:(NSDictionary *)project
 {
@@ -334,6 +344,7 @@
     [self.segmentedControl setSelectedIndex:0];
     
     if (self.project) {
+        self.projectType = (ProjectType)self.project[@"Type"];
         //保存原始数据
         storedProject = [self.project copy];
         

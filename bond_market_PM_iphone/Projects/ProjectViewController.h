@@ -14,8 +14,15 @@ typedef enum ProjectEditStaus: NSUInteger {
     ProjectCreate
 } ProjectEditStaus;
 
+
+typedef enum ProjectType: NSUInteger {
+    Bond,
+    Project,
+    PlatformProject,
+} ProjectType;
+
 @interface ProjectViewController : BBCustomBackButtonViewController <UIAlertViewDelegate>
 
 - (id)initWithProject: (NSDictionary *)project;
-
+- (id)initWithProjectCreateType: (ProjectType *)projectType;
 @end
