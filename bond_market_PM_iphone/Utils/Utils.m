@@ -106,6 +106,16 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
             ];
 }
 
+
+- (NSArray *)ProjectTypes
+{
+    return @[
+             @"新债",
+             @"非平台项目",
+             @"平台项目"
+             ];
+}
+
 + (Utils *)sharedInstance
 {
     static Utils *sharedInstance = nil;

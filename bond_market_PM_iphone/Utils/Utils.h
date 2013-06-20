@@ -22,6 +22,8 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 @property (nonatomic, strong) NSArray *SecurityWays;
 @property (nonatomic, strong) NSArray *ApprovalTypes;
 
+@property (strong, nonatomic) NSArray *ProjectTypes;
+
 
 @end
 

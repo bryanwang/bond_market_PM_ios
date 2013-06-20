@@ -56,6 +56,8 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     }
     
     if (curTypeFilterQuery.count > 0) {
+        //因为数据库的设计 type == 0时为bond
+        //这里需要对self.type - 1
         NSPredicate *thePredicate2 = [NSPredicate predicateWithFormat:@"(SELF.Type - 1) in %@", curTypeFilterQuery];
         [filterProjectsJson filterUsingPredicate:thePredicate2];
     }

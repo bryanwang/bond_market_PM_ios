@@ -30,12 +30,7 @@
     if (![_project isEqualToDictionary:project]) {
         _project = project;
         
-        NSArray *projectTypes = @[
-                                  @"新债",
-                                  @"非平台项目",
-                                  @"平台项目"
-                                  ];
-        
+        NSArray *projectTypes =  [Utils sharedInstance].ProjectTypes;
         NSDictionary *info = project[@"ProjectInfo"];
         NSDictionary *owner =  project[@"OwnerInfo"];
         NSDictionary *inputInfo = project[@"InputInfo"];
