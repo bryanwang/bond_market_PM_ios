@@ -18,7 +18,7 @@
 - (void)doneBtnTapped
 {
     NSMutableDictionary *result = [
-                                   @{@"type": @"其它资金用途",
+                                   @{@"type": @"其他资金用途",
                                    @"data": @[@{@"key": @"其他", @"value": self.textview.text}]}
                                    mutableCopy];
     

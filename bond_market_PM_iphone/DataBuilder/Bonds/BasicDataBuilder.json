@@ -9,7 +9,7 @@
                                     "bind": "textValue: ShortTitle"},
                                 { "type":"QPickerElement", "key":"Type", "title":"债券类型", "items":[["无", "中小企业私募债", "企业债", "公司债", "其他"]],
                                     "bind": "value: Type"},
-                                { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "其他"]],
+                                { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "混合", "其他"]],
                                     "bind": "value: EntNature"},
                                 { "type":"QPickerElement", "key":"Area", "title":"所在地区", "bind": "value: Area"},
                                 { "type":"QEntryElement", "key":"IssueScale", "title":"发行规模", "keyboardType":"NumbersAndPunctuation", "prefix": " 亿元", "placeholder": "亿元",

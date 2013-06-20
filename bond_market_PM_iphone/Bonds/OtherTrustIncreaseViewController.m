@@ -18,7 +18,7 @@
 - (void)addOtherTrustIncrease
 {
     NSMutableDictionary *result = [
-                                   @{@"type": @"其它增信方式",
+                                   @{@"type": @"其他增信方式",
                                    @"data": @[@{@"key": @"其他", @"value": self.textview.text}]}
                                    mutableCopy];
     
