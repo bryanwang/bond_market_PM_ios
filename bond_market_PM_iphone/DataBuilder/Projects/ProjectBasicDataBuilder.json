@@ -11,7 +11,7 @@
                                     "bind": "textValue: StockholderStructure"},
                                 { "type":"QEntryElement", "key":"StockholderBackground", "title":"大股东背景",
                                     "bind": "textValue: StockholderBackground"},
-                                { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "其他"]],
+                                { "type":"QPickerElement", "key":"EntNature", "title":"企业性质", "items":[["无", "国企", "民营", "外资", "合资", "集体", "平台", "混合", "其他"]],
                                     "bind": "value: EntNature"},
                                 { "type":"QPickerElement", "key":"Industry", "title":"行业", "items":[["农林牧渔", "科教文卫", "矿产", "制造", "能源", "金融", "房地产", "基建类"]],
                                     "bind": "value: Industry"},
