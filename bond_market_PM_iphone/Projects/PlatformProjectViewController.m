@@ -11,7 +11,7 @@
 #import <PopupListComponent.h>
 
 
-@interface PlatformProjectViewController ()
+@interface PlatformProjectViewController () <UIAlertViewDelegate>
 @property (strong, nonatomic) AKSegmentedControl *segmentedControl;
 @property (strong, nonatomic) PlatformProjectBasicInfoViewController *bc;
 @property (strong, nonatomic) PlatformProjectFinancialIndicatorsViewController *fc;
@@ -330,6 +330,34 @@
     
 }
 
+
+- (void)cancelEditProject
+{
+    //还原数据
+    self.platformProject = [storedPlatformProject copy];
+    [self bindPlatformProjectInfo: self.platformProject];
+    //切换状态
+    [self changePlatformProjectViewSatatus:PlatformProjectView];
+    [ALToastView toastInView:APP_WINDOW withText:@"取消编辑状态"];
+}
+
+- (void)showCancelEditProjectAlert
+{
+    [self.popComponent hide];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"取消编辑"
+                                                   message:@"确定取消修改?"
+                                                  delegate:self
+                                         cancelButtonTitle:@"取消"
+                                         otherButtonTitles:@"确定",nil];
+    [alert show];
+}
+
+#pragma alert view delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self cancelEditProject];
+    }
+}
 
 
 @end
