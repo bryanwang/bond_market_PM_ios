@@ -68,4 +68,11 @@
                                                       userInfo:info];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"募投项目";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem redBarButtonItemWithtitle:@"完成"  target:self selector:@selector(doneBtnTapped)];
+}
+
 @end
