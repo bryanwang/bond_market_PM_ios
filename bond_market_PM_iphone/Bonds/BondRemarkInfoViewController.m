@@ -1,19 +1,19 @@
 //
-//  BondRemarkViewController.m
+//  BondRemarkInfoViewController.m
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-30.
 //  Copyright (c) 2013年 bruce yang. All rights reserved.
 //
 
-#import "BondRemarkViewController.h"
+#import "BondRemarkInfoViewController.h"
 #import "UIPlaceHolderTextView.h"
 
-@interface BondRemarkViewController ()
+@interface BondRemarkInfoViewController ()
 @property (strong, nonatomic) UIPlaceHolderTextView *textview;
 @end
 
-@implementation BondRemarkViewController
+@implementation BondRemarkInfoViewController
 
 - (void)bindObject:(NSString *)remark
 {

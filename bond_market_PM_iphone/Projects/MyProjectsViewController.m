@@ -135,7 +135,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"非平台项目";
+    self.title = @"项目查看";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(filterProjectsByNotification:) name:BYPROJECTFILTERNOTIFICATION object:nil];
     

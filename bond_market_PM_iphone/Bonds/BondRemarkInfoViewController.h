@@ -1,5 +1,5 @@
 //
-//  BondRemarkViewController.h
+//  BondRemarkInfoViewController.h
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-30.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BondRemarkViewController : BBCustomBackButtonViewController
+@interface BondRemarkInfoViewController : BBCustomBackButtonViewController
 
 - (void)bindObject: (NSString *)remark;
 - (void)setElementsEnable;

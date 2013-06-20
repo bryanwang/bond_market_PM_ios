@@ -62,7 +62,7 @@
 		CA3B9CAC176EFA7E00E2D7B8 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CA7176EFA7C00E2D7B8 /* LandViewController.m */; };
 		CA3B9CAD176EFA7E00E2D7B8 /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CA9176EFA7D00E2D7B8 /* ReceivablesViewController.m */; };
 		CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */; };
-		CA3B9CBA176EFAC200E2D7B8 /* BondRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */; };
+		CA3B9CBA176EFAC200E2D7B8 /* BondRemarkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB0176EFA9900E2D7B8 /* BondRemarkInfoViewController.m */; };
 		CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB2176EFA9F00E2D7B8 /* BondsTableViewController.m */; };
 		CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B9CB4176EFAA800E2D7B8 /* BondTableCell.m */; };
 		CA3B9CBD176EFAC200E2D7B8 /* BondTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA3B9CB5176EFAAB00E2D7B8 /* BondTableCell.xib */; };
@@ -319,7 +319,7 @@
 		CA3B9CA8176EFA7C00E2D7B8 /* ReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceivablesViewController.h; path = Bonds/ReceivablesViewController.h; sourceTree = "<group>"; };
 		CA3B9CA9176EFA7D00E2D7B8 /* ReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceivablesViewController.m; path = Bonds/ReceivablesViewController.m; sourceTree = "<group>"; };
 		CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondBasicInfoViewController.m; path = Bonds/BondBasicInfoViewController.m; sourceTree = "<group>"; };
-		CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondRemarkViewController.m; path = Bonds/BondRemarkViewController.m; sourceTree = "<group>"; };
+		CA3B9CB0176EFA9900E2D7B8 /* BondRemarkInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondRemarkInfoViewController.m; path = Bonds/BondRemarkInfoViewController.m; sourceTree = "<group>"; };
 		CA3B9CB1176EFA9D00E2D7B8 /* BondsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondsTableViewController.h; path = Bonds/BondsTableViewController.h; sourceTree = "<group>"; };
 		CA3B9CB2176EFA9F00E2D7B8 /* BondsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BondsTableViewController.m; path = Bonds/BondsTableViewController.m; sourceTree = "<group>"; };
 		CA3B9CB3176EFAA600E2D7B8 /* BondTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondTableCell.h; path = Bonds/BondTableCell.h; sourceTree = "<group>"; };
@@ -496,7 +496,7 @@
 		CACD4178176FF131005E12E8 /* EquityDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EquityDataBuilder.json; path = DataBuilder/Bonds/EquityDataBuilder.json; sourceTree = "<group>"; };
 		CACD417A17700009005E12E8 /* BYKeyValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYKeyValueCell.h; path = Utils/BYKeyValueCell.h; sourceTree = "<group>"; };
 		CACD417B17700009005E12E8 /* BYKeyValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYKeyValueCell.m; path = Utils/BYKeyValueCell.m; sourceTree = "<group>"; };
-		CAD4F33F1771707400F01C13 /* BondRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondRemarkViewController.h; path = Bonds/BondRemarkViewController.h; sourceTree = "<group>"; };
+		CAD4F33F1771707400F01C13 /* BondRemarkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BondRemarkInfoViewController.h; path = Bonds/BondRemarkInfoViewController.h; sourceTree = "<group>"; };
 		CAD4F3431771735200F01C13 /* no-use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-use.png"; sourceTree = "<group>"; };
 		CAD4F3441771735200F01C13 /* no-use@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-use@2x.png"; sourceTree = "<group>"; };
 		CAD4F351177296F100F01C13 /* ProjectFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectFilterViewController.h; path = Projects/ProjectFilterViewController.h; sourceTree = "<group>"; };
@@ -698,8 +698,8 @@
 				CA3B9CAE176EFA9400E2D7B8 /* BondBasicInfoViewController.m */,
 				CA3B9CC1176EFB0500E2D7B8 /* FinancialIndicatorsViewController.h */,
 				CA3B9CC2176EFB0500E2D7B8 /* FinancialIndicatorsViewController.m */,
-				CAD4F33F1771707400F01C13 /* BondRemarkViewController.h */,
-				CA3B9CB0176EFA9900E2D7B8 /* BondRemarkViewController.m */,
+				CAD4F33F1771707400F01C13 /* BondRemarkInfoViewController.h */,
+				CA3B9CB0176EFA9900E2D7B8 /* BondRemarkInfoViewController.m */,
 				0EA882E5175C25B3001100A7 /* TrustIncrease */,
 			);
 			name = Form;
@@ -1306,7 +1306,7 @@
 				CA3B9CAC176EFA7E00E2D7B8 /* LandViewController.m in Sources */,
 				CA3B9CAD176EFA7E00E2D7B8 /* ReceivablesViewController.m in Sources */,
 				CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */,
-				CA3B9CBA176EFAC200E2D7B8 /* BondRemarkViewController.m in Sources */,
+				CA3B9CBA176EFAC200E2D7B8 /* BondRemarkInfoViewController.m in Sources */,
 				CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */,
 				CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */,
 				CA3B9CBE176EFAC200E2D7B8 /* BondTableHeader.m in Sources */,
