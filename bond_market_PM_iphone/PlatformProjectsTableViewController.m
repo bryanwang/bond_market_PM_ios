@@ -6,18 +6,18 @@
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "ProjectsTableViewController.h"
+#import "PlatformProjectsTableViewController.h"
 #import "BondTableHeader.h"
-#import "ProjectViewController.h"
+#import "PlatformProjectViewController.h"
 #import "ProjectTableCell.h"
 
-@interface ProjectsTableViewController () {
+@interface PlatformProjectsTableViewController () {
     //存储原始数据
     NSMutableArray *projectsJson;
     // 用作筛选
     NSMutableArray *filterProjectsJson;
     // 当前的 排序方式
-    ProjectsOrderType curOrderType;
+    PlatformProjectsOrderType curOrderType;
 }
 
 @property (nonatomic, strong) NSMutableArray *sections;
@@ -31,7 +31,7 @@
 static float TABLE_SECTION_HEIGHT = 23.0f;
 static float TABLE_CELL_HEIGHT = 74.0f;
 
-@implementation ProjectsTableViewController
+@implementation PlatformProjectsTableViewController
 
 - (void)filterBy: (NSArray *)query
 {
@@ -49,7 +49,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     [self orderBy:curOrderType];
 }
 
-- (void)orderBy:(ProjectsOrderType)orderType
+- (void)orderBy:(PlatformProjectsOrderType)orderType
 {
     curOrderType = orderType;
     
@@ -120,13 +120,13 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 }
 
 
-- (void)fetchMyProjects
+- (void)fetchMyPlatformProjects
 {
     [MBProgressHUD showHUDAddedTo:self.view.superview animated:YES];
     NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
-        [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[PMHttpClient shareIntance]getPath:MY_PLATFORMPROJECTS_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [MBProgressHUD hideAllHUDsForView:self.view.superview animated:YES];
 
             [self convertProjectsUpdateTimeAndOwner:(NSMutableArray *) responseObject];
@@ -145,7 +145,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
     NSString *userid = [[LoginManager sharedInstance] fetchUserId];
     if (userid != nil) {
         NSDictionary *params = @{@"userid": userid};
-        [[PMHttpClient shareIntance]getPath:MY_PROJECTS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[PMHttpClient shareIntance]getPath:MY_PLATFORMPROJECTS_INPUTUBFI_INTERFACE parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSDictionary *info = (NSDictionary *)responseObject;
             self.projectHeader.inputInfo= info;
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -238,8 +238,9 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSDictionary *project = self.projects[indexPath.section][indexPath.row];
-    ProjectViewController *nc = [[ProjectViewController alloc]initWithProject:project];
+    NSDictionary *platformProject = self.projects[indexPath.section][indexPath.row];
+    
+    PlatformProjectViewController *nc = [[PlatformProjectViewController alloc]initWithPlatformProject:platformProject];
     [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
 }
 

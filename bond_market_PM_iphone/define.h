@@ -20,15 +20,19 @@
 #define DELETE_NEWBOND_INTERFACE @"/api/ios/newbond/delete"
 #define MY_BONDS_INPUTUBFI_INTERFACE @"/api/ios/newbond/bonus"
 
-//project
-#define UPDATE_PROJECT_INTERFACE @"/api/ios/project/update"
-#define MY_PROJECTS_INTERFACE @"/api/ios/project/mine"
-#define MY_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/project/bonus"
+//non-platform project
+#define UPDATE_NON-PLATFORM_PROJECT_INTERFACE @"/api/ios/nonplatformproject/update"
+#define MY_NON-PLATFORM_PROJECTS_INTERFACE @"/api/ios/nonplatformproject/mine"
+#define MY_NON-PLATFORM_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/nonplatformproject/bonus"
 
 //platformProject
 #define UPDATE_PLATFORMPROJECT_INTERFACE @"/api/ios/platformproject/update"
 #define MY_PLATFORMPROJECTS_INTERFACE @"/api/ios/platformproject/mine"
 #define MY_PLATFORMPROJECTS_INPUTUBFI_INTERFACE @"/api/ios/platformproject/bonus"
+
+// return all types of 
+#define MY_PROJECTS_INTERFACE @"/api/ios/project/mine"
+#define MY_PROJECTS_INPUTUBFI_INTERFACE @"/api/ios/project/bonus"
 
 
 //notification

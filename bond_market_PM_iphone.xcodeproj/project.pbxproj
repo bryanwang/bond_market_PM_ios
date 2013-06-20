@@ -23,6 +23,7 @@
 		0EA882A6175C2522001100A7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829D175C2522001100A7 /* area.plist */; };
 		0EA882A7175C2522001100A7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA8829E175C2522001100A7 /* city.plist */; };
 		0EA8830B175C2C81001100A7 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8830A175C2C01001100A7 /* libQuickDialog.a */; };
+		126A75161771A92200CAD493 /* PlatformProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126A75151771A92200CAD493 /* PlatformProjectsTableViewController.m */; };
 		12BC5F89177175430088517A /* PlatformProjectBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F84177175430088517A /* PlatformProjectBasicInfoViewController.m */; };
 		12BC5F8A177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F86177175430088517A /* PlatformProjectFinancialIndicatorsViewController.m */; };
 		12BC5F8B177175430088517A /* PlatformProjectRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC5F88177175430088517A /* PlatformProjectRemarkViewController.m */; };
@@ -262,6 +263,8 @@
 		0EA8829E175C2522001100A7 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		0EA8829F175C2522001100A7 /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		0EA88302175C2C00001100A7 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = Support/QuickDialog/QuickDialog.xcodeproj; sourceTree = SOURCE_ROOT; };
+		126A75151771A92200CAD493 /* PlatformProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectsTableViewController.m; sourceTree = "<group>"; };
+		126A751A1771AA1300CAD493 /* PlatformProjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectsTableViewController.h; sourceTree = "<group>"; };
 		12BC5F83177175430088517A /* PlatformProjectBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectBasicInfoViewController.h; sourceTree = "<group>"; };
 		12BC5F84177175430088517A /* PlatformProjectBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformProjectBasicInfoViewController.m; sourceTree = "<group>"; };
 		12BC5F85177175430088517A /* PlatformProjectFinancialIndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformProjectFinancialIndicatorsViewController.h; sourceTree = "<group>"; };
@@ -772,6 +775,8 @@
 		CA3B9C2C176EACB000E2D7B8 /* PlatformProject */ = {
 			isa = PBXGroup;
 			children = (
+				126A751A1771AA1300CAD493 /* PlatformProjectsTableViewController.h */,
+				126A75151771A92200CAD493 /* PlatformProjectsTableViewController.m */,
 				12BC5FBF177175E00088517A /* PlatformProjectViewController.h */,
 				12BC5FC0177175E00088517A /* PlatformProjectViewController.m */,
 				12BE3869177192FD0090E0BD /* MyPlatformProjectViewController.h */,
@@ -1324,6 +1329,7 @@
 				12BC5F8B177175430088517A /* PlatformProjectRemarkViewController.m in Sources */,
 				12BC5FC1177175E00088517A /* PlatformProjectViewController.m in Sources */,
 				12BE386B177192FE0090E0BD /* MyPlatformProjectViewController.m in Sources */,
+				126A75161771A92200CAD493 /* PlatformProjectsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
