@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
 #import <QuickDialog.h>
+#import <AKSegmentedControl.h>
 
 void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 
 @interface Utils : NSObject
+
 + (Utils *)sharedInstance;
 
 @property (nonatomic, strong) NSArray *Arears;
@@ -21,12 +23,14 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void));
 @property (nonatomic, strong) NSArray *EnhancementsProperties;
 @property (nonatomic, strong) NSArray *SecurityWays;
 @property (nonatomic, strong) NSArray *ApprovalTypes;
-
 @property (strong, nonatomic) NSArray *ProjectTypes;
 
+- (id)convertJSONStrToObject: (NSString *)str;
+- (NSString *)convertObjectToJSONStr: (id)obj;
+
+- (void)hideKeyBoard;
 
 @end
-
 
 @interface QuickDialogHelper: NSObject
 
@@ -40,14 +44,14 @@ typedef void (^ selectChangedCallback)();
 
 - (void)setUpArearsPickerRoles: (QPickerElement *)picker;
 
-- (id)convertJSONStrToObject: (NSString *)str;
-- (NSString *)convertObjectToJSONStr: (id)obj;
-- (void)setUpSelectRoleWithAllSelecte: (QSelectSection *)all AndQuerySelect: (QSelectSection *)query WithChangedCallback: (selectChangedCallback) callback;
+- (void)setUpSelectRoleWithAllSelecte: (QSelectSection *)all
+                       AndQuerySelect: (QSelectSection *)query
+                  WithChangedCallback: (selectChangedCallback) callback;
 
-@end
+- (AKSegmentedControl *)setUpSegmentedControllWithTitles:(NSArray *)titles
+                                WithSelectedChangedAcion:(SEL)action
+                                              WithTarget:(id)target;
 
-@interface NSObject(BY)
-- (void)hideKeyBoard;
 @end
 
 
@@ -59,7 +63,9 @@ typedef void (^ selectChangedCallback)();
 
 
 @interface NSString(BY)
+
 - (NSString *)trim;
+
 @end
 
 

@@ -1,5 +1,5 @@
 //
-//  BondTableHeader.h
+//  InputInfoTableHeader.h
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-4.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BondTableHeader : UIView
+@interface InputInfoTableHeader : UIView
 @property (nonatomic, strong) NSDictionary *inputInfo;
 @end

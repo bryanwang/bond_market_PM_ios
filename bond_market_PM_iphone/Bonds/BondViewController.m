@@ -9,7 +9,7 @@
 #import "BondViewController.h"
 #import <AKSegmentedControl.h>
 #import "BondBasicInfoViewController.h"
-#import "FinancialIndicatorsViewController.h"
+#import "BondFinancialIndicatorsViewController.h"
 #import "BondRemarkInfoViewController.h"
 
 typedef enum BondEditStaus: NSUInteger {
@@ -24,7 +24,7 @@ typedef enum BondEditStaus: NSUInteger {
 @property (nonatomic, strong)NSDictionary *bondInfo;
 
 @property (nonatomic, strong) BondBasicInfoViewController *bc;
-@property (nonatomic, strong) FinancialIndicatorsViewController *fc;
+@property (nonatomic, strong) BondFinancialIndicatorsViewController *fc;
 @property (nonatomic, strong) BondRemarkInfoViewController *rc;
 @property (nonatomic, strong) AKSegmentedControl *segmentedControl;
 @property (nonatomic, strong)PopupListComponent *popComponent;
@@ -51,11 +51,11 @@ typedef enum BondEditStaus: NSUInteger {
     return _bc;
 }
 
-- (FinancialIndicatorsViewController *)fc
+- (BondFinancialIndicatorsViewController *)fc
 {
     if (_fc == nil) {
         QRootElement *root  = [[QRootElement alloc] initWithJSONFile:@"FinanceDataBuilder" andData:nil];
-        _fc = [[FinancialIndicatorsViewController alloc]initWithRoot:root];
+        _fc = [[BondFinancialIndicatorsViewController alloc]initWithRoot:root];
         _fc.view.frame = CGRectMake(0.0f, 44.0f, self.view.bounds.size.width, self.view.bounds.size.height - 88.0f);
     }
     return _fc;
@@ -154,7 +154,7 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (void)updateBond
 {
-    [self hideKeyBoard];
+    [[Utils sharedInstance] hideKeyBoard];
     
     NSMutableDictionary *newbondInfo = [self buildNewbondInfo];
     // 简称 这个字段必填
@@ -171,8 +171,8 @@ typedef enum BondEditStaus: NSUInteger {
         newbondInfo[@"Id"] = self.bondInfo[@"Id"];
     
     //转成string
-    newbondInfo[@"FinanceIndex"] = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:newbondInfo[@"FinanceIndex"]];
-    NSString *bondJsonString = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:newbondInfo];
+    newbondInfo[@"FinanceIndex"] = [[Utils sharedInstance]convertObjectToJSONStr:newbondInfo[@"FinanceIndex"]];
+    NSString *bondJsonString = [[Utils sharedInstance]convertObjectToJSONStr:newbondInfo];
 
     NSDictionary *parameters = @{@"userid": userId, @"newbond": bondJsonString};
     
@@ -208,21 +208,19 @@ typedef enum BondEditStaus: NSUInteger {
     switch (index) {
         case 0:
             [self.view bringSubviewToFront:self.bc.view];
-            [self hideKeyBoard];
             break;
         case 1:
             [self.view bringSubviewToFront:self.fc.view];
-            [self hideKeyBoard];
             break;
         case 2:
             [self.view bringSubviewToFront:self.rc.view];
-            [self hideKeyBoard];
             break;
         default:
             [self.view bringSubviewToFront:self.bc.view];
-            [self hideKeyBoard];
             break;
     }
+    
+    [[Utils sharedInstance] hideKeyBoard];
 }
 
 - (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
@@ -233,51 +231,13 @@ typedef enum BondEditStaus: NSUInteger {
 
 - (void)setUpSegmentedController
 {
-    CGRect aRect = CGRectMake(0.0f, 0.0f, APP_SCREEN_WIDTH, 44.0f);
-    AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect];
-    [segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
-
-    UIImage *backgroundImage = [UIImage imageNamed:@"sort-bar"];
-    [segmentedControl setBackgroundImage:backgroundImage];
-
-    UIImage *buttonBackgroundImagePressedLeft = [UIImage imageNamed:@"sort-bar-01-sel"];
-    UIImage *buttonBackgroundImagePressedCenter = [UIImage imageNamed:@"sort-bar-01-sel"];
-    UIImage *buttonBackgroundImagePressedRight = [UIImage imageNamed:@"sort-bar-01-sel"];
-    
-    UIButton *btn1 = [[UIButton alloc] init];
-    [btn1 setTitle:@"基本信息" forState:UIControlStateNormal];
-    btn1.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
-    [btn1 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
-    [btn1 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
-    [btn1 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
-    [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateHighlighted];
-    [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateSelected];
-    [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:(UIControlStateHighlighted|UIControlStateSelected)];
-    
-    UIButton *btn2 = [[UIButton alloc] init];
-    btn2.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
-    [btn2 setTitle:@"财务指标" forState:UIControlStateNormal];
-    [btn2 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
-    [btn2 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
-    [btn2 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
-    [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateHighlighted];
-    [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateSelected];
-    [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:(UIControlStateHighlighted|UIControlStateSelected)];
-    
-    UIButton *btn3 = [[UIButton alloc] init];
-    btn3.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
-    [btn3 setTitle:@"备注说明" forState:UIControlStateNormal];
-    [btn3 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
-    [btn3 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
-    [btn3 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
-    [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:UIControlStateHighlighted];
-    [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:UIControlStateSelected];
-    [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:(UIControlStateHighlighted|UIControlStateSelected)];
-    
-    [segmentedControl setButtonsArray:@[btn1, btn2, btn3]];
-    [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-    self.segmentedControl = segmentedControl;
-    [self.view addSubview:segmentedControl];
+    NSArray *titles = @[@"基本信息", @"财务指标", @"备注说明"];
+    SEL action = @selector(segmentedControlValueChanged:);
+    self.segmentedControl = [[QuickDialogHelper sharedInstance]
+                             setUpSegmentedControllWithTitles:titles
+                             WithSelectedChangedAcion:action
+                             WithTarget:self];
+    [self.view addSubview:self.segmentedControl];
 }
 
 

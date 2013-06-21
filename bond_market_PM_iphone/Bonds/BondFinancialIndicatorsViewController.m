@@ -1,18 +1,18 @@
 //
-//  FinancialIndicatorsViewController.m
+//  BondFinancialIndicatorsViewController.m
 //  Form_test
 //
 //  Created by Bruce yang on 13-5-30.
 //  Copyright (c) 2013年 bruce yang. All rights reserved.
 //
 
-#import "FinancialIndicatorsViewController.h"
+#import "BondFinancialIndicatorsViewController.h"
 
-@interface FinancialIndicatorsViewController ()
+@interface BondFinancialIndicatorsViewController ()
 
 @end
 
-@implementation FinancialIndicatorsViewController
+@implementation BondFinancialIndicatorsViewController
 
 
 - (void)bindObject: (NSDictionary *)obj

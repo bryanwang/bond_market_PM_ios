@@ -1,19 +1,19 @@
 //
-//  BondTableHeader.m
+//  InputInfoTableHeader.m
 //  bond_market_PM_iphone
 //
 //  Created by Bruce yang on 13-6-4.
 //  Copyright (c) 2013年 pyrating. All rights reserved.
 //
 
-#import "BondTableHeader.h"
+#import "InputInfoTableHeader.h"
 
-@interface BondTableHeader()
+@interface InputInfoTableHeader ()
 @property (weak, nonatomic) IBOutlet UILabel *totalEntryFee;
 @property (weak, nonatomic) IBOutlet UILabel *totalDeductFee;
 @end
 
-@implementation BondTableHeader
+@implementation InputInfoTableHeader
 
 - (void)awakeFromNib
 {

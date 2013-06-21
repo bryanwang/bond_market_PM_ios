@@ -25,7 +25,7 @@
 @implementation LoginViewController
 
 - (IBAction)login:(id)sender {
-    [self hideKeyBoard];
+    [[Utils sharedInstance] hideKeyBoard];
     
     NSString *mobile = self.mobile.text;
     NSString *password = self.password.text;

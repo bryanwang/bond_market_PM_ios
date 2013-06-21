@@ -46,6 +46,18 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
 
 @implementation Utils
 
++ (Utils *)sharedInstance
+{
+    static Utils *sharedInstance = nil;
+    static dispatch_once_t onceToken = 0;
+    
+    dispatch_once(&onceToken,^{
+        sharedInstance = [[Utils alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
 - (NSArray *)Arears
 {
     if (_Arears == nil) {
@@ -116,17 +128,63 @@ void RunBlockAfterDelay(NSTimeInterval delay, void (^block)(void)) {
              ];
 }
 
-+ (Utils *)sharedInstance
+
+- (id)convertJSONStrToObject: (NSString *)str
 {
-    static Utils *sharedInstance = nil;
-    static dispatch_once_t onceToken = 0;
-    
-    dispatch_once(&onceToken,^{
-        sharedInstance = [[Utils alloc] init];
-    });
-    
-    return sharedInstance;
+    NSError *error;
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    id obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (!error)
+        return obj;
+    else
+        return nil;
 }
+
+
+- (NSString *)convertObjectToJSONStr:(id)obj
+{
+    NSError *error = nil;
+    NSData *data;
+    NSString *JsonStr;
+    data = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:&error];
+    if (data)
+        JsonStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    if (!error)
+        return JsonStr;
+    else
+        return  nil;
+}
+
+//隐藏键盘
+- (void)hideKeyBoard
+{
+    for (UIWindow* window in [UIApplication sharedApplication].windows)
+    {
+        for (UIView* view in window.subviews)
+        {
+            [self dismissAllKeyBoardInView:view];
+        }
+    }
+}
+
+-(BOOL) dismissAllKeyBoardInView:(UIView *)view
+{
+    if([view isFirstResponder])
+    {
+        [view resignFirstResponder];
+        return YES;
+    }
+    for(UIView *subView in view.subviews)
+    {
+        if([self dismissAllKeyBoardInView:subView])
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end
 
 
@@ -236,7 +294,9 @@ const char ArearsPickerSelectedCity;
     };
 }
 
-- (void)setUpSelectRoleWithAllSelecte:(QSelectSection *)all AndQuerySelect:(QSelectSection *)query WithChangedCallback:(selectChangedCallback)callback
+- (void)setUpSelectRoleWithAllSelecte:(QSelectSection *)all
+                       AndQuerySelect:(QSelectSection *)query
+                  WithChangedCallback:(selectChangedCallback)callback
 {
     __weak QSelectSection *allsection = all;
     __weak QSelectSection *querysection = query;
@@ -265,31 +325,38 @@ const char ArearsPickerSelectedCity;
     };
 }
 
-- (id)convertJSONStrToObject: (NSString *)str
+- (AKSegmentedControl *)setUpSegmentedControllWithTitles:(NSArray *)titles
+                                WithSelectedChangedAcion:(SEL)action
+                                              WithTarget:(id)target
 {
-    NSError *error;
-    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-    id obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    if (!error)
-        return obj;
-    else
-        return nil;
-}
-
-
-- (NSString *)convertObjectToJSONStr:(id)obj
-{
-    NSError *error = nil;
-    NSData *data;
-    NSString *JsonStr;
-    data = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:&error];
-    if (data)
-         JsonStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    CGRect aRect = CGRectMake(0.0f, 0.0f, APP_SCREEN_WIDTH, 44.0f);
+    AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect];
+    [segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
     
-    if (!error)
-        return JsonStr;
-    else
-        return  nil;
+    UIImage *backgroundImage = [UIImage imageNamed:@"sort-bar"];
+    [segmentedControl setBackgroundImage:backgroundImage];
+    
+    UIImage *buttonBackgroundImagePressed = [UIImage imageNamed:@"sort-bar-01-sel"];
+    
+    NSMutableArray *btns = [NSMutableArray array];
+    [titles enumerateObjectsUsingBlock:^(id title, NSUInteger index, BOOL *stop) {
+        UIButton *btn = [[UIButton alloc] init];
+        [btn setTitle:title forState:UIControlStateNormal];
+        btn.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
+        [btn setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
+        [btn setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
+        [btn setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
+        [btn setBackgroundImage:buttonBackgroundImagePressed forState:UIControlStateHighlighted];
+        [btn setBackgroundImage:buttonBackgroundImagePressed forState:UIControlStateSelected];
+        [btn setBackgroundImage:buttonBackgroundImagePressed forState:(UIControlStateHighlighted|UIControlStateSelected)];
+        
+        [btns addObject:btn];
+    }];
+    
+    [segmentedControl setButtonsArray:btns];
+    [segmentedControl addTarget:target action:action forControlEvents:UIControlEventValueChanged];
+  
+    return segmentedControl;
 }
 
 
@@ -315,38 +382,6 @@ const char ArearsPickerSelectedCity;
 
 @end
 
-@implementation NSObject(BY)
-
-//隐藏键盘
-- (void)hideKeyBoard
-{
-    for (UIWindow* window in [UIApplication sharedApplication].windows)
-    {
-        for (UIView* view in window.subviews)
-        {
-            [self dismissAllKeyBoardInView:view];
-        }
-    }
-}
-
--(BOOL) dismissAllKeyBoardInView:(UIView *)view
-{
-    if([view isFirstResponder])
-    {
-        [view resignFirstResponder];
-        return YES;
-    }
-    for(UIView *subView in view.subviews)
-    {
-        if([self dismissAllKeyBoardInView:subView])
-        {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-@end
 
 @implementation NSString(BY)
 

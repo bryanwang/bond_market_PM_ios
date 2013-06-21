@@ -8,7 +8,7 @@
 
 #import "BondsTableViewController.h"
 #import "BondTableCell.h"
-#import "BondTableHeader.h"
+#import "InputInfoTableHeader.h"
 #import "BondViewController.h"
 
 @interface BondsTableViewController () {
@@ -23,7 +23,7 @@
 @property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, strong) NSMutableArray *bonds;
 
-@property (nonatomic, strong) BondTableHeader *bondHeader;
+@property (nonatomic, strong) InputInfoTableHeader *bondHeader;
 
 @end
 
@@ -163,7 +163,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.bondHeader = (BondTableHeader *)[[[NSBundle mainBundle]loadNibNamed:@"BondTableHeader" owner:self options:nil] lastObject];
+    self.bondHeader = (InputInfoTableHeader *)[[[NSBundle mainBundle]loadNibNamed:@"InputInfoTableHeader" owner:self options:nil] lastObject];
     self.tableView.tableHeaderView = self.bondHeader;
     
     self.tableView.backgroundColor = RGBCOLOR(255, 255, 255);

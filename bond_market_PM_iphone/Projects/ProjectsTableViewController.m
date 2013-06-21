@@ -7,7 +7,7 @@
 //
 
 #import "ProjectsTableViewController.h"
-#import "BondTableHeader.h"
+#import "InputInfoTableHeader.h"
 #import "ProjectTableCell.h"
 #import "ProjectViewController.h"
 #import "PlatformProjectViewController.h"
@@ -28,7 +28,7 @@
 @property (nonatomic, strong) NSMutableArray *sections;
 @property (nonatomic, strong) NSMutableArray *projects;
 
-@property (nonatomic, strong) BondTableHeader *projectHeader;
+@property (nonatomic, strong) InputInfoTableHeader *projectHeader;
 
 @end
 
@@ -181,7 +181,7 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.projectHeader = (BondTableHeader *)[[[NSBundle mainBundle]loadNibNamed:@"BondTableHeader" owner:self options:nil] lastObject];
+    self.projectHeader = (InputInfoTableHeader *)[[[NSBundle mainBundle]loadNibNamed:@"InputInfoTableHeader" owner:self options:nil] lastObject];
     self.tableView.tableHeaderView = self.projectHeader;
     
     self.tableView.backgroundColor = RGBCOLOR(255, 255, 255);

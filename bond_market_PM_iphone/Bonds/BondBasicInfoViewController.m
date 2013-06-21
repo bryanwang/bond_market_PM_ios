@@ -56,7 +56,7 @@
     
     //增信方式
     if (info[@"TrustIncrease"]) {
-        id trustIncreaseArray = [[QuickDialogHelper sharedInstance] convertJSONStrToObject:info[@"TrustIncrease"]];
+        id trustIncreaseArray = [[Utils sharedInstance] convertJSONStrToObject:info[@"TrustIncrease"]];
         [self.trustIncreaseViewController bindObject: trustIncreaseArray];
     }
     
@@ -93,7 +93,7 @@
     
     //增信方式
     NSMutableArray *trustIncreaseArray = [self.trustIncreaseViewController fetchData];
-    newbondInfo[@"trustIncrease"] = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:trustIncreaseArray];
+    newbondInfo[@"trustIncrease"] = [[Utils sharedInstance]convertObjectToJSONStr:trustIncreaseArray];
     
     return newbondInfo;
 }

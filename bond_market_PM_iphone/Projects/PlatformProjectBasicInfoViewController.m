@@ -62,19 +62,19 @@
     
     //增信方式
     if (info[@"TrustIncrease"]) {
-        id trustIncrease= [[QuickDialogHelper sharedInstance] convertJSONStrToObject:info[@"TrustIncrease"]];
+        id trustIncrease= [[Utils sharedInstance] convertJSONStrToObject:info[@"TrustIncrease"]];
         [self.trustIncreaseViewController bindObject:trustIncrease];
     }
     
     //资金用途
     if (info[@"UseOfFunds"]) {
-        id useOfFunds= [[QuickDialogHelper sharedInstance] convertJSONStrToObject:info[@"UseOfFunds"]];
+        id useOfFunds= [[Utils sharedInstance] convertJSONStrToObject:info[@"UseOfFunds"]];
         [self.useOfFoundsViewController bindObject:useOfFunds];
     }
     
     //融资方式
     if (info[@"FinancingMethod"]) {
-        id financingMethod= [[QuickDialogHelper sharedInstance] convertJSONStrToObject:info[@"FinancingMethod"]];
+        id financingMethod= [[Utils sharedInstance] convertJSONStrToObject:info[@"FinancingMethod"]];
         [self.financingViewController bindObject:financingMethod];
     }
     
@@ -111,15 +111,15 @@
     
     //增信方式
     NSMutableArray *trustIncreaseArray = [self.trustIncreaseViewController fetchData];
-    project[@"trustIncrease"] = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:trustIncreaseArray];
+    project[@"trustIncrease"] = [[Utils sharedInstance] convertObjectToJSONStr:trustIncreaseArray];
     
     //资金用途
     NSMutableArray *useOfFundsArray = [self.useOfFoundsViewController fetchData];
-    project[@"UseOfFunds"] = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:useOfFundsArray];;
+    project[@"UseOfFunds"] = [[Utils sharedInstance] convertObjectToJSONStr:useOfFundsArray];;
     
     //融资方式
     id financing = [self.financingViewController fetchData];
-    project[@"FinancingMethod"] = [[QuickDialogHelper sharedInstance] convertObjectToJSONStr:financing];;
+    project[@"FinancingMethod"] = [[Utils sharedInstance] convertObjectToJSONStr:financing];;
     
     return project;
 }

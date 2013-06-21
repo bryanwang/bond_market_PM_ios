@@ -73,21 +73,19 @@
     switch (index) {
         case 0:
             [self.view bringSubviewToFront:self.bc.view];
-            [self hideKeyBoard];
             break;
         case 1:
             [self.view bringSubviewToFront:self.fc.view];
-            [self hideKeyBoard];
             break;
         case 2:
             [self.view bringSubviewToFront:self.rc.view];
-            [self hideKeyBoard];
             break;
         default:
             [self.view bringSubviewToFront:self.bc.view];
-            [self hideKeyBoard];
             break;
     }
+    
+    [[Utils sharedInstance] hideKeyBoard];
 }
 
 - (void)segmentedControlValueChanged: (AKSegmentedControl *)sender
@@ -98,51 +96,13 @@
 
 - (void)setUpSegmentedController
 {
-    CGRect aRect = CGRectMake(0.0f, 0.0f, APP_SCREEN_WIDTH, 44.0f);
-    AKSegmentedControl *segmentedControl = [[AKSegmentedControl alloc] initWithFrame:aRect];
-    [segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
-    
-    UIImage *backgroundImage = [UIImage imageNamed:@"sort-bar"];
-    [segmentedControl setBackgroundImage:backgroundImage];
-    
-    UIImage *buttonBackgroundImagePressedLeft = [UIImage imageNamed:@"sort-bar-01-sel"];
-    UIImage *buttonBackgroundImagePressedCenter = [UIImage imageNamed:@"sort-bar-01-sel"];
-    UIImage *buttonBackgroundImagePressedRight = [UIImage imageNamed:@"sort-bar-01-sel"];
-    
-    UIButton *btn1 = [[UIButton alloc] init];
-    [btn1 setTitle:@"基本信息" forState:UIControlStateNormal];
-    btn1.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
-    [btn1 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
-    [btn1 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
-    [btn1 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
-    [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateHighlighted];
-    [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateSelected];
-    [btn1 setBackgroundImage:buttonBackgroundImagePressedLeft forState:(UIControlStateHighlighted|UIControlStateSelected)];
-    
-    UIButton *btn2 = [[UIButton alloc] init];
-    btn2.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
-    [btn2 setTitle:@"财务指标" forState:UIControlStateNormal];
-    [btn2 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
-    [btn2 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
-    [btn2 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
-    [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateHighlighted];
-    [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateSelected];
-    [btn2 setBackgroundImage:buttonBackgroundImagePressedCenter forState:(UIControlStateHighlighted|UIControlStateSelected)];
-    
-    UIButton *btn3 = [[UIButton alloc] init];
-    btn3.titleLabel.font =  [UIFont systemFontOfSize: 14.0];
-    [btn3 setTitle:@"备注说明" forState:UIControlStateNormal];
-    [btn3 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateHighlighted];
-    [btn3 setTitleColor:RGBCOLOR(186, 13, 17) forState:UIControlStateSelected];
-    [btn3 setTitleColor:RGBCOLOR(100, 100, 100) forState:UIControlStateNormal];
-    [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:UIControlStateHighlighted];
-    [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:UIControlStateSelected];
-    [btn3 setBackgroundImage:buttonBackgroundImagePressedRight forState:(UIControlStateHighlighted|UIControlStateSelected)];
-    
-    [segmentedControl setButtonsArray:@[btn1, btn2, btn3]];
-    [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-    self.segmentedControl = segmentedControl;
-    [self.view addSubview:segmentedControl];
+    NSArray *titles = @[@"基本信息", @"财务指标", @"备注说明"];
+    SEL action = @selector(segmentedControlValueChanged:);
+    self.segmentedControl = [[QuickDialogHelper sharedInstance]
+                             setUpSegmentedControllWithTitles:titles
+                             WithSelectedChangedAcion:action
+                             WithTarget:self];
+    [self.view addSubview:self.segmentedControl];
 }
 
 
@@ -215,7 +175,7 @@
 
 - (void)updateProjectInfo
 {
-    [self hideKeyBoard];
+    [[Utils sharedInstance] hideKeyBoard];
     
     NSMutableDictionary *project = [self buildProjectInfo];
     // 简称 这个字段必填
@@ -232,8 +192,8 @@
         project[@"Id"] = self.project[@"Id"];
     
     //转成string
-    project[@"FinanceIndex"] = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:project[@"FinanceIndex"]];
-    NSString *projectJsonString = [[QuickDialogHelper sharedInstance]convertObjectToJSONStr:project];
+    project[@"FinanceIndex"] = [[Utils sharedInstance]convertObjectToJSONStr:project[@"FinanceIndex"]];
+    NSString *projectJsonString = [[Utils sharedInstance]convertObjectToJSONStr:project];
     
     NSDictionary *parameters = @{@"userid": userId, @"project": projectJsonString};
     
