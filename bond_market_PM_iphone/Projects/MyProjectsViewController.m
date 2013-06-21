@@ -32,7 +32,6 @@
 {
     if (_tableviewController == nil) {
         _tableviewController = [[ProjectsTableViewController  alloc]init];
-        _tableviewController.delegate = self;
     }
     
     return _tableviewController;

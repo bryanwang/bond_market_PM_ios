@@ -25,8 +25,6 @@ typedef enum ProjectType: NSUInteger
 
 @interface ProjectsTableViewController : UITableViewController
 
-@property (strong, nonatomic) id delegate;
-
 - (void) reloadTableview;
 - (void) fetchMyProjects;
 - (void) fetchMyInputInfo;

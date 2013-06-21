@@ -237,8 +237,10 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     BondViewController *nc = [[BondViewController alloc]initWithBond:self.bonds[indexPath.section][indexPath.row]];
-    [((UIViewController *)self.delegate).navigationController pushViewController:nc animated:YES];
+    id vc = [self.view.superview nextResponder];
+    [((UIViewController *)vc).navigationController pushViewController:nc animated:YES];
 }
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath

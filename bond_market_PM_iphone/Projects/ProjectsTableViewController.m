@@ -255,13 +255,15 @@ static float TABLE_CELL_HEIGHT = 74.0f;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *project = self.projects[indexPath.section][indexPath.row];
+    id vc = [self.view.superview nextResponder];
+
     if ([project[@"Type"] integerValue] == Project) {
         ProjectViewController *pc = [[ProjectViewController alloc] initWithProject:project];
-        [((UIViewController *)self.delegate).navigationController pushViewController:pc animated:YES];
+        [((UIViewController *)vc).navigationController pushViewController:pc animated:YES];
     }
     else if ([project[@"Type"] integerValue] == PlatformProject) {
         PlatformProjectViewController *pc = [[PlatformProjectViewController alloc] initWithPlatformProject:project];
-        [((UIViewController *)self.delegate).navigationController pushViewController:pc animated:YES];
+        [((UIViewController *)vc).navigationController pushViewController:pc animated:YES];
     }
 }
     
