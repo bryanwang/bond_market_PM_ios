@@ -53,7 +53,6 @@
     [[QuickDialogHelper sharedInstance]setUpSelectRoleWithAllSelecte:allsection AndQuerySelect:querysection WithChangedCallback:^{
         [_self.qc.quickDialogTableView reloadData];
     }];
-
 }
 
 - (void)viewDidLoad

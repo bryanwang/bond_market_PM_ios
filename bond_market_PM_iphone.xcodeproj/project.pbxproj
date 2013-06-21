@@ -27,6 +27,17 @@
 		12BE386117717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */; };
 		12BE386217717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = 12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */; };
 		17B6C395DD2442B28C98C92C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387BF9DE8CE3400AA0164469 /* libPods.a */; };
+		6C4172541774AC61005B62C3 /* AddTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41723F1774AC61005B62C3 /* AddTrustIncreaseViewController.m */; };
+		6C4172551774AC61005B62C3 /* AntiGuarantorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172411774AC61005B62C3 /* AntiGuarantorViewController.m */; };
+		6C4172561774AC61005B62C3 /* BankSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172431774AC61005B62C3 /* BankSupportViewController.m */; };
+		6C4172571774AC61005B62C3 /* EnhancementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172451774AC61005B62C3 /* EnhancementsViewController.m */; };
+		6C4172581774AC61005B62C3 /* EquityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172471774AC61005B62C3 /* EquityViewController.m */; };
+		6C4172591774AC61005B62C3 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172491774AC61005B62C3 /* EstateViewController.m */; };
+		6C41725A1774AC61005B62C3 /* GuaranteeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41724B1774AC61005B62C3 /* GuaranteeViewController.m */; };
+		6C41725B1774AC61005B62C3 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41724D1774AC61005B62C3 /* LandViewController.m */; };
+		6C41725C1774AC61005B62C3 /* OtherTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C41724F1774AC61005B62C3 /* OtherTrustIncreaseViewController.m */; };
+		6C41725D1774AC61005B62C3 /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172511774AC61005B62C3 /* ReceivablesViewController.m */; };
+		6C41725E1774AC61005B62C3 /* TrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4172531774AC61005B62C3 /* TrustIncreaseViewController.m */; };
 		CA04494117705C2400D6FBE8 /* ProjectTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494017705C2400D6FBE8 /* ProjectTableCell.m */; };
 		CA04494717705CE800D6FBE8 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04494517705CE800D6FBE8 /* ProjectsTableViewController.m */; };
 		CA04494817705CE800D6FBE8 /* ProjectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA04494617705CE800D6FBE8 /* ProjectTableCell.xib */; };
@@ -211,19 +222,8 @@
 		CAD4F36617729C2A00F01C13 /* ProjectTypeFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CAD4F36517729C2A00F01C13 /* ProjectTypeFilterDataBuilder.json */; };
 		CAD4F36C17729CF000F01C13 /* ProjectStatusFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD4F36B17729CEF00F01C13 /* ProjectStatusFilterViewController.m */; };
 		CAD4F36E17729E6B00F01C13 /* ProjectStatusFilterDataBuilder.json in Resources */ = {isa = PBXBuildFile; fileRef = CAD4F36D17729E6B00F01C13 /* ProjectStatusFilterDataBuilder.json */; };
-		DEDE000323CFF769B3D106A9 /* AddTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE01178679C48E1A8DCE74 /* AddTrustIncreaseViewController.m */; };
-		DEDE01FE8F2DB484C2B8DF6B /* GuaranteeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE02407757A3FDD921715F /* GuaranteeViewController.m */; };
-		DEDE035473B5DA7DCCE389D3 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE05C7641A5FB969BE3E34 /* EstateViewController.m */; };
-		DEDE0829BB8F60A75907598E /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE066D04B088985B2245E2 /* LandViewController.m */; };
-		DEDE094AADAEC682EDA8227B /* ReceivablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE0EAA2D893658E274173E /* ReceivablesViewController.m */; };
 		DEDE0BC1528B07DDE17E7F9E /* InputInfoTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE07B9B71D3B058B218C95 /* InputInfoTableHeader.m */; };
-		DEDE0BF162B7578DCC4D3830 /* EquityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE0F40EEEA6685FFD8D0DE /* EquityViewController.m */; };
-		DEDE0D498F9D008F8D9568B4 /* AntiGuarantorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE04D0366713AAB8061019 /* AntiGuarantorViewController.m */; };
-		DEDE0DAF41EF71CCCA0B0AA8 /* EnhancementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE0CA557153F170AB3601A /* EnhancementsViewController.m */; };
-		DEDE0DC56B397DA5A4907FBF /* BankSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE0BF69F275FF459937127 /* BankSupportViewController.m */; };
-		DEDE0E2A36BD3ACFE477D7B5 /* TrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE0E7D9CC729FD2AE96E0A /* TrustIncreaseViewController.m */; };
 		DEDE0EB094AF14BE2877F180 /* InputInfoTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDE0F5C877995A413250641 /* InputInfoTableHeader.xib */; };
-		DEDE0F14B456336053CF7EF7 /* OtherTrustIncreaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE0C1AB1AE44D6944A62A3 /* OtherTrustIncreaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +270,28 @@
 		12BE385817717A5D0090E0BD /* PlatformProjectBasicDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformProjectBasicDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformProjectBasicDataBuilder.json; sourceTree = "<group>"; };
 		12BE385917717A5D0090E0BD /* PlatformProjectFinanceDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PlatformProjectFinanceDataBuilder.json; path = DataBuilder/PlatformProjects/PlatformProjectFinanceDataBuilder.json; sourceTree = "<group>"; };
 		387BF9DE8CE3400AA0164469 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C41723E1774AC61005B62C3 /* AddTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTrustIncreaseViewController.h; path = Public/TrustIncrease/AddTrustIncreaseViewController.h; sourceTree = "<group>"; };
+		6C41723F1774AC61005B62C3 /* AddTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTrustIncreaseViewController.m; path = Public/TrustIncrease/AddTrustIncreaseViewController.m; sourceTree = "<group>"; };
+		6C4172401774AC61005B62C3 /* AntiGuarantorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AntiGuarantorViewController.h; path = Public/TrustIncrease/AntiGuarantorViewController.h; sourceTree = "<group>"; };
+		6C4172411774AC61005B62C3 /* AntiGuarantorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntiGuarantorViewController.m; path = Public/TrustIncrease/AntiGuarantorViewController.m; sourceTree = "<group>"; };
+		6C4172421774AC61005B62C3 /* BankSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BankSupportViewController.h; path = Public/TrustIncrease/BankSupportViewController.h; sourceTree = "<group>"; };
+		6C4172431774AC61005B62C3 /* BankSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BankSupportViewController.m; path = Public/TrustIncrease/BankSupportViewController.m; sourceTree = "<group>"; };
+		6C4172441774AC61005B62C3 /* EnhancementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnhancementsViewController.h; path = Public/TrustIncrease/EnhancementsViewController.h; sourceTree = "<group>"; };
+		6C4172451774AC61005B62C3 /* EnhancementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnhancementsViewController.m; path = Public/TrustIncrease/EnhancementsViewController.m; sourceTree = "<group>"; };
+		6C4172461774AC61005B62C3 /* EquityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EquityViewController.h; path = Public/TrustIncrease/EquityViewController.h; sourceTree = "<group>"; };
+		6C4172471774AC61005B62C3 /* EquityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EquityViewController.m; path = Public/TrustIncrease/EquityViewController.m; sourceTree = "<group>"; };
+		6C4172481774AC61005B62C3 /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateViewController.h; path = Public/TrustIncrease/EstateViewController.h; sourceTree = "<group>"; };
+		6C4172491774AC61005B62C3 /* EstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateViewController.m; path = Public/TrustIncrease/EstateViewController.m; sourceTree = "<group>"; };
+		6C41724A1774AC61005B62C3 /* GuaranteeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuaranteeViewController.h; path = Public/TrustIncrease/GuaranteeViewController.h; sourceTree = "<group>"; };
+		6C41724B1774AC61005B62C3 /* GuaranteeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuaranteeViewController.m; path = Public/TrustIncrease/GuaranteeViewController.m; sourceTree = "<group>"; };
+		6C41724C1774AC61005B62C3 /* LandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandViewController.h; path = Public/TrustIncrease/LandViewController.h; sourceTree = "<group>"; };
+		6C41724D1774AC61005B62C3 /* LandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandViewController.m; path = Public/TrustIncrease/LandViewController.m; sourceTree = "<group>"; };
+		6C41724E1774AC61005B62C3 /* OtherTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherTrustIncreaseViewController.h; path = Public/TrustIncrease/OtherTrustIncreaseViewController.h; sourceTree = "<group>"; };
+		6C41724F1774AC61005B62C3 /* OtherTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherTrustIncreaseViewController.m; path = Public/TrustIncrease/OtherTrustIncreaseViewController.m; sourceTree = "<group>"; };
+		6C4172501774AC61005B62C3 /* ReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceivablesViewController.h; path = Public/TrustIncrease/ReceivablesViewController.h; sourceTree = "<group>"; };
+		6C4172511774AC61005B62C3 /* ReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceivablesViewController.m; path = Public/TrustIncrease/ReceivablesViewController.m; sourceTree = "<group>"; };
+		6C4172521774AC61005B62C3 /* TrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrustIncreaseViewController.h; path = Public/TrustIncrease/TrustIncreaseViewController.h; sourceTree = "<group>"; };
+		6C4172531774AC61005B62C3 /* TrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrustIncreaseViewController.m; path = Public/TrustIncrease/TrustIncreaseViewController.m; sourceTree = "<group>"; };
 		8AA1A1135AB24A4CB6294401 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CA04493F17705C2400D6FBE8 /* ProjectTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTableCell.h; path = Projects/ProjectTableCell.h; sourceTree = "<group>"; };
 		CA04494017705C2400D6FBE8 /* ProjectTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectTableCell.m; path = Projects/ProjectTableCell.m; sourceTree = "<group>"; };
@@ -491,30 +513,8 @@
 		CAD4F36A17729CEE00F01C13 /* ProjectStatusFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectStatusFilterViewController.h; path = Projects/ProjectStatusFilterViewController.h; sourceTree = "<group>"; };
 		CAD4F36B17729CEF00F01C13 /* ProjectStatusFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectStatusFilterViewController.m; path = Projects/ProjectStatusFilterViewController.m; sourceTree = "<group>"; };
 		CAD4F36D17729E6B00F01C13 /* ProjectStatusFilterDataBuilder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProjectStatusFilterDataBuilder.json; path = DataBuilder/Projects/ProjectStatusFilterDataBuilder.json; sourceTree = "<group>"; };
-		DEDE01178679C48E1A8DCE74 /* AddTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTrustIncreaseViewController.m; path = Bonds/AddTrustIncreaseViewController.m; sourceTree = "<group>"; };
-		DEDE02407757A3FDD921715F /* GuaranteeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuaranteeViewController.m; path = Bonds/GuaranteeViewController.m; sourceTree = "<group>"; };
-		DEDE0269851AC24FF7E01DBD /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateViewController.h; path = Bonds/EstateViewController.h; sourceTree = "<group>"; };
-		DEDE0372A8F641FBCE04639D /* OtherTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherTrustIncreaseViewController.h; path = Bonds/OtherTrustIncreaseViewController.h; sourceTree = "<group>"; };
-		DEDE04D0366713AAB8061019 /* AntiGuarantorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AntiGuarantorViewController.m; path = Bonds/AntiGuarantorViewController.m; sourceTree = "<group>"; };
-		DEDE04D7DC56138C3C56E02C /* AddTrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTrustIncreaseViewController.h; path = Bonds/AddTrustIncreaseViewController.h; sourceTree = "<group>"; };
-		DEDE05C7641A5FB969BE3E34 /* EstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateViewController.m; path = Bonds/EstateViewController.m; sourceTree = "<group>"; };
-		DEDE066D04B088985B2245E2 /* LandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandViewController.m; path = Bonds/LandViewController.m; sourceTree = "<group>"; };
 		DEDE07B9B71D3B058B218C95 /* InputInfoTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputInfoTableHeader.m; sourceTree = "<group>"; };
-		DEDE08D9B19FB6357E8FBEC1 /* TrustIncreaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrustIncreaseViewController.h; path = Bonds/TrustIncreaseViewController.h; sourceTree = "<group>"; };
-		DEDE096307DDA19DE5CD1BD3 /* AntiGuarantorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AntiGuarantorViewController.h; path = Bonds/AntiGuarantorViewController.h; sourceTree = "<group>"; };
-		DEDE09AE5FA5BE4DB24F7E62 /* GuaranteeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuaranteeViewController.h; path = Bonds/GuaranteeViewController.h; sourceTree = "<group>"; };
 		DEDE0A7D3D6749B9E6D7EBBA /* InputInfoTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputInfoTableHeader.h; sourceTree = "<group>"; };
-		DEDE0B797335DBC6DDD7235C /* ReceivablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceivablesViewController.h; path = Bonds/ReceivablesViewController.h; sourceTree = "<group>"; };
-		DEDE0BF45AFECFA3E0A892F5 /* LandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandViewController.h; path = Bonds/LandViewController.h; sourceTree = "<group>"; };
-		DEDE0BF69F275FF459937127 /* BankSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BankSupportViewController.m; path = Bonds/BankSupportViewController.m; sourceTree = "<group>"; };
-		DEDE0C1AB1AE44D6944A62A3 /* OtherTrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherTrustIncreaseViewController.m; path = Bonds/OtherTrustIncreaseViewController.m; sourceTree = "<group>"; };
-		DEDE0CA557153F170AB3601A /* EnhancementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnhancementsViewController.m; path = Bonds/EnhancementsViewController.m; sourceTree = "<group>"; };
-		DEDE0CC8E23C36C2F67F046A /* EquityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EquityViewController.h; path = Bonds/EquityViewController.h; sourceTree = "<group>"; };
-		DEDE0D4CC137A883102911ED /* BankSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BankSupportViewController.h; path = Bonds/BankSupportViewController.h; sourceTree = "<group>"; };
-		DEDE0D533C126DBBE1B4C1B0 /* EnhancementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnhancementsViewController.h; path = Bonds/EnhancementsViewController.h; sourceTree = "<group>"; };
-		DEDE0E7D9CC729FD2AE96E0A /* TrustIncreaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrustIncreaseViewController.m; path = Bonds/TrustIncreaseViewController.m; sourceTree = "<group>"; };
-		DEDE0EAA2D893658E274173E /* ReceivablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceivablesViewController.m; path = Bonds/ReceivablesViewController.m; sourceTree = "<group>"; };
-		DEDE0F40EEEA6685FFD8D0DE /* EquityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EquityViewController.m; path = Bonds/EquityViewController.m; sourceTree = "<group>"; };
 		DEDE0F5C877995A413250641 /* InputInfoTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputInfoTableHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -976,21 +976,28 @@
 		DEDE05FBCC72EC0DB578059E /* TrustIncrease */ = {
 			isa = PBXGroup;
 			children = (
-				DEDE08D9B19FB6357E8FBEC1 /* TrustIncreaseViewController.h */,
-				DEDE0E7D9CC729FD2AE96E0A /* TrustIncreaseViewController.m */,
-				DEDE04D7DC56138C3C56E02C /* AddTrustIncreaseViewController.h */,
-				DEDE01178679C48E1A8DCE74 /* AddTrustIncreaseViewController.m */,
-				DEDE0D4CC137A883102911ED /* BankSupportViewController.h */,
-				DEDE0BF69F275FF459937127 /* BankSupportViewController.m */,
-				DEDE0D533C126DBBE1B4C1B0 /* EnhancementsViewController.h */,
-				DEDE0CA557153F170AB3601A /* EnhancementsViewController.m */,
-				DEDE09AE5FA5BE4DB24F7E62 /* GuaranteeViewController.h */,
-				DEDE02407757A3FDD921715F /* GuaranteeViewController.m */,
-				DEDE0372A8F641FBCE04639D /* OtherTrustIncreaseViewController.h */,
-				DEDE0C1AB1AE44D6944A62A3 /* OtherTrustIncreaseViewController.m */,
-				DEDE096307DDA19DE5CD1BD3 /* AntiGuarantorViewController.h */,
-				DEDE04D0366713AAB8061019 /* AntiGuarantorViewController.m */,
-				DEDE0B14E53B65B9354A1C2B /* AssetBacked */,
+				6C41723E1774AC61005B62C3 /* AddTrustIncreaseViewController.h */,
+				6C41723F1774AC61005B62C3 /* AddTrustIncreaseViewController.m */,
+				6C4172401774AC61005B62C3 /* AntiGuarantorViewController.h */,
+				6C4172411774AC61005B62C3 /* AntiGuarantorViewController.m */,
+				6C4172421774AC61005B62C3 /* BankSupportViewController.h */,
+				6C4172431774AC61005B62C3 /* BankSupportViewController.m */,
+				6C4172441774AC61005B62C3 /* EnhancementsViewController.h */,
+				6C4172451774AC61005B62C3 /* EnhancementsViewController.m */,
+				6C4172461774AC61005B62C3 /* EquityViewController.h */,
+				6C4172471774AC61005B62C3 /* EquityViewController.m */,
+				6C4172481774AC61005B62C3 /* EstateViewController.h */,
+				6C4172491774AC61005B62C3 /* EstateViewController.m */,
+				6C41724A1774AC61005B62C3 /* GuaranteeViewController.h */,
+				6C41724B1774AC61005B62C3 /* GuaranteeViewController.m */,
+				6C41724C1774AC61005B62C3 /* LandViewController.h */,
+				6C41724D1774AC61005B62C3 /* LandViewController.m */,
+				6C41724E1774AC61005B62C3 /* OtherTrustIncreaseViewController.h */,
+				6C41724F1774AC61005B62C3 /* OtherTrustIncreaseViewController.m */,
+				6C4172501774AC61005B62C3 /* ReceivablesViewController.h */,
+				6C4172511774AC61005B62C3 /* ReceivablesViewController.m */,
+				6C4172521774AC61005B62C3 /* TrustIncreaseViewController.h */,
+				6C4172531774AC61005B62C3 /* TrustIncreaseViewController.m */,
 			);
 			name = TrustIncrease;
 			path = bond_market_PM_iphone;
@@ -1005,21 +1012,6 @@
 				DEDE05FBCC72EC0DB578059E /* TrustIncrease */,
 			);
 			path = Public;
-			sourceTree = "<group>";
-		};
-		DEDE0B14E53B65B9354A1C2B /* AssetBacked */ = {
-			isa = PBXGroup;
-			children = (
-				DEDE0CC8E23C36C2F67F046A /* EquityViewController.h */,
-				DEDE0F40EEEA6685FFD8D0DE /* EquityViewController.m */,
-				DEDE0269851AC24FF7E01DBD /* EstateViewController.h */,
-				DEDE05C7641A5FB969BE3E34 /* EstateViewController.m */,
-				DEDE0BF45AFECFA3E0A892F5 /* LandViewController.h */,
-				DEDE066D04B088985B2245E2 /* LandViewController.m */,
-				DEDE0B797335DBC6DDD7235C /* ReceivablesViewController.h */,
-				DEDE0EAA2D893658E274173E /* ReceivablesViewController.m */,
-			);
-			name = AssetBacked;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1294,26 +1286,37 @@
 			files = (
 				0EA8827A175C237A001100A7 /* main.m in Sources */,
 				0EA88296175C24DF001100A7 /* AppDelegate.m in Sources */,
+				6C41725A1774AC61005B62C3 /* GuaranteeViewController.m in Sources */,
+				6C4172561774AC61005B62C3 /* BankSupportViewController.m in Sources */,
 				0EA88297175C24DF001100A7 /* BoardViewController.m in Sources */,
 				CA8A1E33175C343B00E87946 /* LoginViewController.m in Sources */,
+				6C4172581774AC61005B62C3 /* EquityViewController.m in Sources */,
 				CA3B9CB9176EFAC200E2D7B8 /* BondBasicInfoViewController.m in Sources */,
 				CA3B9CBA176EFAC200E2D7B8 /* BondRemarkInfoViewController.m in Sources */,
+				6C41725C1774AC61005B62C3 /* OtherTrustIncreaseViewController.m in Sources */,
+				6C4172591774AC61005B62C3 /* EstateViewController.m in Sources */,
+				6C4172571774AC61005B62C3 /* EnhancementsViewController.m in Sources */,
 				CA3B9CBB176EFAC200E2D7B8 /* BondsTableViewController.m in Sources */,
 				CA3B9CBC176EFAC200E2D7B8 /* BondTableCell.m in Sources */,
 				CA3B9CC3176EFB0600E2D7B8 /* BondFinancialIndicatorsViewController.m in Sources */,
 				CA3B9CC8176EFB2400E2D7B8 /* BondFilterViewController.m in Sources */,
+				6C41725D1774AC61005B62C3 /* ReceivablesViewController.m in Sources */,
+				6C4172551774AC61005B62C3 /* AntiGuarantorViewController.m in Sources */,
 				CA3B9CC9176EFB2400E2D7B8 /* BondViewController.m in Sources */,
 				CA3B9CCC176EFB4100E2D7B8 /* MyBondsViewController.m in Sources */,
 				CA3B9CD2176EFB9E00E2D7B8 /* ProjectViewController.m in Sources */,
+				6C4172541774AC61005B62C3 /* AddTrustIncreaseViewController.m in Sources */,
 				CA3B9CD7176EFBA600E2D7B8 /* ProjectBasicInfoViewController.m in Sources */,
 				CA3B9CD8176EFBA600E2D7B8 /* ProjectFinancialIndicatorsViewController.m in Sources */,
 				CA3B9CDB176EFBB300E2D7B8 /* ProjectRemarkViewController.m in Sources */,
 				CA3B9CDE176EFBD200E2D7B8 /* FinancingMethodViewController.m in Sources */,
 				CA3B9CEB176EFC0600E2D7B8 /* LiquidityViewController.m in Sources */,
+				6C41725E1774AC61005B62C3 /* TrustIncreaseViewController.m in Sources */,
 				CA3B9CEC176EFC0600E2D7B8 /* AddUseOfFoundsViewController.m in Sources */,
 				CA3B9CED176EFC0600E2D7B8 /* DebtRestructuringViewController.m in Sources */,
 				CA3B9CEE176EFC0600E2D7B8 /* EquityInvestmentProjectsViewController.m in Sources */,
 				CA3B9CEF176EFC0600E2D7B8 /* OtherPurposesViewController.m in Sources */,
+				6C41725B1774AC61005B62C3 /* LandViewController.m in Sources */,
 				CA3B9CF0176EFC0600E2D7B8 /* UseOfFoundsViewController.m in Sources */,
 				CA3B9CFB176EFC1E00E2D7B8 /* BBCustomBackButtonViewController.m in Sources */,
 				CA3B9CFC176EFC1E00E2D7B8 /* BYQuickDialogWrappedViewController.m in Sources */,
@@ -1332,17 +1335,6 @@
 				CAD4F36417729BE100F01C13 /* ProjectTypeFilterViewController.m in Sources */,
 				CAD4F36C17729CF000F01C13 /* ProjectStatusFilterViewController.m in Sources */,
 				DEDE0BC1528B07DDE17E7F9E /* InputInfoTableHeader.m in Sources */,
-				DEDE0E2A36BD3ACFE477D7B5 /* TrustIncreaseViewController.m in Sources */,
-				DEDE000323CFF769B3D106A9 /* AddTrustIncreaseViewController.m in Sources */,
-				DEDE0DC56B397DA5A4907FBF /* BankSupportViewController.m in Sources */,
-				DEDE0DAF41EF71CCCA0B0AA8 /* EnhancementsViewController.m in Sources */,
-				DEDE01FE8F2DB484C2B8DF6B /* GuaranteeViewController.m in Sources */,
-				DEDE0F14B456336053CF7EF7 /* OtherTrustIncreaseViewController.m in Sources */,
-				DEDE0D498F9D008F8D9568B4 /* AntiGuarantorViewController.m in Sources */,
-				DEDE0BF162B7578DCC4D3830 /* EquityViewController.m in Sources */,
-				DEDE035473B5DA7DCCE389D3 /* EstateViewController.m in Sources */,
-				DEDE0829BB8F60A75907598E /* LandViewController.m in Sources */,
-				DEDE094AADAEC682EDA8227B /* ReceivablesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,10 +20,7 @@
 
 @end
 
-@implementation BondBasicInfoViewController {
-    NSNumber *selectedProvince;
-    NSNumber *selectedCity;
-}
+@implementation BondBasicInfoViewController
 
 #pragma public methods
 - (void)bindObject: (NSDictionary *)obj

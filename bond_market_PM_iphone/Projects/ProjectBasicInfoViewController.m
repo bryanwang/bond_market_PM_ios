@@ -26,10 +26,7 @@
 
 @end
 
-@implementation ProjectBasicInfoViewController {
-    NSNumber *selectedProvince;
-    NSNumber *selectedCity;
-}
+@implementation ProjectBasicInfoViewController
 
 #pragma public methods
 - (void)bindObject: (NSDictionary *)obj

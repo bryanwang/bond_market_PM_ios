@@ -91,31 +91,14 @@
 - (void)setUpSeletedRole
 {
     QRootElement *root = self.qc.quickDialogTableView.root;
-    __weak QSelectSection *allsection = (QSelectSection *)[root getSectionForIndex:0];
-    __weak QSelectSection *querysection = (QSelectSection *)[root getSectionForIndex:1];
-    allsection.onSelected = ^{
-        NSMutableArray *items = [NSMutableArray array];
-        if (allsection.selectedIndexes.count == allsection.items.count) {
-            for (QElement *el in querysection.elements) {
-                [items addObject: [NSNumber numberWithInt:((QSelectItemElement *)el).index]];
-            }
-            querysection.selectedIndexes = items;
-        } else {
-            [querysection setSelectedIndexes:items];
-        }
-        
-        [self.qc.quickDialogTableView reloadData];
-    };
+    QSelectSection *allsection = (QSelectSection *)[root getSectionForIndex:0];
+    QSelectSection *querysection = (QSelectSection *)[root getSectionForIndex:1];
+    __block FinancingMethodViewController *_self = self;
     
-    querysection.onSelected = ^{
-        if (querysection.selectedIndexes.count > 0 && querysection.selectedIndexes.count != allsection.items.count) {
-            [allsection setSelectedIndexes:[NSMutableArray array]];
-        }
-        
-        [self.qc.quickDialogTableView reloadData];
-    };
+    [[QuickDialogHelper sharedInstance] setUpSelectRoleWithAllSelecte:allsection AndQuerySelect:querysection WithChangedCallback:^{
+        [_self.qc.quickDialogTableView reloadData];
+    }];
 }
-
 
 - (void)viewDidLoad
 {
