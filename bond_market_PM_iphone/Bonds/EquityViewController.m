@@ -54,6 +54,13 @@
     if (array.count > 0)
       [result[@"data"] addObject: @{@"key": @"股权所有人", @"value":array}];
     
+    // 上市公司
+    section = [root sectionWithKey:@"上市公司"];
+    QSelectSection *selectionSection = (QSelectSection *)section;
+    NSArray *selectedItems = [selectionSection.selectedItems copy];
+    if (selectedItems.count > 0)
+        [result[@"data"] addObject: @{@"key": @"上市公司", @"value":selectedItems}];
+    
     NSDictionary* info = [NSDictionary dictionaryWithObject:result forKey:BYTRUSTINCREASEKEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:BYPOPVIEWCONTOLLERNOTIFICATION
                                                         object:self
