@@ -55,8 +55,7 @@
       [result[@"data"] addObject: @{@"key": @"股权所有人", @"value":array}];
     
     // 上市公司
-    section = [root sectionWithKey:@"上市公司"];
-    QSelectSection *selectionSection = (QSelectSection *)section;
+    QSelectSection *selectionSection = (QSelectSection *)[root sectionWithKey:@"上市公司"];
     NSArray *selectedItems = [selectionSection.selectedItems copy];
     if (selectedItems.count > 0)
         [result[@"data"] addObject: @{@"key": @"上市公司", @"value":selectedItems}];
