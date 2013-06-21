@@ -48,8 +48,8 @@
     self.quickDialogTableView.backgroundView =bv;
     
     QAppearance *appearance = [QElement appearance];
-    appearance.backgroundColorEnabled = RGBCOLOR(255, 255, 255);
-    appearance.backgroundColorDisabled = RGBCOLOR(255, 255, 255);
+//    appearance.backgroundColorEnabled = RGBCOLOR(255, 255, 255);
+//    appearance.backgroundColorDisabled = RGBCOLOR(255, 255, 255);
     
     appearance.labelFont = [UIFont systemFontOfSize:12];
     appearance.labelColorEnabled = RGBCOLOR(100, 100, 100);

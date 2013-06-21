@@ -63,7 +63,6 @@
     self = [self initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"QuickformEntryElement"];
     if (self!=nil){
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-
         [self createSubviews];
     }
     return self;
@@ -335,6 +334,5 @@
     _textField.font = appearance.entryFont;
     _textField.textColor = element.enabled ? appearance.entryTextColorEnabled : appearance.entryTextColorDisabled;
 }
-
 
 @end
