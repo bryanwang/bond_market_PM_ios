@@ -9,6 +9,17 @@
                                 { "type":"QButtonElement", "title":"添加", "controllerAction": "handleEquityAddButtonTapped:"}
                         ]
                 },
+                 {
+                 "title": "上市公司",
+                 "key": "上市公司",
+                 "type": "QSelectSection",
+                 "items": [
+                           "上市公司 - 大小非",
+                           "上市公司 - 全流通",
+                           "非上市公司",
+                           ],
+                 "bind": "value: 上市公司"
+                 },
                { "elements":
                         [
                                 { "type":"QEntryElement", "key": "质押金额", "title": "质押金额", "placeholder": "亿", "prefix": " 亿", "keyboardType":"NumbersAndPunctuation",
