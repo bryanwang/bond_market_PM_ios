@@ -35,16 +35,13 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     [root fetchValueIntoObject:dic];
     
-    //性质
-    NSArray *kinds =[Utils sharedInstance].SecurityWays;
-    NSMutableArray *a = [NSMutableArray array];
-    [(NSArray *)dic[@"担保方式"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-        [a addObject: kinds[[obj integerValue]]];
-    }];
+    //担保方式
+    QSelectSection *s = (QSelectSection *)[root sectionWithKey:@"担保方式"];
+    NSMutableArray *items = [s.selectedItems mutableCopy];
     if (dic[@"其他担保方式"])
-        [a addObject: dic[@"其他担保方式"]];
-    if (a.count > 0)
-        [result[@"data"] addObject: @{@"key": @"担保方式", @"value": a}];
+        [items addObject: dic[@"其他担保方式"]];
+    if (items.count > 0)
+        [result[@"data"] addObject: @{@"key": @"担保方式", @"value": items}];
     
     //担保方
     NSMutableArray *array = [NSMutableArray array];

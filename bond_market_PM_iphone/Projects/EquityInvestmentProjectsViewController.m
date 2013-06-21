@@ -51,15 +51,12 @@
         [result[@"data"] addObject: @{@"key": @"项目简介", @"value": dic[@"项目简介"]}];
     
     //批文
-    NSArray *kinds =[Utils sharedInstance].ApprovalTypes;
-    NSMutableArray *a = [NSMutableArray array];
-    [(NSArray *)dic[@"批文"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-        [a addObject: kinds[[obj integerValue]]];
-    }];
+    QSelectSection *s = (QSelectSection *)[root sectionWithKey:@"批文"];
+    NSMutableArray *items = [s.selectedItems mutableCopy];
     if (dic[@"其他批文"])
-        [a addObject: dic[@"其他批文"]];
-    if (a.count > 0)
-        [result[@"data"] addObject: @{@"key": @"批文", @"value": a}];
+        [items addObject: dic[@"其他批文"]];
+    if (items.count > 0)
+        [result[@"data"] addObject: @{@"key": @"批文", @"value": items}];
 
     
     NSDictionary* info = [NSDictionary dictionaryWithObject:result forKey:BYTRUSTINCREASEKEY];

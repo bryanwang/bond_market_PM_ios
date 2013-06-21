@@ -37,13 +37,10 @@
     [root fetchValueIntoObject:dic];
     
     //内部增级
-    NSArray *kinds =[Utils sharedInstance].EnhancementsProperties;
-    NSMutableArray *a = [NSMutableArray array];
-    [(NSArray *)dic[@"内部增级"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-        [a addObject: kinds[[obj integerValue]]];
-    }];
-    if (a.count > 0)
-        [result[@"data"] addObject: @{@"key": @"内部增级", @"value": a}];
+    QSelectSection *s = (QSelectSection *)[root sectionWithKey:@"内部增级"];
+    NSMutableArray *items = [s.selectedItems mutableCopy];
+    if (items.count > 0)
+        [result[@"data"] addObject: @{@"key": @"内部增级", @"value": items}];
     
     if (dic[@"其他内部增级"])
        [result[@"data"] addObject: @{@"key": @"其他", @"value": dic[@"其他内部增级"]}];

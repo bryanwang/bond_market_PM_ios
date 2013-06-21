@@ -49,15 +49,12 @@
         [result[@"data"] addObject: @{@"key": @"反担保人", @"value":array}];
     
     //担保方式
-    NSMutableArray *kinds =[[Utils sharedInstance].SecurityWays mutableCopy];
-    NSMutableArray *a = [NSMutableArray array];
-    [(NSArray *)dic[@"担保方式"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-        [a addObject: kinds[[obj integerValue]]];
-    }];
+    QSelectSection *s = (QSelectSection *)[root sectionWithKey:@"担保方式"];
+    NSMutableArray *items = [s.selectedItems mutableCopy];
     if (dic[@"其他担保方式"])
-        [a addObject: dic[@"其他担保方式"]];
-    if (a.count > 0)
-        [result[@"data"] addObject: @{@"key": @"担保方式", @"value": a}];
+        [items addObject: dic[@"其他担保方式"]];
+    if (items.count > 0)
+        [result[@"data"] addObject: @{@"key": @"担保方式", @"value": items}];
     
     if (dic[@"反担保人主体评级"])
         [result[@"data"] addObject: @{@"key": @"反担保人主体评级", @"value": dic[@"反担保人主体评级"]}];

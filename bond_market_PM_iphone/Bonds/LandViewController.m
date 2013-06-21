@@ -36,15 +36,12 @@
     [root fetchValueIntoObject:dic];
     
     //性质
-    NSArray *kinds =[Utils sharedInstance].LandAndEstateProperties;
-    NSMutableArray *a = [NSMutableArray array];
-    [(NSArray *)dic[@"性质"]  enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-        [a addObject: kinds[[obj integerValue]]];
-    }];
+    QSelectSection *s = (QSelectSection *)[root sectionWithKey:@"性质"];
+    NSMutableArray *items = [s.selectedItems mutableCopy];
     if (dic[@"其他性质"])
-        [a addObject: dic[@"其他性质"]];
-    if (a.count > 0)
-        [result[@"data"] addObject: @{@"key": @"性质", @"value": a}];
+        [items addObject: dic[@"其他性质"]];
+    if (items.count > 0)
+        [result[@"data"] addObject: @{@"key": @"性质", @"value": items}];
     
     //土地出让证明
     NSMutableArray *cards = [@[
