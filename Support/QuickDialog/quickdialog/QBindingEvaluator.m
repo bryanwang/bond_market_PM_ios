@@ -136,10 +136,11 @@
 
         if (![propName isEqualToString:@"iterate"] && ![valueName isEqualToString:@"self"]) {
             id value = [element valueForKeyPath:propName];
-            if (propName!= nil && value!=nil)
+            if (propName!= nil && value != nil && ![value isEqual: @""]) {
                 [data setValue:value forKeyPath:valueName];
+            }
         }
     }
-
 }
+
 @end
